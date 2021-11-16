@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'datasearch.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       debugShowCheckedModeBanner: false,
-      home: const MyHomePage(title: 'HOME'),
+      home: const MyHomePage(title: 'Home'),
     );
   }
 }
@@ -72,22 +73,59 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () => {},
-          icon: Image.asset("assets/images/FIC logo.png"),
-          //icon: const Icon(Icons.home),
+        automaticallyImplyLeading: false,
+        toolbarHeight: 60,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.home),
+              onPressed: () => (){},
+              iconSize: 35,
+            ),
+            Stack(
+              alignment: Alignment.center,
+              children: <Widget>[
+                IconButton(
+                  icon: Image.asset('assets/images/FIC logo.png'),
+                  onPressed: (){},
+                  iconSize: 50,
+                ),
+                Positioned(
+                  top: 12.0,
+                  right: 10.0,
+                  width: 10.0,
+                  height: 10.0,
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                    ),
+                  ),
+                )
+              ],
+            ),
+            Expanded(
+              child: Center(child: Text(widget.title)),
+            )
+          ],
         ),
-        //leading: Image.asset("assets/images/FIC logo.png"),
-        title: Text(widget.title),
         actions: [
           IconButton(
-              onPressed: () => {},
-              icon: const Icon(Icons.search)),
+              onPressed: () => {
+                showSearch(context: context, delegate: DataSearch())
+              },
+              icon: const Icon(Icons.search),
+              iconSize: 30,
+          ),
           IconButton(
               onPressed: () => {},
-              icon: const Icon(Icons.settings))
+              icon: const Icon(Icons.settings),
+              iconSize: 30,
+          )
         ],
       ),
+      drawer: const Drawer(),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.

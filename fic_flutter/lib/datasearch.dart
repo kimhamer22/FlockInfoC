@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class DataSearch extends SearchDelegate<String>{
 
+  // TODO: Get all categories from DB
   final categories = [
     "Controlling Abortion",
     "Lamb Survival",
@@ -43,9 +44,10 @@ class DataSearch extends SearchDelegate<String>{
     if (query.isEmpty) {
       suggestionList = recents;
     } else {
-      suggestionList = categories.where((element) => element.startsWith(query)).toList();
+      suggestionList = categories.where((element) => element.toLowerCase().startsWith(query)).toList();
     }
     return ListView.builder(
+        itemCount: suggestionList.length,
         itemBuilder: (context, index) => ListTile(
             onTap: () => {showResults(context)},
             leading: const Icon(Icons.pets),

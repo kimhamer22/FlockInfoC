@@ -34,18 +34,27 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.example.fic_flutter"
+        applicationId "flock.information.centre"
         minSdkVersion 16
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
 
+    signingConfigs {
+        release {
+            keyAlias 'flock2'
+            keyPassword 'SheepWereMadeGreatEvenThoughTheyAlwaysWereGreat123.'
+            storeFile file('/home/danielius/keystores/flock2.keystore')
+            storePassword 'SheepWereMadeGreatEvenThoughTheyAlwaysWereGreat123.'
+        }
+    }
+
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
         }
     }
 }

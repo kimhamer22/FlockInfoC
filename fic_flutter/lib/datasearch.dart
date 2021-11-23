@@ -44,7 +44,7 @@ class DataSearch extends SearchDelegate<String>{
     if (query.isEmpty) {
       suggestionList = recents;
     } else {
-      suggestionList = categories.where((element) => element.toLowerCase().startsWith(query)).toList();
+      suggestionList = categories.where((element) => element.toLowerCase().startsWith(query.toLowerCase())).toList();
     }
     return ListView.builder(
         itemCount: suggestionList.length,

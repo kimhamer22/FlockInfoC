@@ -24,7 +24,6 @@ class NavigationButton extends StatelessWidget {
               border: Border.all(),
             ),
             child: Row(children: [
-              // TODO: Circle
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: Container(

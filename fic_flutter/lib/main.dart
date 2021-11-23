@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'datasearch.dart';
+import 'package:fic_flutter/navigation_button.dart';
+import 'package:fic_flutter/top_bar.dart';
+import 'package:fic_flutter/general_resources.dart';
 
 void main() {
   runApp(const MyApp());
@@ -50,19 +52,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -72,59 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        toolbarHeight: 60,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            IconButton(
-              icon: const Icon(Icons.home),
-              onPressed: () => (){},
-              iconSize: 35,
-            ),
-            Stack(
-              alignment: Alignment.center,
-              children: <Widget>[
-                IconButton(
-                  icon: Image.asset('assets/images/FIC logo.png'),
-                  onPressed: (){},
-                  iconSize: 50,
-                ),
-                Positioned(
-                  top: 12.0,
-                  right: 10.0,
-                  width: 10.0,
-                  height: 10.0,
-                  child: Container(
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                    ),
-                  ),
-                )
-              ],
-            ),
-            Expanded(
-              child: Center(child: Text(widget.title)),
-            )
-          ],
-        ),
-        actions: [
-          IconButton(
-              onPressed: () => {
-                showSearch(context: context, delegate: DataSearch())
-              },
-              icon: const Icon(Icons.search),
-              iconSize: 30,
-          ),
-          IconButton(
-              onPressed: () => {Drawer()},
-              icon: const Icon(Icons.settings),
-              iconSize: 30,
-          )
-        ],
-      ),
+      appBar: const TopBar(page: 'Home'),
       drawer: Drawer(
         // Add a ListView to the drawer. This ensures the user can scroll
         // through the options in the drawer if there isn't enough vertical
@@ -178,22 +115,27 @@ class _MyHomePageState extends State<MyHomePage> {
           // center the children vertically; the main axis here is the vertical
           // axis because Columns are vertical (the cross axis would be
           // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
+          //mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            // TODO: Insert tabs here
+            Padding(
+                padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
+                child: Image.asset('assets/images/word art (low res).png')),
             const Text(
-              'You have pushed the button this many times:',
+              'Flock Information Centre',
+              style: TextStyle(fontSize: 30),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            const Padding(
+              padding: EdgeInsets.all(8),
+              child: Text(
+                'Online resources to provide information to professionals in the farming industry',
+                textAlign: TextAlign.center,
+              ),
             ),
+            const NavigationButton(title: 'General Resources'),
+            const NavigationButton(title: 'Benefits of Reducing Losses'),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }

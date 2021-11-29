@@ -1,9 +1,8 @@
 import 'package:fic_flutter/home_species.dart';
 import 'package:flutter/material.dart';
-import 'package:fic_flutter/navigation_button.dart';
 import 'package:fic_flutter/top_bar.dart';
 import 'package:fic_flutter/home_resources.dart';
-import 'package:fic_flutter/general_resources.dart';
+import 'package:fic_flutter/info_page.dart';
 
 void main() {
   runApp(const FlockControl());
@@ -21,7 +20,11 @@ class FlockControl extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       debugShowCheckedModeBanner: false,
-      home: const HomePage(title: 'Home'),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomePage(title: 'Home'),
+        '/infopage': (context) => const InfoPage(),
+      },
     );
   }
 }
@@ -47,8 +50,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         appBar: const TopBar(page: 'Home'),
         body: DefaultTabController(
           length: 2,
@@ -75,7 +77,6 @@ class _HomePageState extends State<HomePage> {
             ),
           ]),
         ),
-      ),
     );
   }
 }

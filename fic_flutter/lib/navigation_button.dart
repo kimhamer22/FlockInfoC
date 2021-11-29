@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class NavigationButton extends StatelessWidget {
   final String title;
   final String imageURL;
+  final String route;
 
   const NavigationButton(
       {Key? key,
       required this.title,
-      this.imageURL = 'assets/images/sheep icon.png'})
+      this.imageURL = 'assets/images/sheep icon.png',
+      required this.route})
       : super(key: key);
 
   @override
@@ -15,7 +17,9 @@ class NavigationButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8),
       child: MaterialButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, route);
+        },
         child: SizedBox(
           child: Container(
             decoration: BoxDecoration(

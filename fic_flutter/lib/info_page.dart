@@ -55,7 +55,7 @@ class _InfoPageState extends State<InfoPage> {
             'Description:',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
-          Text(description),
+          Padding(padding: EdgeInsets.all(10), child: Text(description)),
           ExpansionPanelList(
             expansionCallback: (int index, bool isExpanded) {
               setState(() {

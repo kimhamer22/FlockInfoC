@@ -13,13 +13,15 @@ class _HomeSpecies extends State<HomeSpecies> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffDBF9D3),
-      body: Column(children: const [
-        NavigationButton(title: "Hello", route: '/infopage'),
-        NavigationButton(
-          title: "Goodbye",
-          route: '/infopage',
-        ),
-      ]),
+      body: Center(
+        child: Column(children: const [
+          NavigationButton(title: "Sheep", route: '/infopage'),
+          NavigationButton(
+            title: "Cows",
+            route: '/infopage',
+          ),
+        ]),
+      ),
     );
   }
 }

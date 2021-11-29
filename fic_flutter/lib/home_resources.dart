@@ -12,9 +12,10 @@ class _HomeResources extends State<HomeResources> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xffDBF9D3),
       body: Column(children: [
         Padding(
-          padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
+          padding: const EdgeInsets.fromLTRB(30, 30, 30, 30),
           child: Image.asset('assets/images/word art (low res).png'),
         ),
         const Text(
@@ -31,7 +32,6 @@ class _HomeResources extends State<HomeResources> {
         const NavigationButton(title: 'General Resources', route: "/infopage"),
         const NavigationButton(
             title: 'Benefits of Reducing Losses', route: "/infopage"),
-        const Icon(Icons.eleven_mp_sharp),
       ]),
     );
   }

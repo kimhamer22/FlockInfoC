@@ -52,30 +52,36 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const TopBar(page: 'Home'),
-      body: DefaultTabController(
-        length: 2,
-        child: Column(children: <Widget>[
-          Container(
-            constraints: const BoxConstraints(maxHeight: 150.0),
-            child: const Material(
-              color: Colors.green,
-              child: TabBar(
-                tabs: [
-                  Tab(text: "Resources"),
-                  Tab(text: "Species"),
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+        child: DefaultTabController(
+          length: 2,
+          child: Column(children: <Widget>[
+            Container(
+              constraints: const BoxConstraints(maxHeight: 150.0),
+              child: const Material(
+                child: TabBar(
+                  labelColor: Colors.black,
+                  indicator: BoxDecoration(
+                    color: Color(0xFFDBF9D3),
+                  ),
+                  tabs: [
+                    Tab(text: "Resources"),
+                    Tab(text: "Species"),
+                  ],
+                ),
+              ),
+            ),
+            const Expanded(
+              child: TabBarView(
+                children: <Widget>[
+                  HomeResources(),
+                  HomeSpecies(),
                 ],
               ),
             ),
-          ),
-          const Expanded(
-            child: TabBarView(
-              children: <Widget>[
-                HomeResources(),
-                HomeSpecies(),
-              ],
-            ),
-          ),
-        ]),
+          ]),
+        ),
       ),
     );
   }

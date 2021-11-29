@@ -64,7 +64,7 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
           onPressed: () => {const Drawer()},
           icon: const Icon(Icons.settings),
           iconSize: 30,
-        )
+        ),
       ],
     );
   }

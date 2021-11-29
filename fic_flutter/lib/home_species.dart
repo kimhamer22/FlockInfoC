@@ -12,6 +12,7 @@ class _HomeSpecies extends State<HomeSpecies> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xffDBF9D3),
       body: Column(children: const [
         NavigationButton(title: "Hello", route: '/infopage'),
         NavigationButton(

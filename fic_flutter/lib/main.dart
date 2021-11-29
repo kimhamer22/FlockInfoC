@@ -51,32 +51,32 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const TopBar(page: 'Home'),
-        body: DefaultTabController(
-          length: 2,
-          child: Column(children: <Widget>[
-            Container(
-              constraints: const BoxConstraints(maxHeight: 150.0),
-              child: const Material(
-                color: Colors.green,
-                child: TabBar(
-                  tabs: [
-                    Tab(text: "Resources"),
-                    Tab(text: "Species"),
-                  ],
-                ),
-              ),
-            ),
-            const Expanded(
-              child: TabBarView(
-                children: <Widget>[
-                  HomeResources(),
-                  HomeSpecies(),
+      appBar: const TopBar(page: 'Home'),
+      body: DefaultTabController(
+        length: 2,
+        child: Column(children: <Widget>[
+          Container(
+            constraints: const BoxConstraints(maxHeight: 150.0),
+            child: const Material(
+              color: Colors.green,
+              child: TabBar(
+                tabs: [
+                  Tab(text: "Resources"),
+                  Tab(text: "Species"),
                 ],
               ),
             ),
-          ]),
-        ),
+          ),
+          const Expanded(
+            child: TabBarView(
+              children: <Widget>[
+                HomeResources(),
+                HomeSpecies(),
+              ],
+            ),
+          ),
+        ]),
+      ),
     );
   }
 }

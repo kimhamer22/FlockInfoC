@@ -13,8 +13,11 @@ class _HomeSpecies extends State<HomeSpecies> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(children: const [
-        NavigationButton(title: "Hello"),
-        NavigationButton(title: "Goodbye"),
+        NavigationButton(title: "Hello", route: '/infopage'),
+        NavigationButton(
+          title: "Goodbye",
+          route: '/infopage',
+        ),
       ]),
     );
   }

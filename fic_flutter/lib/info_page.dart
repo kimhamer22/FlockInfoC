@@ -49,35 +49,38 @@ class _InfoPageState extends State<InfoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: TopBar(page: title),
-      body: SingleChildScrollView(
-        child: Column(children: [
-          const Text(
-            'Description:',
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
-          Padding(padding: EdgeInsets.all(10), child: Text(description)),
-          ExpansionPanelList(
-            expansionCallback: (int index, bool isExpanded) {
-              setState(() {
-                _headings[index].isExpanded = !isExpanded;
-              });
-            },
-            children: _headings.map<ExpansionPanel>((Heading heading) {
-              return ExpansionPanel(
-                headerBuilder: (BuildContext context, bool isExpanded) {
-                  return ListTile(
-                    title: Text(heading.headerValue),
-                  );
-                },
-                body: ListTile(
-                  title: Text(heading.expandedValue),
-                ),
-                isExpanded: heading.isExpanded,
-                canTapOnHeader: true,
-              );
-            }).toList(),
-          ),
-        ]),
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+        child: SingleChildScrollView(
+          child: Column(children: [
+            const Text(
+              'Description:',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            Padding(padding: EdgeInsets.all(10), child: Text(description)),
+            ExpansionPanelList(
+              expansionCallback: (int index, bool isExpanded) {
+                setState(() {
+                  _headings[index].isExpanded = !isExpanded;
+                });
+              },
+              children: _headings.map<ExpansionPanel>((Heading heading) {
+                return ExpansionPanel(
+                  headerBuilder: (BuildContext context, bool isExpanded) {
+                    return ListTile(
+                      title: Text(heading.headerValue),
+                    );
+                  },
+                  body: ListTile(
+                    title: Text(heading.expandedValue),
+                  ),
+                  isExpanded: heading.isExpanded,
+                  canTapOnHeader: true,
+                );
+              }).toList(),
+            ),
+          ]),
+        ),
       ),
     );
   }

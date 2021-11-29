@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                 child: TabBar(
                   labelColor: Colors.black,
                   indicator: BoxDecoration(
-                    color: Color(0xFFDBF9D3),
+                    color: Color(0x80DBF9D3),
                   ),
                   tabs: [
                     Tab(text: "Resources"),

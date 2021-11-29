@@ -12,7 +12,7 @@ class _HomeResources extends State<HomeResources> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffDBF9D3),
+      backgroundColor: const Color(0x80DBF9D3),
       body: Column(children: [
         Padding(
           padding: const EdgeInsets.fromLTRB(30, 30, 30, 30),

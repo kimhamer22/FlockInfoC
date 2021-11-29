@@ -15,7 +15,7 @@ class _HomeResources extends State<HomeResources> {
       backgroundColor: const Color(0x80DBF9D3),
       body: Column(children: [
         Padding(
-          padding: const EdgeInsets.fromLTRB(30, 30, 30, 30),
+          padding: const EdgeInsets.fromLTRB(30, 20, 30, 30),
           child: Image.asset('assets/images/word art (low res).png'),
         ),
         const Text(

@@ -62,6 +62,10 @@ class _HomePageState extends State<HomePage> {
               child: const Material(
                 child: TabBar(
                   labelColor: Colors.black,
+                  labelStyle: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
                   indicator: BoxDecoration(
                     color: Color(0x80DBF9D3),
                   ),

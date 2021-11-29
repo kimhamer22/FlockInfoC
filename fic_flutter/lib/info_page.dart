@@ -47,10 +47,10 @@ class _InfoPageState extends State<InfoPage> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Scaffold(
-        appBar: TopBar(page: title),
-        body: Column(children: [
+    return Scaffold(
+      appBar: TopBar(page: title),
+      body: SingleChildScrollView(
+        child: Column(children: [
           const Text(
             'Description:',
             style: TextStyle(fontWeight: FontWeight.bold),

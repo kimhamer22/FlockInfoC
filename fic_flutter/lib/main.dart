@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/navigation_button.dart';
 import 'package:fic_flutter/top_bar.dart';
-import 'package:fic_flutter/general_resources.dart';
+import 'package:fic_flutter/info_page.dart';
 
 void main() {
   runApp(const FlockControl());
@@ -19,7 +19,11 @@ class FlockControl extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       debugShowCheckedModeBanner: false,
-      home: const HomePage(title: 'Home'),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomePage(title: 'Home'),
+        '/infopage': (context) => const InfoPage(),
+      },
     );
   }
 }
@@ -45,8 +49,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-    home: DefaultTabController (
+    return DefaultTabController(
         length: 2,
         child: Scaffold(
           appBar: const TopBar(page: 'Home'),
@@ -106,13 +109,9 @@ class _HomePageState extends State<HomePage> {
               //mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Column(
-                  children: const <Widget> [
+                  children: const <Widget>[
                     TabBar(
-                        tabs: [
-                          Tab(text:"Resources"),
-                          Tab(text: "Species")
-                        ]
-                    ),
+                        tabs: [Tab(text: "Resources"), Tab(text: "Species")]),
                   ],
                 ),
                 Padding(
@@ -129,13 +128,13 @@ class _HomePageState extends State<HomePage> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                const NavigationButton(title: 'General Resources'),
-                const NavigationButton(title: 'Benefits of Reducing Losses'),
+                const NavigationButton(
+                    title: 'General Resources', route: "/infopage"),
+                const NavigationButton(
+                    title: 'Benefits of Reducing Losses', route: "/infopage"),
               ],
             ),
           ), // This trailing comma makes auto-formatting nicer for build methods.
-        )
-      )
-    );
+        ));
   }
 }

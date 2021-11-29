@@ -20,7 +20,9 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
         children: <Widget>[
           IconButton(
             icon: const Icon(Icons.home),
-            onPressed: () => () {},
+            onPressed: () {
+              Navigator.popUntil(context, ModalRoute.withName('/'));
+            },
             iconSize: 35,
           ),
           Stack(
@@ -28,7 +30,9 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
             children: <Widget>[
               IconButton(
                 icon: Image.asset('assets/images/FIC logo.png'),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.popUntil(context, ModalRoute.withName('/'));
+                },
                 iconSize: 50,
               ),
               Positioned(

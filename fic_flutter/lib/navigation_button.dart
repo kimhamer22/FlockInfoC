@@ -45,10 +45,13 @@ class NavigationButton extends StatelessWidget {
                   ),
                 ),
               ),
-              Text(
-                title,
-                style: const TextStyle(color: Colors.black),
-                textAlign: TextAlign.start,
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.4,
+                child: Text(
+                  title,
+                  style: const TextStyle(color: Colors.black),
+                  textAlign: TextAlign.start,
+                ),
               ),
               const Spacer(),
               Padding(

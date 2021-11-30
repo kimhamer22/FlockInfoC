@@ -1,3 +1,4 @@
+import 'package:fic_flutter/navigation_button.dart';
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/top_bar.dart';
 
@@ -49,15 +50,16 @@ class _InfoPageState extends State<InfoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: TopBar(page: title),
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
           child: Column(children: [
             const Text(
               'Description:',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            Padding(padding: EdgeInsets.all(10), child: Text(description)),
+            Padding(
+                padding: const EdgeInsets.all(10), child: Text(description)),
             ExpansionPanelList(
               expansionCallback: (int index, bool isExpanded) {
                 setState(() {
@@ -79,6 +81,19 @@ class _InfoPageState extends State<InfoPage> {
                 );
               }).toList(),
             ),
+            const Padding(
+                padding: EdgeInsets.all(10),
+                child: Text(
+                  'Relevant Causes',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                )),
+            const NavigationButton(
+                title: 'Schmallenberg Virus', route: "/infopage"),
+            const NavigationButton(
+                title: 'Toxoplasma Gondii', route: "/infopage"),
+            const NavigationButton(
+                title: 'Bluetongue Virus', route: "/infopage"),
+            const NavigationButton(title: '...', route: "/infopage"),
           ]),
         ),
       ),

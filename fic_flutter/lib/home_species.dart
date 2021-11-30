@@ -17,7 +17,7 @@ class _HomeSpecies extends State<HomeSpecies> {
         padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
         child: Center(
           child: Column(children: const [
-            NavigationButton(title: "Sheep", route: '/infopage'),
+            NavigationButton(title: "Sheep", route: '/sheep'),
             NavigationButton(
               title: "Cows",
               route: '/infopage',

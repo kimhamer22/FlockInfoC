@@ -1,4 +1,5 @@
 import 'package:fic_flutter/home_species.dart';
+import 'package:fic_flutter/sheep.dart';
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/top_bar.dart';
 import 'package:fic_flutter/home_resources.dart';
@@ -24,6 +25,7 @@ class FlockControl extends StatelessWidget {
       routes: {
         '/': (context) => const HomePage(title: 'Home'),
         '/infopage': (context) => const InfoPage(),
+        '/sheep': (context) => const Sheep(),
       },
     );
   }

@@ -1,3 +1,4 @@
+import 'package:fic_flutter/breadcrumb.dart';
 import 'package:fic_flutter/navigation_button.dart';
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/top_bar.dart';
@@ -54,6 +55,7 @@ class _InfoPageState extends State<InfoPage> {
         child: Padding(
           padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
           child: Column(children: [
+            BreadCrumb(),
             const Text(
               'Description:',
               style: TextStyle(fontWeight: FontWeight.bold),

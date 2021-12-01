@@ -19,9 +19,10 @@ class _CategoryPageState extends State<CategoryPage> {
   //final String title = "Controlling Abortion";
   final List<Category> _categories = [
     Category(name: "Vaccination", subCategories: [
-      "Schmallenberg Virus",
-      "Toxoplasma Gondii",
-      "Bluetongue Virus",
+      const NavigationButton(title: "Vaccination", route: '/infopage'),
+      const NavigationButton(title: "Schmallenberg Virus", route: '/'),
+      const NavigationButton(title: "Toxoplasma Gondii", route: '/'),
+      const NavigationButton(title: "Bluetongue Virus", route: '/'),
     ]),
     Category(name: "Body Condition Scoring", subCategories: []),
     Category(name: "Reduce Stress", subCategories: []),
@@ -67,8 +68,8 @@ class _CategoryPageState extends State<CategoryPage> {
                       title: Text(category.name),
                     );
                   },
-                  body: Row(children: <Widget>[
-                    for (String subcat in category.subCategories) Text(subcat)
+                  body: Column(children: [
+                    for (NavigationButton nb in category.subCategories) nb
                   ]),
                   isExpanded: category.isExpanded,
                   canTapOnHeader: true,
@@ -90,6 +91,6 @@ class Category {
   });
 
   String name;
-  List<String> subCategories;
+  List<NavigationButton> subCategories;
   bool isExpanded;
 }

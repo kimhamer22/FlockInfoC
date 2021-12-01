@@ -10,7 +10,7 @@ class BreadCrumb extends StatelessWidget {
     return Container(
         padding: const EdgeInsets.only(left: 10.0),
         height: 40.0,
-        width: double.infinity,
+        width: MediaQuery.of(context).size.width,
         color: const Color.fromARGB(255, 227, 226, 226),
         child: Row(
             children: breadcrumb.map((e) => BreadcrumbItem(name: e)).toList()));

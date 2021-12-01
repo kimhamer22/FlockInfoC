@@ -1,9 +1,11 @@
 import 'package:fic_flutter/home_species.dart';
+import 'package:fic_flutter/categories_main.dart';
 import 'package:fic_flutter/sheep.dart';
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/top_bar.dart';
 import 'package:fic_flutter/home_resources.dart';
 import 'package:fic_flutter/info_page.dart';
+import 'package:fic_flutter/breadcrumb.dart';
 
 void main() {
   runApp(const FlockControl());
@@ -26,6 +28,7 @@ class FlockControl extends StatelessWidget {
         '/': (context) => const HomePage(title: 'Home'),
         '/infopage': (context) => const InfoPage(),
         '/sheep': (context) => const Sheep(),
+        '/categorypage': (context) => const CategoryPage(),
       },
     );
   }
@@ -44,7 +47,7 @@ class HomePage extends StatefulWidget {
   // always marked "final".
 
   final String title;
-
+  static const String route = '/';
   @override
   State<HomePage> createState() => _HomePageState();
 }

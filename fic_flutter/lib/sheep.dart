@@ -1,6 +1,7 @@
 import 'package:fic_flutter/navigation_button.dart';
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/top_bar.dart';
+import 'package:fic_flutter/breadcrumb.dart';
 
 class Sheep extends StatefulWidget {
   const Sheep({Key? key}) : super(key: key);
@@ -18,11 +19,13 @@ class _Sheep extends State<Sheep> {
         child: Padding(
           padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
           child: Column(
-            children: const [
-              NavigationButton(
-                  title: 'Controlling Abortion', route: '/infopage'),
-              NavigationButton(title: 'Neonatal Survival', route: '/infopage'),
-              NavigationButton(
+            children: [
+              BreadCrumb(),
+              const NavigationButton(
+                  title: 'Controlling Abortion', route: '/categorypage'),
+              const NavigationButton(
+                  title: 'Neonatal Survival', route: '/infopage'),
+              const NavigationButton(
                   title: 'Additional Resources', route: '/infopage'),
             ],
           ),

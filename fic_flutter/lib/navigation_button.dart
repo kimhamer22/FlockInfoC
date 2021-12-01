@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:fic_flutter/breadcrumb.dart';
 
 class NavigationButton extends StatelessWidget {
   final String title;
   final String imageURL;
   final String route;
 
-  const NavigationButton(
-      {Key? key,
-      required this.title,
-      this.imageURL = 'assets/images/sheep icon.png',
-      required this.route})
-      : super(key: key);
+  const NavigationButton({
+    Key? key,
+    required this.title,
+    this.imageURL = 'assets/images/sheep icon.png',
+    required this.route,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +20,7 @@ class NavigationButton extends StatelessWidget {
       child: MaterialButton(
         onPressed: () {
           Navigator.pushNamed(context, route);
+          breadcrumb.add(route);
         },
         child: SizedBox(
           child: Container(

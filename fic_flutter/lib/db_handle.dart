@@ -53,11 +53,19 @@ class Section {
   final int id;
   final int? expandable_child;
   final int? is_tab;
+  final String? translation_section;
+  final String? translation_data;
+  final String? parent;
 
   Section({
     required this.id,
     this.expandable_child = 0,
     this.is_tab = 0,
+
+    // only used for retrieval not population
+    this.translation_section = "",
+    this.translation_data = "",
+    this.parent = "",
   });
 
   Map<String, dynamic> toMap() {
@@ -70,7 +78,7 @@ class Section {
 
   @override
   String toString() {
-    return 'Section{id: $id, expandable_child: $expandable_child, is_tab: $is_tab}';
+    return 'Section{ID: $id, TITLE: $translation_section, PARENT: $parent, DATA: $translation_data, EXPANDABLE_CHILD: $expandable_child, IS_TAB: $is_tab}';
   }
 }
 
@@ -178,13 +186,27 @@ class SectionHandler
 
     final db = await DatabaseImporter.open();
 
-    final List<Map<String, dynamic>> maps = await db.query('section');
-
+    // final List<Map<String, dynamic>> maps = await db.query('section');
+    const query = """
+        SELECT s.*, 
+               td.translation as translation_data, 
+               ts.translation as translation_section,
+               pts.translation as parent
+        FROM section as s
+        JOIN translations_sections as ts ON s.id = ts.section_id
+        LEFT JOIN translations_data as td ON s.id = td.section_id
+        LEFT JOIN section_parent as sp ON s.id = sp.section_id
+        LEFT JOIN translations_sections as pts ON sp.parent_section_id = pts.section_id
+    """;
+    final List<Map<String, dynamic>> maps = await db.rawQuery(query);
     return List.generate(maps.length, (i) {
       return Section(
         id: maps[i]['id'],
         expandable_child: maps[i]['expandable_child'],
         is_tab: maps[i]['is_tab'],
+        translation_data: maps[i]['translation_data'],
+        translation_section: maps[i]['translation_section'],
+        parent: maps[i]['parent'],
       );
     });
   }

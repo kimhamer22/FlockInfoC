@@ -1,9 +1,22 @@
+// import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/navigation_button.dart';
 import 'package:fic_flutter/top_bar.dart';
 import 'package:fic_flutter/general_resources.dart';
+import 'package:fic_flutter/db_handle.dart';
 
-void main() {
+void main() async {
+
+  // Avoid errors caused by flutter upgrade.
+  // Importing 'package:flutter/widgets.dart' is required.
+  WidgetsFlutterBinding.ensureInitialized();
+
+
+  SectionHandler sh = SectionHandler();
+  var sections = await sh.sections();
+  print(sections); // first database interaction!
+
   runApp(const FlockControl());
 }
 

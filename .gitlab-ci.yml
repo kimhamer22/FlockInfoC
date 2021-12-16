@@ -1,5 +1,8 @@
 image: ubuntu
 
+before_script:
+  - docker pull cirrusci/flutter
+
 stages:
   - build
   - test

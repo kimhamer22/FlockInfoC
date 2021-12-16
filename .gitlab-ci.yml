@@ -1,3 +1,5 @@
+image: ubuntu
+
 stages:
   - build
   - test

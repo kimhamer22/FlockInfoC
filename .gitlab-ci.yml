@@ -1,7 +1,7 @@
 before_script:
   - docker pull cirrusci/flutter
 
-image: cirrusci/flutter
+image: cirrusci/flutter:latest
 
 stages:
   - build
@@ -63,7 +63,7 @@ lint-test-job:   # This job also runs in the test stage.
     - echo "Linting code..."
     - echo "No lint issues found."
   tags:
-    - shell
+    - docker
 
 deploy-job:      # This job runs in the deploy stage.
   stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
@@ -71,4 +71,4 @@ deploy-job:      # This job runs in the deploy stage.
     - echo "Deploying application..."
     - echo "Application successfully deployed."
   tags:
-    - shell
+    - docker

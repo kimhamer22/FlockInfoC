@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:fic_flutter/top_bar.dart';
 import 'package:fic_flutter/home_resources.dart';
 import 'package:fic_flutter/info_page.dart';
-import 'package:fic_flutter/breadcrumb.dart';
 
 void main() {
   runApp(const FlockControl());
@@ -75,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                     color: Color(0x80DBF9D3),
                   ),
                   tabs: [
-                    Tab(text: "Resources"),
+                    Tab(text: "Home"),
                     Tab(text: "Species"),
                   ],
                 ),

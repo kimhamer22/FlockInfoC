@@ -8,16 +8,16 @@ stages:
   - test
   - deploy
 
-flutter_run_debug:
-  stage: build
-  before_script:
-    - cd ./fic_flutter
-    - flutter packages get
-    - flutter clean
-  script:
-    - flutter run
-  tags:
-    - docker
+# flutter_run_debug:
+#   stage: build
+#   before_script:
+#     - cd ./fic_flutter
+#     - flutter packages get
+#     - flutter clean
+#   script:
+#     - flutter run
+#   tags:
+#     - docker
 
 # flutter_build_android:
 #   stage: build

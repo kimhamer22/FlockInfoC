@@ -12,7 +12,7 @@ stages:
 flutter_build_android:
   stage: build
   before_script:
-    - cd /fic_flutter/
+    - cd ./fic_flutter/
     - flutter packages get
     - flutter clean
   script:

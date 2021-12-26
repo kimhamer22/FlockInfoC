@@ -1,7 +1,7 @@
-image: ubuntu
-
 before_script:
   - docker pull cirrusci/flutter
+
+image: cirrusci/flutter
 
 stages:
   - build

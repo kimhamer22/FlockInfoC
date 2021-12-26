@@ -18,10 +18,10 @@ class _HomeSpecies extends State<HomeSpecies> {
         child: Center(
           child: Column(children: const [
             NavigationButton(title: "Sheep", route: '/sheep'),
-            NavigationButton(
-              title: "Cows",
-              route: '/infopage',
-            ),
+            // NavigationButton(
+            //   title: "Cows",
+            //   route: '/infopage',
+            // ),
           ]),
         ),
       ),

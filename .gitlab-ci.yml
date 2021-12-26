@@ -1,6 +1,5 @@
 before_script:
   - docker pull cirrusci/flutter
-  - cd ./fic_flutter
 
 image: cirrusci/flutter
 
@@ -12,6 +11,7 @@ stages:
 flutter_run_debug:
   stage: build
   before_script:
+    - cd ./fic_flutter
     - flutter packages get
     - flutter clean
   script:
@@ -50,6 +50,8 @@ flutter_run_debug:
 
 unit-test-job:   # This job runs in the test stage.
   stage: test    # It only starts when the job in the build stage completes successfully.
+  before_script:
+    - cd ./fic_flutter
   script:
     - flutter test # Run Flutter test
   tags:

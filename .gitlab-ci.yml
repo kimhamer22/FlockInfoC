@@ -1,11 +1,8 @@
 before_script:
   - docker pull cirrusci/flutter
-  - pwd
-  - ls -al
+  - cd fic_flutter
 
-image: 
-  name: cirrusci/flutter
-  entrypoint: ["/fic_flutter"]
+image: cirrusci/flutter
 
 stages:
   - build

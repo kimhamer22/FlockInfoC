@@ -1,6 +1,6 @@
 before_script:
   - docker pull cirrusci/flutter
-  - cd fic_flutter
+  - cd ./fic_flutter
 
 image: cirrusci/flutter
 
@@ -9,35 +9,44 @@ stages:
   - test
   - deploy
 
-flutter_build_android:
+flutter_run_debug:
   stage: build
   before_script:
-    - cd ./fic_flutter/
     - flutter packages get
     - flutter clean
   script:
-     - flutter build apk
-  artifacts:
-    paths:
-      - build/app/outputs/apk/release/app-release.apk
+    - flutter run
   tags:
     - docker
 
-flutter_build_ios:
-  stage: build
-  before_script:
-    - flutter packages get
-    - flutter clean
-  script:
-    - flutter build ios
-    - cd ios
-    - xcodebuild clean archive -workspace Runner.xcworkspace -scheme Runner -archivePath RunnerArchive
-    - xcodebuild -exportArchive -archivePath RunnerArchive.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath ./build
-  artifacts:
-    paths:
-      - ios/build/Runner.ipa
-  tags:
-    - docker
+# flutter_build_android:
+#   stage: build
+#   before_script:
+#     - flutter packages get
+#     - flutter clean
+#   script:
+#      - flutter build apk
+#   artifacts:
+#     paths:
+#       - build/app/outputs/apk/release/app-release.apk
+#   tags:
+#     - docker
+
+# flutter_build_ios:
+#   stage: build
+#   before_script:
+#     - flutter packages get
+#     - flutter clean
+#   script:
+#     - flutter build ios
+#     - cd ios
+#     - xcodebuild clean archive -workspace Runner.xcworkspace -scheme Runner -archivePath RunnerArchive
+#     - xcodebuild -exportArchive -archivePath RunnerArchive.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath ./build
+#   artifacts:
+#     paths:
+#       - ios/build/Runner.ipa
+#   tags:
+#     - docker
 
 unit-test-job:   # This job runs in the test stage.
   stage: test    # It only starts when the job in the build stage completes successfully.

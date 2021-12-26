@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'navigation_button.dart';
+import '../widgets/navigation_button.dart';
 
 class HomeSpecies extends StatefulWidget {
   const HomeSpecies({Key? key}) : super(key: key);

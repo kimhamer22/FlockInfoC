@@ -1,10 +1,10 @@
-import 'package:fic_flutter/home_species.dart';
-import 'package:fic_flutter/categories_main.dart';
-import 'package:fic_flutter/sheep.dart';
+import 'package:fic_flutter/pages/home_species.dart';
+import 'package:fic_flutter/pages/categories_main.dart';
+import 'package:fic_flutter/pages/sheep.dart';
 import 'package:flutter/material.dart';
-import 'package:fic_flutter/top_bar.dart';
-import 'package:fic_flutter/home_resources.dart';
-import 'package:fic_flutter/info_page.dart';
+import 'package:fic_flutter/widgets/top_bar.dart';
+import 'package:fic_flutter/pages/home_resources.dart';
+import 'package:fic_flutter/pages/info_page.dart';
 
 void main() {
   runApp(const FlockControl());

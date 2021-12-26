@@ -1,9 +1,8 @@
-import 'package:fic_flutter/breadcrumb.dart';
-import 'package:fic_flutter/info_page.dart';
-import 'package:fic_flutter/top_bar.dart';
+import 'package:fic_flutter/widgets/breadcrumb.dart';
+import 'package:fic_flutter/widgets/top_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'navigation_button.dart';
+import '../widgets/navigation_button.dart';
 
 class CategoryPage extends StatefulWidget {
   const CategoryPage({Key? key}) : super(key: key);

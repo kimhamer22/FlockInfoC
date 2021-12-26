@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fic_flutter/breadcrumb.dart';
+import 'package:fic_flutter/widgets/breadcrumb.dart';
 
 class NavigationButton extends StatelessWidget {
   final String title;

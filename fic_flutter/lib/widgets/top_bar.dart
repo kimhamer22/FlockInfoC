@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fic_flutter/data_search.dart';
+import 'package:fic_flutter/widgets/data_search.dart';
 
 class TopBar extends StatelessWidget implements PreferredSizeWidget {
   final String page;

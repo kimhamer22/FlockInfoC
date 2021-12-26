@@ -1,7 +1,7 @@
-import 'package:fic_flutter/navigation_button.dart';
+import 'package:fic_flutter/widgets/navigation_button.dart';
 import 'package:flutter/material.dart';
-import 'package:fic_flutter/top_bar.dart';
-import 'package:fic_flutter/breadcrumb.dart';
+import 'package:fic_flutter/widgets/top_bar.dart';
+import 'package:fic_flutter/widgets/breadcrumb.dart';
 
 class Sheep extends StatefulWidget {
   const Sheep({Key? key}) : super(key: key);

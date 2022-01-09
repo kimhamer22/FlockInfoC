@@ -197,7 +197,8 @@ class SectionHandler
                ts.translation as translation_section
         FROM section as s
         JOIN translations_sections as ts ON s.id = ts.section_id
-        WHERE s.type=""" + SectionType.speciesCategory.index.toString() + """
+        WHERE s.type=""" + SectionType.speciesCategory.index.toString() + """ and
+        ts.language_id = 1
     """;
 
     final List<Map<String, dynamic>> maps = await db.rawQuery(query);
@@ -228,7 +229,8 @@ class SectionHandler
         LEFT JOIN translations_data as td ON s.id = td.section_id
         LEFT JOIN section_parent as sp ON s.id = sp.section_id
         LEFT JOIN translations_sections as pts ON sp.parent_section_id = pts.section_id
-        WHERE sp.parent_section_id=""" + parentId.toString() + """
+        WHERE sp.parent_section_id=""" + parentId.toString() + """ and
+        ts.language_id = 1
     """;
 
     final List<Map<String, dynamic>> maps = await db.rawQuery(query);
@@ -244,6 +246,7 @@ class SectionHandler
   }
 
   /// Returns all the information about current section given its id
+  /// Throws DatabaseRecordNotFound if record is not found
   Future<Section> section(int id) async {
 
     final db = await DatabaseImporter.open();
@@ -259,7 +262,8 @@ class SectionHandler
         LEFT JOIN translations_data as td ON s.id = td.section_id
         LEFT JOIN section_parent as sp ON s.id = sp.section_id
         LEFT JOIN translations_sections as pts ON sp.parent_section_id = pts.section_id
-        WHERE s.id =""" + id.toString() + """
+        WHERE s.id =""" + id.toString() + """ and
+        ts.language_id = 1
         LIMIT 1
     """;
     final List<Map<String, dynamic>> maps = await db.rawQuery(query);

@@ -14,9 +14,20 @@ void main() async {
 
 
   SectionHandler sh = SectionHandler();
-  // var sections = await sh.sections();
-  var sections = await sh.section(1);
-  print(sections); // first database interaction!
+
+
+  // DATABASE EXAMPLES
+  var section = await sh.section(1);
+  print("Calling section(1): \n RESULT: ");
+  print(section);
+
+  var children = await sh.childSections(1);
+  print("Calling childSections(1): \n RESULT: ");
+  print(children);
+
+  var animals = await sh.animalCategories();
+  print("Calling animalCategories(): \n RESULT: ");
+  print(animals);
 
   runApp(const FlockControl());
 }

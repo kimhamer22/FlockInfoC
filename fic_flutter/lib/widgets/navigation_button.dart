@@ -1,21 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:fic_flutter/widgets/breadcrumb.dart';
 
 class NavigationButton extends StatelessWidget {
   final String title;
   final String imageURL;
+  final String route;
 
-  const NavigationButton(
-      {Key? key,
-      required this.title,
-      this.imageURL = 'assets/images/sheep icon.png'})
-      : super(key: key);
+  const NavigationButton({
+    Key? key,
+    required this.title,
+    this.imageURL = 'assets/images/sheep icon.png',
+    required this.route,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8),
       child: MaterialButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, route);
+          breadcrumb.add(route);
+        },
         child: SizedBox(
           child: Container(
             decoration: BoxDecoration(
@@ -41,10 +47,13 @@ class NavigationButton extends StatelessWidget {
                   ),
                 ),
               ),
-              Text(
-                title,
-                style: const TextStyle(color: Colors.black),
-                textAlign: TextAlign.start,
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.4,
+                child: Text(
+                  title,
+                  style: const TextStyle(color: Colors.black),
+                  textAlign: TextAlign.start,
+                ),
               ),
               const Spacer(),
               Padding(

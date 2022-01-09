@@ -1,8 +1,14 @@
+<<<<<<< fic_flutter/lib/main.dart
 
-import 'package:flutter/material.dart';
 import 'package:fic_flutter/navigation_button.dart';
-import 'package:fic_flutter/top_bar.dart';
 import 'package:fic_flutter/db_handle.dart';
+import 'package:fic_flutter/pages/home_species.dart';
+import 'package:fic_flutter/pages/categories_main.dart';
+import 'package:fic_flutter/pages/sheep.dart';
+import 'package:flutter/material.dart';
+import 'package:fic_flutter/widgets/top_bar.dart';
+import 'package:fic_flutter/pages/home_resources.dart';
+import 'package:fic_flutter/pages/info_page.dart';
 
 void main() async {
 
@@ -42,7 +48,13 @@ class FlockControl extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       debugShowCheckedModeBanner: false,
-      home: const HomePage(title: 'Home'),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomePage(title: 'Home'),
+        '/infopage': (context) => const InfoPage(),
+        '/sheep': (context) => const Sheep(),
+        '/categorypage': (context) => const CategoryPage(),
+      },
     );
   }
 }
@@ -60,7 +72,7 @@ class HomePage extends StatefulWidget {
   // always marked "final".
 
   final String title;
-
+  static const String route = '/';
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -68,97 +80,43 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-    home: DefaultTabController (
-        length: 2,
-        child: Scaffold(
-          appBar: const TopBar(page: 'Home'),
-          drawer: Drawer(
-            // Add a ListView to the drawer. This ensures the user can scroll
-            // through the options in the drawer if there isn't enough vertical
-            // space to fit everything.
-            child: ListView(
-              // Important: Remove any padding from the ListView.
-              padding: EdgeInsets.zero,
-              children: [
-                const DrawerHeader(
-                  decoration: BoxDecoration(
-                    color: Colors.green,
+    return Scaffold(
+      appBar: const TopBar(page: 'Home'),
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+        child: DefaultTabController(
+          length: 2,
+          child: Column(children: <Widget>[
+            Container(
+              constraints: const BoxConstraints(maxHeight: 150.0),
+              child: const Material(
+                child: TabBar(
+                  labelColor: Colors.black,
+                  labelStyle: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
                   ),
-                  child: Text('Drawer Header'),
-                ),
-                ListTile(
-                  title: const Text('Item 1'),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
-                  },
-                ),
-                ListTile(
-                  title: const Text('Item 2'),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
-                  },
-                ),
-              ],
-            ),
-          ),
-          body: Center(
-            // Center is a layout widget. It takes a single child and positions it
-            // in the middle of the parent.
-            child: Column(
-              // Column is also a layout widget. It takes a list of children and
-              // arranges them vertically. By default, it sizes itself to fit its
-              // children horizontally, and tries to be as tall as its parent.
-              //
-              // Invoke "debug painting" (press "p" in the console, choose the
-              // "Toggle Debug Paint" action from the Flutter Inspector in Android
-              // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-              // to see the wireframe for each widget.
-              //
-              // Column has various properties to control how it sizes itself and
-              // how it positions its children. Here we use mainAxisAlignment to
-              // center the children vertically; the main axis here is the vertical
-              // axis because Columns are vertical (the cross axis would be
-              // horizontal).
-              //mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Column(
-                  children: const <Widget> [
-                    TabBar(
-                        tabs: [
-                          Tab(text:"Resources"),
-                          Tab(text: "Species")
-                        ]
-                    ),
+                  indicator: BoxDecoration(
+                    color: Color(0x80DBF9D3),
+                  ),
+                  tabs: [
+                    Tab(text: "Home"),
+                    Tab(text: "Species"),
                   ],
                 ),
-                Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
-                    child: Image.asset('assets/images/word art (low res).png')),
-                const Text(
-                  'Flock Information Centre',
-                  style: TextStyle(fontSize: 30),
-                ),
-                const Padding(
-                  padding: EdgeInsets.all(8),
-                  child: Text(
-                    'Online resources to provide information to professionals in the farming industry',
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                const NavigationButton(title: 'General Resources'),
-                const NavigationButton(title: 'Benefits of Reducing Losses'),
-              ],
+              ),
             ),
-          ), // This trailing comma makes auto-formatting nicer for build methods.
-        )
-      )
+            const Expanded(
+              child: TabBarView(
+                children: <Widget>[
+                  HomeResources(),
+                  HomeSpecies(),
+                ],
+              ),
+            ),
+          ]),
+        ),
+      ),
     );
   }
 }

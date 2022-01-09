@@ -1,4 +1,4 @@
-import 'package:fic_flutter/top_bar.dart';
+import 'package:fic_flutter/widgets/top_bar.dart';
 import 'package:flutter/material.dart';
 
 class GeneralResources extends StatelessWidget {

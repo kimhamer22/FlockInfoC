@@ -1,0 +1,71 @@
+image: cirrusci/flutter:latest
+
+stages:
+  - build
+  - test
+  - deploy
+
+# flutter_run_debug:
+#   stage: build
+#   before_script:
+#     - cd ./fic_flutter
+#     - flutter packages get
+#     - flutter clean
+#   script:
+#     - flutter run
+#   tags:
+#     - docker
+
+# flutter_build_android:
+#   stage: build
+#   before_script:
+#     - flutter packages get
+#     - flutter clean
+#   script:
+#      - flutter build apk
+#   artifacts:
+#     paths:
+#       - build/app/outputs/apk/release/app-release.apk
+#   tags:
+#     - docker
+
+# flutter_build_ios:
+#   stage: build
+#   before_script:
+#     - flutter packages get
+#     - flutter clean
+#   script:
+#     - flutter build ios
+#     - cd ios
+#     - xcodebuild clean archive -workspace Runner.xcworkspace -scheme Runner -archivePath RunnerArchive
+#     - xcodebuild -exportArchive -archivePath RunnerArchive.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath ./build
+#   artifacts:
+#     paths:
+#       - ios/build/Runner.ipa
+#   tags:
+#     - docker
+
+unit-test-job:   # This job runs in the test stage.
+  stage: test    # It only starts when the job in the build stage completes successfully.
+  before_script:
+    - cd ./fic_flutter
+  script:
+    - flutter test # Run Flutter test
+  tags:
+    - docker # Tags for runner
+
+lint-test-job:   # This job also runs in the test stage.
+  stage: test    # It can run at the same time as unit-test-job (in parallel).
+  script:
+    - echo "Linting code..."
+    - echo "No lint issues found."
+  tags:
+    - docker
+
+deploy-job:      # This job runs in the deploy stage.
+  stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
+  script:
+    - echo "Deploying application..."
+    - echo "Application successfully deployed."
+  tags:
+    - docker

@@ -267,7 +267,7 @@ class SectionHandler
     """;
     final List<Map<String, dynamic>> maps = await db.rawQuery(query);
 
-    if (maps.length == 0)
+    if (maps.isEmpty)
     {
       throw DatabaseRecordNotFound("The section with this id does not exist!");
     }

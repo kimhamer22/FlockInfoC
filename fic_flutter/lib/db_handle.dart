@@ -7,7 +7,7 @@ import 'dart:io';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
-import 'exceptions/DatabaseRecordNotFound.dart';
+import 'exceptions/database_record_not_found.dart';
 
 final database = openDatabase('flock-controll.sqlite');
 
@@ -187,6 +187,17 @@ class SectionHandler
   late Database db;
   SectionHandler();
 
+  Section sectionGenerator(data)
+  {
+    return Section(
+      id: data['id'],
+      type: data['type'],
+      translation_data: data['translation_data'],
+      translation_section: data['translation_section'],
+      parent: data['parent'],
+    );
+  }
+
   /// Returns all animal categories (by filtering out section type 0)
   Future<List<Section>> animalCategories() async
   {
@@ -203,13 +214,7 @@ class SectionHandler
 
     final List<Map<String, dynamic>> maps = await db.rawQuery(query);
     return List.generate(maps.length, (i) {
-      return Section(
-        id: maps[i]['id'],
-        type: maps[i]['type'],
-        translation_data: maps[i]['translation_data'],
-        translation_section: maps[i]['translation_section'],
-        parent: maps[i]['parent'],
-      );
+      return sectionGenerator(maps[i]);
     });
   }
 
@@ -235,13 +240,7 @@ class SectionHandler
 
     final List<Map<String, dynamic>> maps = await db.rawQuery(query);
     return List.generate(maps.length, (i) {
-      return Section(
-        id: maps[i]['id'],
-        type: maps[i]['type'],
-        translation_data: maps[i]['translation_data'],
-        translation_section: maps[i]['translation_section'],
-        parent: maps[i]['parent'],
-      );
+      return sectionGenerator(maps[i]);
     });
   }
 
@@ -267,18 +266,17 @@ class SectionHandler
         LIMIT 1
     """;
     final List<Map<String, dynamic>> maps = await db.rawQuery(query);
-    if (maps.length != 1)
+
+    if (maps.length == 0)
     {
       throw DatabaseRecordNotFound("The section with this id does not exist!");
     }
+    if (maps.length != 1)
+    {
 
-    return Section(
-      id: maps[0]['id'],
-      type: maps[0]['type'],
-      translation_data: maps[0]['translation_data'],
-      translation_section: maps[0]['translation_section'],
-      parent: maps[0]['parent'],
-    );
+    }
+
+    return sectionGenerator(maps[0]);
   }
 
 }

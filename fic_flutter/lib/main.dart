@@ -1,9 +1,7 @@
-// import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/navigation_button.dart';
 import 'package:fic_flutter/top_bar.dart';
-import 'package:fic_flutter/general_resources.dart';
 import 'package:fic_flutter/db_handle.dart';
 
 void main() async {

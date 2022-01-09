@@ -6,6 +6,8 @@ import 'dart:io';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
+import 'exceptions/DatabaseRecordNotFound.dart';
+
 final database = openDatabase('flock-controll.sqlite');
 
 class AssociatedImage {
@@ -182,12 +184,11 @@ class SectionHandler
   late Database db;
   SectionHandler();
 
-  Future<List<Section>> sections() async {
-
+  Future<List<Section>> childSections(int parentId) async
+  {
     final db = await DatabaseImporter.open();
 
-    // final List<Map<String, dynamic>> maps = await db.query('section');
-    const query = """
+    var query = """
         SELECT s.*, 
                td.translation as translation_data, 
                ts.translation as translation_section,
@@ -197,7 +198,9 @@ class SectionHandler
         LEFT JOIN translations_data as td ON s.id = td.section_id
         LEFT JOIN section_parent as sp ON s.id = sp.section_id
         LEFT JOIN translations_sections as pts ON sp.parent_section_id = pts.section_id
+        WHERE sp.parent_section_id=""" + parentId.toString() + """
     """;
+
     final List<Map<String, dynamic>> maps = await db.rawQuery(query);
     return List.generate(maps.length, (i) {
       return Section(
@@ -209,6 +212,41 @@ class SectionHandler
         parent: maps[i]['parent'],
       );
     });
+  }
+
+  Future<Section> section(int id) async {
+
+    final db = await DatabaseImporter.open();
+
+    // final List<Map<String, dynamic>> maps = await db.query('section');
+    var query = """
+        SELECT s.*, 
+               td.translation as translation_data, 
+               ts.translation as translation_section,
+               pts.translation as parent
+        FROM section as s
+        JOIN translations_sections as ts ON s.id = ts.section_id
+        LEFT JOIN translations_data as td ON s.id = td.section_id
+        LEFT JOIN section_parent as sp ON s.id = sp.section_id
+        LEFT JOIN translations_sections as pts ON sp.parent_section_id = pts.section_id
+        WHERE s.id =""" + id.toString() + """
+        LIMIT 1
+    """;
+    final List<Map<String, dynamic>> maps = await db.rawQuery(query);
+
+    if (maps.length != 1)
+    {
+      throw DatabaseRecordNotFound("The section with this id does not exist!");
+    }
+
+    return Section(
+      id: maps[0]['id'],
+      expandable_child: maps[0]['expandable_child'],
+      is_tab: maps[0]['is_tab'],
+      translation_data: maps[0]['translation_data'],
+      translation_section: maps[0]['translation_section'],
+      parent: maps[0]['parent'],
+    );
   }
 
 }

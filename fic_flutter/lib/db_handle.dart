@@ -247,7 +247,7 @@ class SectionHandler
 
   /// Returns all the information about current section given its id
   /// Throws DatabaseRecordNotFound if record is not found
-  /// Throws Mul
+  /// Throws MultipleRecordsFoundExpectedOne (sanity check) if more than one record is returned
   Future<Section> section(int id) async {
 
     final db = await DatabaseImporter.open();
@@ -264,7 +264,6 @@ class SectionHandler
         LEFT JOIN translations_sections as pts ON sp.parent_section_id = pts.section_id
         WHERE s.id =""" + id.toString() + """ and
         ts.language_id = 1
-        LIMIT 1
     """;
     final List<Map<String, dynamic>> maps = await db.rawQuery(query);
 

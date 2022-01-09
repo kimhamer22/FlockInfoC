@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:typed_data';
 import 'package:fic_flutter/enums/sections/section_type.dart';
+import 'package:fic_flutter/exceptions/multiple_records_found_expected_one.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'dart:io';
@@ -246,11 +247,11 @@ class SectionHandler
 
   /// Returns all the information about current section given its id
   /// Throws DatabaseRecordNotFound if record is not found
+  /// Throws Mul
   Future<Section> section(int id) async {
 
     final db = await DatabaseImporter.open();
 
-    // final List<Map<String, dynamic>> maps = await db.query('section');
     var query = """
         SELECT s.*, 
                td.translation as translation_data, 
@@ -273,7 +274,7 @@ class SectionHandler
     }
     if (maps.length != 1)
     {
-
+      throw MultipleRecordsFoundExpectedOne("Only one record should be returned by the query");
     }
 
     return sectionGenerator(maps[0]);

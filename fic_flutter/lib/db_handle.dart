@@ -14,19 +14,19 @@ final database = openDatabase('flock-controll.sqlite');
 
 class AssociatedImage {
   final int id;
-  final int section_id;
+  final int sectionId;
   final Uint8List image;
 
   AssociatedImage({
     required this.id,
-    required this.section_id,
+    required this.sectionId,
     required this.image,
   });
 
   Map<String, dynamic> toMap() {
     return {
       'id': id,
-      'section_id': section_id,
+      'section_id': sectionId,
       'image': image,
     };
   }
@@ -55,9 +55,9 @@ class Language {
 }
 class Section {
   final int id;
-  final int? type;
-  final String? translation_section;
-  final String? translation_data;
+  final int type;
+  final String? translationSection;
+  final String? translationData;
   final String? parent;
 
   Section({
@@ -65,8 +65,8 @@ class Section {
     this.type = 2,
 
     // only used for retrieval not population
-    this.translation_section = "",
-    this.translation_data = "",
+    this.translationSection = "",
+    this.translationData = "",
     this.parent = "",
   });
 
@@ -79,51 +79,52 @@ class Section {
 
   @override
   String toString() {
-    return 'Section{ID: $id, TITLE: $translation_section, PARENT: $parent, DATA: $translation_data, TYPE: $type}';
+    String typeEnum = SectionType.values[type].toString();
+    return 'Section{ID: $id, TITLE: $translationSection, PARENT: $parent, DATA: $translationData, TYPE: $type ($typeEnum)}';
   }
 }
 
 class SectionParent {
-  final int section_id;
-  final int parent_section_id;
+  final int sectionId;
+  final int parentSectionId;
 
   SectionParent({
-    required this.section_id,
-    required this.parent_section_id,
+    required this.sectionId,
+    required this.parentSectionId,
   });
 
   Map<String, dynamic> toMap() {
     return {
-      'section_id': section_id,
-      'parent_section_id': parent_section_id,
+      'section_id': sectionId,
+      'parent_section_id': parentSectionId,
     };
   }
 
   @override
   String toString() {
-    return 'Child - $section_id, parent - $parent_section_id';
+    return 'Child - $sectionId, parent - $parentSectionId';
   }
 }
 
 
 class TranslationsData {
   final int id;
-  final int language_id;
-  final int section_id;
+  final int languageId;
+  final int sectionId;
   final String translation;
 
   TranslationsData({
     required this.id,
-    required this.language_id,
-    required this.section_id,
+    required this.languageId,
+    required this.sectionId,
     required this.translation,
   });
 
   Map<String, dynamic> toMap() {
     return {
       'id': id,
-      'language_id': language_id,
-      'section_id': section_id,
+      'language_id': languageId,
+      'section_id': sectionId,
       'translation': translation,
     };
   }
@@ -132,22 +133,22 @@ class TranslationsData {
 
 class TranslationsSection {
   final int id;
-  final int language_id;
-  final int section_id;
+  final int languageId;
+  final int sectionId;
   final String translation;
 
   TranslationsSection({
     required this.id,
-    required this.language_id,
-    required this.section_id,
+    required this.languageId,
+    required this.sectionId,
     required this.translation,
   });
 
   Map<String, dynamic> toMap() {
     return {
       'id': id,
-      'language_id': language_id,
-      'section_id': section_id,
+      'language_id': languageId,
+      'section_id': sectionId,
       'translation': translation,
     };
   }
@@ -193,8 +194,8 @@ class SectionHandler
     return Section(
       id: data['id'],
       type: data['type'],
-      translation_data: data['translation_data'],
-      translation_section: data['translation_section'],
+      translationData: data['translation_data'],
+      translationSection: data['translation_section'],
       parent: data['parent'],
     );
   }

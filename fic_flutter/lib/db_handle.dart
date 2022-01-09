@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:typed_data';
+import 'package:fic_flutter/enums/sections/section_type.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'dart:io';
@@ -53,16 +54,14 @@ class Language {
 }
 class Section {
   final int id;
-  final int? expandable_child;
-  final int? is_tab;
+  final int? type;
   final String? translation_section;
   final String? translation_data;
   final String? parent;
 
   Section({
     required this.id,
-    this.expandable_child = 0,
-    this.is_tab = 0,
+    this.type = 2,
 
     // only used for retrieval not population
     this.translation_section = "",
@@ -73,14 +72,13 @@ class Section {
   Map<String, dynamic> toMap() {
     return {
       'id': id,
-      'expandable_child': expandable_child,
-      'is_tab': is_tab,
+      'type': type,
     };
   }
 
   @override
   String toString() {
-    return 'Section{ID: $id, TITLE: $translation_section, PARENT: $parent, DATA: $translation_data, EXPANDABLE_CHILD: $expandable_child, IS_TAB: $is_tab}';
+    return 'Section{ID: $id, TITLE: $translation_section, PARENT: $parent, DATA: $translation_data, TYPE: $type}';
   }
 }
 
@@ -162,8 +160,10 @@ class DatabaseImporter
     var dbDir = await getDatabasesPath();
     var dbPath = join(dbDir, "db.sqlite");
 
-    // // Delete any existing database: // uncomment if you have a malfunctioning database
-    // await deleteDatabase(dbPath);
+    // Delete any existing database:
+    // KEEP FOR DEVELOPMENT so database is updated
+    // COMMENT OUT when on production
+    await deleteDatabase(dbPath);
 
     var exists = await databaseExists(dbPath);
 
@@ -179,11 +179,41 @@ class DatabaseImporter
     return db;
   }
 }
+
+
+/// Handles all database operations related to sections
 class SectionHandler
 {
   late Database db;
   SectionHandler();
 
+  /// Returns all animal categories (by filtering out section type 0)
+  Future<List<Section>> animalCategories() async
+  {
+    final db = await DatabaseImporter.open();
+
+    var query = """
+        SELECT s.*, 
+               ts.translation as translation_section
+        FROM section as s
+        JOIN translations_sections as ts ON s.id = ts.section_id
+        WHERE s.type=""" + SectionType.speciesCategory.index.toString() + """
+    """;
+
+    final List<Map<String, dynamic>> maps = await db.rawQuery(query);
+    return List.generate(maps.length, (i) {
+      return Section(
+        id: maps[i]['id'],
+        type: maps[i]['type'],
+        translation_data: maps[i]['translation_data'],
+        translation_section: maps[i]['translation_section'],
+        parent: maps[i]['parent'],
+      );
+    });
+  }
+
+
+  /// Returns child sections provided parent section id
   Future<List<Section>> childSections(int parentId) async
   {
     final db = await DatabaseImporter.open();
@@ -205,8 +235,7 @@ class SectionHandler
     return List.generate(maps.length, (i) {
       return Section(
         id: maps[i]['id'],
-        expandable_child: maps[i]['expandable_child'],
-        is_tab: maps[i]['is_tab'],
+        type: maps[i]['type'],
         translation_data: maps[i]['translation_data'],
         translation_section: maps[i]['translation_section'],
         parent: maps[i]['parent'],
@@ -214,6 +243,7 @@ class SectionHandler
     });
   }
 
+  /// Returns all the information about current section given its id
   Future<Section> section(int id) async {
 
     final db = await DatabaseImporter.open();
@@ -233,7 +263,6 @@ class SectionHandler
         LIMIT 1
     """;
     final List<Map<String, dynamic>> maps = await db.rawQuery(query);
-
     if (maps.length != 1)
     {
       throw DatabaseRecordNotFound("The section with this id does not exist!");
@@ -241,8 +270,7 @@ class SectionHandler
 
     return Section(
       id: maps[0]['id'],
-      expandable_child: maps[0]['expandable_child'],
-      is_tab: maps[0]['is_tab'],
+      type: maps[0]['type'],
       translation_data: maps[0]['translation_data'],
       translation_section: maps[0]['translation_section'],
       parent: maps[0]['parent'],

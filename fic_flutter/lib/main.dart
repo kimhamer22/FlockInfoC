@@ -15,7 +15,7 @@ void main() async {
 
   SectionHandler sh = SectionHandler();
   // var sections = await sh.sections();
-  var sections = await sh.section(100);
+  var sections = await sh.section(1);
   print(sections); // first database interaction!
 
   runApp(const FlockControl());

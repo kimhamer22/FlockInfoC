@@ -1,5 +1,3 @@
-<<<<<<< fic_flutter/lib/main.dart
-
 import 'package:fic_flutter/navigation_button.dart';
 import 'package:fic_flutter/db_handle.dart';
 import 'package:fic_flutter/pages/home_species.dart';

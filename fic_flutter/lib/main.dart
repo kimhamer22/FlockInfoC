@@ -1,3 +1,5 @@
+import 'package:fic_flutter/widgets/navigation_button.dart';
+import 'package:fic_flutter/db_handle.dart';
 import 'package:fic_flutter/pages/home_species.dart';
 import 'package:fic_flutter/pages/categories_main.dart';
 import 'package:fic_flutter/pages/sheep.dart';
@@ -6,7 +8,29 @@ import 'package:fic_flutter/widgets/top_bar.dart';
 import 'package:fic_flutter/pages/home_resources.dart';
 import 'package:fic_flutter/pages/info_page.dart';
 
-void main() {
+void main() async {
+
+  // Avoid errors caused by flutter upgrade.
+  // Importing 'package:flutter/widgets.dart' is required.
+  WidgetsFlutterBinding.ensureInitialized();
+
+
+  SectionHandler sh = SectionHandler();
+
+
+  // DATABASE EXAMPLES
+  var section = await sh.section(1);
+  print("Calling section(1): \n RESULT: ");
+  print(section);
+
+  var children = await sh.childSections(1);
+  print("Calling childSections(1): \n RESULT: ");
+  print(children);
+
+  var animals = await sh.animalCategories();
+  print("Calling animalCategories(): \n RESULT: ");
+  print(animals);
+
   runApp(const FlockControl());
 }
 

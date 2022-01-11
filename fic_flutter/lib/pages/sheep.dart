@@ -1,3 +1,4 @@
+import 'package:fic_flutter/widgets/ham_menu.dart';
 import 'package:fic_flutter/widgets/navigation_button.dart';
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/widgets/top_bar.dart';
@@ -15,6 +16,7 @@ class _Sheep extends State<Sheep> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const TopBar(page: 'Sheep'),
+      drawer: const HamMenu(),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),

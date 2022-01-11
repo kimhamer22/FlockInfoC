@@ -1,4 +1,5 @@
 import 'package:fic_flutter/widgets/breadcrumb.dart';
+import 'package:fic_flutter/widgets/ham_menu.dart';
 import 'package:fic_flutter/widgets/top_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +30,8 @@ class _CategoryPageState extends State<CategoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: TopBar(page: "Controlling Abortion"),
+      appBar: const TopBar(page: "Controlling Abortion"),
+      drawer: const HamMenu(),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),

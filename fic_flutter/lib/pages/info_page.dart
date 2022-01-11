@@ -1,4 +1,5 @@
 import 'package:fic_flutter/widgets/breadcrumb.dart';
+import 'package:fic_flutter/widgets/ham_menu.dart';
 import 'package:fic_flutter/widgets/navigation_button.dart';
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/widgets/top_bar.dart';
@@ -51,6 +52,7 @@ class _InfoPageState extends State<InfoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: TopBar(page: title),
+      drawer: const HamMenu(),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),

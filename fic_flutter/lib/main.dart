@@ -1,4 +1,3 @@
-import 'package:fic_flutter/widgets/navigation_button.dart';
 import 'package:fic_flutter/db_handle.dart';
 import 'package:fic_flutter/pages/home_species.dart';
 import 'package:fic_flutter/pages/categories_main.dart';
@@ -9,14 +8,11 @@ import 'package:fic_flutter/pages/home_resources.dart';
 import 'package:fic_flutter/pages/info_page.dart';
 
 void main() async {
-
   // Avoid errors caused by flutter upgrade.
   // Importing 'package:flutter/widgets.dart' is required.
   WidgetsFlutterBinding.ensureInitialized();
 
-
   SectionHandler sh = SectionHandler();
-
 
   // DATABASE EXAMPLES
   var section = await sh.section(1);
@@ -51,6 +47,7 @@ class FlockControl extends StatelessWidget {
         '/': (context) => const HomePage(title: 'Home'),
         '/infopage': (context) => const InfoPage(),
         '/sheep': (context) => const Sheep(),
+        '/cows': (context) => const HomePage(title: 'Home'),
         '/categorypage': (context) => const CategoryPage(),
       },
     );

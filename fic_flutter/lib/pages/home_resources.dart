@@ -29,9 +29,9 @@ class _HomeResources extends State<HomeResources> {
             textAlign: TextAlign.center,
           ),
         ),
-        const NavigationButton(title: 'General Resources', route: "/infopage"),
+        const NavigationButton(title: 'General Resources', route: "/"),
         const NavigationButton(
-            title: 'Benefits of Reducing Losses', route: "/infopage"),
+            title: 'Benefits of Reducing Losses', route: "/"),
       ]),
     );
   }

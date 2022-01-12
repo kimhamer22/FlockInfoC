@@ -1,7 +1,8 @@
-import 'package:fic_flutter/widgets/navigation_button.dart';
 import 'package:flutter/material.dart';
-import 'package:fic_flutter/widgets/top_bar.dart';
-import 'package:fic_flutter/widgets/breadcrumb.dart';
+import '../widgets/navigation_button.dart';
+import '../widgets/top_bar.dart';
+import '../widgets/breadcrumb.dart';
+import '../db_handle.dart';
 
 class Sheep extends StatefulWidget {
   const Sheep({Key? key}) : super(key: key);
@@ -11,6 +12,19 @@ class Sheep extends StatefulWidget {
 }
 
 class _Sheep extends State<Sheep> {
+  late Future allCategories;
+  SectionHandler sh = SectionHandler();
+
+  @override
+  void initState() {
+    super.initState();
+    allCategories = _getAllCategories();
+  }
+
+  _getAllCategories() async {
+    return await sh.childSections(1); // 1 = Sheep
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,12 +35,25 @@ class _Sheep extends State<Sheep> {
           child: Column(
             children: [
               BreadCrumb(),
-              const NavigationButton(
-                  title: 'Controlling Abortion', route: '/categorypage'),
-              const NavigationButton(
-                  title: 'Neonatal Survival', route: '/infopage'),
-              const NavigationButton(
-                  title: 'Additional Resources', route: '/infopage'),
+              FutureBuilder(
+                  future: allCategories,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      var list = <NavigationButton>[];
+                      var data = snapshot.data as List;
+                      print(data);
+                      for (var i = 0; i < data.length; i++) {
+                        var title = data[i].translationSection;
+                        list.add(NavigationButton(
+                            title: title, route: '/categorypage'));
+                      }
+                      return Column(
+                        children: list,
+                      );
+                    } else {
+                      return const Text('Awaiting data...');
+                    }
+                  }),
             ],
           ),
         ),

@@ -47,7 +47,8 @@ class FlockControl extends StatelessWidget {
         '/': (context) => const HomePage(title: 'Home'),
         '/infopage': (context) => const InfoPage(),
         '/sheep': (context) => const Sheep(),
-        '/cows': (context) => const HomePage(title: 'Home'),
+        '/cows': (context) =>
+            const HomePage(title: 'Home'), // TODO: Do something about Cows
         '/categorypage': (context) => const CategoryPage(),
       },
     );

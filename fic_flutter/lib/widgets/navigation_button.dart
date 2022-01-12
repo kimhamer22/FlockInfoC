@@ -31,28 +31,14 @@ class NavigationButton extends StatelessWidget {
             ),
             child: Row(children: [
               Padding(
-                padding: const EdgeInsets.all(10),
-                child: Container(
-                  child: Center(
-                    child: Text(
-                      title.substring(0, 1),
-                      style: const TextStyle(fontSize: 24),
-                    ),
+                padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.4,
+                  child: Text(
+                    title,
+                    style: const TextStyle(color: Colors.black, fontSize: 17),
+                    textAlign: TextAlign.start,
                   ),
-                  width: 35,
-                  height: 35,
-                  decoration: const BoxDecoration(
-                    color: Colors.lightGreen,
-                    shape: BoxShape.circle,
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.4,
-                child: Text(
-                  title,
-                  style: const TextStyle(color: Colors.black),
-                  textAlign: TextAlign.start,
                 ),
               ),
               const Spacer(),

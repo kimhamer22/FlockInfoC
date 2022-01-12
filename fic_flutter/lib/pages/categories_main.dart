@@ -29,7 +29,7 @@ class _CategoryPageState extends State<CategoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: TopBar(page: "Controlling Abortion"),
+      appBar: const TopBar(page: "Controlling Abortion"),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),

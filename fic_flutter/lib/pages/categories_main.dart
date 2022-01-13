@@ -1,4 +1,5 @@
 import 'package:fic_flutter/widgets/breadcrumb.dart';
+import 'package:fic_flutter/widgets/expandable_cats.dart';
 import 'package:fic_flutter/widgets/top_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -30,53 +31,71 @@ class _CategoryPageState extends State<CategoryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const TopBar(page: "Controlling Abortion"),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
-          child: Column(children: [
-            BreadCrumb(),
-            const DefaultTabController(
-              length: 2,
-              child: Material(
-                child: TabBar(
-                  labelColor: Colors.black,
-                  labelStyle: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
+        child: Column(children: [
+          BreadCrumb(),
+          DefaultTabController(
+            length: 2,
+            child: Expanded(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    constraints: const BoxConstraints(maxHeight: 150.0),
+                    child: const Material(
+                      child: TabBar(
+                        labelColor: Colors.black,
+                        labelStyle: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                        indicator: BoxDecoration(
+                          color: Color(0x80DBF9D3),
+                        ),
+                        tabs: [
+                          Tab(text: "Control"),
+                          Tab(text: "Causes"),
+                        ],
+                      ),
+                    ),
                   ),
-                  indicator: BoxDecoration(
-                    color: Color(0x80DBF9D3),
-                  ),
-                  tabs: [
-                    Tab(text: "Control"),
-                    Tab(text: "Causes"),
-                  ],
-                ),
+                  Expanded(
+                      child: TabBarView(children: <Widget>[
+                    SingleChildScrollView(
+                      child: ExpansionPanelList(
+                        expansionCallback: (int index, bool isExpanded) {
+                          setState(() {
+                            _categories[index].isExpanded = !isExpanded;
+                          });
+                        },
+                        children: _categories
+                            .map<ExpansionPanel>((Category category) {
+                          return ExpansionPanel(
+                            headerBuilder:
+                                (BuildContext context, bool isExpanded) {
+                              return ListTile(
+                                title: Text(category.name),
+                              );
+                            },
+                            body: Column(children: [
+                              for (NavigationButton nb
+                                  in category.subCategories)
+                                nb
+                            ]),
+                            isExpanded: category.isExpanded,
+                            canTapOnHeader: true,
+                          );
+                        }).toList(),
+                      ),
+                    ),
+                    //const Text('hello'),
+                    ExpandableCats(parentID: 5)
+                  ]))
+                ],
               ),
             ),
-            ExpansionPanelList(
-              expansionCallback: (int index, bool isExpanded) {
-                setState(() {
-                  _categories[index].isExpanded = !isExpanded;
-                });
-              },
-              children: _categories.map<ExpansionPanel>((Category category) {
-                return ExpansionPanel(
-                  headerBuilder: (BuildContext context, bool isExpanded) {
-                    return ListTile(
-                      title: Text(category.name),
-                    );
-                  },
-                  body: Column(children: [
-                    for (NavigationButton nb in category.subCategories) nb
-                  ]),
-                  isExpanded: category.isExpanded,
-                  canTapOnHeader: true,
-                );
-              }).toList(),
-            ),
-          ]),
-        ),
+          ),
+        ]),
       ),
     );
   }

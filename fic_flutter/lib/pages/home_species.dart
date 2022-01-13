@@ -13,14 +13,14 @@ class _HomeSpecies extends State<HomeSpecies> {
   late Future allSpeciesFuture;
   SectionHandler sh = SectionHandler();
 
+  _getAllSpecies() async {
+    return await sh.animalCategories();
+  }
+
   @override
   void initState() {
     super.initState();
     allSpeciesFuture = _getAllSpecies();
-  }
-
-  _getAllSpecies() async {
-    return await sh.animalCategories();
   }
 
   @override

@@ -17,16 +17,17 @@ class _CategoryPageState extends State<CategoryPage> {
   bool causesClicked = false;
 
   //final String title = "Controlling Abortion";
-  final List<Category> _categories = [
-    Category(name: "Vaccination", subCategories: [
-      const NavigationButton(title: "Vaccination", route: '/infopage'),
-      const NavigationButton(title: "Schmallenberg Virus", route: '/'),
-      const NavigationButton(title: "Toxoplasma Gondii", route: '/'),
-      const NavigationButton(title: "Bluetongue Virus", route: '/'),
-    ]),
-    Category(name: "Body Condition Scoring", subCategories: []),
-    Category(name: "Reduce Stress", subCategories: []),
-  ];
+  // final List<Category> _categories = [
+  //   Category(name: "Vaccination", subCategories: [
+  //     const NavigationButton(title: "Vaccination", route: '/infopage'),
+  //     const NavigationButton(title: "Schmallenberg Virus", route: '/'),
+  //     const NavigationButton(title: "Toxoplasma Gondii", route: '/'),
+  //     const NavigationButton(title: "Bluetongue Virus", route: '/'),
+  //   ]),
+  //   Category(name: "Body Condition Scoring", subCategories: []),
+  //   Category(name: "Reduce Stress", subCategories: []),
+  // ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,36 +61,10 @@ class _CategoryPageState extends State<CategoryPage> {
                     ),
                   ),
                   Expanded(
-                      child: TabBarView(children: <Widget>[
-                    SingleChildScrollView(
-                      child: ExpansionPanelList(
-                        expansionCallback: (int index, bool isExpanded) {
-                          setState(() {
-                            _categories[index].isExpanded = !isExpanded;
-                          });
-                        },
-                        children: _categories
-                            .map<ExpansionPanel>((Category category) {
-                          return ExpansionPanel(
-                            headerBuilder:
-                                (BuildContext context, bool isExpanded) {
-                              return ListTile(
-                                title: Text(category.name),
-                              );
-                            },
-                            body: Column(children: [
-                              for (NavigationButton nb
-                                  in category.subCategories)
-                                nb
-                            ]),
-                            isExpanded: category.isExpanded,
-                            canTapOnHeader: true,
-                          );
-                        }).toList(),
-                      ),
-                    ),
+                      child: TabBarView(children: [
+                    ExpandableCats(parentID: 4),
                     //const Text('hello'),
-                    ExpandableCats(parentID: 5)
+                    ExpandableCats(parentID: 5),
                   ]))
                 ],
               ),

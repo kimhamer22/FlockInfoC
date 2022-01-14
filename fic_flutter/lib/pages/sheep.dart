@@ -41,7 +41,6 @@ class _Sheep extends State<Sheep> {
                     if (snapshot.hasData) {
                       var list = <NavigationButton>[];
                       var data = snapshot.data as List;
-                      print(data);
                       for (var i = 0; i < data.length; i++) {
                         var title = data[i].translationSection;
                         list.add(NavigationButton(

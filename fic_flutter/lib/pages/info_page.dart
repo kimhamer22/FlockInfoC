@@ -13,7 +13,7 @@ class InfoPage extends StatefulWidget {
 }
 
 class _InfoPageState extends State<InfoPage> {
-  final int id = 6; // TODO: Pass this when navigating
+  final int id = 6; // TODO: Pass this when navigating (6- Vaccination)
   SectionHandler sh = SectionHandler();
   late Future section;
 
@@ -66,18 +66,30 @@ class _InfoPageState extends State<InfoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: TopBar(page: title),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(60),
+        child: FutureBuilder(
+            future: section,
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                var sectionObj = snapshot.data as Section;
+                var title = sectionObj.translationSection ?? 'Loading...';
+                return TopBar(page: title);
+              } else {
+                return const TopBar(page: "Loading...");
+              }
+            }),
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
           child: FutureBuilder(
               future: section,
               builder: (context, snapshot) {
-                var sectionObject = snapshot.data;
                 if (snapshot.hasData) {
-                  var sectionNotNullObj = sectionObject as Section;
+                  var sectionObj = snapshot.data as Section;
                   var description =
-                      sectionNotNullObj.translationData ?? 'Could not load';
+                      sectionObj.translationData ?? 'Could not load';
                   return Column(children: [
                     BreadCrumb(),
                     const Text(

@@ -1,3 +1,4 @@
+import 'package:fic_flutter/helpers.dart';
 import 'package:flutter/material.dart';
 import '../widgets/navigation_button.dart';
 import '../widgets/top_bar.dart';
@@ -12,23 +13,39 @@ class Sheep extends StatefulWidget {
 }
 
 class _Sheep extends State<Sheep> {
+  final int id = 1; // 1 = Sheep
   late Future allCategories;
+  late Future section;
   SectionHandler sh = SectionHandler();
 
   @override
   void initState() {
     super.initState();
     allCategories = _getAllCategories();
+    section = Helpers().getSection(id);
   }
 
   _getAllCategories() async {
-    return await sh.childSections(1); // 1 = Sheep
+    return await sh.childSections(id);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const TopBar(page: 'Sheep'),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(60),
+        child: FutureBuilder(
+            future: section,
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                var sectionObj = snapshot.data as Section;
+                var title = sectionObj.translationSection ?? 'Loading...';
+                return TopBar(page: title);
+              } else {
+                return const TopBar(page: "Loading...");
+              }
+            }),
+      ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),

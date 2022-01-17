@@ -304,6 +304,48 @@ class SectionHandler
     return sectionGenerator(maps[0]);
   }
 
+  ///generates the buttons for the homepage
+  Future<List<Section>> mainPageButtons() async
+  {
+    final db = await DatabaseImporter.open();
+
+    var query = """
+        SELECT s.*, 
+               ts.translation as translation_section
+        FROM section as s
+        JOIN translations_sections as ts ON s.id = ts.section_id
+        WHERE s.type=""" + SectionType.homePage.index.toString() + """ and
+        ts.language_id = 1
+    """;
+
+    final List<Map<String, dynamic>> maps = await db.rawQuery(query);
+    return List.generate(maps.length, (i) {
+      return sectionGenerator(maps[i]);
+    });
+  }
+
+  Future<List<Section>> relevantSections() async
+  {
+    final db = await DatabaseImporter.open();
+
+    var query = """ 
+      SELECT s.*, ts.translation as translation_section FROM relevant_sections as rs
+      JOIN section as s ON rs.section_id = s.id
+      JOIN translation_section as ts ON s.id = ts.section_id
+      UNION 
+      SELECT s.*, ts.translation as translation_section FROM relevant_sections as rs
+      JOIN section as s ON rs.section_id = s.id
+      JOIN translation_section as ts ON s.id = ts.relevant_section_id
+       """;
+    final List<Map<String, dynamic>> maps = await db.rawQuery(query);
+    return List.generate(maps.length, (i) {
+      return sectionGenerator(maps[i]);
+    });
+
+
+
+  }
+
 }
 
 /// A class for all database operations for the main page
@@ -332,6 +374,12 @@ class MainPageHandler
     return maps;
 
   }
+
+
+
+
+
+
 
 }
 

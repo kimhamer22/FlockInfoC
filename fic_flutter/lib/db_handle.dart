@@ -9,7 +9,7 @@ import 'package:sqflite/sqflite.dart';
 
 import 'exceptions/database_record_not_found.dart';
 
-final database = openDatabase('flock-controll.sqlite');
+final database = openDatabase('flock-control.sqlite');
 
 class AssociatedImage {
   final int id;
@@ -154,6 +154,31 @@ class TranslationsSection {
 
 }
 
+class MainPage {
+  final String title;
+  final String description;
+  final String button1;
+  final String button2;
+
+  MainPage({
+    required this.title,
+    required this.description,
+    required this.button1,
+    required this.button2,
+
+  });
+
+  Map<String, dynamic> toMap() {
+    return {
+      'title': title,
+      'description': description,
+      'button1': button1,
+      'button2': button2,
+    };
+  }
+
+}
+
 class DatabaseImporter
 {
   static Future open() async {
@@ -279,6 +304,84 @@ class SectionHandler
     return sectionGenerator(maps[0]);
   }
 
+  ///generates the buttons for the homepage
+  Future<List<Section>> mainPageButtons() async
+  {
+    final db = await DatabaseImporter.open();
+
+    var query = """
+        SELECT s.*, 
+               ts.translation as translation_section
+        FROM section as s
+        JOIN translations_sections as ts ON s.id = ts.section_id
+        WHERE s.type=""" + SectionType.homePage.index.toString() + """ and
+        ts.language_id = 1
+    """;
+
+    final List<Map<String, dynamic>> maps = await db.rawQuery(query);
+    return List.generate(maps.length, (i) {
+      return sectionGenerator(maps[i]);
+    });
+  }
+
+  Future<List<Section>> relevantSections(int id) async
+  {
+    final db = await DatabaseImporter.open();
+
+    var query = """ 
+      SELECT s.*, ts.translation as translation_section FROM relevant_sections as rs
+      JOIN section as s ON rs.relevant_sections_id = s.id
+      JOIN translations_sections as ts ON s.id = ts.section_id
+      WHERE rs.section_id = """ + id.toString() + """
+      UNION 
+      SELECT s.*, ts.translation as translation_section FROM relevant_sections as rs
+      JOIN section as s ON rs.section_id = s.id
+      JOIN translations_sections as ts ON s.id = ts.section_id
+      WHERE rs.relevant_sections_id = """ + id.toString() + """
+       """;
+    final List<Map<String, dynamic>> maps = await db.rawQuery(query);
+    return List.generate(maps.length, (i) {
+      return sectionGenerator(maps[i]);
+    });
+
+  }
+
 }
+
+/// A class for all database operations for the main page
+
+class MainPageHandler
+{
+  late Database db;
+  MainPageHandler();
+
+  Future<List> mainPage() async {
+
+    // get a reference to the database
+    final db = await DatabaseImporter.open();
+
+    var query = """ 
+    SELECT * FROM main_page
+    
+    """;
+    final List<Map<String, dynamic>> maps = await db.rawQuery(query);
+
+    if (maps.isEmpty)
+    {
+      throw DatabaseRecordNotFound("The main page is empty!");
+    }
+
+    return maps;
+
+  }
+
+
+
+
+
+
+
+}
+
 
 

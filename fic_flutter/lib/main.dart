@@ -40,6 +40,11 @@ void main() async {
   print("Calling mainPage(): \n RESULT: ");
   print(mainPage);
   runApp(const FlockControl());
+
+  var mainPageButtons = await sh.mainPageButtons();
+  print("Calling mainPageButtons(): \n RESULT: ");
+  print(mainPageButtons);
+  runApp(const FlockControl());
 }
 
 class FlockControl extends StatelessWidget {

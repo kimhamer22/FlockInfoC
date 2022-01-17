@@ -31,6 +31,9 @@ void main() async {
   print("Calling animalCategories(): \n RESULT: ");
   print(animals);
 
+  var relevant = await sh.relevantSections(4);
+  print("Calling relevantSections(): \n RESULT: ");
+  print(relevant);
   runApp(const FlockControl());
 }
 

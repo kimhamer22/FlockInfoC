@@ -324,25 +324,25 @@ class SectionHandler
     });
   }
 
-  Future<List<Section>> relevantSections() async
+  Future<List<Section>> relevantSections(int id) async
   {
     final db = await DatabaseImporter.open();
 
     var query = """ 
       SELECT s.*, ts.translation as translation_section FROM relevant_sections as rs
-      JOIN section as s ON rs.section_id = s.id
-      JOIN translation_section as ts ON s.id = ts.section_id
+      JOIN section as s ON rs.relevant_sections_id = s.id
+      JOIN translations_sections as ts ON s.id = ts.section_id
+      WHERE rs.section_id = """ + id.toString() + """
       UNION 
       SELECT s.*, ts.translation as translation_section FROM relevant_sections as rs
       JOIN section as s ON rs.section_id = s.id
-      JOIN translation_section as ts ON s.id = ts.relevant_section_id
+      JOIN translations_sections as ts ON s.id = ts.section_id
+      WHERE rs.relevant_sections_id = """ + id.toString() + """
        """;
     final List<Map<String, dynamic>> maps = await db.rawQuery(query);
     return List.generate(maps.length, (i) {
       return sectionGenerator(maps[i]);
     });
-
-
 
   }
 

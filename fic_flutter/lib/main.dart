@@ -16,7 +16,7 @@ void main() async {
 
 
   SectionHandler sh = SectionHandler();
-
+  MainPageHandler mph = MainPageHandler();
 
   // DATABASE EXAMPLES
   var section = await sh.section(1);
@@ -34,6 +34,11 @@ void main() async {
   var relevant = await sh.relevantSections(4);
   print("Calling relevantSections(): \n RESULT: ");
   print(relevant);
+  runApp(const FlockControl());
+
+  var mainPage = await mph.mainPage();
+  print("Calling mainPage(): \n RESULT: ");
+  print(mainPage);
   runApp(const FlockControl());
 }
 

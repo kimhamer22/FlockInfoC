@@ -1,0 +1,85 @@
+ID,Section Title,Section Data,Section Type,Parent Sections,Related Sections,
+1,Bluetongue Virus,"Cause: Virus (orbiviruses)
+Distribution: Worldwide
+Source: Infected ruminants (domestic or wild) especially cattle, spread by midges (Cullicoides species)
+Samples for Diagnosis: Blood or post mortem samples from ewes, aborted lambs and placenta
+Treatment: Fluids and anti-inflammatories to control symptoms. Seek veterinary advice. 
+Notifiable Disease: Yes
+Risk to Humans: No 
+",Button,18,"22, 8",
+2,Characteristics of Bluetongue Virus,"Bluetongue viruses mainly causes abortions in the second half of pregnancy, but can also cause pregnancy loss in the first half, or occasionally death in neonatal lambs (2). Outbreaks are often seasonal as they are linked to when the midges are most active, which tends to late summer and autumn in Europe. Outbreaks are currently uncommon in the UK, but there is a significant risk of midges from mainland Europe reaching the UK in the future (3). The number of abortions caused by Bluetongue can vary depending on the strain. Ewes are normally unwell, with depression, drooling and potential difficulty breathing, and they may have swollen heads. Mouth and nose ulceration and lameness are common (4). Some lambs are born deformed. See Abortions - What to do? for immediate steps to take following an abortion to reduce spread within the flock.",Expandable,1,,
+3,Control,"The virus can be controlled by vaccination (5), insect control and biosecurity measures.  Vaccination should be undertaken before breeding, and before the high risk period when midges are active. Furthermore, care should be taken to use the vaccine which is specific to the strain of bluetongue in the area.",Expandable,1,,
+4,References,"(1)   OIE, World Organisation for Animal Health. Bluetongue [cited 2021 August 10]. Available from: https://www.oie.int/en/disease/bluetongue/. 
+(2)   Yavari M, Gharekhani J, Mohammadzadeh A. Bluetongue virus seropositivity and some risk factors affecting bluetongue virus infection in sheep flocks. Comparative Clinical Pathology. 2018;27(4):1017-22. Available from: https://doi.org/10.1007/s00580-018-2695-4
+(3)   DEFRA, APHA. Bluetongue: how to spot and report the disease; 2019 [cited 2021 August 10]. Available from: https://www.gov.uk/guidance/bluetongue.
+(4)   Simcock E. Bluetongue in Cattle and Sheep; 2019 [cited 2021 August 10]. Available from: https://www.nadis.org.uk/disease-a-z/sheep/bluetongue-in-cattle-and-sheep/.
+(5)   Mayo C, Lee J, Kopanke J, MacLachlan NJ. A review of potential bluetongue virus vaccine strategies. Veterinary Microbiology. 2017;206:84-90. Available from: https://doi.org/10.1016/j.vetmic.2017.03.015
+Updates on outbreaks in Europe. GOV.UK. Bluetongue virus in Europe; 2020 [cited 2021 August 10]. Available from: https://www.gov.uk/government/publications/bluetongue-virus-in-europe. ",Expandable,1,,
+5,Border Disease Virus,"Cause: Virus (pestivirus). Border Disease Virus (normally sheep), Bovine
+Viral Diarrhoea Virus (BVDV) (normally cattle)
+Distribution: Worldwide
+Source: Persistently infected cattle or sheep
+Samples for Diagnosis: Aborted lambs and placenta, blood samples from lambs and/or ewes
+Treatment: None, cull persistently infected animals as soon as possible
+Notifiable Disease: No
+Risk to Humans: No
+
+Border Disease Virus (BDV, also sometimes known as ""Hairy Shaker Disease"") is similar to BVDV in cattle. BVDV can also be transmitted from cattle to sheep, and presents similarly to a sheep infected with BDV (1). These viruses are spread most efficiently by animals that are infected before birth and carry the disease for their whole lives, persistently infected or PI animals (2). This is how the disease is maintained in a flock. ",Button ,18," 8, 24",
+6,Characteristics of BDV,"Abortion is seen in mid to late pregnancy. If the infection is newly introduced in the flock, the number of abortions can be high. If the infection is already present, there tends to be a constant but lower level of abortion. The stage at which the ewe is infected with BDV (or BVDV) affects the outcome, which can include a high level of barren ewes, as the embryos are reabsorbed before scanning (3), abortion, stillbirths or live lambs. If lambs make it to full term, they grow 20% slower than uninfected lambs and either exhibit no symptoms or deformities, the most common of which are behavioural abnormalities and altered wool appearance (4). Either type of lamb can be persistently infected and transfer the virus to other sheep. The ewes do not present as sick.
+
+See Abortions - What to do? for immediate steps which should be undertaken following an abortion .
+
+For more information on BDV consult your vet or see FAS. Border Disease (BD); 2020. Available from: https://www.fas.scot/publication/border-disease/. PDF Version
+",Expandable,5,,
+7,Control,"The virus can be controlled by blood testing the flock and removing infected individuals. Wherever possible, a closed flock should be maintained to prevent entry of the virus into the flock. Where this is not possible, new stock should be quarantined and blood tested for the virus before joining the flock (5). See biosecurity for more information on quarantining. ",Expandable,5,,
+8,Vaccination,Vaccination of cattle on the same farm for Bovine Viral Diarrhoea Virus (BVDV) can reduce the transmission between cattle and sheep. Current evidence suggests that vaccinating sheep using a BVDV cattle vaccine does not help prevent BDV (6). ,Expandable,5,,
+9,References,"(1)   Evans C, Woolford L, Hemmatzadeh F, Reichel M, Cockcroft P. Pathological lesions of lambs infected in utero with bovine viral diarrhoea virus type 1c (BVDV‐1c). Veterinary Record. 2021;188. Available from: https://doi.org/10.1002/vetr.6
+(2)   Crilly JP, Jennings A, Gascoigne E. Border disease: an under-appreciated threat to flock health and productivity? Livestock. 2018;23(2):88-92. Available from: https://doi.org/10.12968/live.2018.23.2.88
+(3)   SRUC. Investigating Poor Scanning Rates in Sheep Flocks; 2021 [cited 2021 August 6]. Available from: https://www.sruc.ac.uk/veterinary-surveillance-blog/investigating-poor-scanning-rates-in-sheep-flocks/.
+(4)    FAS. Border Disease (BD); 2020 [cited 2021 August 6]. Available from: https://www.fas.scot/publication/border-disease/. PDF Version
+(5)   Farm Health Online. Border Disease in Sheep [cited 2021 August 6]. Available from: https://www.farmhealthonline.com/disease-management/sheep-diseases/border-disease/.
+(6)   Meyer G, Combes M, Teillaud A, Pouget C, Bethune M-A, Cassard H. Vaccination of Sheep with Bovine Viral Diarrhea Vaccines Does Not Protect against Fetal Infection after Challenge of Pregnant Ewes with Border Disease Virus. Vaccines. 2021;9(8). Available from: https://doi.org/10.3390/vaccines9080805",Expandable,5,,
+10,Brucella Species,"Cause: Bacteria (Brucella ovis, B. melitensis, B. abortus)
+Distribution: Widely distributed, but not found in all countries. Not present in UK
+Source: Infected sheep, goats, cattle, wild ruminants, dogs, aborted materials
+Samples for Diagnosis: Aborted placenta and lambs, blood from ewes, ram examinations, semen samples
+Treatment: Not considered economical
+Notifiable Disease: Yes
+Risk to Humans: Yes (1) 
+
+Brucella species can be spread between animals by bodily fluids like genital discharge and milk. They can also become infected by drinking contaminated water or eating contaminated feed. In areas of the world where these bacteria are found they are a serious cause of abortion in sheep and goats (2), and a serious cause of human disease. ",Button,18,24,
+11,Characteristics of Brucellosis,"Brucellosis outbreaks are characterised by many abortions in late pregnancy. The aborted lambs tend to be decomposed, stillborn, or alive but weak. Depending on the type of Brucella, ewes may have a fever, be depressed, suffer from weight loss, mastitis, lameness or diarrhoea. Lambs can also be See Abortions - What to do? for immediate steps which should be undertaken following an abortion to prevent spread within the flock and zoonoses (spreading to humans).  In rams it is characterised by testicular abnormalities like testicle enlargement, pain, hardening, epidydimal enlargement and decreased semen quality (3,4). It is commonly transmitted between ewes and rams during breeding. 
+
+For more information see Rayner K, Government of Western Australia. Ovine brucellosis; 2020. Available from: https://www.agric.wa.gov.au/livestock-biosecurity/ovine-brucellosis.
+",Expandable,10,,
+12,Control,It can be controlled by biosecurity measures and regular examination of rams. A vaccination for Brucella melitensis exists but is not currently in use in Europe. This is a notifiable disease so follow guidelines from your vet and local authority if you suspect it in your flock. Some research has suggested wildlife can act as a reservoir for the disease and transfer it to livestock (5). ,Expandable,10,,
+13,References,"(1)   NHS. Brucellosis; 2020 [cited 2021 August 11. Available from: https://www.nhs.uk/conditions/brucellosis/.
+(2)   Bisias G, Burriel A, Boutsini S, Kritas S, Leontides L. A serological investigation of some abortion causes among small ruminant flocks in Greece. The Internet Journal of Veterinary Medicine. 2010;8. Available from: https://doi.org/10.5580/28f4
+(3)   Nicoletti P. Brucellosis in Sheep; 2013 [cited 2021 August 13]. Available from: https://www.msdvetmanual.com/reproductive-system/brucellosis-in-large-animals/brucellosis-in-sheep.
+(4)   Carrera-Chávez JM, Quezada-Casasola A, Pérez-Eguia E, Itzá-Ortíz MF, Gutiérrez-Hernández JL, Quintero-Elisea JA, et al. Sperm quality in naturally infected rams with Brucella ovis. Small Ruminant Research. 2016;144:220-4. Available from: https://doi.org/10.1016/j.smallrumres.2016.09.021
+(5)   Mick V, Le Carrou G, Corde Y, Game Y, Jay M, Garin-Bastuji B. Brucella melitensis in France: Persistence in Wildlife and Probable Spillover from Alpine Ibex to Domestic Animals. PLOS ONE. 2014;9(4):e94168. Available from: https://doi.org/10.1371/journal.pone.0094168",Expandable,10,,
+14,Campylobacter Species (Vibriosis),"Cause: Bacteria (Campylobacter jejuni, C. fetus subspecies fetus)
+Distribution: Worldwide
+Source: Faeces and aborted material of infected sheep, dogs, birds, and contaminated water
+Samples for Diagnosis: Aborted placenta and lambs
+Treatment: Seek veterinary advice
+Notifiable Disease: No
+Risk to Humans: Yes (1) 
+
+Campylobacteriosis (formerly ovine vibriosis) is diagnosed in 9% of infectious abortion cases investigated in sheep in the UK (2). The infection is usually obtained from contaminated water or feed, from aborted materials or faeces from infected sheep. Birds, cattle and dogs have also been implicated in the transmission of these bacteria. ",Button,,,
+15,Characteristics of Campylobacteriosis,"Infection of ewes can result in an ""abortion storm"" (high number of abortions) in late pregnancy (after 12 weeks), alongside the birth of stillborn or weak lambs that die shortly after birth. Aborted lambs tend to be well preserved. The ewes are usually well, but may show a mild diarrhoea (3). Outbreaks tend to last for one lambing season, and reoccur 4-7 years later, during the intervening years lower levels of abortion due to Campylobacter species may still be seen. 
+
+For more information see Government of Western Australia. Ovine campylobacteriosis (formerly ovine vibriosis); 2018. Available from: https://www.agric.wa.gov.au/livestock-biosecurity/ovine-campylobacteriosis-formerly-ovine-vibriosis.",Expandable,14,,
+16,Control,"Campylobacteriosis can be controlled by bird control, clean water, not mixing new stock with pregnant stock, and biosecurity measures. There is no vaccination commercially available in the UK for sheep, but in the case of an outbreak, consult your veterinarian as a vaccine can be imported on a license from the VMD. Note that there is emerging antibiotic resistance within some USA strains of Campylobacter jejuni (4). Sheep which have aborted due to Campylobacter should be isolated from pregnant sheep, as they will continue to shed the bacteria so can infect others. Pregnant sheep should also be kept away from any aborted material or lambs, as this is a major source of infection and can cause them to abort within 14-21 days (5). See Abortions - What to do? for immediate steps which should be undertaken following an abortion to prevent spread within the flock and zoonoses (infection of humans).  ",Expandable,14,,
+17,References,"(1)   World Health Organisation (WHO). Campylobacter; 2020 [cited 2021 August 11]. Available from: https://www.who.int/news-room/fact-sheets/detail/campylobacter.
+(2)   HCC. Making Every Lamb Count; 2011 [cited 2021 August 11]. Available from: https://meatpromotion.wales/en/industry-resources/sheep-management. PDF Version
+(3) Farm Health Online. Campylobacteriosis in Sheep [cited 2021 August 10]. Available from: https://www.farmhealthonline.com/disease-management/sheep-diseases/campylobacteriosis/.
+(4)   Xia J, Pang J, Tang Y, Wu Z, Dai L, Singh K, et al. High Prevalence of Fluoroquinolone-Resistant Campylobacter Bacteria in Sheep and Increased Campylobacter Counts in the Bile and Gallbladders of Sheep Medicated with Tetracycline in Feed. Applied and Environmental Microbiology. 2019;85(11):e00008-19. Available from: https://doi-org.ezproxy.lib.gla.ac.uk/10.1128/AEM.00008-19
+(5)   Menzies PI. Control of Important Causes of Infectious Abortion in Sheep and Goats. Veterinary Clinics of North America: Food Animal Practice. 2011;27(1):81-93. Available from: https://doi.org/10.1016/j.cvfa.2010.10.011",Expandable,14,,
+18,Causes,,Tab,19,,Controlling Abortion
+19,Controlling Abortion,,Button,21,,Sheep
+20,Sheep,,Species,,,
+21,Controls,,Tab,19,,Controlling Abortion
+22,Vermin Control,,Button,21,,Controls
+23,Vaccination,,Button,21,,Controls
+24,Biosecurity,,Button,,,

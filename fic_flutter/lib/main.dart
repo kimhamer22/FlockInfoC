@@ -1,3 +1,4 @@
+import 'package:fic_flutter/pages/general_resources.dart';
 import 'package:fic_flutter/pages/home_species.dart';
 import 'package:fic_flutter/pages/categories_main.dart';
 import 'package:fic_flutter/pages/sheep.dart';
@@ -48,7 +49,8 @@ class FlockControl extends StatelessWidget {
         '/sheep': (context) => const Sheep(),
         '/cows': (context) =>
             const HomePage(title: 'Home'), // TODO: Do something about Cows
-        '/categorypage': (context) => const CategoryPage(),
+        '/categorypage': (context) => const CategoryPage(sectionID: 3),
+        '/generalresources': (context) => const GeneralResources(),
       },
     );
   }

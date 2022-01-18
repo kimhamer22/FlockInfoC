@@ -7,15 +7,14 @@ import '../widgets/navigation_button.dart';
 import '../helpers.dart';
 
 class CategoryPage extends StatefulWidget {
-  const CategoryPage({Key? key}) : super(key: key);
+  final int sectionID;
+  const CategoryPage({Key? key, required this.sectionID}) : super(key: key);
 
   @override
   State<CategoryPage> createState() => _CategoryPageState();
 }
 
 class _CategoryPageState extends State<CategoryPage> {
-  int sectionID =
-      3; // TODO: Pass as argument by navigation (3 - Controlling Abortion)
   bool controlClicked = false;
   bool causesClicked = false;
 
@@ -24,14 +23,14 @@ class _CategoryPageState extends State<CategoryPage> {
   late Future section;
 
   _getAllCategories() async {
-    return await sh.childSections(sectionID);
+    return await sh.childSections(widget.sectionID);
   }
 
   @override
   void initState() {
     super.initState();
     categories = _getAllCategories();
-    section = Helpers().getSection(sectionID);
+    section = Helpers().getSection(widget.sectionID);
   }
 
   //final String title = "Controlling Abortion";

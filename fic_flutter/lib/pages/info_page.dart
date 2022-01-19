@@ -14,7 +14,7 @@ class InfoPage extends StatefulWidget {
 }
 
 class _InfoPageState extends State<InfoPage> {
-  late int sectionID; // TODO: Pass this when navigating (6- Vaccination)
+  late int sectionID; // TODO: Pass this when navigating (6 - Vaccination)
   SectionHandler sh = SectionHandler();
   late Future section;
   late Future relevantCats;
@@ -127,19 +127,36 @@ class _InfoPageState extends State<InfoPage> {
                         );
                       }).toList(),
                     ),
-                    const Padding(
-                        padding: EdgeInsets.all(10),
-                        child: Text(
-                          'Relevant Factors',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        )),
-                    NavigationButton(
-                        title: 'Schmallenberg Virus', route: "/infopage"),
-                    NavigationButton(
-                        title: 'Toxoplasma Gondii', route: "/infopage"),
-                    NavigationButton(
-                        title: 'Bluetongue Virus', route: "/infopage"),
-                    NavigationButton(title: '...', route: "/infopage"),
+                    FutureBuilder(
+                        future: relevantCats,
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+                            var list = [];
+                            var data = snapshot.data as List;
+                            list.add(
+                              const Padding(
+                                  padding: EdgeInsets.all(10),
+                                  child: Text(
+                                    'Relevant Factors',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  )),
+                            );
+                            for (var i = 0; i < data.length; i++) {
+                              var title = data[i].translationSection;
+                              list.add(NavigationButton(
+                                title: title,
+                                route: '/infopage',
+                                id: data[i].id,
+                              ));
+                            }
+                            return Column(
+                              children: List.from(list),
+                            );
+                          } else {
+                            return const Text('No relevant sections found');
+                          }
+                        }),
                   ]);
                 } else {
                   return const Text('Loading...');

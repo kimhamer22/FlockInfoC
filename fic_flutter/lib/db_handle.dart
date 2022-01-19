@@ -9,7 +9,7 @@ import 'package:sqflite/sqflite.dart';
 
 import 'exceptions/database_record_not_found.dart';
 
-final database = openDatabase('flock-controll.sqlite');
+final database = openDatabase('flock-control.sqlite');
 
 class AssociatedImage {
   final int id;
@@ -29,7 +29,6 @@ class AssociatedImage {
       'image': image,
     };
   }
-
 }
 
 class Language {
@@ -50,8 +49,8 @@ class Language {
       'icon': icon,
     };
   }
-
 }
+
 class Section {
   final int id;
   final int type;
@@ -105,7 +104,6 @@ class SectionParent {
   }
 }
 
-
 class TranslationsData {
   final int id;
   final int languageId;
@@ -127,7 +125,6 @@ class TranslationsData {
       'translation': translation,
     };
   }
-
 }
 
 class TranslationsSection {
@@ -151,11 +148,32 @@ class TranslationsSection {
       'translation': translation,
     };
   }
-
 }
 
-class DatabaseImporter
-{
+class MainPage {
+  final String title;
+  final String description;
+  final String button1;
+  final String button2;
+
+  MainPage({
+    required this.title,
+    required this.description,
+    required this.button1,
+    required this.button2,
+  });
+
+  Map<String, dynamic> toMap() {
+    return {
+      'title': title,
+      'description': description,
+      'button1': button1,
+      'button2': button2,
+    };
+  }
+}
+
+class DatabaseImporter {
   static Future open() async {
     // Construct the path to the app's writable database file:
     var dbDir = await getDatabasesPath();
@@ -169,10 +187,10 @@ class DatabaseImporter
     var exists = await databaseExists(dbPath);
 
     if (!exists) {
-      ByteData data = await rootBundle.load(
-          "assets/database/flock-control.sqlite");
-      List<int> bytes = data.buffer.asUint8List(
-          data.offsetInBytes, data.lengthInBytes);
+      ByteData data =
+          await rootBundle.load("assets/database/flock-control.sqlite");
+      List<int> bytes =
+          data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
       await File(dbPath).writeAsBytes(bytes);
     }
     var db = openDatabase(dbPath, readOnly: true);
@@ -181,15 +199,12 @@ class DatabaseImporter
   }
 }
 
-
 /// Handles all database operations related to sections
-class SectionHandler
-{
+class SectionHandler {
   late Database db;
   SectionHandler();
 
-  Section sectionGenerator(data)
-  {
+  Section sectionGenerator(data) {
     return Section(
       id: data['id'],
       type: data['type'],
@@ -200,8 +215,7 @@ class SectionHandler
   }
 
   /// Returns all animal categories (by filtering out section type 0)
-  Future<List<Section>> animalCategories() async
-  {
+  Future<List<Section>> animalCategories() async {
     final db = await DatabaseImporter.open();
 
     var query = """
@@ -209,7 +223,9 @@ class SectionHandler
                ts.translation as translation_section
         FROM section as s
         JOIN translations_sections as ts ON s.id = ts.section_id
-        WHERE s.type=""" + SectionType.speciesCategory.index.toString() + """ and
+        WHERE s.type=""" +
+        SectionType.speciesCategory.index.toString() +
+        """ and
         ts.language_id = 1
     """;
 
@@ -219,10 +235,8 @@ class SectionHandler
     });
   }
 
-
   /// Returns child sections provided parent section id
-  Future<List<Section>> childSections(int parentId) async
-  {
+  Future<List<Section>> childSections(int parentId) async {
     final db = await DatabaseImporter.open();
 
     var query = """
@@ -235,7 +249,9 @@ class SectionHandler
         LEFT JOIN translations_data as td ON s.id = td.section_id
         LEFT JOIN section_parent as sp ON s.id = sp.section_id
         LEFT JOIN translations_sections as pts ON sp.parent_section_id = pts.section_id
-        WHERE sp.parent_section_id=""" + parentId.toString() + """ and
+        WHERE sp.parent_section_id=""" +
+        parentId.toString() +
+        """ and
         ts.language_id = 1
     """;
 
@@ -249,7 +265,6 @@ class SectionHandler
   /// Throws DatabaseRecordNotFound if record is not found
   /// Throws MultipleRecordsFoundExpectedOne (sanity check) if more than one record is returned
   Future<Section> section(int id) async {
-
     final db = await DatabaseImporter.open();
 
     var query = """
@@ -262,23 +277,90 @@ class SectionHandler
         LEFT JOIN translations_data as td ON s.id = td.section_id
         LEFT JOIN section_parent as sp ON s.id = sp.section_id
         LEFT JOIN translations_sections as pts ON sp.parent_section_id = pts.section_id
-        WHERE s.id =""" + id.toString() + """ and
+        WHERE s.id =""" +
+        id.toString() +
+        """ and
         ts.language_id = 1
     """;
     final List<Map<String, dynamic>> maps = await db.rawQuery(query);
 
-    if (maps.isEmpty)
-    {
+    if (maps.isEmpty) {
       throw DatabaseRecordNotFound("The section with this id does not exist!");
     }
-    if (maps.length != 1)
-    {
-      throw MultipleRecordsFoundExpectedOne("Only one record should be returned by the query");
+    if (maps.length != 1) {
+      throw MultipleRecordsFoundExpectedOne(
+          "Only one record should be returned by the query");
     }
 
     return sectionGenerator(maps[0]);
   }
 
+  ///generates the buttons for the homepage
+  Future<List<Section>> mainPageButtons() async {
+    final db = await DatabaseImporter.open();
+
+    var query = """
+        SELECT s.*, 
+               ts.translation as translation_section
+        FROM section as s
+        JOIN translations_sections as ts ON s.id = ts.section_id
+        WHERE s.type=""" +
+        SectionType.homePage.index.toString() +
+        """ and
+        ts.language_id = 1
+    """;
+
+    final List<Map<String, dynamic>> maps = await db.rawQuery(query);
+    return List.generate(maps.length, (i) {
+      return sectionGenerator(maps[i]);
+    });
+  }
+
+  Future<List<Section>> relevantSections(int id) async {
+    final db = await DatabaseImporter.open();
+
+    var query = """ 
+      SELECT s.*, ts.translation as translation_section FROM relevant_sections as rs
+      JOIN section as s ON rs.relevant_sections_id = s.id
+      JOIN translations_sections as ts ON s.id = ts.section_id
+      WHERE rs.section_id = """ +
+        id.toString() +
+        """
+      UNION 
+      SELECT s.*, ts.translation as translation_section FROM relevant_sections as rs
+      JOIN section as s ON rs.section_id = s.id
+      JOIN translations_sections as ts ON s.id = ts.section_id
+      WHERE rs.relevant_sections_id = """ +
+        id.toString() +
+        """
+       """;
+    final List<Map<String, dynamic>> maps = await db.rawQuery(query);
+    return List.generate(maps.length, (i) {
+      return sectionGenerator(maps[i]);
+    });
+  }
 }
 
+/// A class for all database operations for the main page
 
+class MainPageHandler {
+  late Database db;
+  MainPageHandler();
+
+  Future<List> mainPage() async {
+    // get a reference to the database
+    final db = await DatabaseImporter.open();
+
+    var query = """ 
+    SELECT * FROM main_page
+    
+    """;
+    final List<Map<String, dynamic>> maps = await db.rawQuery(query);
+
+    if (maps.isEmpty) {
+      throw DatabaseRecordNotFound("The main page is empty!");
+    }
+
+    return maps;
+  }
+}

@@ -16,7 +16,20 @@ class _ExpandableCats extends State<ExpandableCats> {
   SectionHandler sh = SectionHandler();
 
   _getAllFactors(int parentID) async {
-    return await sh.childSections(parentID);
+    var children = await sh.childSections(parentID);
+    var factorsList = <Category>[];
+    for (var child in children) {
+      var relevantFactors = await sh.relevantSections(child.id);
+      var factorsBtns = <NavigationButton>[];
+      for (var factor in relevantFactors) {
+        var title = factor.translationSection ?? 'Loading...';
+        factorsBtns.add(NavigationButton(title: title, route: '/infopage'));
+      }
+      var title = child.translationSection ?? 'Loading';
+      factorsList
+          .add(Category(subCategories: factorsBtns, name: title, id: child.id));
+    }
+    return factorsList;
   }
 
   @override
@@ -33,15 +46,16 @@ class _ExpandableCats extends State<ExpandableCats> {
           future: allFactors,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              var factorsList = <Category>[];
-              var data = snapshot.data as List;
-              for (var dataPoint in data) {
-                factorsList.add(Category(
-                    subCategories: [],
-                    name: dataPoint.translationSection,
-                    id: dataPoint.id));
-              }
-              return CustomPanelList(categories: factorsList);
+              // var factorsList = <Category>[];
+              // var data = snapshot.data as List;
+              // for (var dataPoint in data) {
+              //   factorsList.add(Category(
+              //       subCategories: [],
+              //       name: dataPoint.translationSection,
+              //       id: dataPoint.id));
+              // }
+              return CustomPanelList(
+                  categories: snapshot.data as List<Category>);
             } else {
               return const Text('Loading...');
             }
@@ -100,57 +114,13 @@ class _CustomPanelList extends State<CustomPanelList> {
               title: Text(category.name),
             );
           },
-          body: RelevantFactors(
-            id: category.id,
+          body: Column(
+            children: category.subCategories,
           ),
           isExpanded: category.isExpanded,
           canTapOnHeader: true,
         );
       }).toList(),
     );
-  }
-}
-
-class RelevantFactors extends StatefulWidget {
-  final int id;
-  const RelevantFactors({Key? key, required this.id}) : super(key: key);
-
-  @override
-  State<StatefulWidget> createState() => _RelevantFactorsState();
-}
-
-class _RelevantFactorsState extends State<RelevantFactors> {
-  late int id;
-  late Future children;
-  SectionHandler sh = SectionHandler();
-
-  // TODO: Change to actual relevant factors
-  _getRelevantFactors() async {
-    return await sh.animalCategories();
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    children = _getRelevantFactors();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return FutureBuilder(
-        future: children,
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            var list = <NavigationButton>[];
-            var data = snapshot.data as List;
-            for (var dataPoint in data) {
-              list.add(NavigationButton(
-                  title: dataPoint.translationSection, route: '/infopage'));
-            }
-            return Column(children: list);
-          } else {
-            return const Text('Loading...');
-          }
-        });
   }
 }

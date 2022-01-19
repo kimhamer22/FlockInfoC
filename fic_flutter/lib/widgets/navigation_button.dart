@@ -5,12 +5,14 @@ class NavigationButton extends StatelessWidget {
   final String title;
   final String imageURL;
   final String route;
+  late int id;
 
-  const NavigationButton({
+  NavigationButton({
     Key? key,
     required this.title,
     this.imageURL = 'assets/images/sheep icon.png',
     required this.route,
+    this.id = 1,
   }) : super(key: key);
 
   @override
@@ -19,7 +21,7 @@ class NavigationButton extends StatelessWidget {
       padding: const EdgeInsets.all(8),
       child: MaterialButton(
         onPressed: () {
-          Navigator.pushNamed(context, route);
+          Navigator.pushNamed(context, route, arguments: id);
           breadcrumb.add(route);
         },
         child: SizedBox(

@@ -1,8 +1,12 @@
 import 'package:fic_flutter/db_handle.dart';
 
 class Helpers {
+  SectionHandler sh = SectionHandler();
   getSection(int id) async {
-    SectionHandler sh = SectionHandler();
     return await sh.section(id);
+  }
+
+  getRelevantSections(int id) async {
+    return await sh.relevantSections(id);
   }
 }

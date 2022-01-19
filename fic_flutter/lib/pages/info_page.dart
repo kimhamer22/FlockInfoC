@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:fic_flutter/widgets/top_bar.dart';
 
 import '../db_handle.dart';
+import '../helpers.dart';
 
 class InfoPage extends StatefulWidget {
   const InfoPage({Key? key}) : super(key: key);
@@ -13,18 +14,22 @@ class InfoPage extends StatefulWidget {
 }
 
 class _InfoPageState extends State<InfoPage> {
-  final int id = 6; // TODO: Pass this when navigating (6- Vaccination)
+  late int sectionID; // TODO: Pass this when navigating (6- Vaccination)
   SectionHandler sh = SectionHandler();
   late Future section;
-
-  _getSection() async {
-    return await sh.section(id);
-  }
+  late Future relevantCats;
 
   @override
   void initState() {
+    Future.delayed(Duration.zero, () {
+      var id = ModalRoute.of(context)!.settings.arguments as int;
+      sectionID = id;
+    }).whenComplete(() {
+      section = Helpers().getSection(sectionID);
+      relevantCats = Helpers().getRelevantSections(sectionID);
+      setState(() {});
+    }).then;
     super.initState();
-    section = _getSection();
   }
 
   final String title = "Vaccination";
@@ -125,16 +130,16 @@ class _InfoPageState extends State<InfoPage> {
                     const Padding(
                         padding: EdgeInsets.all(10),
                         child: Text(
-                          'Relevant Causes',
+                          'Relevant Factors',
                           style: TextStyle(fontWeight: FontWeight.bold),
                         )),
-                    const NavigationButton(
+                    NavigationButton(
                         title: 'Schmallenberg Virus', route: "/infopage"),
-                    const NavigationButton(
+                    NavigationButton(
                         title: 'Toxoplasma Gondii', route: "/infopage"),
-                    const NavigationButton(
+                    NavigationButton(
                         title: 'Bluetongue Virus', route: "/infopage"),
-                    const NavigationButton(title: '...', route: "/infopage"),
+                    NavigationButton(title: '...', route: "/infopage"),
                   ]);
                 } else {
                   return const Text('Loading...');

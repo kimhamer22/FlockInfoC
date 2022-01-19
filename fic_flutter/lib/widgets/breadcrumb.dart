@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fic_flutter/main.dart';
 
 List<String> breadcrumb = [HomePage.route];
+//list of breadcrumbs as page route names
 
 class BreadCrumb extends StatelessWidget {
   @override

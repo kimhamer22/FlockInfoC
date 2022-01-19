@@ -13,7 +13,7 @@ class Sheep extends StatefulWidget {
 }
 
 class _Sheep extends State<Sheep> {
-  final int id = 1; // 1 = Sheep
+  final int id = 20; // 1 = Sheep
   late Future allCategories;
   late Future section;
   SectionHandler sh = SectionHandler();
@@ -61,7 +61,9 @@ class _Sheep extends State<Sheep> {
                       for (var i = 0; i < data.length; i++) {
                         var title = data[i].translationSection;
                         list.add(NavigationButton(
-                            title: title, route: '/categorypage'));
+                            title: title,
+                            route: '/categorypage',
+                            id: data[i].id));
                       }
                       return Column(
                         children: list,

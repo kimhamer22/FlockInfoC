@@ -7,13 +7,17 @@ import 'package:fic_flutter/widgets/top_bar.dart';
 import 'package:fic_flutter/pages/home_resources.dart';
 import 'package:fic_flutter/pages/info_page.dart';
 
+import 'db_handle.dart';
+
 void main() async {
   // Avoid errors caused by flutter upgrade.
   // Importing 'package:flutter/widgets.dart' is required.
   WidgetsFlutterBinding.ensureInitialized();
 
-  // SectionHandler sh = SectionHandler();
-  //
+  SectionHandler sh = SectionHandler();
+
+  var relevants = await sh.relevantSections(5); // 7 - BCS
+  print(relevants);
   // // DATABASE EXAMPLES
   // var section = await sh.section(1);
   // print("Calling section(1): \n RESULT: ");
@@ -49,9 +53,18 @@ class FlockControl extends StatelessWidget {
         '/sheep': (context) => const Sheep(),
         '/cows': (context) =>
             const HomePage(title: 'Home'), // TODO: Do something about Cows
-        '/categorypage': (context) => const CategoryPage(sectionID: 3),
+        '/categorypage': (context) => const CategoryPage(3),
         '/generalresources': (context) => const GeneralResources(),
       },
+      // onGenerateRoute: (RouteSettings settings) {
+      //   print(settings.name);
+      //   var routes = <String, WidgetBuilder>{
+      //     "infopage": (ctx) => InfoPage(settings.arguments),
+      //   };
+      //   WidgetBuilder builder = routes[settings.name]!;
+      //   return MaterialPageRoute(
+      //       builder: (ctx) => builder(ctx), settings: settings);
+      // },
     );
   }
 }
@@ -116,4 +129,9 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
+
+class Arguments {
+  final int id;
+  Arguments(this.id);
 }

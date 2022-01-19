@@ -14,7 +14,7 @@ class InfoPage extends StatefulWidget {
 }
 
 class _InfoPageState extends State<InfoPage> {
-  late int sectionID; // TODO: Pass this when navigating (6 - Vaccination)
+  late int sectionID;
   SectionHandler sh = SectionHandler();
   late Future section;
   late Future relevantCats;

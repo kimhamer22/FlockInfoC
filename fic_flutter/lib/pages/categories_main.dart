@@ -14,9 +14,6 @@ class CategoryPage extends StatefulWidget {
 }
 
 class _CategoryPageState extends State<CategoryPage> {
-  bool controlClicked = false;
-  bool causesClicked = false;
-
   SectionHandler sh = SectionHandler();
   late Future categories;
   late Future section;
@@ -35,7 +32,7 @@ class _CategoryPageState extends State<CategoryPage> {
       categories = _getAllCategories(sectionID);
       section = Helpers().getSection(sectionID);
       setState(() {});
-    }).then;
+    });
     super.initState();
   }
 
@@ -53,75 +50,80 @@ class _CategoryPageState extends State<CategoryPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(60),
-        child: FutureBuilder(
-            future: section,
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                var sectionObj = snapshot.data as Section;
-                var title = sectionObj.translationSection ?? 'Loading...';
-                return TopBar(page: title);
-              } else {
-                return const TopBar(page: "Loading...");
-              }
-            }),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
-        child: Column(children: [
-          BreadCrumb(),
-          FutureBuilder(
-              future: categories,
+    try {
+      return Scaffold(
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(60),
+          child: FutureBuilder(
+              future: section,
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
-                  var catsList = <ExpandableCats>[];
-                  var tabsList = <Tab>[];
-                  var data = snapshot.data as List;
-                  for (var i = 0; i < data.length; i++) {
-                    var id = data[i].id;
-                    var title = data[i].translationSection;
-                    catsList.add(ExpandableCats(
-                      parentID: id,
-                    ));
-                    tabsList.add(Tab(
-                      text: title,
-                    ));
-                  }
-                  return DefaultTabController(
-                    length: data.length,
-                    child: Expanded(
-                      child: Column(
-                        children: <Widget>[
-                          Container(
-                            constraints: const BoxConstraints(maxHeight: 150.0),
-                            child: Material(
-                              child: TabBar(
-                                labelColor: Colors.black,
-                                labelStyle: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                ),
-                                indicator: const BoxDecoration(
-                                  color: Color(0x80DBF9D3),
-                                ),
-                                tabs: tabsList,
-                              ),
-                            ),
-                          ),
-                          Expanded(child: TabBarView(children: catsList))
-                        ],
-                      ),
-                    ),
-                  );
+                  var sectionObj = snapshot.data as Section;
+                  var title = sectionObj.translationSection ?? 'Loading...';
+                  return TopBar(page: title);
                 } else {
-                  return const Text('Loading...');
+                  return const TopBar(page: "Loading...");
                 }
               }),
-        ]),
-      ),
-    );
+        ),
+        body: Padding(
+          padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
+          child: Column(children: [
+            BreadCrumb(),
+            FutureBuilder(
+                future: categories,
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    var catsList = <ExpandableCats>[];
+                    var tabsList = <Tab>[];
+                    var data = snapshot.data as List;
+                    for (var i = 0; i < data.length; i++) {
+                      var id = data[i].id;
+                      var title = data[i].translationSection;
+                      catsList.add(ExpandableCats(
+                        parentID: id,
+                      ));
+                      tabsList.add(Tab(
+                        text: title,
+                      ));
+                    }
+                    return DefaultTabController(
+                      length: data.length,
+                      child: Expanded(
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              constraints:
+                                  const BoxConstraints(maxHeight: 150.0),
+                              child: Material(
+                                child: TabBar(
+                                  labelColor: Colors.black,
+                                  labelStyle: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                  ),
+                                  indicator: const BoxDecoration(
+                                    color: Color(0x80DBF9D3),
+                                  ),
+                                  tabs: tabsList,
+                                ),
+                              ),
+                            ),
+                            Expanded(child: TabBarView(children: catsList))
+                          ],
+                        ),
+                      ),
+                    );
+                  } else {
+                    return const Text('Loading...');
+                  }
+                }),
+          ]),
+        ),
+      );
+    } catch (LateInitializationError) {
+      return const Text('ERROR');
+    }
   }
 }
 

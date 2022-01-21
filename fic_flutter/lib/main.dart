@@ -7,18 +7,19 @@ import 'package:fic_flutter/widgets/top_bar.dart';
 import 'package:fic_flutter/pages/home_resources.dart';
 import 'package:fic_flutter/pages/info_page.dart';
 
-import 'db_handle.dart';
+//import 'db_handle.dart';
 
 void main() async {
   // Avoid errors caused by flutter upgrade.
   // Importing 'package:flutter/widgets.dart' is required.
   WidgetsFlutterBinding.ensureInitialized();
 
-  SectionHandler sh = SectionHandler();
-
-  var relevants = await sh.relevantSections(5); // 7 - BCS
-  print(relevants);
-  // // DATABASE EXAMPLES
+  // DATABASE EXAMPLES
+  // SectionHandler sh = SectionHandler();
+  //
+  // var relevants = await sh.relevantSections(5); // 7 - BCS
+  // print(relevants);
+  //
   // var section = await sh.section(1);
   // print("Calling section(1): \n RESULT: ");
   // print(section);

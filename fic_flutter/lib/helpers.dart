@@ -9,4 +9,8 @@ class Helpers {
   getRelevantSections(int id) async {
     return await sh.relevantSections(id);
   }
+
+  getChildren(int id) async {
+    return await sh.childSections(id);
+  }
 }

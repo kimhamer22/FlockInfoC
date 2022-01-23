@@ -29,7 +29,6 @@ class AssociatedImage {
       'image': image,
     };
   }
-
 }
 
 class Language {
@@ -50,8 +49,8 @@ class Language {
       'icon': icon,
     };
   }
-
 }
+
 class Section {
   final int id;
   final int type;
@@ -105,7 +104,6 @@ class SectionParent {
   }
 }
 
-
 class TranslationsData {
   final int id;
   final int languageId;
@@ -127,7 +125,6 @@ class TranslationsData {
       'translation': translation,
     };
   }
-
 }
 
 class TranslationsSection {
@@ -194,10 +191,10 @@ class DatabaseImporter
     var exists = await databaseExists(dbPath);
 
     if (!exists) {
-      ByteData data = await rootBundle.load(
-          "assets/database/flock-control.sqlite");
-      List<int> bytes = data.buffer.asUint8List(
-          data.offsetInBytes, data.lengthInBytes);
+      ByteData data =
+          await rootBundle.load("assets/database/flock-control.sqlite");
+      List<int> bytes =
+          data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
       await File(dbPath).writeAsBytes(bytes);
     }
     var db = openDatabase(dbPath, readOnly: true);
@@ -206,15 +203,12 @@ class DatabaseImporter
   }
 }
 
-
 /// Handles all database operations related to sections
-class SectionHandler
-{
+class SectionHandler {
   late Database db;
   SectionHandler();
 
-  Section sectionGenerator(data)
-  {
+  Section sectionGenerator(data) {
     return Section(
       id: data['id'],
       type: data['type'],
@@ -225,8 +219,7 @@ class SectionHandler
   }
 
   /// Returns all animal categories (by filtering out section type 0)
-  Future<List<Section>> animalCategories() async
-  {
+  Future<List<Section>> animalCategories() async {
     final db = await DatabaseImporter.open();
 
     var query = """
@@ -234,7 +227,9 @@ class SectionHandler
                ts.translation as translation_section
         FROM section as s
         JOIN translations_sections as ts ON s.id = ts.section_id
-        WHERE s.type=""" + SectionType.speciesCategory.index.toString() + """ and
+        WHERE s.type=""" +
+        SectionType.speciesCategory.index.toString() +
+        """ and
         ts.language_id = 1
     """;
 
@@ -244,10 +239,8 @@ class SectionHandler
     });
   }
 
-
   /// Returns child sections provided parent section id
-  Future<List<Section>> childSections(int parentId) async
-  {
+  Future<List<Section>> childSections(int parentId) async {
     final db = await DatabaseImporter.open();
 
     var query = """
@@ -260,7 +253,9 @@ class SectionHandler
         LEFT JOIN translations_data as td ON s.id = td.section_id
         LEFT JOIN section_parent as sp ON s.id = sp.section_id
         LEFT JOIN translations_sections as pts ON sp.parent_section_id = pts.section_id
-        WHERE sp.parent_section_id=""" + parentId.toString() + """ and
+        WHERE sp.parent_section_id=""" +
+        parentId.toString() +
+        """ and
         ts.language_id = 1
     """;
 
@@ -274,7 +269,6 @@ class SectionHandler
   /// Throws DatabaseRecordNotFound if record is not found
   /// Throws MultipleRecordsFoundExpectedOne (sanity check) if more than one record is returned
   Future<Section> section(int id) async {
-
     final db = await DatabaseImporter.open();
 
     var query = """
@@ -287,18 +281,19 @@ class SectionHandler
         LEFT JOIN translations_data as td ON s.id = td.section_id
         LEFT JOIN section_parent as sp ON s.id = sp.section_id
         LEFT JOIN translations_sections as pts ON sp.parent_section_id = pts.section_id
-        WHERE s.id =""" + id.toString() + """ and
+        WHERE s.id =""" +
+        id.toString() +
+        """ and
         ts.language_id = 1
     """;
     final List<Map<String, dynamic>> maps = await db.rawQuery(query);
 
-    if (maps.isEmpty)
-    {
+    if (maps.isEmpty) {
       throw DatabaseRecordNotFound("The section with this id does not exist!");
     }
-    if (maps.length != 1)
-    {
-      throw MultipleRecordsFoundExpectedOne("Only one record should be returned by the query");
+    if (maps.length != 1) {
+      throw MultipleRecordsFoundExpectedOne(
+          "Only one record should be returned by the query");
     }
 
     return sectionGenerator(maps[0]);

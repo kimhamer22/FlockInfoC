@@ -148,7 +148,6 @@ class TranslationsSection {
       'translation': translation,
     };
   }
-
 }
 
 class MainPage {
@@ -162,7 +161,6 @@ class MainPage {
     required this.description,
     required this.button1,
     required this.button2,
-
   });
 
   Map<String, dynamic> toMap() {
@@ -173,11 +171,9 @@ class MainPage {
       'button2': button2,
     };
   }
-
 }
 
-class DatabaseImporter
-{
+class DatabaseImporter {
   static Future open() async {
     // Construct the path to the app's writable database file:
     var dbDir = await getDatabasesPath();
@@ -300,8 +296,7 @@ class SectionHandler {
   }
 
   ///generates the buttons for the homepage
-  Future<List<Section>> mainPageButtons() async
-  {
+  Future<List<Section>> mainPageButtons() async {
     final db = await DatabaseImporter.open();
 
     var query = """
@@ -309,7 +304,9 @@ class SectionHandler {
                ts.translation as translation_section
         FROM section as s
         JOIN translations_sections as ts ON s.id = ts.section_id
-        WHERE s.type=""" + SectionType.homePage.index.toString() + """ and
+        WHERE s.type=""" +
+        SectionType.homePage.index.toString() +
+        """ and
         ts.language_id = 1
     """;
 
@@ -319,39 +316,38 @@ class SectionHandler {
     });
   }
 
-  Future<List<Section>> relevantSections(int id) async
-  {
+  Future<List<Section>> relevantSections(int id) async {
     final db = await DatabaseImporter.open();
 
     var query = """ 
       SELECT s.*, ts.translation as translation_section FROM relevant_sections as rs
       JOIN section as s ON rs.relevant_sections_id = s.id
       JOIN translations_sections as ts ON s.id = ts.section_id
-      WHERE rs.section_id = """ + id.toString() + """
+      WHERE rs.section_id = """ +
+        id.toString() +
+        """
       UNION 
       SELECT s.*, ts.translation as translation_section FROM relevant_sections as rs
       JOIN section as s ON rs.section_id = s.id
       JOIN translations_sections as ts ON s.id = ts.section_id
-      WHERE rs.relevant_sections_id = """ + id.toString() + """
+      WHERE rs.relevant_sections_id = """ +
+        id.toString() +
+        """
        """;
     final List<Map<String, dynamic>> maps = await db.rawQuery(query);
     return List.generate(maps.length, (i) {
       return sectionGenerator(maps[i]);
     });
-
   }
-
 }
 
 /// A class for all database operations for the main page
 
-class MainPageHandler
-{
+class MainPageHandler {
   late Database db;
   MainPageHandler();
 
   Future<List> mainPage() async {
-
     // get a reference to the database
     final db = await DatabaseImporter.open();
 
@@ -361,22 +357,10 @@ class MainPageHandler
     """;
     final List<Map<String, dynamic>> maps = await db.rawQuery(query);
 
-    if (maps.isEmpty)
-    {
+    if (maps.isEmpty) {
       throw DatabaseRecordNotFound("The main page is empty!");
     }
 
     return maps;
-
   }
-
-
-
-
-
-
-
 }
-
-
-

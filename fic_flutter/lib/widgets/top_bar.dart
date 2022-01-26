@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/widgets/data_search.dart';
+import 'package:fic_flutter/widgets/breadcrumb.dart';
+import 'package:fic_flutter/main.dart';
 
 class TopBar extends StatelessWidget implements PreferredSizeWidget {
   final String page;
@@ -36,6 +38,8 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
                   icon: Image.asset('assets/images/FIC logo.png'),
                   onPressed: () {
                     Navigator.popUntil(context, ModalRoute.withName('/'));
+                    breadcrumb.clear();
+                    breadcrumb.add(HomePage.route);
                   },
                   iconSize: 50,
                 ),

@@ -1,3 +1,4 @@
+import 'package:fic_flutter/pages/general_resources.dart';
 import 'package:fic_flutter/pages/home_species.dart';
 import 'package:fic_flutter/pages/categories_main.dart';
 import 'package:fic_flutter/pages/sheep.dart';
@@ -7,7 +8,46 @@ import 'package:fic_flutter/widgets/top_bar.dart';
 import 'package:fic_flutter/pages/home_resources.dart';
 import 'package:fic_flutter/pages/info_page.dart';
 
-void main() {
+//import 'db_handle.dart';
+
+void main() async {
+  // Avoid errors caused by flutter upgrade.
+  // Importing 'package:flutter/widgets.dart' is required.
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // DATABASE EXAMPLES
+  // SectionHandler sh = SectionHandler();
+  // MainPageHandler mph = MainPageHandler();
+  //
+  // var relevants = await sh.relevantSections(5); // 7 - BCS
+  // print(relevants);
+  //
+  // var section = await sh.section(1);
+  // print("Calling section(1): \n RESULT: ");
+  // print(section);
+  //
+  // var children = await sh.childSections(1);
+  // print("Calling childSections(1): \n RESULT: ");
+  // print(children);
+  //
+  // var animals = await sh.animalCategories();
+  // print("Calling animalCategories(): \n RESULT: ");
+  // print(animals);
+
+  // var relevant = await sh.relevantSections(4);
+  // print("Calling relevantSections(): \n RESULT: ");
+  // print(relevant);
+  // runApp(const FlockControl());
+  //
+  // var mainPage = await mph.mainPage();
+  // print("Calling mainPage(): \n RESULT: ");
+  // print(mainPage);
+  // runApp(const FlockControl());
+  //
+  // var mainPageButtons = await sh.mainPageButtons();
+  // print("Calling mainPageButtons(): \n RESULT: ");
+  // print(mainPageButtons);
+
   runApp(const FlockControl());
 }
 
@@ -28,7 +68,10 @@ class FlockControl extends StatelessWidget {
         '/': (context) => const HomePage(title: 'Home'),
         '/infopage': (context) => const InfoPage(),
         '/sheep': (context) => const Sheep(),
-        '/categorypage': (context) => const CategoryPage(),
+        '/cows': (context) =>
+            const HomePage(title: 'Home'), // TODO: Do something about Cows
+        '/categorypage': (context) => const CategoryPage(3),
+        '/generalresources': (context) => const GeneralResources(),
       },
     );
   }

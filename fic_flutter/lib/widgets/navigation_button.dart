@@ -5,12 +5,14 @@ class NavigationButton extends StatelessWidget {
   final String title;
   final String imageURL;
   final String route;
+  late int id;
 
-  const NavigationButton({
+  NavigationButton({
     Key? key,
     required this.title,
     this.imageURL = 'assets/images/sheep icon.png',
     required this.route,
+    this.id = 1,
   }) : super(key: key);
 
   @override
@@ -19,7 +21,7 @@ class NavigationButton extends StatelessWidget {
       padding: const EdgeInsets.all(8),
       child: MaterialButton(
         onPressed: () {
-          Navigator.pushNamed(context, route);
+          Navigator.pushNamed(context, route, arguments: id);
           breadcrumb.add(route);
         },
         child: SizedBox(
@@ -31,28 +33,14 @@ class NavigationButton extends StatelessWidget {
             ),
             child: Row(children: [
               Padding(
-                padding: const EdgeInsets.all(10),
-                child: Container(
-                  child: Center(
-                    child: Text(
-                      title.substring(0, 1),
-                      style: const TextStyle(fontSize: 24),
-                    ),
+                padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.4,
+                  child: Text(
+                    title,
+                    style: const TextStyle(color: Colors.black, fontSize: 17),
+                    textAlign: TextAlign.start,
                   ),
-                  width: 35,
-                  height: 35,
-                  decoration: const BoxDecoration(
-                    color: Colors.lightGreen,
-                    shape: BoxShape.circle,
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.4,
-                child: Text(
-                  title,
-                  style: const TextStyle(color: Colors.black),
-                  textAlign: TextAlign.start,
                 ),
               ),
               const Spacer(),

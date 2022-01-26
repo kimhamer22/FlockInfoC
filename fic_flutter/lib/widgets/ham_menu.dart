@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HamMenu extends StatelessWidget {
+  final double fontSize = 20;
   const HamMenu({Key? key}) : super(key: key);
 
   @override
@@ -10,22 +11,61 @@ class HamMenu extends StatelessWidget {
         children: [
           ListTile(
             leading: const Icon(Icons.home),
-            title: const Text(
+            title: Text(
               'Home',
-              style: TextStyle(fontSize: 24),
+              style: TextStyle(fontSize: fontSize),
             ),
             onTap: () {
-              //Navigator.pop(context);
+              Navigator.popUntil(context, ModalRoute.withName('/'));
+            },
+          ),
+          ExpansionTile(
+            leading: const Icon(Icons.pets),
+            title: Text(
+              'Species',
+              style: TextStyle(fontSize: fontSize),
+            ),
+          ),
+          ListTile(
+            leading: const Icon(Icons.info),
+            title: Text(
+              'General Resources',
+              style: TextStyle(fontSize: fontSize),
+            ),
+            onTap: () {
               Navigator.popUntil(context, ModalRoute.withName('/'));
             },
           ),
           ListTile(
-            title: const Text(
-              'Sheep',
-              style: TextStyle(fontSize: 24),
+            leading: const Icon(Icons.health_and_safety),
+            title: Text(
+              'Benefits of Reducing Losses',
+              style: TextStyle(fontSize: fontSize),
             ),
-            onTap: () {},
-          )
+            onTap: () {
+              Navigator.popUntil(context, ModalRoute.withName('/'));
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.article),
+            title: Text(
+              'Acknowledgments',
+              style: TextStyle(fontSize: fontSize),
+            ),
+            onTap: () {
+              Navigator.popUntil(context, ModalRoute.withName('/'));
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.email),
+            title: Text(
+              'Contact Us',
+              style: TextStyle(fontSize: fontSize),
+            ),
+            onTap: () {
+              Navigator.popUntil(context, ModalRoute.withName('/'));
+            },
+          ),
         ],
       ),
     );

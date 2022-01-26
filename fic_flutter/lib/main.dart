@@ -2,6 +2,7 @@ import 'package:fic_flutter/pages/general_resources.dart';
 import 'package:fic_flutter/pages/home_species.dart';
 import 'package:fic_flutter/pages/categories_main.dart';
 import 'package:fic_flutter/pages/sheep.dart';
+import 'package:fic_flutter/pages/simple_text.dart';
 import 'package:fic_flutter/widgets/ham_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/widgets/top_bar.dart';
@@ -72,6 +73,7 @@ class FlockControl extends StatelessWidget {
             const HomePage(title: 'Home'), // TODO: Do something about Cows
         '/categorypage': (context) => const CategoryPage(3),
         '/generalresources': (context) => const GeneralResources(),
+        '/simple_text': (context) => const SimpleText(),
       },
     );
   }

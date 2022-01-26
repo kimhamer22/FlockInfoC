@@ -16,7 +16,6 @@ class InfoPage extends StatefulWidget {
 
 class _InfoPageState extends State<InfoPage> {
   late int sectionID;
-  SectionHandler sh = SectionHandler();
   late Future section;
   late Future relevantCats;
   late Future subheadings;
@@ -34,20 +33,6 @@ class _InfoPageState extends State<InfoPage> {
     }).then;
     super.initState();
   }
-
-  final String title = "Vaccination";
-  final String description =
-      """Vaccines are essential for controlling some causes of abortion.
-
-  Vaccines are only effective if:
-  - stored at the correct temperature
-  - given at the correct time
-  - given to the correct animals
-  - administered correctly
-  - used within the stated time from opening (usually 2-8hrs) and before the use by date
-
-  Product information leaflets will show specific details for each vaccine.
-  """;
 
   @override
   Widget build(BuildContext context) {

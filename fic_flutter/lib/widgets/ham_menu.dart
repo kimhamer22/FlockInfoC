@@ -14,6 +14,7 @@ class HamMenu extends StatefulWidget {
 class _HamMenu extends State<HamMenu> {
   final double fontSize = 20;
   late Future allSpeciesFuture;
+  final String tileRoute = '/simple_text';
 
   @override
   void initState() {
@@ -77,7 +78,8 @@ class _HamMenu extends State<HamMenu> {
               style: TextStyle(fontSize: fontSize),
             ),
             onTap: () {
-              Navigator.popUntil(context, ModalRoute.withName('/'));
+              // 25 - General Resources
+              Navigator.pushNamed(context, tileRoute, arguments: 25);
             },
           ),
           ListTile(
@@ -87,17 +89,17 @@ class _HamMenu extends State<HamMenu> {
               style: TextStyle(fontSize: fontSize),
             ),
             onTap: () {
-              Navigator.popUntil(context, ModalRoute.withName('/'));
+              Navigator.pushNamed(context, tileRoute, arguments: 26);
             },
           ),
           ListTile(
             leading: const Icon(Icons.article),
             title: Text(
-              'Acknowledgments',
+              'Acknowledgements',
               style: TextStyle(fontSize: fontSize),
             ),
             onTap: () {
-              Navigator.popUntil(context, ModalRoute.withName('/'));
+              Navigator.pushNamed(context, tileRoute, arguments: 27);
             },
           ),
           ListTile(
@@ -107,7 +109,7 @@ class _HamMenu extends State<HamMenu> {
               style: TextStyle(fontSize: fontSize),
             ),
             onTap: () {
-              Navigator.popUntil(context, ModalRoute.withName('/'));
+              Navigator.pushNamed(context, tileRoute, arguments: 28);
             },
           ),
         ],

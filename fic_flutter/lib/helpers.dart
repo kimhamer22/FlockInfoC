@@ -13,4 +13,8 @@ class Helpers {
   getChildren(int id) async {
     return await sh.childSections(id);
   }
+
+  getSpecies() async {
+    return await sh.animalCategories();
+  }
 }

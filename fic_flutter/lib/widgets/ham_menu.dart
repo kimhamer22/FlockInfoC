@@ -2,9 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:fic_flutter/widgets/breadcrumb.dart';
 import 'package:fic_flutter/main.dart';
 
-class HamMenu extends StatelessWidget {
-  final double fontSize = 20;
+import '../helpers.dart';
+
+class HamMenu extends StatefulWidget {
   const HamMenu({Key? key}) : super(key: key);
+
+  @override
+  State<StatefulWidget> createState() => _HamMenu();
+}
+
+class _HamMenu extends State<HamMenu> {
+  final double fontSize = 20;
+  late Future allSpeciesFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    allSpeciesFuture = Helpers().getSpecies();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,13 +38,38 @@ class HamMenu extends StatelessWidget {
               breadcrumb.add(HomePage.route);
             },
           ),
-          ExpansionTile(
-            leading: const Icon(Icons.pets),
-            title: Text(
-              'Species',
-              style: TextStyle(fontSize: fontSize),
-            ),
-          ),
+          FutureBuilder(
+              future: allSpeciesFuture,
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  var list = <ListTile>[];
+                  var data = snapshot.data as List;
+                  for (var i = 0; i < data.length; i++) {
+                    var title = Text(data[i].translationSection);
+                    var route = '/' + title.data.toString().toLowerCase();
+                    list.add(ListTile(
+                        title: title,
+                        onTap: () {
+                          Navigator.pushNamed(context, route);
+                          breadcrumb.add(route);
+                        }));
+                  }
+                  return ExpansionTile(
+                    leading: const Icon(Icons.pets),
+                    title: Text(
+                      'Species',
+                      style: TextStyle(fontSize: fontSize),
+                    ),
+                    children: list,
+                  );
+                } else {
+                  return ListTile(
+                    leading: const Icon(Icons.pets),
+                    title:
+                        Text('Species', style: TextStyle(fontSize: fontSize)),
+                  );
+                }
+              }),
           ListTile(
             leading: const Icon(Icons.info),
             title: Text(

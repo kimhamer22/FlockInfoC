@@ -1,6 +1,6 @@
+import 'package:fic_flutter/helpers.dart';
 import 'package:flutter/material.dart';
 import '../widgets/navigation_button.dart';
-import '../db_handle.dart';
 
 class HomeSpecies extends StatefulWidget {
   const HomeSpecies({Key? key}) : super(key: key);
@@ -11,16 +11,11 @@ class HomeSpecies extends StatefulWidget {
 
 class _HomeSpecies extends State<HomeSpecies> {
   late Future allSpeciesFuture;
-  SectionHandler sh = SectionHandler();
-
-  _getAllSpecies() async {
-    return await sh.animalCategories();
-  }
 
   @override
   void initState() {
     super.initState();
-    allSpeciesFuture = _getAllSpecies();
+    allSpeciesFuture = Helpers().getSpecies();
   }
 
   @override

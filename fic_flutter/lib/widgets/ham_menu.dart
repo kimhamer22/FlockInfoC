@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fic_flutter/widgets/breadcrumb.dart';
+import 'package:fic_flutter/main.dart';
 
 class HamMenu extends StatelessWidget {
   final double fontSize = 20;
@@ -17,6 +19,8 @@ class HamMenu extends StatelessWidget {
             ),
             onTap: () {
               Navigator.popUntil(context, ModalRoute.withName('/'));
+              breadcrumb.clear();
+              breadcrumb.add(HomePage.route);
             },
           ),
           ExpansionTile(

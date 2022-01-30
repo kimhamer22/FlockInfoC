@@ -106,15 +106,17 @@ class _InfoPageState extends State<InfoPage> {
                             if (snapshot.hasData) {
                               var list = [];
                               var data = snapshot.data as List;
-                              list.add(
-                                const Padding(
-                                    padding: EdgeInsets.all(10),
-                                    child: Text(
-                                      'Relevant Factors',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold),
-                                    )),
-                              );
+                              if (data.isNotEmpty) {
+                                list.add(
+                                  const Padding(
+                                      padding: EdgeInsets.all(10),
+                                      child: Text(
+                                        'Relevant Factors',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold),
+                                      )),
+                                );
+                              }
                               for (var i = 0; i < data.length; i++) {
                                 var title = data[i].translationSection;
                                 list.add(NavigationButton(

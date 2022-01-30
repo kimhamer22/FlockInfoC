@@ -115,7 +115,7 @@ if __name__ == "__main__":
 	if len(sys.argv) < 3:
 		raise Exception("No csv file name provided!")
 
-	with open(sys.argv[2]) as csvfile:
+	with open(sys.argv[2], encoding="utf-8") as csvfile:
 		f = csv.reader(csvfile, delimiter=',', quotechar='"')
 		next(f)
 		for row in f:

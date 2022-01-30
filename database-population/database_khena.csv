@@ -6,7 +6,7 @@ Samples for Diagnosis: Blood or post mortem samples from ewes, aborted lambs and
 Treatment: Fluids and anti-inflammatories to control symptoms. Seek veterinary advice. 
 Notifiable Disease: Yes
 Risk to Humans: No 
-",Button,18,"22, 8",
+",Button,18,"22, 68",Causes
 2,Characteristics of Bluetongue Virus,"Bluetongue viruses mainly causes abortions in the second half of pregnancy, but can also cause pregnancy loss in the first half, or occasionally death in neonatal lambs (2). Outbreaks are often seasonal as they are linked to when the midges are most active, which tends to late summer and autumn in Europe. Outbreaks are currently uncommon in the UK, but there is a significant risk of midges from mainland Europe reaching the UK in the future (3). The number of abortions caused by Bluetongue can vary depending on the strain. Ewes are normally unwell, with depression, drooling and potential difficulty breathing, and they may have swollen heads. Mouth and nose ulceration and lameness are common (4). Some lambs are born deformed. See Abortions - What to do? for immediate steps to take following an abortion to reduce spread within the flock.",Expandable,1,,
 3,Control,"The virus can be controlled by vaccination (5), insect control and biosecurity measures.  Vaccination should be undertaken before breeding, and before the high risk period when midges are active. Furthermore, care should be taken to use the vaccine which is specific to the strain of bluetongue in the area.",Expandable,1,,
 4,References,"(1)   OIE, World Organisation for Animal Health. Bluetongue [cited 2021 August 10]. Available from: https://www.oie.int/en/disease/bluetongue/. 
@@ -24,7 +24,7 @@ Treatment: None, cull persistently infected animals as soon as possible
 Notifiable Disease: No
 Risk to Humans: No
 
-Border Disease Virus (BDV, also sometimes known as ""Hairy Shaker Disease"") is similar to BVDV in cattle. BVDV can also be transmitted from cattle to sheep, and presents similarly to a sheep infected with BDV (1). These viruses are spread most efficiently by animals that are infected before birth and carry the disease for their whole lives, persistently infected or PI animals (2). This is how the disease is maintained in a flock. ",Button ,18," 8, 24",
+Border Disease Virus (BDV, also sometimes known as ""Hairy Shaker Disease"") is similar to BVDV in cattle. BVDV can also be transmitted from cattle to sheep, and presents similarly to a sheep infected with BDV (1). These viruses are spread most efficiently by animals that are infected before birth and carry the disease for their whole lives, persistently infected or PI animals (2). This is how the disease is maintained in a flock. ",Button ,18," 68, 24",Causes
 6,Characteristics of BDV,"Abortion is seen in mid to late pregnancy. If the infection is newly introduced in the flock, the number of abortions can be high. If the infection is already present, there tends to be a constant but lower level of abortion. The stage at which the ewe is infected with BDV (or BVDV) affects the outcome, which can include a high level of barren ewes, as the embryos are reabsorbed before scanning (3), abortion, stillbirths or live lambs. If lambs make it to full term, they grow 20% slower than uninfected lambs and either exhibit no symptoms or deformities, the most common of which are behavioural abnormalities and altered wool appearance (4). Either type of lamb can be persistently infected and transfer the virus to other sheep. The ewes do not present as sick.
 
 See Abortions - What to do? for immediate steps which should be undertaken following an abortion .
@@ -47,7 +47,7 @@ Treatment: Not considered economical
 Notifiable Disease: Yes
 Risk to Humans: Yes (1) 
 
-Brucella species can be spread between animals by bodily fluids like genital discharge and milk. They can also become infected by drinking contaminated water or eating contaminated feed. In areas of the world where these bacteria are found they are a serious cause of abortion in sheep and goats (2), and a serious cause of human disease. ",Button,18,24,
+Brucella species can be spread between animals by bodily fluids like genital discharge and milk. They can also become infected by drinking contaminated water or eating contaminated feed. In areas of the world where these bacteria are found they are a serious cause of abortion in sheep and goats (2), and a serious cause of human disease. ",Button,18,24,Causes
 11,Characteristics of Brucellosis,"Brucellosis outbreaks are characterised by many abortions in late pregnancy. The aborted lambs tend to be decomposed, stillborn, or alive but weak. Depending on the type of Brucella, ewes may have a fever, be depressed, suffer from weight loss, mastitis, lameness or diarrhoea. Lambs can also be See Abortions - What to do? for immediate steps which should be undertaken following an abortion to prevent spread within the flock and zoonoses (spreading to humans).  In rams it is characterised by testicular abnormalities like testicle enlargement, pain, hardening, epidydimal enlargement and decreased semen quality (3,4). It is commonly transmitted between ewes and rams during breeding. 
 
 For more information see Rayner K, Government of Western Australia. Ovine brucellosis; 2020. Available from: https://www.agric.wa.gov.au/livestock-biosecurity/ovine-brucellosis.
@@ -66,7 +66,7 @@ Treatment: Seek veterinary advice
 Notifiable Disease: No
 Risk to Humans: Yes (1) 
 
-Campylobacteriosis (formerly ovine vibriosis) is diagnosed in 9% of infectious abortion cases investigated in sheep in the UK (2). The infection is usually obtained from contaminated water or feed, from aborted materials or faeces from infected sheep. Birds, cattle and dogs have also been implicated in the transmission of these bacteria. ",Button,,,
+Campylobacteriosis (formerly ovine vibriosis) is diagnosed in 9% of infectious abortion cases investigated in sheep in the UK (2). The infection is usually obtained from contaminated water or feed, from aborted materials or faeces from infected sheep. Birds, cattle and dogs have also been implicated in the transmission of these bacteria. ",Button,18,"24, 23, 38",Causes
 15,Characteristics of Campylobacteriosis,"Infection of ewes can result in an ""abortion storm"" (high number of abortions) in late pregnancy (after 12 weeks), alongside the birth of stillborn or weak lambs that die shortly after birth. Aborted lambs tend to be well preserved. The ewes are usually well, but may show a mild diarrhoea (3). Outbreaks tend to last for one lambing season, and reoccur 4-7 years later, during the intervening years lower levels of abortion due to Campylobacter species may still be seen. 
 
 For more information see Government of Western Australia. Ovine campylobacteriosis (formerly ovine vibriosis); 2018. Available from: https://www.agric.wa.gov.au/livestock-biosecurity/ovine-campylobacteriosis-formerly-ovine-vibriosis.",Expandable,14,,
@@ -77,9 +77,445 @@ For more information see Government of Western Australia. Ovine campylobacterios
 (4)   Xia J, Pang J, Tang Y, Wu Z, Dai L, Singh K, et al. High Prevalence of Fluoroquinolone-Resistant Campylobacter Bacteria in Sheep and Increased Campylobacter Counts in the Bile and Gallbladders of Sheep Medicated with Tetracycline in Feed. Applied and Environmental Microbiology. 2019;85(11):e00008-19. Available from: https://doi-org.ezproxy.lib.gla.ac.uk/10.1128/AEM.00008-19
 (5)   Menzies PI. Control of Important Causes of Infectious Abortion in Sheep and Goats. Veterinary Clinics of North America: Food Animal Practice. 2011;27(1):81-93. Available from: https://doi.org/10.1016/j.cvfa.2010.10.011",Expandable,14,,
 18,Causes,,Tab,19,,Controlling Abortion
-19,Controlling Abortion,,Button,21,,Sheep
+19,Controlling Abortion,,Button,20,,Sheep
 20,Sheep,,Species,,,
 21,Controls,,Tab,19,,Controlling Abortion
-22,Vermin Control,,Button,21,,Controls
-23,Vaccination,,Button,21,,Controls
-24,Biosecurity,,Button,,,
+22,Vermin Control,"Feed should be stored in a sealed container to keep out vermin, birds and cats. The container should be checked regularly for leakages or holes. 
+
+Poisons can be used in a safe container to control vermin. Caution must be taken to keep livestock, pets and children away from any poisonous materials. Dogs or neutered cats can also be used to help control rodent populations. 
+
+Mole control should be carried out in silage fields to avoid molehills causing soil contamination of silage.",Button,21,,Controls
+23,Bird Control,"Birds can carry some disease and pass these to sheep when their faeces contaminate feed or water, for example Salmonella species. Also, birds may carry placentae or other abortion products from one farm to another, so can transport any abortive disease between farms in this way. 
+?
+Prevent birds having access to stored feeds by using
+ 
+
+    feed bins with a secure lid
+    bird-proof sheds for feed storage
+    multiple layers of plastic on top of silage
+
+
+Prevent birds being attracted to left-overs or ad-lib feed by
+?
+
+    turning over feed troughs immediately after feeding
+    using covered feeders
+    when feeding on the floor, use a clean, new location each time
+
+
+Use bird scaring devices to discourage birds being near the sheep.
+ 
+Arrangements may be able to be made with local gamekeepers to help keep the bird populations under control. ",Button,21,,Controls
+24,Biosecurity,,Button,21,,Controls
+25,General Resources,"Please note that the authors of this website are not responsible for the content of these websites or any changes which may have been made to the additional resources since the time of publishing. 
+
+Printable Lamb Losses Record Sheet - PDF Version
+
+AHDB:
+- Knowledge Library https://ahdb.org.uk/knowledge-library.
+- Sheep Diseases Directory  https://ahdb.org.uk/knowledge-library/sheep-diseases-directory
+- Reducing lamb losses for Better Returns https://ahdb.org.uk/knowledge-library/reducing-lamb-losses-for-better-returns-2. 
+- Use of vaccines in cattle and sheep production https://projectblue.blob.core.windows.net/media/Default/Dairy/Publications/Use%20of%20vaccines%20in%20cattle%20and%20sheep%20prod_WEB.pdf.
+
+HCC/Meat Promotion Wales:
+- Sheep Industry Resources https://meatpromotion.wales/en/industry-resources/sheep-management.
+- Making Every Lamb Count https://meatpromotion.wales/images/resources/Making_Every_Lamb_Count.pdf
+
+QMS/Quality Meat Scotland:
+- Health and Welfare https://www.qmscotland.co.uk/health-and-welfare-0
+- Breeding https://www.qmscotland.co.uk/breeding-1
+
+NADIS Disease A-Z for Sheep: https://www.nadis.org.uk/disease-a-z/sheep/.
+
+MSD Veterinary Manual:
+- Homepage https://www.msdvetmanual.com/en-au.
+- Flockmaster's Guide to Abortion and Vaccination https://www.msd-animal-health-hub.co.uk/DNOMF/sheep-health.
+
+Health and Safety Executive (HSE) Guide to Zoonoses:  https://www.hse.gov.uk/agriculture/topics/zoonoses.htm.
+
+Moredun Livestock Diseases: https://www.moredun.org.uk/research/diseases
+
+Farm Health Online - Sheep Diseases:  https://www.farmhealthonline.com/disease-management/sheep-diseases/.
+
+FAS Technical Notes Collection: https://www.fas.scot/publication/technical-notes/.
+
+Government Sheep and Goats: Health regulations: https://www.gov.uk/guidance/monitoring-prevention-and-control-of-disease-in-sheep-and-goats.
+
+Guides for Vets and Farmers for Responsible Antibiotic Use: https://www.ruma.org.uk/sheep/antimicrobials-sheep-production/.",Button,,,Drawer
+26,Benefits of Reducing Losses,"Sheep and lamb losses are of major concern. Total lamb mortality is thought to be about 15% in UK flocks, but it has been shown to be anywhere between 1 and 43% depending on the farm and year (1). Of this, 30% are due to abortions, 49% is within the first 48hrs of being born, and an additional 11% is within the first 15 days of life (2). Therefore, the prevention of losses between scanning and weaning is important for health, welfare, productivity and viability of sheep flocks in the UK and across Europe.  
+
+Animal Welfare
+Reduced abortions and mortality mean a healthier, happier and more productive flock. There is an improved welfare for the ewes if they are not aborting the lambs, as abortion is often associated with poor health of the ewe. There have also been studies which have shown that ewes suffer emotionally when they lose a lamb (3).
+?
+A lower incidence of lamb mortality is a positive outcome for animal welfare as it indicates less lamb disease, starvation, hypothermia and other conditions which will cause suffering to the lamb. 
+
+Economical/Financial
+
+Each lamb which does not survive or is aborted costs the farm about £85 (4). For enzoonotic abortion alone, losses are estimated to cost £6-20 million yearly. Reducing the lamb mortality and abortion rates is expected to result in large cost efficiency gains (5). More large, healthy lambs can be sent to market, or sold as breeding stock. 
+
+?
+Emotional/Mental Health of Farmers
+Losing livestock has also been shown to have a negative impact on the emotional wellbeing of the farmer (6). The death of a ewe or lambs born deformed can be particularly upsetting. A healthier flock with less death will result in a more positive lambing season for staff. 
+?
+Environmental Impact
+
+The environmental impact of reduced abortion rates and lamb mortality is related to needing less ewes to produce more lambs. If more ewes birth and raise healthy, viable lambs, the flock size can theoretically be reduced while maintaining the same output. The mean carbon footprint has been calculated to be 10.85 to 17.86 kg CO2E/kg live weight finished lamb (7). The number of lambs raised per ewe (which is influenced by abortion and neonatal mortality) was identified as an important influence on the mean carbon footprint per finished lamb (7). Hence, reducing abortions and neonatal lamb mortality will decrease the carbon footprint of the lamb industry.
+
+
+References
+(1)   Dwyer CM, Conington J, Corbiere F, Holmøy IH, Muri K, Nowak R, et al. Invited review: Improving neonatal survival in small ruminants: science into practice. animal. 2016;10(3):449-59. Available from: https://doi.org/10.1017/S1751731115001974
+(2) HCC. Making Every Lamb Count2011. Available from: https://meatpromotion.wales/en/industry-resources/sheep-management.
+(3) Marino L, Merskin D. Intelligence, complexity, and individuality in sheep. Animal Sentience. 2019;4. Available from: http://dx.doi.org/10.51291/2377-7478.1374 
+
+(4) Cutress D. Factors affecting sheep flock productivity; 2020. Available from: https://businesswales.gov.wales/farmingconnect/news-and-events/technical-articles/factors-affecting-sheep-flock-productivity.
+
+(5) Hovers K. Enzootic abortion of ewes: a review. Vet Times. 2021;6(2):10-1. Available from: https://doi.org/10.12968/live.2021.26.4.207
+
+(6) Phythian CJ, Glover MJ. Highs and Lows of Lambing Time: Sheep Farmers' Perceptions of the First Outbreak of Schmallenberg Disease in South West England on Their Well-Being. International journal of environmental research and public health. 2019;16(24):5057. Available from: https://doi.org/10.3390/ijerph16245057
+(7) Jones AK, Jones DL, Cross P. The carbon footprint of lamb: Sources of variation and opportunities for mitigation. Agricultural Systems. 2014;123:97-107. Available from: http://dx.doi.org/10.1016/j.agsy.2013.09.006",Button,,,Drawer
+27,Acknowledgements,"Authors:
+
+- Quianne Reijnen
+- Kim Hamer VetMB CertAVP(SHEEP) Dip.ECSRHM MRCVS
+
+Logo by Aurélie Reijnen
+
+Many thanks for the constructive feedback from:
+
+- Ruminant Clinical Service of the Veterinary Faculty of Zaragoza (interns and teachers)
+- Renée de Cremoux, Institut de l'Elevage, Chambre d'Agriculture du Tarn
+- Phillipa Page, BVSc BSc MRCVS, Flock Health Ltd",Button,,,Drawer
+28,Contact Us,"Please contact Kim Hamer at the University of Glasgow with any questions. 
+
+Email: kim.hamer@glasgow.ac.uk",Button,,,Drawer
+29,Contact with Other Livestock,"Double fencing boundary fences between fields where neighbouring farms have livestock reduces transmission of diseases by nose-to-nose contact or short distance aerial spread (1). Ideally there should be a 3m gap between the two fences to prevent direct contact (2). Either permanent or electric fencing are suitable. Note that this will not prevent the spread of insect or wind borne diseases e.g. Bluetongue.  
+
+Do not share rams with other farms when possible. Ideally use home-bred rams or artificial insemination. ",Expandable,24,,
+30,Buying in Livestock,"Buy in as few new animals as possible, however when buying in new stock is necessary, be careful about the source. Try to purchase animals from one known source with known health status. Get as much information as possible about the health history of that flock and vaccination history of the animals (3). Buy young stock, as older stock are more likely to be carrying disease. 
+
+Quarantine new livestock for at least 3 weeks, keeping them away from other animals or handling facilities used for other livestock on the farm, unless these facilities can be disinfected between uses. Ideally keep bought in replacement ewes separate form the rest of the flock for at least one production cycle. This is particularly important for purchased pregnant animals, which should be kept separate from the existing flock until after lambing. Monitor these animals closely for signs of disease. Undertake testing of any animals with suspicious signs, especially any abortions. Disinfect or change boots, clothing and equipment when going between the new and existing flocks (4). 
+
+Test new stock for diseases not present in the existing flock, especially those you particularly want to avoid bringing into the flock. Consult your vet and undertake testing in the existing flock to decide which tests should be prioritised. Common recommendations may include Enzootic Abortion of Ewes, Border Disease Virus and Maedi Visna, but other may be pertinent to your situation. 
+
+Vaccinate new animals for diseases which are already present in the existing flock to ensure their vaccination status matches that of the rest of the flock. ",Expandable,24,,
+31,Farm Visitors,"Provide disinfectant foot baths or clean boots and protective clothing for visitors to the farm, to prevent disease coming onto the farm from outside sources. 
+
+Keep non-farm vehicles at the boundaries of the farm. 
+
+Dispose of fallen stock, stillborn and aborted lambs quickly, safely and legally. The dead stock collection site should be away from healthy animals, and at the edge of the farm boundary (5). Ensure that other animals and scavengers cannot access the carcases. Covered bins are useful for temporary storage until dead stock can be collected, but they must be leakproof and be cleaned and disinfected regularly (6).",Expandable,24,,
+32,References,"Provide disinfectant foot baths or clean boots and protective clothing for visitors to the farm, to prevent disease coming onto the farm from outside sources. 
+
+Keep non-farm vehicles at the boundaries of the farm. 
+
+Dispose of fallen stock, stillborn and aborted lambs quickly, safely and legally. The dead stock collection site should be away from healthy animals, and at the edge of the farm boundary (5). Ensure that other animals and scavengers cannot access the carcases. Covered bins are useful for temporary storage until dead stock can be collected, but they must be leakproof and be cleaned and disinfected regularly (6).",Expandable,24,,
+33,Body Condition Scoring,"Studies have shown that not only does body condition score (BCS) have an impact on fertility, but also on the incidence of abortions. Ewes that are both too lean and too fat have higher losses during pregnancy (1). 
+A constant supply of good quality forage should be supplied (either conserved or grazed). Extra feed should be supplied if needed, for example during late pregnancy, if forage is poor or for ewes carrying multiples. If feed is limited, livestock numbers should be reduced so the feed demand can be met. 
+
+To ensure adequate nutrition of breeding and pregnant ewes:
+*    ?Monitor ewe BCS before and after breeding, in mid pregnancy, before and after lambing and at weaning. The majority of ewes should be within the recommended BCS, see here for guidance (2).
+*    Get forage analysed ahead of time to allow additional feeding to be sources before it is needed
+*    Consult a nutritionist and/or vet to provide a pregnant ewe diet
+*    Ensure there is enough space for all ewes to access food, recommendations vary depending on whether is feed is ad lib or limited, see here (page 32) for details (3). 
+*    Blood sample ewes 3-4 weeks before lambing to check nutrition is appropriate",Button,21,,Controls
+34,References,"(1)   Morgan-Davies C, Waterhouse A, Pollock M, Milner J. Body condition score as an indicator of ewe survival under extensive conditions. Animal welfare (South Mimms, England). 2008;17:71-7. Available from: https://www.ingentaconnect.com/contentone/ufaw/aw/2008/00000017/00000001/art00009#trendmd-suggestions
+(2) FAS. Body Condition Scoring of Mature Sheep - Technical Note TN702; 2018 [cited 2021 August 10]. Available from: https://www.fas.scot/publication/technical-notes/. PDF Version
+(3) AHDB. Feeding the ewe; 2018 [cited 2021 August 10]. Available from: https://ahdb.org.uk/knowledge-library/feeding-the-ewe.",Expandable,33,,
+35,Cat Control,,Button,21,,Controls
+36,Reducing Feed Contamination,"Do not allow farm cats to have access to feed, forage or bedding. Stored hay should be covered with sheeting to prevent cats defecating on it. Any feed contaminated with cat faeces should not be used to feed sheep, especially pregnant ewes. Raise water troughs to prevent faecal contamination. Provide litter boxes for the cats to defecate in.",Expandable,35,,
+37,Controlling Cat Populations,Neuter or spay adult cats to prevent breeding. Keep a stable neutered cat population to reduce visits by feral cats. Control feral cat populations.,Expandable,35,,
+38,Clean Water,"Sheep should have a constant supply of fresh, clean water with reduced risk of contamination with animal or bird faeces. This can be provided by piping main s water into raised water troughs. 
+
+Ensure water is not contaminated with faeces of cats, vermin, neighbouring livestock or cattle. 
+
+Ideally use a separate water source for sheep and cattle. Clean water troughs frequently - drain the water and clean inside of trough. Also, deep clean the troughs after repair or maintenance, following possible contamination or when contamination levels are high (1). Portable water systems and IBCs should also be cleaned regularly. 
+
+?Provide enough water for the whole flock, especially for pregnant ewes and when the weather is hot. 
+
+Check natural water sources for growth of blue-green algae. It can be found in lakes, ponds, canals, reservoirs or any other water source (2). Look for the green, blue-green or green-brown appearance in water, and deceased wildlife around the edges of the water source. Water samples can be sent off for testing.",Button,21,,Controls
+39,References,"(1)   AHDB. Deep cleaning farm drinking systems; 2019 [cited 2021 August 8]. Available from: https://ahdb.org.uk/knowledge-library/deep-cleaning-farm-drinking-systems-factsheet. PDF Version
+(2)   Department of Primary Industries and Regional Development. Blue-green algae poisoning in livestock; 2020 [cited 2021 August 8]. Available from: https://www.agric.wa.gov.au/animal-welfare/blue-green-algae-poisoning-livestock.",Expandable,38,,
+40,Feed Contamination Control,"Sheep should not be fed feed that is visibly dirty, mouldy or contaminated, as this may pose a disease risk. 
+
+Concentrate feed should be stored securely in sealed containers to keep out vermin, birds and cats. 
+
+Pastures should be inspected for poisonous plants before grazing. Poisoning is especially common when feed is scarce, as poisonous plants are usually unpalatable. See page 4 to 8 of this paper (1) for the most common toxic plants in the UK which may be eaten by livestock, clinical signs and how it can be diagnosed. Toxic plants should be removed from the pastures, or fenced off to prevent livestock getting access. 
+
+Feed troughs should be turned over after feeding to prevent birds getting access.
+
+When floor feeding, use a new, clean area every day.",Button,21,,Controls
+41,References,"(1) Payne J, Murphy A. Plant poisoning in farm animals. In Practice. 2014;36(9):455. Available from: https://doi.org/10.1136/inp.g6148",Expandable,40,,
+42,Insect Control,"Insects can be carriers of disease, which they pass on to sheep and other livestock during feeding, either through direct contact or blood sucking. 
+
+Insecticides can be applied to animals during high-risk periods e.g. pour on solutions or insecticide impregnated ear tags. See the AHDB Parasite Control Guide for more information: 2021. Available from: https://ahdb.org.uk/knowledge-library/parasite-control-guide.
+
+To avoid midges, sheep can be housed overnight during periods of high midge activity. They should also be kept away from wet areas of farms where possible. Breeding of livestock can be delayed until the risk period is over. 
+
+Ticks can be avoided by keeping livestock away from woodland and shrubs during high-risk periods. Tick habitat can also be removed from the field, e.g. by clearing bracken and draining wet land, where this is allowed.",Button,21,,Controls
+43,Reduce Stress,"Keep the handling of pregnant sheep to a minimum. When handling is necessary use a  gentle and calm handling technique, using funnels, races and crates to minimise stress. Also keep the use of dogs to a minimum when working with pregnant ewes. 
+
+Avoid transporting ewes within 2 weeks before lambing, 3 weeks if they are carrying multiple lambs (1). 
+
+Where possible keep pregnant ewes away from areas where they may encounter pet dogs. Put up signage to inform dog walkers that there are sheep in the field and remind them that sheep worrying is illegal. Talking to dog owners may also be worthwhile. Wildlife attacks can be prevented by predator control, working with local gamekeepers, adding additional fencing or moving sheep to another area (2).
+
+Provide shade or shelter in high temperatures to reduce heat stress. Also make sure there is access to fresh clean water. Keep a close eye on the flock for signs of heat stress on days when the temperature humidity index is high.
+
+Provide windbreaks or shelter in windy or wet conditions.",Button,21,,Controls
+44,References,"(1)   North Canterbury Veterinary Clinics. Guidelines for the Trucking of Pregnant Ewes; 2017 [cited 2021 August 12]. Available from: https://www.ncvets.co.nz/news/posts/2017/october/guidelines-for-the-trucking-of-pregnant-ewes/.
+(2)   Murray L, Warren R. Sheep Attacks and Harassment Research; 2019 [cited 2021 August 12]. Available from: https://www.gov.scot/publications/sheep-attacks-harassment-research/pages/2/.",Expandable,43,,
+45,Silage Contamination Control,"Sheep should not be fed visibly dirty, mouldy, discoloured, odd smelling or contaminated silage which may pose a disease risk. 
+
+Soil and faecal contamination should be avoided when making silage. This can be done by:
+- ensuring slurry applied to the fields has been taken up by the plant before harvesting
+- setting the mower high enough to avoid it encountering soil
+- making sure the wheels of all vehicles are clean before starting harvesting, baling or wrapping
+- ensuring all equipment is clean of material from the previous harvest 
+- removing stock from the pasture well before silage making, to avoid faecal contamination 
+- rolling fields after winter
+- keeping mole populations under control
+
+Silage should be stored anaerobically (without air) to allow sufficient fermentation to take place, in order to drop the pH to acidic condition, and stop dangerous bacteria proliferating/breeding. This can be achieved by:
+- rolling out all the air in the silage clamp, ensuring the shoulders are not missed
+- covering the silage clamp with oxygen-proof plastic sheeting 
+- using a secondary thick bird-proof sheet over the clamp
+- weighing down the sheeting appropriately
+- adding an additive can help speed up fermentation and decrease harmful pathogens which may be present (1)
+- bales should be covered by 4 layers of plastic, more layers has not been proven to be beneficial (2) 
+- regularly checking for punctures in the plastic covering the clamp or bales
+
+When using silage, only uncover a little at a time, to keep air out as much as possible. Once the surface is exposed to air, the silage will deteriorate rapidly and soon be unsuitable to feed to animals, especially sheep. The edge of the sheet should be weighed down to prevent air getting under it. 
+
+Silage testing should be undertaken before feeding it to livestock, to ensure it has fermented sufficiently, to assess the nutritional content, and check ash values. For grass silages, ash levels are usually between 6 and 8% (3). If ash levels are over 10%, this is an indicator of soil contamination, which may increase mould, yeast and bacteria growth which can be associated with disease e.g. listeriosis (4). 
+
+A guide to good silage making by AHDB Beef & Lamb is available here: Making grass silage for Better Returns; 2019. Available from: https://ahdb.org.uk/knowledge-library/making-grass-silage-for-better-returns.",Button,21,,Controls
+46,References,"(1)   Queiroz OCM, Ogunade IM, Weinberg Z, Adesogan AT. Silage review: Foodborne pathogens in silage and their mitigation by silage additives. Journal of Dairy Science. 2018;101(5):4132-42. Available from: https://doi.org/10.3168/jds.2017-13901
+(2)   Coblentz WK, Coffey KP, Chow EA. Storage characteristics, nutritive value, and fermentation characteristics of alfalfa packaged in large-round bales and wrapped in stretch film after extended time delays. J Dairy Sci. 2016;99(5):3497-511. Available from: https://doi.org/10.15232/pas.2016-01538
+(3)   Quality Silage. Ash Contamination [cited 2021 August 13]. Available from: https://qualitysilage.com/avoid-pitfalls/ash-contamination/.
+(4)   Phillips K, Phythian C, Wright N, Morgan M. Sheep health, welfare and production planning 2. Assessing nutrition of the ewe in late pregnancy. In Practice. 2014;36. Available at: https://doi.org/10.1136/inp.g1564",Expandable,45,,
+47,Chlamydia Abortus (Enzootic Abortion),"Cause: Bacteria (Chlamydia abortus)
+Distribution: Wide distribution, but not present in all countries e.g. Australia
+Source: Carrier sheep, aborting sheep, aborted materials
+Samples for Diagnosis: Aborted placentas and lambs, blood samples from ewes
+Treatment: Seek veterinary advice
+Notifiable Disease: No
+Risk to Humans: Yes (1,2)
+
+Chlamydia abortus (Enzootic abortion of ewes, EAE, or Ovine Enzootic abortion, OEA) is the largest cause of abortion in sheep in the UK, accounting for 24% of infectious abortions (3). Ewes are commonly infected by exposure to aborted materials from an infected ewe during lambing time, and will then abort their next pregnancy. See Abortions - What to do? for immediate steps which should be undertaken following an abortion to prevent spread within the flock and zoonoses (the infection spreading to humans).",Button,18,"68, 24",Causes
+48,Characteristics of EAE,"When Chlamydia abortus is first introduced to a flock, a few abortions may be seen in the first year and, if no preventative measures are taken, high levels of abortion can be seen during late pregnancy (>100 days) of the following lambing. Lambs can be aborted preserved, decomposed, mummified, stillborn and born weak but alive. Litters of lambs can include a mixture of these. The affected ewes do not tend to be unwell.
+
+For more information see SRUC. Enzootic Abortion of Ewes (EAE) 2020. Available from: https://www.sruc.ac.uk/media/mjjbxmvr/eae_insert_2020-1.pdf.",Expandable,47,,
+49,Control,"EAE can be controlled by vaccination of replacement ewes before breeding, alongside biosecurity measures during lambing and not using female lambs that survive as replacement stock (4). Ongoing antibiotics use for management of enzootic abortion does not achieve the same level of control as vaccination and is not recommended when considering the responsible use of antibiotics (5,6). In the event of a large outbreak, consult your vet. 
+
+For EAE-free flocks, new stock should be bought from EAE-free accredited flocks were possible and kept separate from the rest of the flock for the first one to two years. Also all abortions should be investigated and the results acted upon. 
+
+Information on EAE Accreditation SRUC. Premium Sheep and Goat Health Schemes. Available from: https://www.sruc.ac.uk/business-services/what-is-your-goal/veterinary-laboratory-services/sheep-and-goat-health-schemes/premium-sheep-and-goat-health-schemes/.",Expandable,47,,
+50,Vaccination,"Vaccination dramatically reduces abortion levels, but will not stop them altogether. Also, the live vaccines should not be used on farms that are EAE-free (7). The live vaccine (Cevac Chlamydia or Enzovax in the UK) should be administered at least 4 weeks before mating, it will not work on animals recently treated with certain antibiotics and should be treated with caution as it can cause disease in humans (8, 9). The inactivated vaccine (Inmeva in the UK), requires two doses in the first year, then annual boosters. The first dose should be given at least 5 weeks before mating and the second 3 weeks later. Booster vaccines should be given at least 2 weeks before mating. This vaccine can also be given during pregnancy, especially during the second trimester of pregnancy but not in the last month (10).",Expandable,47,,
+51,References,"(1)   HSE. Ovine Chlamydiosis [cited 2021 August 10]. Available from: https://www.hse.gov.uk/agriculture/topics/zoonoses.htm. PDF Version
+(2)   Essig A, Longbottom D. Chlamydia abortus: New Aspects of Infectious Abortion in Sheep and Potential Risk for Pregnant Women. Current Clinical Microbiology Reports. 2015;2(1):22-34. Available from: https://doi.org/10.1007/s40588-015-0014-2
+(3)   APHA, SRUC. GB small ruminant quarterly report. Disease surveillance and emerging threats. Volume 23: Q2 - April - June 2020. Available from: https://www.gov.uk/government/publications/small-ruminant-gb-disease-surveillance-and-emerging-threats-reports. PDF Version
+(4)   AHDB. Abortion vaccines in sheep [cited 2021 August 9]. Available from: https://ahdb.org.uk/knowledge-library/abortion-vaccines-in-sheep. 
+(5)   Sheep Health and Welfare Council. Industry guidance document for veterinary surgeons and farmers on responsible use of antibiotics in sheep; 2019 [cited 2021 August 12]. Available from: https://www.ruma.org.uk/sheep/antimicrobials-sheep-production/. PDF Version
+(6)   Lovatt F, Duncan J, Hinde D. Responsible use of antibiotics on sheep farms: application at farm level. In Practice. 2019;41(1):23-33. Available from: https://doi-org.ezproxy.lib.gla.ac.uk/10.1136/inp.k5370
+(7)    Laroucau K, Aaziz R, Vorimore F, Menard MF, Longbottom D, Denis G. Abortion storm induced by the live C. abortus vaccine 1B strain in a vaccinated sheep flock, mimicking a natural wild-type infection. Veterinary Microbiology. 2018;225:31-3. Available from: https://doi.org/10.1016/j.vetmic.2018.09.012
+(8)   Veterinary Medicines Directorate. Cevac Chlamydia; 2020 [cited 2021 August 7]. Available from: https://www.vmd.defra.gov.uk/ProductInformationDatabase/product/A003427. PDF Version
+(9)   Veterinary Medicines Directorate. Enzova; 2020 [cited 2021 August 8]. Available from: https://www.vmd.defra.gov.uk/ProductInformationDatabase/product/A002363. PDF Version
+(10)   Veterinary Medicines Directorate. Inmeva, Suspension for Injection; 2019 [cited 2021 August 8]. Available from: https://www.vmd.defra.gov.uk/ProductInformationDatabase/product/A010210.",Expandable,47,,
+52,Coxiella Burnetti (Q Fever),"Cause: Bacteria (Coxiella burnetti)
+Distribution: Worldwide
+Source: Carrier sheep, normal birth products, aborted materials, vaginal discharge, milk, faeces, urine. Becomes windborne, ticks, carrier animals (cats, cattle, goats, vermin)
+Samples for Diagnosis: Aborted placenta and lambs, vaginal swabs, milk, faeces from ewes. Environmental/feedstuff testing
+Treatment: Seek veterinary advice
+Notifiable Disease: Yes
+Risk to Humans: Yes (1) 
+
+Q fever is transmitted between animals through bodily fluids and faeces. During normal lambings or abortion, a huge amount of Coxiella Burnetii bacteria are shed in the birth products of infected ewes. The bacteria can survive in the environment and when these products dry they can become an aerosol and are then spread by the wind and inhaled, or eaten. Ticks can also transmit the bacteria from an infected animal to a healthy one. The main concern is infection of humans through these routes. See Abortions - What to do? for immediate steps which should be undertaken following an abortion to prevent spread within the flock and zoonoses (the infection spreading to humans).",Button,18,"24, 22, 68, 42, 38",Causes
+53,Characteristics of Q Fever,"Abortion due to Q fever in sheep is generally sporadic, although abortion storms can occasionally occur in flocks where it has not been seen previously. Especially if an infected animal is brought in and lambs or aborts within the main flock, shedding high levels of bacteria into the surroundings. If the disease has been present in the flock for some time, there can continue to be low levels of abortion due to it (2). The abortions are late in the pregnancy, also some lambs from infected mothers will be stillborn or alive but weak. The ewes do not normally present as unwell, but there can be a higher chance of metritis (infection of the uterus) in these ewes. Diagnosis of Q fever may be difficult as C. burnetti bacteria may be present without being the primary cause of abortion, as they can be found in normal birth products of infected ewes. 
+
+For more information on Q fever see OIE. Q Fever. Available from: https://www.oie.int/en/disease/q-fever/.",Expandable,52,,
+54,Control,"The purpose of controlling Q fever is mostly to protect human health, as the clinical impact on sheep flocks is generally low. Control measures can include insect and vermin control, biosecurity measures and clean water. 
+Specific control measures for flocks in which Q fever is a problem include:
+- Keeping pregnant and young animals away from those giving birth and any birth products
+- Keeping pregnant and young animals upwind of lambing ewes or kidding goats
+- Keeping lambing ewes indoors with carefully controlled airflow
+- Compost manure for at least 90 days before spreading on land, then spread on low wind days
+- Minimise dust",Expandable,52,,
+55,Vaccination,"In the event of an outbreak, your veterinarian may be able to apply for a special import licence for the vaccine from Europe, as it is not currently commercially available in the UK (3). However, despite vaccination, ewes which are infected before being vaccinated will continue to shed some bacteria during the next lambing season (4).",Expandable,52,,
+56,References,"(1)   NHS. Q Fever; 2021 [cited 2021 August 14]. Available from: https://www.nhs.uk/conditions/q-fever/. 
+(2)   Álvarez-Alonso R, Zendoia II, Barandika JF, Jado I, Hurtado A, López CM, et al. Monitoring Coxiella burnetii Infection in Naturally Infected Dairy Sheep Flocks Throughout Four Lambing Seasons and Investigation of Viable Bacteria. Frontiers in Veterinary Science. 2020;7(352). Available from: https://doi.org/10.3389/fvets.2020.00352
+(3)   Hogerwerf L, van den Brom R, Roest H-J, Bouma A, Pieterse M, Dercksen D, et al. Reduction of Coxiella burnetii Prevalence by Vaccination of Goats and Sheep. Emerging infectious diseases. 2011;17:379-86. Available from: https://doi.org/10.3201/eid1703.101157
+(4) Bauer BU, Knittler MR, Prüfer TL, Wolf A, Matthiesen S, Runge M, et al. Humoral immune response to Q fever vaccination of three sheep flocks naturally pre-infected with Coxiella burnetii. Vaccine. 2021;39(10):1499-507. Available from: https://doi.org/10.1016/j.vaccine.2021.01.062",Expandable,52,,
+57,E. Coli,"Cause: Bacteria (Escherichia coli, shiga toxin producing strains)
+Distribution: Worldwide
+Source: Sheep, faeces, environment
+Samples for Diagnosis: Aborted placenta and lambs, blood cultures from ewes
+Treatment: Seek veterinary advice
+Notifiable Disease: No
+Risk to Humans: Yes (1) 
+
+E. coli is found widely in the environment, as well as the gut, and in faeces. However, it can also be a cause of abortion if ewes become infected. Infection commonly occurs when the bacteria is eaten. Care needs to be taken to avoid human infection by this bacteria. See Abortions - What to do? for immediate steps which should be undertaken following an abortion to prevent spread within the flock and zoonoses (the infection spreading to humans).",Button,18,"22, 23, 24, 45, 38, 40",Causes
+58,Characteristics of E. coli Infections,"Ewes become unwell, presenting with diarrhoea, dark red vaginal discharge and can die. They will abort in the final 2 weeks of pregnancy, producing well preserved or decomposed lambs. Some lambs will be stillborn, or born live but die shortly after birth. Abortions due to E. coli occur sporadically, but are common, although outbreaks can also occur (2).",Expandable,57,,
+59,Control,"E. coli is difficult to control as it is so common in the environment, and is sometimes resistant to antibiotics (3). Reducing bacterial load on farm can be done by bird and vermin control, controlling silage and feed contamination, providing clean water and implementing good biosecurity measures. Keeping the environment clean and dry will reduce survival of E. coli bacteria and hence the spread of disease.",Expandable,57,,
+60,References,"(1)   HSE. Verotoxigenic   E. coli   (VTEC) - includes   E. coli   O157 [cited 2021 August 9]. Available from: https://www.hse.gov.uk/agriculture/topics/zoonoses.htm. PDF Version
+(2)   Sargison ND, Howie F, Mearns R, Penny CD, Foster G. Shiga toxin-producing Escherichia coli as a perennial cause of abortion in a closed flock of Suffolk ewes. Veterinary Record. 2007;160(25):875-6. Available from: https://doi.org/10.1136/vr.160.25.875
+(3)   Doidge C, West H, Kaler J. Antimicrobial Resistance Patterns of Escherichia coli Isolated from Sheep and Beef Farms in England and Wales: A Comparison of Disk Diffusion Interpretation Methods. Antibiotics. 2021;10(4). Available from: https://doi.org/10.3390/antibiotics10040453",Expandable,57,,
+61,Listeriosis,"Cause: Bacteria (Listeria monocytogenes or ivanovii)
+Distribution: Worldwide
+Source: Contaminated silage, pasture contaminated by faeces
+Samples for Diagnosis: Aborted placenta and lambs, vaginal swabs from ewes
+Treatment: Seek veterinary advice
+Notifiable Disease: No
+Risk to Humans: Yes (1) 
+
+Listeriosis is a bacterial infection often obtained from spoiled silage or soil contaminated pasture. The bacteria reproduce in silage contaminated with soil or faeces that is not stored appropriately. If the packaging around the silage is not air tight, it will not ferment sufficiently to reach acidic pH (2).",Button,18,"22, 23, 24, 40, 45",Causes
+62,Characteristics of Listeriosis,"Ewes can become unwell, a minimum of seven days after infection, and may abort the foetus(es) (3). This can be at any point during pregnancy. The aborted lambs are often decomposed. Common symptoms in the ewe include diarrhoea, behavioural changes (depression, compulsive walking, one droopy ear and/or eye, drooling), and septicaemia (4).
+
+More information on listeriosis can be found at NADIS at Simcock E. Nervous Disease in Sheep; 2019. Available from: https://www.nadis.org.uk/disease-a-z/sheep/nervous-disease-in-sheep/.",Expandable,61,,
+63,Control,"Listeriosis can be controlled by preventing soil contamination of silage and feed , correct storage conditions for silage fermentation, not feeding any suspected contaminated feed to sheep, bird and vermin control, and biosecurity measures. See Abortions - What to do? for immediate steps which should be undertaken following an abortion to prevent spread within the flock and zoonoses (the infection spreading to humans).",Expandable,61,,
+64,References,"(1)   NHS. Listeriosis; 2020 [cited 2021 August 12]. Available from: https://www.nhs.uk/conditions/listeriosis/. 
+(2)   Simcock E. Nervous Disease in Sheep; 2019 [cited 2021 August 12]. Available from: https://www.nadis.org.uk/disease-a-z/sheep/nervous-disease-in-sheep/.
+(3)   SRUC. Disease presentations of Listeria monocytogenes in sheep. Vet Rec. 2018;183(21):649. Available from: https://doi-org.ezproxy.lib.gla.ac.uk/10.1136/vr.k5071 
+(4)   Scott P. Overview of Listeriosis; 2014 [cited 2021 August 13]. Available from: https://www.msdvetmanual.com/generalized-conditions/listeriosis/overview-of-listeriosis.",Expandable,61,,
+65,No Diagnosis,"Cause: Possibly too few samples tested
+Distribution: Worldwide
+Source: Unknown
+Samples for Diagnosis: Aborted placenta and lambs, blood samples from normal and aborted ewes, silage samples
+Treatment: Seek veterinary advice
+Notifiable Disease: Unknown
+Risk to Humans: Unknown
+
+Not being able to diagnose the cause of abortion is a common issue. It is often due to too few samples being sent off for diagnosis, or samples sent having too little placenta. Use disposable gloves to pick up aborted placentas and lambs, place them in clean plastic bags without any holes, using one bag per aborting ewe. Contact your vet as soon as possible to arrange laboratory testing of the samples. Mark and isolate affected ewes for the vet to perform blood tests if necessary. See Abortions - What to do? for more information and steps which should be undertaken immediately to prevent spread of potential infectious causes within the flock and zoonoses (infection of humans).",Button,18,"24, 43, 45",Causes
+66,Control,"Ewes should be treated as if the cause is infectious, so appropriate biosecurity measures should be put in place. Stress should also be reduced. Silage testing can be undertaken. Grass silage with an ash content of above 10% or a pH above 5 could indicate soil contamination and an increased chance of certain diseases such as listeriosis (1).",Expandable,65,,
+67,References,"(1) Phillips K, Phythian C, Wright N, Morgan M. Sheep health, welfare and production planning 2. Assessing nutrition of the ewe in late pregnancy. In Practice. 2014;36. Available from: https://doi.org/10.1136/inp.g1564",Expandable,65,,
+68,Vaccination,"Vaccines are essential for controlling some causes of abortion. 
+
+Vaccines are only effective if:
+- stored at the correct temperature
+- given at the correct time
+- given to the correct animals
+- administered correctly
+- used within the stated time from opening (usually 2-8hrs) and before the use by date
+
+Product information leaflets will show specific details for each vaccine. 
+
+Availability and licencing of vaccines may vary between different countries. Search if the vaccine is available in the UK here - Veterinary Medicines Directorate Product Information Database
+
+Information on vaccines for sheep abortion can be found on page 15 of this AHDB resource: Use of vaccines in cattle and sheep production; 2019. Available from: https://projectblue.blob.core.windows.net/media/Default/Dairy/Publications/Use%20of%20vaccines%20in%20cattle%20and%20sheep%20prod_WEB.pdf.",Button,21,,Controls
+69,References,Veterinary Medicines Directorate Product Information Database [cited 2021 August 9] https://www.vmd.defra.gov.uk/ProductInformationDatabase,Expandable,68,,
+70,Bad Nutrition,"Cause: Severe/prolonged undernutrition, overstocking, mycotoxins, plant
+toxins
+Distribution: Worldwide
+Source: As above
+Samples for Diagnosis: Nutritional assessment, blood samples from pregnant ewes, young lambs which have died
+Treatment: Seek veterinary advice and/or advice from a nutritionist
+Notifiable Disease: No
+Risk to Humans: No
+
+Body Condition Score (BCS) is an indicator of the fat cover of the ewe. Both ewes that are too thin and too fat can have problems with fertility and increased risk of abortion (1). Both the quantity and quality of forage is important. Overstocking a field or having too little feed space in a shed can contribute to some sheep becoming too thin.",Button,18,"33, 40, 45",Causes
+71,Undernutrition,"Undernutrition makes sheep more susceptible to other diseases. Underfed and thin ewes during the first 6 weeks of pregnancy are more likely to be barren due to lower fertility (2), reabsorb their embryos (3) and some may suffer later from abortions of mummified foetuses. Undernutrition during the second trimester can increase the chance of premature birth of weak lambs and further abortions. Ewes with a low BCS and undernutrition during the third trimester will produce small and weak lambs which are susceptible to disease and hypothermia. Studies have shown that nutrition during late pregnancy is most important in determining lamb birthweight (4), as well as colostrum quality and quantity.",Expandable,70,,
+72,Iodine Deficiency,"Ewe diets that are deficient in iodine or high in goitrogens (compounds that interfere iodine uptake and use), such as brassicas and some legumes, can impact on lamb numbers and survival. Iodine deficiency during breeding and early pregnancy can result in reduced lamb numbers at scanning time. An iodine-deficient or goitrogen-high diet in the second half of pregnancy can result in late abortions, stillbirths or the birth of weak live lambs. Lambs characteristically have reduced hair cover and in severe cases may have a swelling on the lower neck. Note that over supplementation of iodine during late pregnancy can contribute to the death of newborn lambs by reducing colostrum consumption.",Expandable,70,,
+73,Other Trace Element Deficiencies,"Deficiencies in manganese and selenium have occasionally been associated with abortion in sheep, but they are uncommon. 
+
+For more information on trace element deficiencies in sheep, see this FAS fact sheet: FAS. Trace Element   Supplementation in Sheep Flocks. Available from: https://www.fas.scot/publication/trace-element-supplementation-in-sheep-flocks/.",Expandable,70,,
+74,Toxic Plants,"Sheep may eat toxic plants when food is scarce, when usually they would not eat these plants as they are unpalatable. See feed contamination for further information on which plants are toxic for livestock, and how to prevent poisoning.",Expandable,70,,
+75,Control,Nutritional problems can be controlled by maintaining good Body Condition Score and avoiding silage and feed contamination. Dentition (teeth) should also be checked for any particularly thin ewes.,Expandable,70,,
+76,References,"References
+(1) Morgan-Davies C, Waterhouse A, Pollock M, Milner J. Body condition score as an indicator of ewe survival under extensive conditions. Animal welfare (South Mimms, England). 2008;17:71-7. Available from: https://www.ingentaconnect.com/contentone/ufaw/aw/2008/00000017/00000001/art00009#trendmd-suggestions
+(2)   Aké-López J, Isla-Herrera G, Magaña-Monforte J, Segura J, Centurión-Castro F, Cansino-Arroyo GR. Effect of body condition on estrus cycle, ovarian activity and corpus luteum function of Pelibuey ewes. Livestock Research for Rural Development. 2013;25. Available from: https://www.redalyc.org/pdf/939/93915703034.pdf 
+(3)   de Brun V, Meikle A, Fernández-Foren A, Forcada F, Palacín I, Menchaca A, et al. Failure to establish and maintain a pregnancy in undernourished recipient ewes is associated with a poor endocrine milieu in the early luteal phase. Animal Reproduction Science. 2016;173:80-6. Available from: https://doi.org/10.1016/j.anireprosci.2016.08.016
+(4)   Roca Fraga FJ, Lagisz M, Nakagawa S, Lopez-Villalobos N, Blair HT, Kenyon PR. Meta-analysis of lamb birth weight as influenced by pregnancy nutrition of multiparous ewes. Journal of Animal Science. 2018;96(5):1962-77. Available from: https://doi.org/10.1093/jas/sky072",Expandable,70,,
+77,Salmonella Species,"Cause: Bacteria (Salmonella montevideo, S. dublin, S. diarizonae,
+S. typhimurium, S. abortusovis)
+Distribution: Worldwide, except S. abortusovis is not found in all countries, including the UK at present
+Source: Contaminated feed or water, birds, vermin, carrier animals (sheep, cattle, dogs, cats etc)
+Samples for Diagnosis: Aborted placenta and lambs, vaginal swabs from aborted ewes
+Treatment: Seek veterinary advice 
+Notifiable Disease: No
+Risk to Humans: Yes (1) - except S. abortusovis 
+
+Salmonella species are commonly found in healthy sheep in the UK. However, certain serotypes (Salmonella montevideo, S. dublin, S. diarizonae, S. typhimurium, S. abortusovis) can cause abortion (2). S. abortusovis is an important cause of abortion in other parts of the world, but is not currently seen in the UK. Other Salmonella species remain important in the UK, especially due to their potential to cause severe disease in humans. See Abortions - What to do? for immediate steps which should be undertaken following an abortion to prevent spread within the flock and zoonoses (the infection spreading to humans).
+
+These bacteria can be introduced to the flock by contaminated feed or water rodents and birds, or by the addition of infected animals to the flock. Outbreaks of disease due to salmonellosis are especially severe when sheep are housed, due to a higher stocking density and a greater potential for the bacteria to spread through water and feed troughs (3). Stress (e.g. transport, feed/water shortages, weather changes) can also initiate abortion storms due to these bacteria.",Button,18,"22, 23, 24, 38, 40, 45, 68",Causes
+78,Characteristics of Salmonellosis,"Symptoms of infection with Salmonella species in sheep are diarrhoea, depression, not eating, and sometimes rapid death (4). When abortion occurs, it is usually seen during mid to late pregnancy.  Lambs can also be stillborn or alive but weak and suffer from diarrhoea, these lambs often die soon after birth. Ewes can also have retained placenta and/or vaginal discharge after aborting or giving birth to affected lambs.  
+
+For more information on Salmonella see this article by NADIS: Scott P, NADIS. Abortion in Sheep; 2016. Available from: https://www.nadis.org.uk/disease-a-z/sheep/abortion-in-ewes/.",Expandable,77,,
+79,Control,"The most effective control measures are bird control, avoiding silage and feed contamination, providing clean water, vermin control, and biosecurity measures.",Expandable,77,,
+80,Vaccination,"There is an inactivated vaccine (Inmeva in the UK) for Salmonella abortusovis (5). For other Salmonella species, vaccines can be produced, however this is expensive and outbreaks of disease commonly only last one lambing season.",Expandable,77,,
+81,References,"(1)   HSE. Salmonella [cited 2021 August 5]. Available from: https://www.hse.gov.uk/agriculture/topics/zoonoses.htm. PDF Version
+(2)   Animal & Plant Health Agency. Salmonella in Livestock  Production in GB 2019; 2020 [cited 2021 August 4]. Available from: https://www.gov.uk/government/publications/salmonella-in-livestock-production-in-great-britain. PDF Version
+(3)   Grünberg W. Salmonellosis in Animals; 2020 [cited 2021 August 6]. Available from: https://www.msdvetmanual.com/digestive-system/salmonellosis/salmonellosis-in-animals.
+(4)   Carson A, Davies R. Salmonellosis in sheep. The Veterinary Record. 2018;183(17):539. Available from: https://doi-org.ezproxy.lib.gla.ac.uk/10.1136/vr.k4569
+(5)   Veterinary Medicines Directorate. Inmeva, Suspension for Injection; 2019 [cited 2021 August 5]. Available from: https://www.vmd.defra.gov.uk/ProductInformationDatabase/product/A010210.",Expandable,77,,
+82,Schmallenberg Virus,"Cause: Virus (Schmallenberg virus, an orthobunyavirus) 
+Distribution: Europe, but similar viruses are found in Asia, Africa and Australia
+Source:  Spread by midges
+Samples for Diagnosis: Aborted placenta and lambs, blood samples from ewes or other ruminants on the farm
+Treatment: Seek veterinary advice. Affected lambs often need to be euthanised
+Notifiable Disease: No
+Risk to Humans: No
+
+The Schmallenerg Virus is a ruminant disease which is spread by midges and commonly causes abortion and the birth of deformed lambs.",Button,18,"42, 68",Causes
+83,Characteristics of Schmallenberg Virus,"Schmallenberg can cause abortion during mid to late pregnancy. The number of ewes affected can be high if infected midges are present when most ewes are in early pregnancy, otherwise abortion numbers may be low. Ewes are not normally unwell. Each litter can have a mixture of normal, stillborn or deformed lambs (1). Deformations can be severe, with joints and the spine having abnormal angles. There may also be signs of brain damage. Even severely deformed lambs can be alive at birth and need to be euthanised promptly to prevent suffering. The deformities can cause problems during birth, making assistance or veterinary intervention necessary. Schmallenberg outbreaks can be particularly hard for farmers due to the high levels of losses (of both ewes and lambs), deformities and birthing troubles (2).
+
+For more information see the 2018 article by Scott P. Schmallenberg Virus (SBV) on the NADIS website. Available from: https://www.nadis.org.uk/disease-a-z/cattle/schmallenberg-virus-sbv/.",Expandable,82,,
+84,Control,Insect control should be undertaken to prevent the spread by midges.,Expandable,82,,
+85,Vaccination,"There is an inactivated vaccine available (Zulvac in the UK) (3). It is safe to use from 3.5 months of age. One injection should be administered at least 2 weeks before breeding. Revaccination is necessary every 6 months, at least 2 weeks before breeding.",Expandable,82,,
+86,References,"(1)   van den Brom R, Luttikholt S, Peterson K, Peperkamp NHMT, Mars M, Poel W. Epizootic of ovine congenital malformations associated with Schmallenberg virus infection. Tijdschrift voor diergeneeskunde. 2012;137:106-11. 
+(2)   Phythian CJ, Glover MJ. Highs and Lows of Lambing Time: Sheep Farmers' Perceptions of the First Outbreak of Schmallenberg Disease in South West England on Their Well-Being. International journal of environmental research and public health. 2019;16(24):5057. Available from: https://doi.org/10.3390/ijerph16245057
+(3)   European Medicines Agency. Zulvac SBV [cited 2021 August 8]. Available from: https://www.ema.europa.eu/en/medicines/veterinary/EPAR/zulvac-sbv.",Expandable,82,,
+87,Stress,"Cause: Dog worrying, predator attacks, heat stress, rough handling
+Distribution: Worldwide 
+Source: As above
+Samples for Diagnosis: Aborted placenta and lambs to rule out infectious causes
+Treatment: None
+Notifiable Disease: No
+Risk to Humans: No
+
+Stress can cause an increase in other diseases in the flock. Abortions are usually sporadic, and the ewes are not likely to be unwell. Abortions are most likely in response to stress during mid to late pregnancy. 
+
+Murray et al 2019 reported that each incident of dog worrying has been shown to cause on average 0.34 pregnant ewes to abort per dog worrying incident (1). In May/June 2019, 14% of sheep farmers claimed that dogs had attacked or chased their flock in the last 12 months. These farmers had an average of 3.5 incidents per year. These figures show that dog worrying is a real cause of abortion in ewes. 
+
+By comparison, predator attacks by animals like foxes, large birds or badgers are also associated with abortion in ewes. Each incident is thought to cause 0.15 pregnant ewes to abort, on average (1). 37% of sheep farmers reported wildlife attacks in their flocks when asked about the incidence of attacks in the 12 months preceding when the questionnaire was conducted (May/June 2019). The average number of attacks reported was 9.4 incidents a year. 
+
+Heavily pregnant ewes may abort if transported, handled or herded during late pregnancy as these events are stressful, especially if done in a rough or rushed manner. Sheep dogs should be used sparingly when moving pregnant ewes. 
+
+Heat stress has been shown to cause decreased fertility of ewes, early embryo losses, impaired foetal growth and increased lamb mortality. The impact of heat stress is thought to be most profound at temperatures above 25-31°C (2). There are various mechanisms by which this happens, one is ewes eating less when under heat stress. This lowered feed intake affects the ability to maintain a pregnancy and foetal development (3). 
+
+See reduce stress for information on how to prevent abortions caused by stress.",Button,18,43,Causes
+88,References,"(1)   Murray L, Warren R. Sheep Attacks and   Harassment   Research; 2019 [cited 2021 August 15]. Available from: https://www.gov.scot/publications/sheep-attacks-harassment-research/pages/2/.
+(2)   van Wettere WHEJ, Kind KL, Gatford KL, Swinbourne AM, Leu ST, Hayman PT, et al. Review of the impact of heat stress on reproductive performance of sheep. Journal of Animal Science and Biotechnology. 2021;12(1):26. Available from: https://doi.org/10.1186/s40104-020-00537-z 
+(3)   AHDB. Feeding the ewe; 2018 [cited 2021 August 15]. Available from: https://ahdb.org.uk/knowledge-library/feeding-the-ewe.",Expandable,87,,
+89,Tickborne Fever,"Cause: Bacteria (Anaplasma phagocytophilum)
+Distribution: Europe, similar diseases seen in other continents
+Source: Ticks (ixodes ricinus - the common sheep tick), shared needles
+Samples for Diagnosis: Aborted placenta and lambs, blood samples from ewes
+Treatment: Seek veterinary advice
+Notifiable Disease: No
+Risk to Humans: Yes (1)
+
+Sheep can become infected with Anaplasma phagocytophilium when they are bitten by infected ixodes ricinus ticks, the common sheep tick. The bacteria can also be transmitted from infected sheep to their flock-mates through reused needles. The resulting disease, tickborne fever, is typically seen in lambs in spring and summer when sheep are moved from areas with low numbers of ticks to areas where there are many. Symptoms normally start to show 1-2 weeks after infection, and last approximately 2 weeks, although subsequent relapses are possible.",Button,18,42,Causes
+90,Characteristics of Tickborne Fever,"Symptoms include fever, depression, weight loss and sometimes a cough. If ewes are exposed to infected ticks for the first-time during pregnancy, abortion of the lambs may occur. Abortion tends to occur 2-8 days after the onset of the fever (2). It is unclear if tickborne fever can also result in the birth of stillborn or weak live lambs (3). Tickborne fever affects the animals' immune system, and can make them more susceptible to other diseases, including tick pyaemia, louping ill, listeriosis and pneumonic pasteurellosis.
+
+For more information see the Moredun Research Institute factsheet from 2015 written by Rocchi M, Sargison N., Ticks and Tickborne Diseases. Available from: https://www.moredun.org.uk/research/diseases/ticks-tickborne-diseases.",Expandable,89,,
+91,Control,Tickborne fever can be controlled by avoiding exposure of ewes to tick habitat during their first pregnancy. Sheep can be protected from ticks by using acaricides like plunge dips and pour on treatments (4). See insect control for more details.,Expandable,89,,
+92,References,"(1) European Centre for Disease Prevention and Control. Tick-borne Diseases [cited 2021 August 6]. Available from: https://www.ecdc.europa.eu/en/tick-borne-diseases.
+(2)   Woldehiwet Z. Tickborne Fever in Ruminants; 2020 [cited 2021 August 3]. Available from: https://www.msdvetmanual.com/generalized-conditions/tickborne-fever/tickborne-fever-in-ruminants.
+(3)   Stuen S, Okstad W, Sagen AM. Intrauterine Transmission of Anaplasma phagocytophilum in Persistently Infected Lambs. Veterinary Sciences. 2018;5(1). Available from: https://doi.org/10.3390/vetsci5010025
+(4)   Rocchi M, Sargison N. Ticks and   Tickborne Diseases; 2015 [cited 2021 August 10]. Available from: https://www.moredun.org.uk/research/diseases/ticks-tickborne-diseases.",Expandable,89,,
+93,Toxoplasma Gondii,"Cause: Protozoal parasite (Toxoplasma gondii)
+Distribution: Worldwide
+Source: Young cats, feed/forage contaminated by cat faeces
+Samples for Diagnosis: Aborted placenta and lambs, blood samples from ewes
+Treatment: Seek veterinary advice
+Notifiable Disease: No
+Risk to Humans: Yes, from cat faeces (1)
+
+Toxoplasma gondii is a parasite which causes toxoplasmosis. It is transmitted by cats. Cats shed a high number of parasite oocysts ('eggs') in their faeces when they are young and first start hunting, they pick up the infection from rodents. Cats rarely present as unwell (2). If the cat defecates on pasture, forage, concentrate feed or into a sheep water source, sheep can ingest the oocysts, and they only need to eat a few 10s of oocysts to cause pregnancy loss or abortion. The oocysts can remain in the soil for up to 18 months, and in a water supply for up to 4.5 years (3).",Button,18,"22, 35, 38, 40, 68",Causes
+94,Characteristics of Toxoplasmosis,"If the disease is introduced to a farm while ewes are pregnant, there can be a high barren ewe rate and/or many abortions. If the disease is already present, it may cause a constant low level of abortions every year. The ewes do not present as unwell. Toxoplasmosis can cause abortion of mummified or decomposed lambs, stillbirths and the birth of live weak lambs (4). One ewe can produce a mixture of these outcomes within one litter of lambs.
+
+More information on toxoplasmosis is available at from The Moredun Foundation at: Control of Toxoplasma Abortion in Sheep, 2019. Available from: https://www.moredun.org.uk/sites/default/files/documents/diseases/Moredun%20Vol%207%20No%202%20Control%20of%20Toxoplasma%20Abortion%20in%20Sheep.pdf.",Expandable,93,,
+95,Control,"Toxoplasmosis can be controlled by vaccination, managing cats appropriately, vermin control, providing clean water and avoiding feed contamination. Aborted material should be cleared away rapidly to prevent cats or vermin eating it, and being infected by the parasite. See Abortions - What to do? for immediate steps which should be undertaken following an abortion to prevent spread within the flock and zoonoses (infection of humans).",Expandable,93,,
+96,Vaccination,"There is a vaccination available (Toxovax in the UK). Replacement/first time breeding ewes should be vaccinated with a single dose between 3 weeks and 4 months before breeding, provided they are over 5 months of age. Revaccination after 2 years is recommended by the manufacturer, at least 3 weeks before breeding. This vaccine cannot be used in pregnant ewes and should not be administered by anybody who is immunocompromised or pregnant (5).",Expandable,93,,
+97,References,"(1)   NHS. Toxoplasmosis; 2020 [cited 2021 August 12]. Available from: https://www.nhs.uk/conditions/toxoplasmosis/.
+(2)   Cornell Feline Health Center. Toxoplasmosis in Cats; 2018 [cited 2021 August 13]. Available from: https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/toxoplasmosis-cats.
+(3)  Van Wormer E, Fritz H, Shapiro K, Mazet JA, Conrad PA. Molecules to modelling: Toxoplasma gondii oocysts at the human-animal-environment interface. Comp Immunol Microbiol Infect Dis. 2013;36(3):217-31. Available from: https://dx.doi.org/10.1016%2Fj.cimid.2012.10.006
+(4) The Moredun Foundation. Control of Toxoplasma Abortion in Sheep; 2019 [cited 2021 August 15]. Available from: https://www.moredun.org.uk/sites/default/files/documents/diseases/Moredun%20Vol%207%20No%202%20Control%20of%20Toxoplasma%20Abortion%20in%20Sheep.pdf
+(5)   Veterinary Medicines Directorate. Toxovax; 2020 [cited 2021 August 13]. Available from: https://www.vmd.defra.gov.uk/ProductInformationDatabase/product/A000451.",Expandable,93,,

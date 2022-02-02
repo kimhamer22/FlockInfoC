@@ -182,7 +182,7 @@ class DatabaseImporter {
     // Delete any existing database:
     // KEEP FOR DEVELOPMENT so database is updated
     // COMMENT OUT when on production
-    await deleteDatabase(dbPath);
+    // await deleteDatabase(dbPath);
 
     var exists = await databaseExists(dbPath);
 

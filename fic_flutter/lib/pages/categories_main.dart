@@ -2,6 +2,7 @@ import 'package:fic_flutter/widgets/breadcrumb.dart';
 import 'package:fic_flutter/widgets/top_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
 import '../widgets/navigation_button.dart';
 
 class CategoryPage extends StatefulWidget {
@@ -34,7 +35,7 @@ class _CategoryPageState extends State<CategoryPage> {
         child: Padding(
           padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
           child: Column(children: [
-            BreadCrumb(),
+            breadcrumbBar(),
             const DefaultTabController(
               length: 2,
               child: Material(

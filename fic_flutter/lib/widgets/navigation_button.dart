@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/widgets/breadcrumb.dart';
+import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
 
 class NavigationButton extends StatelessWidget {
   final String title;
@@ -20,7 +21,7 @@ class NavigationButton extends StatelessWidget {
       child: MaterialButton(
         onPressed: () {
           Navigator.pushNamed(context, route);
-          breadcrumb.add(route);
+          breadcrumbBar.add(route);
         },
         child: SizedBox(
           child: Container(

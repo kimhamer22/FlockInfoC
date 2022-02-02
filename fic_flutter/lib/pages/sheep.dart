@@ -20,7 +20,7 @@ class _Sheep extends State<Sheep> {
           padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
           child: Column(
             children: [
-              BreadCrumb(),
+              breadcrumbBar(),
               const NavigationButton(
                   title: 'Controlling Abortion', route: '/categorypage'),
               const NavigationButton(

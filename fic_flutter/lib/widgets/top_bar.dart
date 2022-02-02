@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
 import 'package:fic_flutter/widgets/data_search.dart';
 import 'package:fic_flutter/widgets/breadcrumb.dart';
 import 'package:fic_flutter/main.dart';
@@ -27,8 +28,7 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
               icon: const Icon(Icons.home),
               onPressed: () {
                 Navigator.popUntil(context, ModalRoute.withName('/'));
-                breadcrumb.clear();
-                breadcrumb.add(HomePage.route);
+                breadcrumbBar.homePressed();
               },
               iconSize: 35,
             ),
@@ -39,8 +39,7 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
                   icon: Image.asset('assets/images/FIC logo.png'),
                   onPressed: () {
                     Navigator.popUntil(context, ModalRoute.withName('/'));
-                    breadcrumb.clear();
-                    breadcrumb.add(HomePage.route);
+                    breadcrumbBar.homePressed();
                   },
                   iconSize: 50,
                 ),

@@ -55,7 +55,7 @@ class _InfoPageState extends State<InfoPage> {
         child: Padding(
           padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
           child: Column(children: [
-            BreadCrumb(),
+            breadcrumbBar(),
             const Text(
               'Description:',
               style: TextStyle(fontWeight: FontWeight.bold),

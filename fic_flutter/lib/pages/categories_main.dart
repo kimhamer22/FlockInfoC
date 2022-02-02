@@ -37,18 +37,6 @@ class _CategoryPageState extends State<CategoryPage> {
     super.initState();
   }
 
-  //final String title = "Controlling Abortion";
-  // final List<Category> _categories = [
-  //   Category(name: "Vaccination", subCategories: [
-  //     const NavigationButton(title: "Vaccination", route: '/infopage'),
-  //     const NavigationButton(title: "Schmallenberg Virus", route: '/'),
-  //     const NavigationButton(title: "Toxoplasma Gondii", route: '/'),
-  //     const NavigationButton(title: "Bluetongue Virus", route: '/'),
-  //   ]),
-  //   Category(name: "Body Condition Scoring", subCategories: []),
-  //   Category(name: "Reduce Stress", subCategories: []),
-  // ];
-
   @override
   Widget build(BuildContext context) {
     try {

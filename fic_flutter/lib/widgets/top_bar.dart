@@ -24,11 +24,10 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             IconButton(
-              icon: const Icon(Icons.home),
+              icon: const Icon(Icons.menu),
               onPressed: () {
-                Navigator.popUntil(context, ModalRoute.withName('/'));
-                breadcrumb.clear();
-                breadcrumb.add(HomePage.route);
+                Scaffold.of(context).openDrawer();
+                //Navigator.popUntil(context, ModalRoute.withName('/'));
               },
               iconSize: 35,
             ),

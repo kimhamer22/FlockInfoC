@@ -1,4 +1,5 @@
 import 'package:fic_flutter/widgets/breadcrumb.dart';
+import 'package:fic_flutter/widgets/ham_menu.dart';
 import 'package:fic_flutter/widgets/expandable_cats.dart';
 import 'package:fic_flutter/widgets/top_bar.dart';
 import 'package:flutter/material.dart';
@@ -52,6 +53,7 @@ class _CategoryPageState extends State<CategoryPage> {
   Widget build(BuildContext context) {
     try {
       return Scaffold(
+        drawer: const HamMenu(),
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(60),
           child: FutureBuilder(

@@ -21,4 +21,6 @@ from data_modifier import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('admin/', admin.site.urls),
+    path('login/', views.user_login, name="login"),
+    path('logout/', views.user_logout, name='logout'),
 ]

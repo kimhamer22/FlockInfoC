@@ -2,13 +2,39 @@
 {% load static %}
 
 {% block content_block %}
-    <h1>Edit Flock Information Centre Database</h1>
-    <p>...</p>
-    <p>...</p>
-    <p>...</p>
-    <p>...</p>
-    <p>...</p>
-    <p>...</p>
-    <p>...</p>
-    <p>...</p>
+    {% if user.is_authenticated %}
+    <div class="container align-middle">
+        <h1>Edit Flock Information Centre Database</h1>
+        <form class="form-signin" role="form" method="post" action=".">
+            {% csrf_token %}
+            <label for="id_lang" class="sr-only">Language:</label>
+            <select name="language" id="id_lang" class="form-control" placeholder="Select language..." required></select>
+        
+            <p>(Insert search here)</p>
+        
+            <label for="heading" class="sr-only">Page Heading:</label>
+            <!-- TODO - change to heading based on search -->
+            <input type="text" name="heading" id="heading" class="form-control" placeholder="[HEADING]" required>
+        
+            <label for="info" class="sr-only">Information:</label>
+            <!-- TODO - change to info based on search -->
+            <textarea type="text" name="info" id="info" class="form-control" placeholder="[INFO]" required></textarea>
+        
+            <label for="parents">Parent Categories (none for top-level categories, e.g., species):</label>
+            <div id="parents" class="row">
+        
+            </div>
+        
+            <label for="children">Child Categories (none for bottom-level categories, i.e., articles about specific
+                topics/their subheadings):</label>
+            <div id="parents" class="row">
+        
+            </div>
+        
+            <button class="btn btn-lg btn-primary btn-block mt-2" type="submit" value="Submit">Update Information</button>
+        </form>
+        </div>
+        {% else %}
+        <p>Please log in to edit database</p>
+        {% endif %}
 {% endblock %}

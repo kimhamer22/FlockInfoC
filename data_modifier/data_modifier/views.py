@@ -3,8 +3,12 @@ from django.http import HttpResponse
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from data_modifier.models import *
 
 def index(request):
+
+    test = Section.objects.using('app-db').all()
+    print(len(test))
     context_dict = {'boldmessage': 'Crunchy, creamy, cookie, candy, cupcake!'}
     return render(request, 'data_modifier/index.html', context=context_dict)
 

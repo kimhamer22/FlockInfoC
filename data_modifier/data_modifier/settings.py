@@ -88,8 +88,11 @@ DATABASES = {
         # 'NAME': BASE_DIR / 'db.sqlite3',
         # 'ENGINE': 'django.db.backends.postgresqlite', # TODO - change to our database
         # 'NAME': BASE_DIR / 'flock-control.sqlite'
+    },
+    'app-db': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'flock-control.sqlite'
     }
-
 }
 
 

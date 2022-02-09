@@ -21,9 +21,12 @@ class _ExpandableCats extends State<ExpandableCats> {
     for (var child in children) {
       var relevantFactors = await sh.relevantSections(child.id);
       var factorsBtns = <NavigationButton>[];
-      var childTitle = 'Read More';
+      var childTitle = 'Tap to Read More';
       factorsBtns.add(NavigationButton(
-          title: childTitle, route: '/infopage', colour: Colors.green, id: child.id));
+          title: childTitle,
+          route: '/infopage',
+          colour: const Color(0xFF77CC7D), // Great work, team!
+          id: child.id));
       for (var factor in relevantFactors) {
         var title = factor.translationSection ?? 'Loading...';
         factorsBtns.add(NavigationButton(

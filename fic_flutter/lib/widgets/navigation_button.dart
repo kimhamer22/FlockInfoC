@@ -13,7 +13,7 @@ class NavigationButton extends StatelessWidget {
     required this.title,
     this.imageURL = 'assets/images/sheep icon.png',
     required this.route,
-    this.colour = Colors.lightGreen,
+    this.colour = const Color(0x8097E183),
     this.id = 1,
   }) : super(key: key);
 

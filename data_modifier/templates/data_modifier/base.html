@@ -17,6 +17,9 @@
                                     <a class="text-decoration-none" href="{% url 'index' %}">FIC Admin Control</a>
                                 </li>
                                 <li class="text-center">
+                                    <a class="text-decoration-none" href="{% url 'navigation_species' %}">Section Navigation</a>
+                                </li>
+                                <li class="text-center">
                                     {% if user.is_authenticated %}
                                         <a class="nav-link" href="{% url 'logout' %}">Log Out</a><br />
                                     {% else %}

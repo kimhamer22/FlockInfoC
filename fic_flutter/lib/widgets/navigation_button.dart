@@ -21,7 +21,7 @@ class NavigationButton extends StatelessWidget {
       child: MaterialButton(
         onPressed: () {
           Navigator.pushNamed(context, route);
-          breadcrumbBar.add(route);
+          breadcrumbBar.add(route, context);
         },
         child: SizedBox(
           child: Container(

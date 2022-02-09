@@ -27,8 +27,8 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
             IconButton(
               icon: const Icon(Icons.home),
               onPressed: () {
-                Navigator.popUntil(context, ModalRoute.withName('/'));
-                breadcrumbBar.homePressed();
+                //Navigator.popUntil(context, ModalRoute.withName('/'));
+                breadcrumbBar.homePressed(context);
               },
               iconSize: 35,
             ),
@@ -38,8 +38,8 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
                 IconButton(
                   icon: Image.asset('assets/images/FIC logo.png'),
                   onPressed: () {
-                    Navigator.popUntil(context, ModalRoute.withName('/'));
-                    breadcrumbBar.homePressed();
+                    //Navigator.popUntil(context, ModalRoute.withName('/'));
+                    breadcrumbBar.homePressed(context);
                   },
                   iconSize: 50,
                 ),

@@ -22,10 +22,8 @@ class NavigationButton extends StatelessWidget {
       padding: const EdgeInsets.all(8),
       child: MaterialButton(
         onPressed: () {
-          Navigator.pushNamed(context, route);
-          breadcrumbBar.add(route, context);
           Navigator.pushNamed(context, route, arguments: id);
-          breadcrumb.add(route);
+          breadcrumbBar.add(route, context);
         },
         child: SizedBox(
           child: Container(

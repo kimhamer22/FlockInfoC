@@ -34,9 +34,7 @@ class _HamMenu extends State<HamMenu> {
               style: TextStyle(fontSize: fontSize),
             ),
             onTap: () {
-              Navigator.popUntil(context, ModalRoute.withName('/'));
-              breadcrumb.clear();
-              breadcrumb.add(HomePage.route);
+              breadcrumbBar.homePressed(context);
             },
           ),
           FutureBuilder(
@@ -52,7 +50,7 @@ class _HamMenu extends State<HamMenu> {
                         title: title,
                         onTap: () {
                           Navigator.pushNamed(context, route);
-                          breadcrumb.add(route);
+                          breadcrumbBar.add(route, context);
                         }));
                   }
                   return ExpansionTile(
@@ -80,6 +78,7 @@ class _HamMenu extends State<HamMenu> {
             onTap: () {
               // 25 - General Resources
               Navigator.pushNamed(context, tileRoute, arguments: 25);
+              breadcrumbBar.add(tileRoute, context);
             },
           ),
           ListTile(
@@ -90,6 +89,7 @@ class _HamMenu extends State<HamMenu> {
             ),
             onTap: () {
               Navigator.pushNamed(context, tileRoute, arguments: 26);
+              breadcrumbBar.add(tileRoute, context);
             },
           ),
           ListTile(
@@ -100,6 +100,7 @@ class _HamMenu extends State<HamMenu> {
             ),
             onTap: () {
               Navigator.pushNamed(context, tileRoute, arguments: 27);
+              breadcrumbBar.add(tileRoute, context);
             },
           ),
           ListTile(
@@ -110,6 +111,7 @@ class _HamMenu extends State<HamMenu> {
             ),
             onTap: () {
               Navigator.pushNamed(context, tileRoute, arguments: 28);
+              breadcrumbBar.add(tileRoute, context);
             },
           ),
         ],

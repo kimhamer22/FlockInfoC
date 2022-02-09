@@ -54,7 +54,7 @@ class _Sheep extends State<Sheep> {
           padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
           child: Column(
             children: [
-              BreadCrumb(),
+              breadcrumbBar(),
               FutureBuilder(
                   future: allCategories,
                   builder: (context, snapshot) {

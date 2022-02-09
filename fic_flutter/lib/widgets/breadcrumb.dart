@@ -54,7 +54,7 @@ class breadcrumbBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(breads.toString());
+    print("building breadcrumbs");
     if (breads == []) {
       print("empty breads");
       breads.add(BreadCrumbItem(

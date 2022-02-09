@@ -8,3 +8,4 @@ Pillow==9.0.1
 sqlparse==0.4.2
 tzdata==2021.5
 wincertstore==0.2
+psycopg2-binary==2.9.1

@@ -5,7 +5,7 @@ class NavigationButton extends StatelessWidget {
   final String title;
   final String imageURL;
   final String route;
-  final Color colour;
+  Color? colour;
   late int id;
 
   NavigationButton({
@@ -13,7 +13,7 @@ class NavigationButton extends StatelessWidget {
     required this.title,
     this.imageURL = 'assets/images/sheep icon.png',
     required this.route,
-    this.colour = Colors.lightGreen[50],
+    this.colour = Colors.lightGreen,
     this.id = 1,
   }) : super(key: key);
 

@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flowder/flowder.dart';
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/widgets/breadcrumb.dart';
 import 'package:fic_flutter/main.dart';
@@ -15,6 +18,19 @@ class _HamMenu extends State<HamMenu> {
   final double fontSize = 20;
   late Future allSpeciesFuture;
   final String tileRoute = '/simple_text';
+
+  final downloaderUtils = DownloaderUtils(
+    progressCallback: (current, total) {
+      final progress = (current / total) * 100;
+      print('Downloading: $progress');
+    },
+    file: File('../assets/database/200MB.zip'),
+    progress: ProgressImplementation(),
+    onDone: () {
+      print('Download done');
+    },
+    deleteOnCancel: true,
+  );
 
   @override
   void initState() {
@@ -112,6 +128,25 @@ class _HamMenu extends State<HamMenu> {
               Navigator.pushNamed(context, tileRoute, arguments: 28);
             },
           ),
+          ListTile(
+            leading: const Icon(Icons.refresh),
+            title: Text(
+              'Update data',
+              style: TextStyle(fontSize: fontSize),
+            ),
+            onTap: () async {
+              // TODO - Pull database
+              // TODO - Change URL to server's zipped DB
+              const url = 'http://ipv4.download.thinkbroadband.com/200MB.zip';
+              final core = await Flowder.download(url, downloaderUtils);
+              core.download(url, downloaderUtils);
+              // TODO - Unzip database
+              // TODO - Update database
+              Navigator.popUntil(context, ModalRoute.withName('/'));
+              breadcrumb.clear();
+              breadcrumb.add(HomePage.route);
+            },
+          )
         ],
       ),
     );

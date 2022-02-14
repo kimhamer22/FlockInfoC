@@ -6,7 +6,7 @@ Samples for Diagnosis: Blood or post mortem samples from ewes, aborted lambs and
 Treatment: Fluids and anti-inflammatories to control symptoms. Seek veterinary advice. 
 Notifiable Disease: Yes
 Risk to Humans: No 
-",Button,18,"22, 8",
+",Button,18,"22, 68",Causes
 2,Characteristics of Bluetongue Virus,"Bluetongue viruses mainly causes abortions in the second half of pregnancy, but can also cause pregnancy loss in the first half, or occasionally death in neonatal lambs (2). Outbreaks are often seasonal as they are linked to when the midges are most active, which tends to late summer and autumn in Europe. Outbreaks are currently uncommon in the UK, but there is a significant risk of midges from mainland Europe reaching the UK in the future (3). The number of abortions caused by Bluetongue can vary depending on the strain. Ewes are normally unwell, with depression, drooling and potential difficulty breathing, and they may have swollen heads. Mouth and nose ulceration and lameness are common (4). Some lambs are born deformed. See Abortions - What to do? for immediate steps to take following an abortion to reduce spread within the flock.",Expandable,1,,
 3,Control,"The virus can be controlled by vaccination (5), insect control and biosecurity measures.  Vaccination should be undertaken before breeding, and before the high risk period when midges are active. Furthermore, care should be taken to use the vaccine which is specific to the strain of bluetongue in the area.",Expandable,1,,
 4,References,"(1)   OIE, World Organisation for Animal Health. Bluetongue [cited 2021 August 10]. Available from: https://www.oie.int/en/disease/bluetongue/. 
@@ -24,7 +24,7 @@ Treatment: None, cull persistently infected animals as soon as possible
 Notifiable Disease: No
 Risk to Humans: No
 
-Border Disease Virus (BDV, also sometimes known as ""Hairy Shaker Disease"") is similar to BVDV in cattle. BVDV can also be transmitted from cattle to sheep, and presents similarly to a sheep infected with BDV (1). These viruses are spread most efficiently by animals that are infected before birth and carry the disease for their whole lives, persistently infected or PI animals (2). This is how the disease is maintained in a flock. ",Button ,18," 8, 24",
+Border Disease Virus (BDV, also sometimes known as ""Hairy Shaker Disease"") is similar to BVDV in cattle. BVDV can also be transmitted from cattle to sheep, and presents similarly to a sheep infected with BDV (1). These viruses are spread most efficiently by animals that are infected before birth and carry the disease for their whole lives, persistently infected or PI animals (2). This is how the disease is maintained in a flock. ",Button ,18," 68, 24",Causes
 6,Characteristics of BDV,"Abortion is seen in mid to late pregnancy. If the infection is newly introduced in the flock, the number of abortions can be high. If the infection is already present, there tends to be a constant but lower level of abortion. The stage at which the ewe is infected with BDV (or BVDV) affects the outcome, which can include a high level of barren ewes, as the embryos are reabsorbed before scanning (3), abortion, stillbirths or live lambs. If lambs make it to full term, they grow 20% slower than uninfected lambs and either exhibit no symptoms or deformities, the most common of which are behavioural abnormalities and altered wool appearance (4). Either type of lamb can be persistently infected and transfer the virus to other sheep. The ewes do not present as sick.
 
 See Abortions - What to do? for immediate steps which should be undertaken following an abortion .
@@ -47,7 +47,7 @@ Treatment: Not considered economical
 Notifiable Disease: Yes
 Risk to Humans: Yes (1) 
 
-Brucella species can be spread between animals by bodily fluids like genital discharge and milk. They can also become infected by drinking contaminated water or eating contaminated feed. In areas of the world where these bacteria are found they are a serious cause of abortion in sheep and goats (2), and a serious cause of human disease. ",Button,18,24,
+Brucella species can be spread between animals by bodily fluids like genital discharge and milk. They can also become infected by drinking contaminated water or eating contaminated feed. In areas of the world where these bacteria are found they are a serious cause of abortion in sheep and goats (2), and a serious cause of human disease. ",Button,18,24,Causes
 11,Characteristics of Brucellosis,"Brucellosis outbreaks are characterised by many abortions in late pregnancy. The aborted lambs tend to be decomposed, stillborn, or alive but weak. Depending on the type of Brucella, ewes may have a fever, be depressed, suffer from weight loss, mastitis, lameness or diarrhoea. Lambs can also be See Abortions - What to do? for immediate steps which should be undertaken following an abortion to prevent spread within the flock and zoonoses (spreading to humans).  In rams it is characterised by testicular abnormalities like testicle enlargement, pain, hardening, epidydimal enlargement and decreased semen quality (3,4). It is commonly transmitted between ewes and rams during breeding. 
 
 For more information see Rayner K, Government of Western Australia. Ovine brucellosis; 2020. Available from: https://www.agric.wa.gov.au/livestock-biosecurity/ovine-brucellosis.
@@ -66,7 +66,7 @@ Treatment: Seek veterinary advice
 Notifiable Disease: No
 Risk to Humans: Yes (1) 
 
-Campylobacteriosis (formerly ovine vibriosis) is diagnosed in 9% of infectious abortion cases investigated in sheep in the UK (2). The infection is usually obtained from contaminated water or feed, from aborted materials or faeces from infected sheep. Birds, cattle and dogs have also been implicated in the transmission of these bacteria. ",Button,,,
+Campylobacteriosis (formerly ovine vibriosis) is diagnosed in 9% of infectious abortion cases investigated in sheep in the UK (2). The infection is usually obtained from contaminated water or feed, from aborted materials or faeces from infected sheep. Birds, cattle and dogs have also been implicated in the transmission of these bacteria. ",Button,18,"24, 23, 38",Causes
 15,Characteristics of Campylobacteriosis,"Infection of ewes can result in an ""abortion storm"" (high number of abortions) in late pregnancy (after 12 weeks), alongside the birth of stillborn or weak lambs that die shortly after birth. Aborted lambs tend to be well preserved. The ewes are usually well, but may show a mild diarrhoea (3). Outbreaks tend to last for one lambing season, and reoccur 4-7 years later, during the intervening years lower levels of abortion due to Campylobacter species may still be seen. 
 
 For more information see Government of Western Australia. Ovine campylobacteriosis (formerly ovine vibriosis); 2018. Available from: https://www.agric.wa.gov.au/livestock-biosecurity/ovine-campylobacteriosis-formerly-ovine-vibriosis.",Expandable,14,,
@@ -77,9 +77,1077 @@ For more information see Government of Western Australia. Ovine campylobacterios
 (4)   Xia J, Pang J, Tang Y, Wu Z, Dai L, Singh K, et al. High Prevalence of Fluoroquinolone-Resistant Campylobacter Bacteria in Sheep and Increased Campylobacter Counts in the Bile and Gallbladders of Sheep Medicated with Tetracycline in Feed. Applied and Environmental Microbiology. 2019;85(11):e00008-19. Available from: https://doi-org.ezproxy.lib.gla.ac.uk/10.1128/AEM.00008-19
 (5)   Menzies PI. Control of Important Causes of Infectious Abortion in Sheep and Goats. Veterinary Clinics of North America: Food Animal Practice. 2011;27(1):81-93. Available from: https://doi.org/10.1016/j.cvfa.2010.10.011",Expandable,14,,
 18,Causes,,Tab,19,,Controlling Abortion
-19,Controlling Abortion,,Button,21,,Sheep
+19,Controlling Abortion,,Button,20,,Sheep
 20,Sheep,,Species,,,
 21,Controls,,Tab,19,,Controlling Abortion
-22,Vermin Control,,Button,21,,Controls
-23,Vaccination,,Button,21,,Controls
-24,Biosecurity,,Button,,,
+22,Vermin Control,"Feed should be stored in a sealed container to keep out vermin, birds and cats. The container should be checked regularly for leakages or holes. 
+
+Poisons can be used in a safe container to control vermin. Caution must be taken to keep livestock, pets and children away from any poisonous materials. Dogs or neutered cats can also be used to help control rodent populations. 
+
+Mole control should be carried out in silage fields to avoid molehills causing soil contamination of silage.",Button,21,,Controls
+23,Bird Control,"Birds can carry some disease and pass these to sheep when their faeces contaminate feed or water, for example Salmonella species. Also, birds may carry placentae or other abortion products from one farm to another, so can transport any abortive disease between farms in this way. 
+?
+Prevent birds having access to stored feeds by using
+ 
+
+    feed bins with a secure lid
+    bird-proof sheds for feed storage
+    multiple layers of plastic on top of silage
+
+
+Prevent birds being attracted to left-overs or ad-lib feed by
+?
+
+    turning over feed troughs immediately after feeding
+    using covered feeders
+    when feeding on the floor, use a clean, new location each time
+
+
+Use bird scaring devices to discourage birds being near the sheep.
+ 
+Arrangements may be able to be made with local gamekeepers to help keep the bird populations under control. ",Button,21,,Controls
+24,Biosecurity,,Button,21,,Controls
+25,General Resources,"Please note that the authors of this website are not responsible for the content of these websites or any changes which may have been made to the additional resources since the time of publishing. 
+
+Printable Lamb Losses Record Sheet - PDF Version
+
+AHDB:
+- Knowledge Library https://ahdb.org.uk/knowledge-library.
+- Sheep Diseases Directory  https://ahdb.org.uk/knowledge-library/sheep-diseases-directory
+- Reducing lamb losses for Better Returns https://ahdb.org.uk/knowledge-library/reducing-lamb-losses-for-better-returns-2. 
+- Use of vaccines in cattle and sheep production https://projectblue.blob.core.windows.net/media/Default/Dairy/Publications/Use%20of%20vaccines%20in%20cattle%20and%20sheep%20prod_WEB.pdf.
+
+HCC/Meat Promotion Wales:
+- Sheep Industry Resources https://meatpromotion.wales/en/industry-resources/sheep-management.
+- Making Every Lamb Count https://meatpromotion.wales/images/resources/Making_Every_Lamb_Count.pdf
+
+QMS/Quality Meat Scotland:
+- Health and Welfare https://www.qmscotland.co.uk/health-and-welfare-0
+- Breeding https://www.qmscotland.co.uk/breeding-1
+
+NADIS Disease A-Z for Sheep: https://www.nadis.org.uk/disease-a-z/sheep/.
+
+MSD Veterinary Manual:
+- Homepage https://www.msdvetmanual.com/en-au.
+- Flockmaster's Guide to Abortion and Vaccination https://www.msd-animal-health-hub.co.uk/DNOMF/sheep-health.
+
+Health and Safety Executive (HSE) Guide to Zoonoses:  https://www.hse.gov.uk/agriculture/topics/zoonoses.htm.
+
+Moredun Livestock Diseases: https://www.moredun.org.uk/research/diseases
+
+Farm Health Online - Sheep Diseases:  https://www.farmhealthonline.com/disease-management/sheep-diseases/.
+
+FAS Technical Notes Collection: https://www.fas.scot/publication/technical-notes/.
+
+Government Sheep and Goats: Health regulations: https://www.gov.uk/guidance/monitoring-prevention-and-control-of-disease-in-sheep-and-goats.
+
+Guides for Vets and Farmers for Responsible Antibiotic Use: https://www.ruma.org.uk/sheep/antimicrobials-sheep-production/.",Button,,,Drawer
+26,Benefits of Reducing Losses,"Sheep and lamb losses are of major concern. Total lamb mortality is thought to be about 15% in UK flocks, but it has been shown to be anywhere between 1 and 43% depending on the farm and year (1). Of this, 30% are due to abortions, 49% is within the first 48hrs of being born, and an additional 11% is within the first 15 days of life (2). Therefore, the prevention of losses between scanning and weaning is important for health, welfare, productivity and viability of sheep flocks in the UK and across Europe.  
+
+Animal Welfare
+Reduced abortions and mortality mean a healthier, happier and more productive flock. There is an improved welfare for the ewes if they are not aborting the lambs, as abortion is often associated with poor health of the ewe. There have also been studies which have shown that ewes suffer emotionally when they lose a lamb (3).
+?
+A lower incidence of lamb mortality is a positive outcome for animal welfare as it indicates less lamb disease, starvation, hypothermia and other conditions which will cause suffering to the lamb. 
+
+Economical/Financial
+
+Each lamb which does not survive or is aborted costs the farm about £85 (4). For enzoonotic abortion alone, losses are estimated to cost £6-20 million yearly. Reducing the lamb mortality and abortion rates is expected to result in large cost efficiency gains (5). More large, healthy lambs can be sent to market, or sold as breeding stock. 
+
+?
+Emotional/Mental Health of Farmers
+Losing livestock has also been shown to have a negative impact on the emotional wellbeing of the farmer (6). The death of a ewe or lambs born deformed can be particularly upsetting. A healthier flock with less death will result in a more positive lambing season for staff. 
+?
+Environmental Impact
+
+The environmental impact of reduced abortion rates and lamb mortality is related to needing less ewes to produce more lambs. If more ewes birth and raise healthy, viable lambs, the flock size can theoretically be reduced while maintaining the same output. The mean carbon footprint has been calculated to be 10.85 to 17.86 kg CO2E/kg live weight finished lamb (7). The number of lambs raised per ewe (which is influenced by abortion and neonatal mortality) was identified as an important influence on the mean carbon footprint per finished lamb (7). Hence, reducing abortions and neonatal lamb mortality will decrease the carbon footprint of the lamb industry.
+
+
+References
+(1)   Dwyer CM, Conington J, Corbiere F, Holmøy IH, Muri K, Nowak R, et al. Invited review: Improving neonatal survival in small ruminants: science into practice. animal. 2016;10(3):449-59. Available from: https://doi.org/10.1017/S1751731115001974
+(2) HCC. Making Every Lamb Count2011. Available from: https://meatpromotion.wales/en/industry-resources/sheep-management.
+(3) Marino L, Merskin D. Intelligence, complexity, and individuality in sheep. Animal Sentience. 2019;4. Available from: http://dx.doi.org/10.51291/2377-7478.1374 
+
+(4) Cutress D. Factors affecting sheep flock productivity; 2020. Available from: https://businesswales.gov.wales/farmingconnect/news-and-events/technical-articles/factors-affecting-sheep-flock-productivity.
+
+(5) Hovers K. Enzootic abortion of ewes: a review. Vet Times. 2021;6(2):10-1. Available from: https://doi.org/10.12968/live.2021.26.4.207
+
+(6) Phythian CJ, Glover MJ. Highs and Lows of Lambing Time: Sheep Farmers' Perceptions of the First Outbreak of Schmallenberg Disease in South West England on Their Well-Being. International journal of environmental research and public health. 2019;16(24):5057. Available from: https://doi.org/10.3390/ijerph16245057
+(7) Jones AK, Jones DL, Cross P. The carbon footprint of lamb: Sources of variation and opportunities for mitigation. Agricultural Systems. 2014;123:97-107. Available from: http://dx.doi.org/10.1016/j.agsy.2013.09.006",Button,,,Drawer
+27,Acknowledgements,"Authors:
+
+- Quianne Reijnen
+- Kim Hamer VetMB CertAVP(SHEEP) Dip.ECSRHM MRCVS
+
+Logo by Aurélie Reijnen
+
+Many thanks for the constructive feedback from:
+
+- Ruminant Clinical Service of the Veterinary Faculty of Zaragoza (interns and teachers)
+- Renée de Cremoux, Institut de l'Elevage, Chambre d'Agriculture du Tarn
+- Phillipa Page, BVSc BSc MRCVS, Flock Health Ltd",Button,,,Drawer
+28,Contact Us,"Please contact Kim Hamer at the University of Glasgow with any questions. 
+
+Email: kim.hamer@glasgow.ac.uk",Button,,,Drawer
+29,Contact with Other Livestock,"Double fencing boundary fences between fields where neighbouring farms have livestock reduces transmission of diseases by nose-to-nose contact or short distance aerial spread (1). Ideally there should be a 3m gap between the two fences to prevent direct contact (2). Either permanent or electric fencing are suitable. Note that this will not prevent the spread of insect or wind borne diseases e.g. Bluetongue.  
+
+Do not share rams with other farms when possible. Ideally use home-bred rams or artificial insemination. ",Expandable,24,,
+30,Buying in Livestock,"Buy in as few new animals as possible, however when buying in new stock is necessary, be careful about the source. Try to purchase animals from one known source with known health status. Get as much information as possible about the health history of that flock and vaccination history of the animals (3). Buy young stock, as older stock are more likely to be carrying disease. 
+
+Quarantine new livestock for at least 3 weeks, keeping them away from other animals or handling facilities used for other livestock on the farm, unless these facilities can be disinfected between uses. Ideally keep bought in replacement ewes separate form the rest of the flock for at least one production cycle. This is particularly important for purchased pregnant animals, which should be kept separate from the existing flock until after lambing. Monitor these animals closely for signs of disease. Undertake testing of any animals with suspicious signs, especially any abortions. Disinfect or change boots, clothing and equipment when going between the new and existing flocks (4). 
+
+Test new stock for diseases not present in the existing flock, especially those you particularly want to avoid bringing into the flock. Consult your vet and undertake testing in the existing flock to decide which tests should be prioritised. Common recommendations may include Enzootic Abortion of Ewes, Border Disease Virus and Maedi Visna, but other may be pertinent to your situation. 
+
+Vaccinate new animals for diseases which are already present in the existing flock to ensure their vaccination status matches that of the rest of the flock. ",Expandable,24,,
+31,Farm Visitors,"Provide disinfectant foot baths or clean boots and protective clothing for visitors to the farm, to prevent disease coming onto the farm from outside sources. 
+
+Keep non-farm vehicles at the boundaries of the farm. 
+
+Dispose of fallen stock, stillborn and aborted lambs quickly, safely and legally. The dead stock collection site should be away from healthy animals, and at the edge of the farm boundary (5). Ensure that other animals and scavengers cannot access the carcases. Covered bins are useful for temporary storage until dead stock can be collected, but they must be leakproof and be cleaned and disinfected regularly (6).",Expandable,24,,
+32,References,"Provide disinfectant foot baths or clean boots and protective clothing for visitors to the farm, to prevent disease coming onto the farm from outside sources. 
+
+Keep non-farm vehicles at the boundaries of the farm. 
+
+Dispose of fallen stock, stillborn and aborted lambs quickly, safely and legally. The dead stock collection site should be away from healthy animals, and at the edge of the farm boundary (5). Ensure that other animals and scavengers cannot access the carcases. Covered bins are useful for temporary storage until dead stock can be collected, but they must be leakproof and be cleaned and disinfected regularly (6).",Expandable,24,,
+33,Body Condition Scoring,"Studies have shown that not only does body condition score (BCS) have an impact on fertility, but also on the incidence of abortions. Ewes that are both too lean and too fat have higher losses during pregnancy (1). 
+A constant supply of good quality forage should be supplied (either conserved or grazed). Extra feed should be supplied if needed, for example during late pregnancy, if forage is poor or for ewes carrying multiples. If feed is limited, livestock numbers should be reduced so the feed demand can be met. 
+
+To ensure adequate nutrition of breeding and pregnant ewes:
+*    ?Monitor ewe BCS before and after breeding, in mid pregnancy, before and after lambing and at weaning. The majority of ewes should be within the recommended BCS, see here for guidance (2).
+*    Get forage analysed ahead of time to allow additional feeding to be sources before it is needed
+*    Consult a nutritionist and/or vet to provide a pregnant ewe diet
+*    Ensure there is enough space for all ewes to access food, recommendations vary depending on whether is feed is ad lib or limited, see here (page 32) for details (3). 
+*    Blood sample ewes 3-4 weeks before lambing to check nutrition is appropriate",Button,21,,Controls
+34,References,"(1)   Morgan-Davies C, Waterhouse A, Pollock M, Milner J. Body condition score as an indicator of ewe survival under extensive conditions. Animal welfare (South Mimms, England). 2008;17:71-7. Available from: https://www.ingentaconnect.com/contentone/ufaw/aw/2008/00000017/00000001/art00009#trendmd-suggestions
+(2) FAS. Body Condition Scoring of Mature Sheep - Technical Note TN702; 2018 [cited 2021 August 10]. Available from: https://www.fas.scot/publication/technical-notes/. PDF Version
+(3) AHDB. Feeding the ewe; 2018 [cited 2021 August 10]. Available from: https://ahdb.org.uk/knowledge-library/feeding-the-ewe.",Expandable,33,,
+35,Cat Control,,Button,21,,Controls
+36,Reducing Feed Contamination,"Do not allow farm cats to have access to feed, forage or bedding. Stored hay should be covered with sheeting to prevent cats defecating on it. Any feed contaminated with cat faeces should not be used to feed sheep, especially pregnant ewes. Raise water troughs to prevent faecal contamination. Provide litter boxes for the cats to defecate in.",Expandable,35,,
+37,Controlling Cat Populations,Neuter or spay adult cats to prevent breeding. Keep a stable neutered cat population to reduce visits by feral cats. Control feral cat populations.,Expandable,35,,
+38,Clean Water,"Sheep should have a constant supply of fresh, clean water with reduced risk of contamination with animal or bird faeces. This can be provided by piping main s water into raised water troughs. 
+
+Ensure water is not contaminated with faeces of cats, vermin, neighbouring livestock or cattle. 
+
+Ideally use a separate water source for sheep and cattle. Clean water troughs frequently - drain the water and clean inside of trough. Also, deep clean the troughs after repair or maintenance, following possible contamination or when contamination levels are high (1). Portable water systems and IBCs should also be cleaned regularly. 
+
+?Provide enough water for the whole flock, especially for pregnant ewes and when the weather is hot. 
+
+Check natural water sources for growth of blue-green algae. It can be found in lakes, ponds, canals, reservoirs or any other water source (2). Look for the green, blue-green or green-brown appearance in water, and deceased wildlife around the edges of the water source. Water samples can be sent off for testing.",Button,21,,Controls
+39,References,"(1)   AHDB. Deep cleaning farm drinking systems; 2019 [cited 2021 August 8]. Available from: https://ahdb.org.uk/knowledge-library/deep-cleaning-farm-drinking-systems-factsheet. PDF Version
+(2)   Department of Primary Industries and Regional Development. Blue-green algae poisoning in livestock; 2020 [cited 2021 August 8]. Available from: https://www.agric.wa.gov.au/animal-welfare/blue-green-algae-poisoning-livestock.",Expandable,38,,
+40,Feed Contamination Control,"Sheep should not be fed feed that is visibly dirty, mouldy or contaminated, as this may pose a disease risk. 
+
+Concentrate feed should be stored securely in sealed containers to keep out vermin, birds and cats. 
+
+Pastures should be inspected for poisonous plants before grazing. Poisoning is especially common when feed is scarce, as poisonous plants are usually unpalatable. See page 4 to 8 of this paper (1) for the most common toxic plants in the UK which may be eaten by livestock, clinical signs and how it can be diagnosed. Toxic plants should be removed from the pastures, or fenced off to prevent livestock getting access. 
+
+Feed troughs should be turned over after feeding to prevent birds getting access.
+
+When floor feeding, use a new, clean area every day.",Button,21,,Controls
+41,References,"(1) Payne J, Murphy A. Plant poisoning in farm animals. In Practice. 2014;36(9):455. Available from: https://doi.org/10.1136/inp.g6148",Expandable,40,,
+42,Insect Control,"Insects can be carriers of disease, which they pass on to sheep and other livestock during feeding, either through direct contact or blood sucking. 
+
+Insecticides can be applied to animals during high-risk periods e.g. pour on solutions or insecticide impregnated ear tags. See the AHDB Parasite Control Guide for more information: 2021. Available from: https://ahdb.org.uk/knowledge-library/parasite-control-guide.
+
+To avoid midges, sheep can be housed overnight during periods of high midge activity. They should also be kept away from wet areas of farms where possible. Breeding of livestock can be delayed until the risk period is over. 
+
+Ticks can be avoided by keeping livestock away from woodland and shrubs during high-risk periods. Tick habitat can also be removed from the field, e.g. by clearing bracken and draining wet land, where this is allowed.",Button,21,,Controls
+43,Reduce Stress,"Keep the handling of pregnant sheep to a minimum. When handling is necessary use a  gentle and calm handling technique, using funnels, races and crates to minimise stress. Also keep the use of dogs to a minimum when working with pregnant ewes. 
+
+Avoid transporting ewes within 2 weeks before lambing, 3 weeks if they are carrying multiple lambs (1). 
+
+Where possible keep pregnant ewes away from areas where they may encounter pet dogs. Put up signage to inform dog walkers that there are sheep in the field and remind them that sheep worrying is illegal. Talking to dog owners may also be worthwhile. Wildlife attacks can be prevented by predator control, working with local gamekeepers, adding additional fencing or moving sheep to another area (2).
+
+Provide shade or shelter in high temperatures to reduce heat stress. Also make sure there is access to fresh clean water. Keep a close eye on the flock for signs of heat stress on days when the temperature humidity index is high.
+
+Provide windbreaks or shelter in windy or wet conditions.",Button,21,,Controls
+44,References,"(1)   North Canterbury Veterinary Clinics. Guidelines for the Trucking of Pregnant Ewes; 2017 [cited 2021 August 12]. Available from: https://www.ncvets.co.nz/news/posts/2017/october/guidelines-for-the-trucking-of-pregnant-ewes/.
+(2)   Murray L, Warren R. Sheep Attacks and Harassment Research; 2019 [cited 2021 August 12]. Available from: https://www.gov.scot/publications/sheep-attacks-harassment-research/pages/2/.",Expandable,43,,
+45,Silage Contamination Control,"Sheep should not be fed visibly dirty, mouldy, discoloured, odd smelling or contaminated silage which may pose a disease risk. 
+
+Soil and faecal contamination should be avoided when making silage. This can be done by:
+- ensuring slurry applied to the fields has been taken up by the plant before harvesting
+- setting the mower high enough to avoid it encountering soil
+- making sure the wheels of all vehicles are clean before starting harvesting, baling or wrapping
+- ensuring all equipment is clean of material from the previous harvest 
+- removing stock from the pasture well before silage making, to avoid faecal contamination 
+- rolling fields after winter
+- keeping mole populations under control
+
+Silage should be stored anaerobically (without air) to allow sufficient fermentation to take place, in order to drop the pH to acidic condition, and stop dangerous bacteria proliferating/breeding. This can be achieved by:
+- rolling out all the air in the silage clamp, ensuring the shoulders are not missed
+- covering the silage clamp with oxygen-proof plastic sheeting 
+- using a secondary thick bird-proof sheet over the clamp
+- weighing down the sheeting appropriately
+- adding an additive can help speed up fermentation and decrease harmful pathogens which may be present (1)
+- bales should be covered by 4 layers of plastic, more layers has not been proven to be beneficial (2) 
+- regularly checking for punctures in the plastic covering the clamp or bales
+
+When using silage, only uncover a little at a time, to keep air out as much as possible. Once the surface is exposed to air, the silage will deteriorate rapidly and soon be unsuitable to feed to animals, especially sheep. The edge of the sheet should be weighed down to prevent air getting under it. 
+
+Silage testing should be undertaken before feeding it to livestock, to ensure it has fermented sufficiently, to assess the nutritional content, and check ash values. For grass silages, ash levels are usually between 6 and 8% (3). If ash levels are over 10%, this is an indicator of soil contamination, which may increase mould, yeast and bacteria growth which can be associated with disease e.g. listeriosis (4). 
+
+A guide to good silage making by AHDB Beef & Lamb is available here: Making grass silage for Better Returns; 2019. Available from: https://ahdb.org.uk/knowledge-library/making-grass-silage-for-better-returns.",Button,21,,Controls
+46,References,"(1)   Queiroz OCM, Ogunade IM, Weinberg Z, Adesogan AT. Silage review: Foodborne pathogens in silage and their mitigation by silage additives. Journal of Dairy Science. 2018;101(5):4132-42. Available from: https://doi.org/10.3168/jds.2017-13901
+(2)   Coblentz WK, Coffey KP, Chow EA. Storage characteristics, nutritive value, and fermentation characteristics of alfalfa packaged in large-round bales and wrapped in stretch film after extended time delays. J Dairy Sci. 2016;99(5):3497-511. Available from: https://doi.org/10.15232/pas.2016-01538
+(3)   Quality Silage. Ash Contamination [cited 2021 August 13]. Available from: https://qualitysilage.com/avoid-pitfalls/ash-contamination/.
+(4)   Phillips K, Phythian C, Wright N, Morgan M. Sheep health, welfare and production planning 2. Assessing nutrition of the ewe in late pregnancy. In Practice. 2014;36. Available at: https://doi.org/10.1136/inp.g1564",Expandable,45,,
+47,Chlamydia Abortus (Enzootic Abortion),"Cause: Bacteria (Chlamydia abortus)
+Distribution: Wide distribution, but not present in all countries e.g. Australia
+Source: Carrier sheep, aborting sheep, aborted materials
+Samples for Diagnosis: Aborted placentas and lambs, blood samples from ewes
+Treatment: Seek veterinary advice
+Notifiable Disease: No
+Risk to Humans: Yes (1,2)
+
+Chlamydia abortus (Enzootic abortion of ewes, EAE, or Ovine Enzootic abortion, OEA) is the largest cause of abortion in sheep in the UK, accounting for 24% of infectious abortions (3). Ewes are commonly infected by exposure to aborted materials from an infected ewe during lambing time, and will then abort their next pregnancy. See Abortions - What to do? for immediate steps which should be undertaken following an abortion to prevent spread within the flock and zoonoses (the infection spreading to humans).",Button,18,"68, 24",Causes
+48,Characteristics of EAE,"When Chlamydia abortus is first introduced to a flock, a few abortions may be seen in the first year and, if no preventative measures are taken, high levels of abortion can be seen during late pregnancy (>100 days) of the following lambing. Lambs can be aborted preserved, decomposed, mummified, stillborn and born weak but alive. Litters of lambs can include a mixture of these. The affected ewes do not tend to be unwell.
+
+For more information see SRUC. Enzootic Abortion of Ewes (EAE) 2020. Available from: https://www.sruc.ac.uk/media/mjjbxmvr/eae_insert_2020-1.pdf.",Expandable,47,,
+49,Control,"EAE can be controlled by vaccination of replacement ewes before breeding, alongside biosecurity measures during lambing and not using female lambs that survive as replacement stock (4). Ongoing antibiotics use for management of enzootic abortion does not achieve the same level of control as vaccination and is not recommended when considering the responsible use of antibiotics (5,6). In the event of a large outbreak, consult your vet. 
+
+For EAE-free flocks, new stock should be bought from EAE-free accredited flocks were possible and kept separate from the rest of the flock for the first one to two years. Also all abortions should be investigated and the results acted upon. 
+
+Information on EAE Accreditation SRUC. Premium Sheep and Goat Health Schemes. Available from: https://www.sruc.ac.uk/business-services/what-is-your-goal/veterinary-laboratory-services/sheep-and-goat-health-schemes/premium-sheep-and-goat-health-schemes/.",Expandable,47,,
+50,Vaccination,"Vaccination dramatically reduces abortion levels, but will not stop them altogether. Also, the live vaccines should not be used on farms that are EAE-free (7). The live vaccine (Cevac Chlamydia or Enzovax in the UK) should be administered at least 4 weeks before mating, it will not work on animals recently treated with certain antibiotics and should be treated with caution as it can cause disease in humans (8, 9). The inactivated vaccine (Inmeva in the UK), requires two doses in the first year, then annual boosters. The first dose should be given at least 5 weeks before mating and the second 3 weeks later. Booster vaccines should be given at least 2 weeks before mating. This vaccine can also be given during pregnancy, especially during the second trimester of pregnancy but not in the last month (10).",Expandable,47,,
+51,References,"(1)   HSE. Ovine Chlamydiosis [cited 2021 August 10]. Available from: https://www.hse.gov.uk/agriculture/topics/zoonoses.htm. PDF Version
+(2)   Essig A, Longbottom D. Chlamydia abortus: New Aspects of Infectious Abortion in Sheep and Potential Risk for Pregnant Women. Current Clinical Microbiology Reports. 2015;2(1):22-34. Available from: https://doi.org/10.1007/s40588-015-0014-2
+(3)   APHA, SRUC. GB small ruminant quarterly report. Disease surveillance and emerging threats. Volume 23: Q2 - April - June 2020. Available from: https://www.gov.uk/government/publications/small-ruminant-gb-disease-surveillance-and-emerging-threats-reports. PDF Version
+(4)   AHDB. Abortion vaccines in sheep [cited 2021 August 9]. Available from: https://ahdb.org.uk/knowledge-library/abortion-vaccines-in-sheep. 
+(5)   Sheep Health and Welfare Council. Industry guidance document for veterinary surgeons and farmers on responsible use of antibiotics in sheep; 2019 [cited 2021 August 12]. Available from: https://www.ruma.org.uk/sheep/antimicrobials-sheep-production/. PDF Version
+(6)   Lovatt F, Duncan J, Hinde D. Responsible use of antibiotics on sheep farms: application at farm level. In Practice. 2019;41(1):23-33. Available from: https://doi-org.ezproxy.lib.gla.ac.uk/10.1136/inp.k5370
+(7)    Laroucau K, Aaziz R, Vorimore F, Menard MF, Longbottom D, Denis G. Abortion storm induced by the live C. abortus vaccine 1B strain in a vaccinated sheep flock, mimicking a natural wild-type infection. Veterinary Microbiology. 2018;225:31-3. Available from: https://doi.org/10.1016/j.vetmic.2018.09.012
+(8)   Veterinary Medicines Directorate. Cevac Chlamydia; 2020 [cited 2021 August 7]. Available from: https://www.vmd.defra.gov.uk/ProductInformationDatabase/product/A003427. PDF Version
+(9)   Veterinary Medicines Directorate. Enzova; 2020 [cited 2021 August 8]. Available from: https://www.vmd.defra.gov.uk/ProductInformationDatabase/product/A002363. PDF Version
+(10)   Veterinary Medicines Directorate. Inmeva, Suspension for Injection; 2019 [cited 2021 August 8]. Available from: https://www.vmd.defra.gov.uk/ProductInformationDatabase/product/A010210.",Expandable,47,,
+52,Coxiella Burnetti (Q Fever),"Cause: Bacteria (Coxiella burnetti)
+Distribution: Worldwide
+Source: Carrier sheep, normal birth products, aborted materials, vaginal discharge, milk, faeces, urine. Becomes windborne, ticks, carrier animals (cats, cattle, goats, vermin)
+Samples for Diagnosis: Aborted placenta and lambs, vaginal swabs, milk, faeces from ewes. Environmental/feedstuff testing
+Treatment: Seek veterinary advice
+Notifiable Disease: Yes
+Risk to Humans: Yes (1) 
+
+Q fever is transmitted between animals through bodily fluids and faeces. During normal lambings or abortion, a huge amount of Coxiella Burnetii bacteria are shed in the birth products of infected ewes. The bacteria can survive in the environment and when these products dry they can become an aerosol and are then spread by the wind and inhaled, or eaten. Ticks can also transmit the bacteria from an infected animal to a healthy one. The main concern is infection of humans through these routes. See Abortions - What to do? for immediate steps which should be undertaken following an abortion to prevent spread within the flock and zoonoses (the infection spreading to humans).",Button,18,"24, 22, 68, 42, 38",Causes
+53,Characteristics of Q Fever,"Abortion due to Q fever in sheep is generally sporadic, although abortion storms can occasionally occur in flocks where it has not been seen previously. Especially if an infected animal is brought in and lambs or aborts within the main flock, shedding high levels of bacteria into the surroundings. If the disease has been present in the flock for some time, there can continue to be low levels of abortion due to it (2). The abortions are late in the pregnancy, also some lambs from infected mothers will be stillborn or alive but weak. The ewes do not normally present as unwell, but there can be a higher chance of metritis (infection of the uterus) in these ewes. Diagnosis of Q fever may be difficult as C. burnetti bacteria may be present without being the primary cause of abortion, as they can be found in normal birth products of infected ewes. 
+
+For more information on Q fever see OIE. Q Fever. Available from: https://www.oie.int/en/disease/q-fever/.",Expandable,52,,
+54,Control,"The purpose of controlling Q fever is mostly to protect human health, as the clinical impact on sheep flocks is generally low. Control measures can include insect and vermin control, biosecurity measures and clean water. 
+Specific control measures for flocks in which Q fever is a problem include:
+- Keeping pregnant and young animals away from those giving birth and any birth products
+- Keeping pregnant and young animals upwind of lambing ewes or kidding goats
+- Keeping lambing ewes indoors with carefully controlled airflow
+- Compost manure for at least 90 days before spreading on land, then spread on low wind days
+- Minimise dust",Expandable,52,,
+55,Vaccination,"In the event of an outbreak, your veterinarian may be able to apply for a special import licence for the vaccine from Europe, as it is not currently commercially available in the UK (3). However, despite vaccination, ewes which are infected before being vaccinated will continue to shed some bacteria during the next lambing season (4).",Expandable,52,,
+56,References,"(1)   NHS. Q Fever; 2021 [cited 2021 August 14]. Available from: https://www.nhs.uk/conditions/q-fever/. 
+(2)   Álvarez-Alonso R, Zendoia II, Barandika JF, Jado I, Hurtado A, López CM, et al. Monitoring Coxiella burnetii Infection in Naturally Infected Dairy Sheep Flocks Throughout Four Lambing Seasons and Investigation of Viable Bacteria. Frontiers in Veterinary Science. 2020;7(352). Available from: https://doi.org/10.3389/fvets.2020.00352
+(3)   Hogerwerf L, van den Brom R, Roest H-J, Bouma A, Pieterse M, Dercksen D, et al. Reduction of Coxiella burnetii Prevalence by Vaccination of Goats and Sheep. Emerging infectious diseases. 2011;17:379-86. Available from: https://doi.org/10.3201/eid1703.101157
+(4) Bauer BU, Knittler MR, Prüfer TL, Wolf A, Matthiesen S, Runge M, et al. Humoral immune response to Q fever vaccination of three sheep flocks naturally pre-infected with Coxiella burnetii. Vaccine. 2021;39(10):1499-507. Available from: https://doi.org/10.1016/j.vaccine.2021.01.062",Expandable,52,,
+57,E. Coli,"Cause: Bacteria (Escherichia coli, shiga toxin producing strains)
+Distribution: Worldwide
+Source: Sheep, faeces, environment
+Samples for Diagnosis: Aborted placenta and lambs, blood cultures from ewes
+Treatment: Seek veterinary advice
+Notifiable Disease: No
+Risk to Humans: Yes (1) 
+
+E. coli is found widely in the environment, as well as the gut, and in faeces. However, it can also be a cause of abortion if ewes become infected. Infection commonly occurs when the bacteria is eaten. Care needs to be taken to avoid human infection by this bacteria. See Abortions - What to do? for immediate steps which should be undertaken following an abortion to prevent spread within the flock and zoonoses (the infection spreading to humans).",Button,18,"22, 23, 24, 45, 38, 40",Causes
+58,Characteristics of E. coli Infections,"Ewes become unwell, presenting with diarrhoea, dark red vaginal discharge and can die. They will abort in the final 2 weeks of pregnancy, producing well preserved or decomposed lambs. Some lambs will be stillborn, or born live but die shortly after birth. Abortions due to E. coli occur sporadically, but are common, although outbreaks can also occur (2).",Expandable,57,,
+59,Control,"E. coli is difficult to control as it is so common in the environment, and is sometimes resistant to antibiotics (3). Reducing bacterial load on farm can be done by bird and vermin control, controlling silage and feed contamination, providing clean water and implementing good biosecurity measures. Keeping the environment clean and dry will reduce survival of E. coli bacteria and hence the spread of disease.",Expandable,57,,
+60,References,"(1)   HSE. Verotoxigenic   E. coli   (VTEC) - includes   E. coli   O157 [cited 2021 August 9]. Available from: https://www.hse.gov.uk/agriculture/topics/zoonoses.htm. PDF Version
+(2)   Sargison ND, Howie F, Mearns R, Penny CD, Foster G. Shiga toxin-producing Escherichia coli as a perennial cause of abortion in a closed flock of Suffolk ewes. Veterinary Record. 2007;160(25):875-6. Available from: https://doi.org/10.1136/vr.160.25.875
+(3)   Doidge C, West H, Kaler J. Antimicrobial Resistance Patterns of Escherichia coli Isolated from Sheep and Beef Farms in England and Wales: A Comparison of Disk Diffusion Interpretation Methods. Antibiotics. 2021;10(4). Available from: https://doi.org/10.3390/antibiotics10040453",Expandable,57,,
+61,Listeriosis,"Cause: Bacteria (Listeria monocytogenes or ivanovii)
+Distribution: Worldwide
+Source: Contaminated silage, pasture contaminated by faeces
+Samples for Diagnosis: Aborted placenta and lambs, vaginal swabs from ewes
+Treatment: Seek veterinary advice
+Notifiable Disease: No
+Risk to Humans: Yes (1) 
+
+Listeriosis is a bacterial infection often obtained from spoiled silage or soil contaminated pasture. The bacteria reproduce in silage contaminated with soil or faeces that is not stored appropriately. If the packaging around the silage is not air tight, it will not ferment sufficiently to reach acidic pH (2).",Button,18,"22, 23, 24, 40, 45",Causes
+62,Characteristics of Listeriosis,"Ewes can become unwell, a minimum of seven days after infection, and may abort the foetus(es) (3). This can be at any point during pregnancy. The aborted lambs are often decomposed. Common symptoms in the ewe include diarrhoea, behavioural changes (depression, compulsive walking, one droopy ear and/or eye, drooling), and septicaemia (4).
+
+More information on listeriosis can be found at NADIS at Simcock E. Nervous Disease in Sheep; 2019. Available from: https://www.nadis.org.uk/disease-a-z/sheep/nervous-disease-in-sheep/.",Expandable,61,,
+63,Control,"Listeriosis can be controlled by preventing soil contamination of silage and feed , correct storage conditions for silage fermentation, not feeding any suspected contaminated feed to sheep, bird and vermin control, and biosecurity measures. See Abortions - What to do? for immediate steps which should be undertaken following an abortion to prevent spread within the flock and zoonoses (the infection spreading to humans).",Expandable,61,,
+64,References,"(1)   NHS. Listeriosis; 2020 [cited 2021 August 12]. Available from: https://www.nhs.uk/conditions/listeriosis/. 
+(2)   Simcock E. Nervous Disease in Sheep; 2019 [cited 2021 August 12]. Available from: https://www.nadis.org.uk/disease-a-z/sheep/nervous-disease-in-sheep/.
+(3)   SRUC. Disease presentations of Listeria monocytogenes in sheep. Vet Rec. 2018;183(21):649. Available from: https://doi-org.ezproxy.lib.gla.ac.uk/10.1136/vr.k5071 
+(4)   Scott P. Overview of Listeriosis; 2014 [cited 2021 August 13]. Available from: https://www.msdvetmanual.com/generalized-conditions/listeriosis/overview-of-listeriosis.",Expandable,61,,
+65,No Diagnosis,"Cause: Possibly too few samples tested
+Distribution: Worldwide
+Source: Unknown
+Samples for Diagnosis: Aborted placenta and lambs, blood samples from normal and aborted ewes, silage samples
+Treatment: Seek veterinary advice
+Notifiable Disease: Unknown
+Risk to Humans: Unknown
+
+Not being able to diagnose the cause of abortion is a common issue. It is often due to too few samples being sent off for diagnosis, or samples sent having too little placenta. Use disposable gloves to pick up aborted placentas and lambs, place them in clean plastic bags without any holes, using one bag per aborting ewe. Contact your vet as soon as possible to arrange laboratory testing of the samples. Mark and isolate affected ewes for the vet to perform blood tests if necessary. See Abortions - What to do? for more information and steps which should be undertaken immediately to prevent spread of potential infectious causes within the flock and zoonoses (infection of humans).",Button,18,"24, 43, 45",Causes
+66,Control,"Ewes should be treated as if the cause is infectious, so appropriate biosecurity measures should be put in place. Stress should also be reduced. Silage testing can be undertaken. Grass silage with an ash content of above 10% or a pH above 5 could indicate soil contamination and an increased chance of certain diseases such as listeriosis (1).",Expandable,65,,
+67,References,"(1) Phillips K, Phythian C, Wright N, Morgan M. Sheep health, welfare and production planning 2. Assessing nutrition of the ewe in late pregnancy. In Practice. 2014;36. Available from: https://doi.org/10.1136/inp.g1564",Expandable,65,,
+68,Vaccination,"Vaccines are essential for controlling some causes of abortion. 
+
+Vaccines are only effective if:
+- stored at the correct temperature
+- given at the correct time
+- given to the correct animals
+- administered correctly
+- used within the stated time from opening (usually 2-8hrs) and before the use by date
+
+Product information leaflets will show specific details for each vaccine. 
+
+Availability and licencing of vaccines may vary between different countries. Search if the vaccine is available in the UK here - Veterinary Medicines Directorate Product Information Database
+
+Information on vaccines for sheep abortion can be found on page 15 of this AHDB resource: Use of vaccines in cattle and sheep production; 2019. Available from: https://projectblue.blob.core.windows.net/media/Default/Dairy/Publications/Use%20of%20vaccines%20in%20cattle%20and%20sheep%20prod_WEB.pdf.",Button,21,,Controls
+69,References,Veterinary Medicines Directorate Product Information Database [cited 2021 August 9] https://www.vmd.defra.gov.uk/ProductInformationDatabase,Expandable,68,,
+70,Bad Nutrition,"Cause: Severe/prolonged undernutrition, overstocking, mycotoxins, plant
+toxins
+Distribution: Worldwide
+Source: As above
+Samples for Diagnosis: Nutritional assessment, blood samples from pregnant ewes, young lambs which have died
+Treatment: Seek veterinary advice and/or advice from a nutritionist
+Notifiable Disease: No
+Risk to Humans: No
+
+Body Condition Score (BCS) is an indicator of the fat cover of the ewe. Both ewes that are too thin and too fat can have problems with fertility and increased risk of abortion (1). Both the quantity and quality of forage is important. Overstocking a field or having too little feed space in a shed can contribute to some sheep becoming too thin.",Button,18,"33, 40, 45",Causes
+71,Undernutrition,"Undernutrition makes sheep more susceptible to other diseases. Underfed and thin ewes during the first 6 weeks of pregnancy are more likely to be barren due to lower fertility (2), reabsorb their embryos (3) and some may suffer later from abortions of mummified foetuses. Undernutrition during the second trimester can increase the chance of premature birth of weak lambs and further abortions. Ewes with a low BCS and undernutrition during the third trimester will produce small and weak lambs which are susceptible to disease and hypothermia. Studies have shown that nutrition during late pregnancy is most important in determining lamb birthweight (4), as well as colostrum quality and quantity.",Expandable,70,,
+72,Iodine Deficiency,"Ewe diets that are deficient in iodine or high in goitrogens (compounds that interfere iodine uptake and use), such as brassicas and some legumes, can impact on lamb numbers and survival. Iodine deficiency during breeding and early pregnancy can result in reduced lamb numbers at scanning time. An iodine-deficient or goitrogen-high diet in the second half of pregnancy can result in late abortions, stillbirths or the birth of weak live lambs. Lambs characteristically have reduced hair cover and in severe cases may have a swelling on the lower neck. Note that over supplementation of iodine during late pregnancy can contribute to the death of newborn lambs by reducing colostrum consumption.",Expandable,70,,
+73,Other Trace Element Deficiencies,"Deficiencies in manganese and selenium have occasionally been associated with abortion in sheep, but they are uncommon. 
+
+For more information on trace element deficiencies in sheep, see this FAS fact sheet: FAS. Trace Element   Supplementation in Sheep Flocks. Available from: https://www.fas.scot/publication/trace-element-supplementation-in-sheep-flocks/.",Expandable,70,,
+74,Toxic Plants,"Sheep may eat toxic plants when food is scarce, when usually they would not eat these plants as they are unpalatable. See feed contamination for further information on which plants are toxic for livestock, and how to prevent poisoning.",Expandable,70,,
+75,Control,Nutritional problems can be controlled by maintaining good Body Condition Score and avoiding silage and feed contamination. Dentition (teeth) should also be checked for any particularly thin ewes.,Expandable,70,,
+76,References,"References
+(1) Morgan-Davies C, Waterhouse A, Pollock M, Milner J. Body condition score as an indicator of ewe survival under extensive conditions. Animal welfare (South Mimms, England). 2008;17:71-7. Available from: https://www.ingentaconnect.com/contentone/ufaw/aw/2008/00000017/00000001/art00009#trendmd-suggestions
+(2)   Aké-López J, Isla-Herrera G, Magaña-Monforte J, Segura J, Centurión-Castro F, Cansino-Arroyo GR. Effect of body condition on estrus cycle, ovarian activity and corpus luteum function of Pelibuey ewes. Livestock Research for Rural Development. 2013;25. Available from: https://www.redalyc.org/pdf/939/93915703034.pdf 
+(3)   de Brun V, Meikle A, Fernández-Foren A, Forcada F, Palacín I, Menchaca A, et al. Failure to establish and maintain a pregnancy in undernourished recipient ewes is associated with a poor endocrine milieu in the early luteal phase. Animal Reproduction Science. 2016;173:80-6. Available from: https://doi.org/10.1016/j.anireprosci.2016.08.016
+(4)   Roca Fraga FJ, Lagisz M, Nakagawa S, Lopez-Villalobos N, Blair HT, Kenyon PR. Meta-analysis of lamb birth weight as influenced by pregnancy nutrition of multiparous ewes. Journal of Animal Science. 2018;96(5):1962-77. Available from: https://doi.org/10.1093/jas/sky072",Expandable,70,,
+77,Salmonella Species,"Cause: Bacteria (Salmonella montevideo, S. dublin, S. diarizonae,
+S. typhimurium, S. abortusovis)
+Distribution: Worldwide, except S. abortusovis is not found in all countries, including the UK at present
+Source: Contaminated feed or water, birds, vermin, carrier animals (sheep, cattle, dogs, cats etc)
+Samples for Diagnosis: Aborted placenta and lambs, vaginal swabs from aborted ewes
+Treatment: Seek veterinary advice 
+Notifiable Disease: No
+Risk to Humans: Yes (1) - except S. abortusovis 
+
+Salmonella species are commonly found in healthy sheep in the UK. However, certain serotypes (Salmonella montevideo, S. dublin, S. diarizonae, S. typhimurium, S. abortusovis) can cause abortion (2). S. abortusovis is an important cause of abortion in other parts of the world, but is not currently seen in the UK. Other Salmonella species remain important in the UK, especially due to their potential to cause severe disease in humans. See Abortions - What to do? for immediate steps which should be undertaken following an abortion to prevent spread within the flock and zoonoses (the infection spreading to humans).
+
+These bacteria can be introduced to the flock by contaminated feed or water rodents and birds, or by the addition of infected animals to the flock. Outbreaks of disease due to salmonellosis are especially severe when sheep are housed, due to a higher stocking density and a greater potential for the bacteria to spread through water and feed troughs (3). Stress (e.g. transport, feed/water shortages, weather changes) can also initiate abortion storms due to these bacteria.",Button,18,"22, 23, 24, 38, 40, 45, 68",Causes
+78,Characteristics of Salmonellosis,"Symptoms of infection with Salmonella species in sheep are diarrhoea, depression, not eating, and sometimes rapid death (4). When abortion occurs, it is usually seen during mid to late pregnancy.  Lambs can also be stillborn or alive but weak and suffer from diarrhoea, these lambs often die soon after birth. Ewes can also have retained placenta and/or vaginal discharge after aborting or giving birth to affected lambs.  
+
+For more information on Salmonella see this article by NADIS: Scott P, NADIS. Abortion in Sheep; 2016. Available from: https://www.nadis.org.uk/disease-a-z/sheep/abortion-in-ewes/.",Expandable,77,,
+79,Control,"The most effective control measures are bird control, avoiding silage and feed contamination, providing clean water, vermin control, and biosecurity measures.",Expandable,77,,
+80,Vaccination,"There is an inactivated vaccine (Inmeva in the UK) for Salmonella abortusovis (5). For other Salmonella species, vaccines can be produced, however this is expensive and outbreaks of disease commonly only last one lambing season.",Expandable,77,,
+81,References,"(1)   HSE. Salmonella [cited 2021 August 5]. Available from: https://www.hse.gov.uk/agriculture/topics/zoonoses.htm. PDF Version
+(2)   Animal & Plant Health Agency. Salmonella in Livestock  Production in GB 2019; 2020 [cited 2021 August 4]. Available from: https://www.gov.uk/government/publications/salmonella-in-livestock-production-in-great-britain. PDF Version
+(3)   Grünberg W. Salmonellosis in Animals; 2020 [cited 2021 August 6]. Available from: https://www.msdvetmanual.com/digestive-system/salmonellosis/salmonellosis-in-animals.
+(4)   Carson A, Davies R. Salmonellosis in sheep. The Veterinary Record. 2018;183(17):539. Available from: https://doi-org.ezproxy.lib.gla.ac.uk/10.1136/vr.k4569
+(5)   Veterinary Medicines Directorate. Inmeva, Suspension for Injection; 2019 [cited 2021 August 5]. Available from: https://www.vmd.defra.gov.uk/ProductInformationDatabase/product/A010210.",Expandable,77,,
+82,Schmallenberg Virus,"Cause: Virus (Schmallenberg virus, an orthobunyavirus) 
+Distribution: Europe, but similar viruses are found in Asia, Africa and Australia
+Source:  Spread by midges
+Samples for Diagnosis: Aborted placenta and lambs, blood samples from ewes or other ruminants on the farm
+Treatment: Seek veterinary advice. Affected lambs often need to be euthanised
+Notifiable Disease: No
+Risk to Humans: No
+
+The Schmallenerg Virus is a ruminant disease which is spread by midges and commonly causes abortion and the birth of deformed lambs.",Button,18,"42, 68",Causes
+83,Characteristics of Schmallenberg Virus,"Schmallenberg can cause abortion during mid to late pregnancy. The number of ewes affected can be high if infected midges are present when most ewes are in early pregnancy, otherwise abortion numbers may be low. Ewes are not normally unwell. Each litter can have a mixture of normal, stillborn or deformed lambs (1). Deformations can be severe, with joints and the spine having abnormal angles. There may also be signs of brain damage. Even severely deformed lambs can be alive at birth and need to be euthanised promptly to prevent suffering. The deformities can cause problems during birth, making assistance or veterinary intervention necessary. Schmallenberg outbreaks can be particularly hard for farmers due to the high levels of losses (of both ewes and lambs), deformities and birthing troubles (2).
+
+For more information see the 2018 article by Scott P. Schmallenberg Virus (SBV) on the NADIS website. Available from: https://www.nadis.org.uk/disease-a-z/cattle/schmallenberg-virus-sbv/.",Expandable,82,,
+84,Control,Insect control should be undertaken to prevent the spread by midges.,Expandable,82,,
+85,Vaccination,"There is an inactivated vaccine available (Zulvac in the UK) (3). It is safe to use from 3.5 months of age. One injection should be administered at least 2 weeks before breeding. Revaccination is necessary every 6 months, at least 2 weeks before breeding.",Expandable,82,,
+86,References,"(1)   van den Brom R, Luttikholt S, Peterson K, Peperkamp NHMT, Mars M, Poel W. Epizootic of ovine congenital malformations associated with Schmallenberg virus infection. Tijdschrift voor diergeneeskunde. 2012;137:106-11. 
+(2)   Phythian CJ, Glover MJ. Highs and Lows of Lambing Time: Sheep Farmers' Perceptions of the First Outbreak of Schmallenberg Disease in South West England on Their Well-Being. International journal of environmental research and public health. 2019;16(24):5057. Available from: https://doi.org/10.3390/ijerph16245057
+(3)   European Medicines Agency. Zulvac SBV [cited 2021 August 8]. Available from: https://www.ema.europa.eu/en/medicines/veterinary/EPAR/zulvac-sbv.",Expandable,82,,
+87,Stress,"Cause: Dog worrying, predator attacks, heat stress, rough handling
+Distribution: Worldwide 
+Source: As above
+Samples for Diagnosis: Aborted placenta and lambs to rule out infectious causes
+Treatment: None
+Notifiable Disease: No
+Risk to Humans: No
+
+Stress can cause an increase in other diseases in the flock. Abortions are usually sporadic, and the ewes are not likely to be unwell. Abortions are most likely in response to stress during mid to late pregnancy. 
+
+Murray et al 2019 reported that each incident of dog worrying has been shown to cause on average 0.34 pregnant ewes to abort per dog worrying incident (1). In May/June 2019, 14% of sheep farmers claimed that dogs had attacked or chased their flock in the last 12 months. These farmers had an average of 3.5 incidents per year. These figures show that dog worrying is a real cause of abortion in ewes. 
+
+By comparison, predator attacks by animals like foxes, large birds or badgers are also associated with abortion in ewes. Each incident is thought to cause 0.15 pregnant ewes to abort, on average (1). 37% of sheep farmers reported wildlife attacks in their flocks when asked about the incidence of attacks in the 12 months preceding when the questionnaire was conducted (May/June 2019). The average number of attacks reported was 9.4 incidents a year. 
+
+Heavily pregnant ewes may abort if transported, handled or herded during late pregnancy as these events are stressful, especially if done in a rough or rushed manner. Sheep dogs should be used sparingly when moving pregnant ewes. 
+
+Heat stress has been shown to cause decreased fertility of ewes, early embryo losses, impaired foetal growth and increased lamb mortality. The impact of heat stress is thought to be most profound at temperatures above 25-31°C (2). There are various mechanisms by which this happens, one is ewes eating less when under heat stress. This lowered feed intake affects the ability to maintain a pregnancy and foetal development (3). 
+
+See reduce stress for information on how to prevent abortions caused by stress.",Button,18,43,Causes
+88,References,"(1)   Murray L, Warren R. Sheep Attacks and   Harassment   Research; 2019 [cited 2021 August 15]. Available from: https://www.gov.scot/publications/sheep-attacks-harassment-research/pages/2/.
+(2)   van Wettere WHEJ, Kind KL, Gatford KL, Swinbourne AM, Leu ST, Hayman PT, et al. Review of the impact of heat stress on reproductive performance of sheep. Journal of Animal Science and Biotechnology. 2021;12(1):26. Available from: https://doi.org/10.1186/s40104-020-00537-z 
+(3)   AHDB. Feeding the ewe; 2018 [cited 2021 August 15]. Available from: https://ahdb.org.uk/knowledge-library/feeding-the-ewe.",Expandable,87,,
+89,Tickborne Fever,"Cause: Bacteria (Anaplasma phagocytophilum)
+Distribution: Europe, similar diseases seen in other continents
+Source: Ticks (ixodes ricinus - the common sheep tick), shared needles
+Samples for Diagnosis: Aborted placenta and lambs, blood samples from ewes
+Treatment: Seek veterinary advice
+Notifiable Disease: No
+Risk to Humans: Yes (1)
+
+Sheep can become infected with Anaplasma phagocytophilium when they are bitten by infected ixodes ricinus ticks, the common sheep tick. The bacteria can also be transmitted from infected sheep to their flock-mates through reused needles. The resulting disease, tickborne fever, is typically seen in lambs in spring and summer when sheep are moved from areas with low numbers of ticks to areas where there are many. Symptoms normally start to show 1-2 weeks after infection, and last approximately 2 weeks, although subsequent relapses are possible.",Button,18,42,Causes
+90,Characteristics of Tickborne Fever,"Symptoms include fever, depression, weight loss and sometimes a cough. If ewes are exposed to infected ticks for the first-time during pregnancy, abortion of the lambs may occur. Abortion tends to occur 2-8 days after the onset of the fever (2). It is unclear if tickborne fever can also result in the birth of stillborn or weak live lambs (3). Tickborne fever affects the animals' immune system, and can make them more susceptible to other diseases, including tick pyaemia, louping ill, listeriosis and pneumonic pasteurellosis.
+
+For more information see the Moredun Research Institute factsheet from 2015 written by Rocchi M, Sargison N., Ticks and Tickborne Diseases. Available from: https://www.moredun.org.uk/research/diseases/ticks-tickborne-diseases.",Expandable,89,,
+91,Control,Tickborne fever can be controlled by avoiding exposure of ewes to tick habitat during their first pregnancy. Sheep can be protected from ticks by using acaricides like plunge dips and pour on treatments (4). See insect control for more details.,Expandable,89,,
+92,References,"(1) European Centre for Disease Prevention and Control. Tick-borne Diseases [cited 2021 August 6]. Available from: https://www.ecdc.europa.eu/en/tick-borne-diseases.
+(2)   Woldehiwet Z. Tickborne Fever in Ruminants; 2020 [cited 2021 August 3]. Available from: https://www.msdvetmanual.com/generalized-conditions/tickborne-fever/tickborne-fever-in-ruminants.
+(3)   Stuen S, Okstad W, Sagen AM. Intrauterine Transmission of Anaplasma phagocytophilum in Persistently Infected Lambs. Veterinary Sciences. 2018;5(1). Available from: https://doi.org/10.3390/vetsci5010025
+(4)   Rocchi M, Sargison N. Ticks and   Tickborne Diseases; 2015 [cited 2021 August 10]. Available from: https://www.moredun.org.uk/research/diseases/ticks-tickborne-diseases.",Expandable,89,,
+93,Toxoplasma Gondii,"Cause: Protozoal parasite (Toxoplasma gondii)
+Distribution: Worldwide
+Source: Young cats, feed/forage contaminated by cat faeces
+Samples for Diagnosis: Aborted placenta and lambs, blood samples from ewes
+Treatment: Seek veterinary advice
+Notifiable Disease: No
+Risk to Humans: Yes, from cat faeces (1)
+
+Toxoplasma gondii is a parasite which causes toxoplasmosis. It is transmitted by cats. Cats shed a high number of parasite oocysts ('eggs') in their faeces when they are young and first start hunting, they pick up the infection from rodents. Cats rarely present as unwell (2). If the cat defecates on pasture, forage, concentrate feed or into a sheep water source, sheep can ingest the oocysts, and they only need to eat a few 10s of oocysts to cause pregnancy loss or abortion. The oocysts can remain in the soil for up to 18 months, and in a water supply for up to 4.5 years (3).",Button,18,"22, 35, 38, 40, 68",Causes
+94,Characteristics of Toxoplasmosis,"If the disease is introduced to a farm while ewes are pregnant, there can be a high barren ewe rate and/or many abortions. If the disease is already present, it may cause a constant low level of abortions every year. The ewes do not present as unwell. Toxoplasmosis can cause abortion of mummified or decomposed lambs, stillbirths and the birth of live weak lambs (4). One ewe can produce a mixture of these outcomes within one litter of lambs.
+
+More information on toxoplasmosis is available at from The Moredun Foundation at: Control of Toxoplasma Abortion in Sheep, 2019. Available from: https://www.moredun.org.uk/sites/default/files/documents/diseases/Moredun%20Vol%207%20No%202%20Control%20of%20Toxoplasma%20Abortion%20in%20Sheep.pdf.",Expandable,93,,
+95,Control,"Toxoplasmosis can be controlled by vaccination, managing cats appropriately, vermin control, providing clean water and avoiding feed contamination. Aborted material should be cleared away rapidly to prevent cats or vermin eating it, and being infected by the parasite. See Abortions - What to do? for immediate steps which should be undertaken following an abortion to prevent spread within the flock and zoonoses (infection of humans).",Expandable,93,,
+96,Vaccination,"There is a vaccination available (Toxovax in the UK). Replacement/first time breeding ewes should be vaccinated with a single dose between 3 weeks and 4 months before breeding, provided they are over 5 months of age. Revaccination after 2 years is recommended by the manufacturer, at least 3 weeks before breeding. This vaccine cannot be used in pregnant ewes and should not be administered by anybody who is immunocompromised or pregnant (5).",Expandable,93,,
+97,References,"(1)   NHS. Toxoplasmosis; 2020 [cited 2021 August 12]. Available from: https://www.nhs.uk/conditions/toxoplasmosis/.
+(2)   Cornell Feline Health Center. Toxoplasmosis in Cats; 2018 [cited 2021 August 13]. Available from: https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/toxoplasmosis-cats.
+(3)  Van Wormer E, Fritz H, Shapiro K, Mazet JA, Conrad PA. Molecules to modelling: Toxoplasma gondii oocysts at the human-animal-environment interface. Comp Immunol Microbiol Infect Dis. 2013;36(3):217-31. Available from: https://dx.doi.org/10.1016%2Fj.cimid.2012.10.006
+(4) The Moredun Foundation. Control of Toxoplasma Abortion in Sheep; 2019 [cited 2021 August 15]. Available from: https://www.moredun.org.uk/sites/default/files/documents/diseases/Moredun%20Vol%207%20No%202%20Control%20of%20Toxoplasma%20Abortion%20in%20Sheep.pdf
+(5)   Veterinary Medicines Directorate. Toxovax; 2020 [cited 2021 August 13]. Available from: https://www.vmd.defra.gov.uk/ProductInformationDatabase/product/A000451.",Expandable,93,,
+98,Young Lamb Survival,,Button,20,,----------------------------------------
+99,Causes,,Tab,98,,
+100,Controls,,Tab,98,,
+101,Colostrum,"Lambs should get colostrum of a good quantity and quality, quickly. Colostrum is important as an energy source to keep the lamb warm and prevent hypothermia. Colostrum also contains antibodies which are needed to create a healthy immune system, which lambs need to fight off disease. 
+
+Lambs should receive a quantity of 50ml/kg of colostrum within 2 hours after birth, but really as quickly as possible after birth. Within the first 24hrs, they should have received 200ml/kg of colostrum. Especially triplets or small, weak lambs may not receive enough colostrum. They should be closely monitored or supplemented with another source. 
+
+Receiving the colostrum quickly is essential as the brown fat a lamb can use as energy source will run out within a few hours, resulting in hypothermia if there is no alternative energy source. Furthermore, lambs are only able to absorb antibodies needed for their immune system for the first 6 hours after birth. Colostrum is also important as it provides passive immunity for some diseases, eg if the ewe has been vaccinated against Clostridia. 
+
+All ewes' teats should be checked soon after birth (commonly this is done while the lambs undergo navel dipping). The udders and teats should be inspected for heat (an indicator of mastitis) or abnormal shape which may cause difficulty nursing. A little milk should be expelled from both teats to remove the hard wax plug, to make suckling easier for the lambs. If one or both udders do not produce milk, the lambs may need to be supplemented colostrum. Keep a close eye on this ewe and reassess her milk-producing capabilities a few hours later, alongside the appearance of the lambs. One or all of her lambs may need to be fostered onto another ewe or bottle fed if she is unable to produce enough milk. 
+
+Lambs may need to be supplemented milk while the ewe recovers from disease, or if she cannot produce enough milk. These lambs can be kept with the ewe but also bottle fed. Note that there is a significant risk that the lamb will stop nursing from the ewe due to a preference for the bottle so care should be taken when undertaking this approach. 
+
+The best quality of colostrum is fresh colostrum from the ewe. Alternative sources include:
+
+- colostrum from another ewe (preferable)
+- pooled cow's colostrum
+- artificial colostrum (least preferable)
+
+Colostrum from other ewes the flock can be milked by hand. Care must be taken to clean the ewes teat first, wear disposable gloves and use a clean container. This can be frozen and defrosted for later use. 
+
+More information on colostrum for lambs can be found at this AHDB page: Colostrum Management for Lambs. Available from: https://ahdb.org.uk/knowledge-library/colostrum-management-for-lambs",Button,100,,Controls
+102,Ewe and Lamb Observation,"Close observation of lambs and ewes is essential for early intervention. Quick treatment of disease, identification of mismothering, lambs in dangerous situations or dystocia will increase the survival rate.
+
+All ewes (in or outdoors) should be gently encouraged to stand and move at least once daily. This is to check for lameness, prolapses, inability to stand and any other health conditions. Care must be taken to do this in a calm fashion to not cause stress to the ewes. Ewes should be treated accordingly. 
+
+All lambs (in or outdoors) should also be encouraged to stand and move around at least once daily. This is to identify any health issues which may be missed otherwise. Lameness, mismothering, dull lambs, signs of starvation or disease can all be observed this way. Take care to not stress the flock, as there is a risk of mismothering and lamb injury associated with this. If there is concern about any lambs, they should be examined, their identifying number noted, brought into a closer field or indoors (where applicable) and treated accordingly. 
+
+There should be adequate staff to check on both fields and sheds regularly. Common recommendations are 1 experienced shepherd per 250-300 ewes indoors, and 1 per 600-1,000 ewes outdoors. If any staff are trainees or students, staffing levels should be higher to allow for this. 
+
+Staff should be taught what to look out for when looking over the flock. Behaviours, vocalisations, symptoms of disease, treatment protocols and signs of lambing, dystocia and mismothering should all be covered. 
+
+Known field hazards (e.g. gullies or streams) should be checked regularly for lambs which are stuck, unwell or in danger. 
+
+Transport and trailers e.g. pickup trucks or quad bikes should be in full working order for the start of lambing time. Plenty of fuel should be available on farm, running out suddenly could render vehicles useless and leave staff unable to access fields or transport sheep.",Button,100,,Controls
+103,Ewe-Lamb Bonding,"The bond between the ewe and the lamb is very important to prevent mismothering, which is a significant risk factor for increased lamb mortality. A good ewe-lamb bond results in licking of the lamb to dry and stimulate it, increased suckling behaviour to increase colostrum intake, maternal behaviour that avoids lambs being abandoned or left behind by ewes.
+ 
+
+For optimal bonding
+ -    Ensure there is adequate food and water easily accessible to the ewe. A hungry or thirsty ewe will travel in search of water or food, and her lambs may not be able to keep up. Furthermore, ewes with inadequate nutrition will produce less milk.
+ -    Move ewes to the lambing area a few days before they are due to lamb, to reduce stress levels in the ewes before lambing starts. This allows them to get used to the environment, which may be different to their previous environment. This is especially important in first time lambers.
+ -    Avoid disturbing ewes during birth. Observe their progress from an inconspicuous location or distance. Interfere only when necessary, avoid loud noises and dogs. Monitor the flock for any other sources of stress. 
+ -    Do not overstock the pens or fields. This reduces disturbance of lambing and newly lambed ewes by other ewes. In group pens, there should be 1.1m2 per ewe. Individual pens should be at least 3m2 (1), to reduce the chance of ewes lying on their lambs. There should be one individual pen per 8 to 10 ewes for indoor lambing groups. 
+ -    Lambing pens and fields should be secure, to avoid lambs becoming physically separated from the ewe. If they become separated, the mother may leave the lamb and not accept it when they are reunited. There is also increased risk to the lamb of starvation, accidents, hypothermia, attack by other sheep and predation when separated from the mother. 
+ -    Select replacement ewe lambs born to ewes with good maternal ability. Assess ram EBVs (Estimated Breeding Values), selecting for good maternal qualities. A guide to assessing ram EBVs is available here (2). Genetics are important in determining mothering ability.
+ -    Keep rams separate from late pregnant and newly lambed ewes. They may try breed with the ewe, and sometimes kill lambs. 
+ -    Separate pregnant ewes from ewes with lambs. Pregnant ewes close to lambing can become ""lamb-nappers"", trying to steal other ewes' lambs. This can result in mismothering if the mother becomes separated from one or her own lambs. Any particularly bad ""lamb-nappers"" can be separated from the rest of the flock to prevent them from stealing lambs as soon as they are born. This can occasionally be seen in ewes who have lost their own lambs, and mistake other lambs as their own. These ewes should also be separated from ewes with new-born lambs or pregnant ewes anyway for infection control reasons. 
+
+
+Look out for ewes rejecting lambs. They may try push them away, headbutt them or prevent them from suckling, by moving continually. Lambs which have been rejected by their mothers are often noisy, hungry, and are susceptible to starvation and hypothermia. 
+
+If a ewe seems disinterested in her lamb(s),
+- Check the ewe and lamb(s) for signs of ill health, for example mastitis in the ewe.
+- House them together in a small individual pen, to give them a better chance to bond.
+- Ewes which will not let their lambs nurse but do not try to harm their lambs may need to be temporarily restrained to allow the lambs to feed.
+- If the ewe is attacking her lamb the ewe may need restraining for longer, using an adoption pen or halter. Ensure that the ewe has easy access to food and water at all times, and is able to lie down. The ewe can be released under supervision to check if she will accept the lamb every day. Be ready to intervene in case she attacks the lamb again. Bedding may need to be changed more often due to urination and defecation happening in just one spot. Check daily that the restraint is not causing the ewe discomfort, such as rubbing or other injuries. If the ewe does not accepting the lamb, they may need to be separated. The lamb should join the orphan/pet lambs, and the ewe should be marked so she can be identified for culling later in the year.
+     
+
+Identify ewes which are not good mothers and do not retain these for further breeding.",Button,100,,Controls
+104,References,"(1) HCC. Making Every Lamb Count; 2011 [cited 2021 August 18]. Available from: https://meatpromotion.wales/en/industry-resources/sheep-management.
+(2) Quality Meat Scotland. Using EBVs as a Tool  to Breed Better Sheep; 2019 [cited 2021 August 18]. Available from: https://www.qmscotland.co.uk/news/updated-guide-highlights-valuable-role-ebvs.",Expandable,103,,
+105,Ewe Nutrition,"Correct ewe nutrition is a hugely important factor influencing lamb survival (1). It influences
+ - lamb birth weight
+ - colostrum quantity and quality
+ - brown fat of the lamb
+ - mismothering
+ - lamb vigour
+ - presentation of the lamb during birth  
+
+
+Both over and under nutrition of the ewe can have detrimental effects for both ewes and lambs, although undernutrition is most problematic. The recommended target body condition scores (BCS) for ewes at key part of the production cycle can be found on the HCC guide: Practical Sheep Nutrition; 2006. Available from: https://meatpromotion.wales/en/industry-resources/sheep-management.
+ 
+
+A constant supply of good quality forage should be available (either conserved or grazed). Extra feed should be supplied if needed, for example during late pregnancy, if forage is poor or for ewes carrying multiples. If feed is limited, livestock numbers should be reduced so the feed demand can be met.
+
+To ensure adequate nutrition of breeding and pregnant ewes
+ - Monitor ewe BCS before and after breeding, in mid pregnancy, before and after lambing and at weaning
+ - Pregnancy scan ewes in mid pregnancy to determine how many lambs they are carrying, so that they can be fed appropriately
+ - Get forage analysed ahead of time to allow additional feeding to be sourced before it is needed
+ - Consult a nutritionist and/or vet to provide a pregnant ewe diet
+ - Ensure there is enough space for all ewes to access food, recommendations vary depending on whether feed is ad lib or limited, see the AHDB Feeding the ewe, available from: https://ahdb.org.uk/knowledge-library/feeding-the-ewe for more details
+ - Blood sample ewes 3 – 4 weeks prior to lambing to check nutrition is appropriate
+
+
+Most of the lamb growth occurs during the last 6 weeks of pregnancy, therefore this is the most important period for feeding. During this time the ewe needs energy and protein for lamb growth, udder development, and colostrum production. Lamb birth weight and survival are greatly influenced by nutrition during this time. Therefore ewes should be separated into groups and fed according to the number of lambs they are carrying for the final eight weeks of pregnancy.  This includes two weeks of settling in time. Four commonly used categories are young ewes, ewes carrying single lambs, twin lambs, and lastly those carrying triplets or more. Adjustment can be made within and between these groups according to ewe body condition, with thin ewes being moved up a group, to a group being fed more. Not only does this help with monitoring and maintaining the correct body condition of ewes, it also helps reduce pregnancy toxaemia and hypocalcaemia (2). 
+
+During early lactation, the ewe will devote a lot of energy and protein to produce milk for her lambs. The growth of lambs is dependent on the amount of milk the ewe produces. To keep the quality and quantity of milk high, and prevent ewes losing too much body condition. Ewes often require additional feeding during the first 4 – 8 weeks of lactation, depending on grass availability (3).",Button,100,,Controls
+106,References,"(1) Dwyer CM, Lawrence AB, Bishop SC, Lewis M. Ewe–lamb bonding behaviours at birth are affected by maternal undernutrition in pregnancy. British Journal of Nutrition. 2003;89(1):123-36. Available from: https://doi.org/10.1079/BJN2002743
+(2) Alidadi N, Rafia S, Moaddab SH., Outbreak of primary pregnancy toxemia in ewes due to misdiagnosis of pregnancy by ultrasonography, Onl J Vet Res., (9):935-941, 2019
+(3) HCC. Practical Sheep Nutrition; 2006 [cited 2021 August 16]. Available from: https://meatpromotion.wales/en/industry-resources/sheep-management.",Expandable,105,,
+107,Field Management,"Management of the environment the lambs grow up in can have a major impact on lamb mortality. 
+
+Fields should have shelter available for hot, cold, windy or wet weather conditions. 
+
+There should be clean, fresh water and feed available for the ewe to ensure sufficient milk production. 
+
+Fencing and gates should be adequate to keep lambs in, and there should be no gaps. This will prevent lambs escaping and then becoming susceptible to accidents, predation, mismothering, starvation or hypothermia. 
+
+The field should not contain any hazards like steep drops or deep water to minimise the chance of accidents. 
+
+Fields should be checked regularly. All ewes and lambs should be accounted for, and separated lambs and ewes reunited. Watch if the lamb and ewe stay together or immediately separate again. If so, undertake bonding protocols.  Care should be taken to make sure all lambs look healthy and none are looking particularly hungry, cold or injured. Ewes should be checked for any health problems, as ill health of the ewe can result in starvation of the lamb. Any unwell sheep or lambs should be brought into a observation/hospital pen or field along with their mother/any other lambs in the litter and treated for their condition. 
+
+Ensure there is adequate staffing to undertake regular rounds of the fields regardless of how busy it may get. When undertaking field rounds, staff should have a trailer or means of transporting lamb and ewe, and an equipment bag with them for immediate transport and treatment of ewes and lambs. 
+
+Fields which are prone to predators should not be used for young lambs. Attacks can be prevented by predator control, working with local gamekeepers, adding addition fencing or moving sheep to another area (1). Fields close to dog walking routes should also be avoided. 
+
+If lambing indoors, ewes and lambs should not be turned out to pasture unless they are all fit, strong and healthy. Any doubtful cases should be kept indoors for longer or turned out to a close by field for extra observation.
+
+If lambing outdoors, keep ewes in a close by, sheltered, safe field. It is especially important during this time to check all areas of the fields for lambs which may have been left behind, are unwell or stillborn. This may be difficult in fields with large ditches, dense vegetation or rough terrain, so these field should ideally not be used for this purpose. ",Button,100,,Controls
+108,References,"(1)    Murray L, Warren R. Sheep Attacks and Harassment Research; 2019 [cited 2021 August 16]. Available from: https://www.gov.scot/publications/sheep-attacks-harassment-research/pages/2/.",Expandable,107,,
+109,Good Hygiene,"Good cleaning methods are very important for preventing disease spread in the flock. They decrease the amount of bacteria present in the environment which could potentially infect animals. It is important for ewe disease, abortion rates in future years and lamb diseases. Once a lamb has an infection, it is often difficult to treat. Therefore, preventing them is very important. 
+
+If a ewe has aborted or produced a stillborn lamb, she should be isolated from other ewes and lambs, with any remaining offspring for a minimum of 4 weeks. This is to prevent a potentially infectious cause of abortion spreading in the flock. See Abortions - What to do? for more details. 
+
+Each lambing pen should be cleared of all bedding and birth materials after use. The floor should be brushed to remove any smaller bits of bedding. It can then be sprayed with a disinfectant, and allowed to dry before adding in new bedding. There is a list of DEFRA approved disinfects available here (1). FAS also has guidance of disinfectants available (2). Care should be taken when working with disinfectants. 
+
+Equipment like stomach tubes, bottles and teats should be cleaned rinsed with hot water after each use and cleaned regularly to prevent the spread of disease between different lambs. They can be soaked in an appropriate disinfectant. 
+
+Ideally, disposable gloves should be used when assisting a ewe birth. If lambing without gloves, sleeves should be pulled up far enough to not come in contact with the ewe. Arms, hands and any clothing which came into contact with birthing fluids (eg waterproof trousers) should be cleaned with hot soapy water after every lambing before coming in contact with other ewes or lambs. 
+
+Clean trailers used for transporting sheep regularly. Clear out any debris and disinfect. 
+
+Any sheds used for livestock should be clean, well ventilated and dry with adequate draining. Lambs are particularly susceptible to infectious disease, so this is extra important. 
+
+There should be a hospital area where sick lambs and ewes can be kept away from the healthy animals as closely observed There should also be a separate area (inside or outside) for ewes who have aborted and their remaining lambs.
+
+Perform navel dipping of all newborn lambs. 
+
+Dispose of fallen stock, stillborn and aborted lambs quickly, safely and legally. The dead stock collection site should be away from healthy animals, and at the edge of the farm boundary (3). Ensure that other animals and scavengers cannot access the carcases. Covered bins are useful for temporary storage until dead stock can be collected, but they must be leakproof and be cleaned and disinfected regularly (4).",Button,100,,Controls
+110,References,"(1) DEFRA. Disinfectants Approved for use in England, Scotland and Wales [cited 2021 August 19]. Available from: http://disinfectants.defra.gov.uk/DisinfectantsExternal/Default.aspx?Module=ApprovalsList_SI.
+(2) FAS. Disinfectants at lambing [cited 2021 August 19]. Available from: https://www.fas.scot/publication/lambing-information-sheet-disinfectants-at-lambing/.
+(3)   Scotland's Healthy Animals. Dead Animals [cited 2021 August 18]. Available from: https://www.scotlandshealthyanimals.scot/disease-avoidance/farmers-livestock-keepers/how-you-can-avoid-disease/dead-animals/.
+(4)   GOV.UK. Fallen stock and safe disposal of dead animals; 2012 [cited 2021 August 19]. Available from: https://www.gov.uk/guidance/fallen-stock.",Expandable,109,,
+111,Navel Dipping,"Newborn lamb's navels should be treated with a strong iodine solution (preferably 10% mix of iodine and alcohol) as soon as possible after birth. This should be repeated 2-4 hours later. This is a disinfectant that will help prevent the growth of bacteria, as well as helping the navel dry out. This will help prevent infections through the navel (1). 
+
+Treatment of the navel with iodine can be done either by spraying it with a spray bottle, or by dipping the navel. Care must be taken to apply iodine all the way around the navel, not missing the area the umbilicus is hanging over. 
+
+The container of iodine must be kept clean. When dipping navels, debris like straw, bacteria and faeces can get into the solution. Rather than refilling the iodine bottle when it gets empty, empty it out and clean it before refilling it. This reduces disease spread between lambs (2). 
+
+Shepherds should carry iodine with them when checking on ewes lambing outdoors, so iodine can be applied as soon as possible.",Button,100,,Controls
+112,References,"(1) AHDB Beef & Lamb. Reducing lamb losses for Better Returns; 2020 [cited 2021 August 17]. Available from: https://ahdb.org.uk/knowledge-library/reducing-lamb-losses-for-better-returns-2.
+(2) FAS, Williams K. Tips For Treating Lambs Navels; 2018 [cited 2021 August 17]. Available from: https://www.fas.scot/article/tips-for-treating-lambs-navels/.",Expandable,111,,
+113,Reduce Stress,"Keeping stress levels low is especially important around lambing time. Stressed ewes are at a higher risk of dystocia, mismothering, produce a lower quantity and quality of milk and may injure themselves or lambs.
+
+Keep the handling of pregnant sheep to a minimum. When handling is necessary use a  gentle and calm handling technique, using funnels, races and crates to minimise stress. Also keep the use of dogs to a minimum when working with pregnant ewes. Avoid transporting ewes within 2 weeks before lambing, 3 weeks if they are carrying multiple lambs. 
+
+Ewes should be brought to their lambing shed/field at least 2 weeks before lambing. This will allow them to get used to their new surroundings and settle down before they are due to lamb. It will also avoid transporting ewes in labour, as stress hormones can cause labour to pause and result in dystocia (1). 
+
+Stress during the birthing process or immediately following it can result in the ewe abandoning the lamb(s) (2). Hence, lambing ewes should be monitored but not interrupted unless necessary for the welfare of the ewe or lamb. Any particularly noisy or disruptive activities near the lambing ewe should be postponed until later. Extra care should be taken with ewes lambing for the first time as they are more prone to mismothering due to stress (2). 
+
+When the ewes have lambed, take great care when herding or transporting them. This should be done slowly and carefully. Stressed ewes may injure or trod on lambs, and are a higher risk of mismothering. Furthermore, ewes which are feeling their lambs are threatened may pose a danger to humans and sheepdogs. 
+
+Shade or shelter should be provided during warm periods to reduce heat stress. There should also be constant access to clean, fresh water. Ewes should be closely monitored for signs of heat stress when the temperature humidity index is high. 
+
+Where possible keep pregnant ewes and lambs away from areas where they may encounter pet dogs. Put up signage to inform dog walkers that there are sheep in the field and remind them that sheep worrying is illegal. Talking to dog owners may also be worthwhile. Wildlife attacks can be prevented by predator control, working with local gamekeepers, adding additional fencing or moving sheep to another area (3).",Button,100,,Controls
+114,References,"(1) Jacobson C, Bruce M, Kenyon PR, Lockwood A, Miller D, Refshauge G, et al. A review of dystocia in sheep. Small Ruminant Research. 2020;192:106209. Available from: https://doi.org/10.1016/j.smallrumres.2020.106209 
+(2) HCC. Making Every Lamb Count; 2011 [cited 2021 August 22]. Available from: https://meatpromotion.wales/en/industry-resources/sheep-management.
+(3)   Murray L, Warren R. Sheep Attacks and Harassment Research; 2019 [cited 2021 August 20]. Available from: https://www.gov.scot/publications/sheep-attacks-harassment-research/pages/2/.",Expandable,113,,
+115,Selection of Breeding Stock,"The yearly selection of breeding stock is an important event which will contribute to the success of the next year's lambing. Eliminating certain ewes and rams will result in the birth of stronger, healthier lambs with lower mortality rates. 
+
+Ewes which did not perform well during lambing time should be marked so they can be easily identified later on in the year. Common reasons for culling ewes include:
+
+- prolapse - this is likely to reoccur during the next pregnancy
+- teat conformation - some shapes or teat positions can make it difficult for the lamb to nurse
+- mismothering of her lamb(s)
+- poor dentition/teeth - ewes will not be able to eat enough to be in a good body condition
+- mastitis
+- poor body condition compared to other ewes - these ewes will produce lambs less likely to survive
+- old age - lamb survival is optimal at an ewe age of 3 (1). Furthermore, cull value will be better while the ewe is slightly younger. Most ewes are culled before the age of 6
+- producing poor or weak lambs
+- poor milk production
+- lost lambs due to dysocia
+- foot issues
+- late lambing ewes which had trouble getting pregnant during the first couple of cycles
+- behavioural issues like jumping fences
+- not having enough feed/space to maintain a flock the current size
+
+Rams can be culled due to:
+- reduced fertility
+- old age
+- producing lots of lambs with genetic birth defects e.g. entropion
+- any issues regarding the testicles
+- poor dentition/teeth
+- if you want to improve the flock by replacing a ram with a better one
+- foot issues
+- poor body condition
+
+Additional reasons why lambs should not be kept for breeding purposes include:
+
+- genetic malformations e.g. entropion
+- if they have been in contact with aborting ewes (there is a risk of the lamb having picked up infectious disease)
+- if littermates were stillborn or died within the first few days of life due to suspected infectious disease
+
+If buying in new breeding stock, the disease and vaccination history of the herd should be taken into consideration. Ram estimated breeding values (EBVs) can be taken into account. For more information on how to maintain farm biosecurity and reduce the chance of disease coming onto the farm with new stock see here.",Button,100,,Controls
+116,References,"(1) McLaren A, Kaseja K, Moore K, Mucha S, Dwyer C, Conington J. Lamb survival & ewe longevity; 2015 [cited 2021 August 25]. Available from: https://www.nationalsheep.org.uk/workspace/pdfs/coningtonjo22112015101634.pdf",Expandable,115,,
+117,Warming the Lamb,"If a lamb is suspected to be cold, the lamb's temperature should be taken. This can be done quickly by putting a clean finger in the lambs mouth, as this can be a rough indicator of it the lamb is cold or not. A rectal thermometer should be used to determine if the lamb is suffering from hypothermia. Temperatures can be (1):
+- over 40°C - lamb is suffering from a fever or overheating
+- 39-40°C - normal
+- 37-39°C - moderate hypothermia
+- less than 37°C - severe hypothermia  
+
+The lamb should be towel dried if wet, and if suspected to be be less than 5 hours old:
+- moderate hypothermia - glucose injection not necessary due to brown fat reserves. Give 50ml of colostrum per kg of weight or help to drink from ewe. Place in a draft free indoor pen (warming box not necessary). Ensure the lamb nurses or continue to stomach tube every 2 hours. 
+- severe hypothermia - the lamb should be rapidly warmed using a warming box at about 37-40°C. Take the lamb's temperature frequently, and give it colostrum by stomach tube when the temperature reaches 38°C. 
+
+If the lamb is suspected to be more than 5 hours old and have severe hypothermia, it has probably used up it's brown fat reserves. This means it will be hypoglycaemic (have low blood sugar). A glucose injection should be administered before warming, or it is likely to result in death. The lamb should then be placed in a warming box. 
+
+A lamb over 5 hours old with moderate hypothermia should be encouraged to drink from the ewe or given 50ml of colostrum per kg of body weight. 
+
+Warm boxes should be between 37 and 40°C. The box should not be allowed to get any hotter than this. Once the lamb's internal temperature reaches 38°C, it should be moved to a draft free indoor pen instead. 
+
+See the FAS decision tree here (2)or page 20 of AHDB Reducing Lambing Losses (1) for a flow chart on how to treat hypothermic lambs.",Button,100,,Controls
+118,References,"(1)   AHDB Beef & Lamb. Reducing lamb losses for Better Returns; 2020 [cited 2021 August 18]. Available from: https://ahdb.org.uk/knowledge-library/reducing-lamb-losses-for-better-returns-2.
+(2)   FAS. Treating hypothermia in newborn lambs [cited 2021 August 18]. Available from:  https://www.fas.scot/livestock/sheep/hypothermia-lambs/",Expandable,117,,
+119,Accidents and Misadventure,,Button,99,"102, 107, 113",Causes
+120,Predisposing Factors,"Things are are likely to predispose lambs to accidents are:
+- dangerous field features like deep streams or gullies
+- stress to the flock makes it more likely that lambs are going to be trampled by other sheep
+- bottle fed lambs tend to have more of an attachment to humans due to associating them with food. This means they are more likely to try and escape enclosures to seek out humans
+- inadequate fencing or enclosures which may allow lambs to escape or get stuck
+- mismothering means the lamb is more likely to wander off in search of it's mother and get into trouble",Expandable,119,,
+121,Accidents,"Accidents are a common occurrence on busy farms, especially during lambing time. Research suggests that accidents cause 8% of total lamb deaths in the first week of life (1). 
+
+Accidents can occur in any number of ways, from adventurous lambs getting into danger, to lambs falling in water troughs or being trodden on by panicked sheep. Not every hazardous situation can be anticipated, but some of the more common ones can be prevented by careful preparation.",Expandable,119,,
+122,Effects of Accidents,"Lambs who have been the victim of an accident are likely to suffer from:
+- lamb mortality 
+- injuries 
+- hypothermia or starvation due to being separated from their mother and not being able to feed
+- mismothering if they have been separated from the ewe for a period of time",Expandable,119,,
+123,Preventing Accidents,"Accidents can be prevented by:
+- Field management so young lambs or pregnant sheep close to lambing are not kept in fields with dangerous features
+- observation of ewes and lambs so lambs in danger, damage to fences and potential hazards can be spotted and corrected quickly. 
+- reduce sources of stress so lambs are not trampled by panicked ewes
+- Secure fencing, gates and lambing pens to prevent escapes
+- Taking extra care when driving vehicles or heavy machinery around lambing time so escaped lambs aren't run over
+- Raising water troughs off the ground to prevent accidental drowning",Expandable,119,,
+124,References,"(1) Shiels D, Dwyer C, Mee J, Keady T. Causes and time of lamb mortality in grass - based systems of prime lamb production [cited 2021 August 21]. Available from: https://www.teagasc.ie/media/website/rural-economy/rural-economy/Causes-time-lamb-mortality-sruc-shiels.pdf.",Expandable,119,,
+125,Birth Defects,,Button,99,"105, 109, 115",Causes
+126,Predisposing Factors,"Things are are likely to predispose lambs to birth defects are:
+- genetics passed on from the ewe or ram can cause lambs to have certain conditions like entropion (turned in eyelids), Brachygnathia (shortened lower jaw) and Arthrogryposis (rigid joints) (1)
+- infectious diseases like Schmallenberg virus, Border Disease and Bluetongue can affect the formation of the foetus if the ewe is infected during pregnancy. 
+- ewe nutrition can affect the prevalence of birth defects. Deficiencies in trace elements like copper and manganese can increase the prevalence of certain defects. 
+- if ingested by the ewe, certain toxins can cause birth defects in lambs. Common sources of toxins include heavy metals, plants like lupine, and administration of drugs during pregnancy which are not suitable.",Expandable,125,,
+127,What are Birth Defects?,Birth or congenital defects are structural changes in the body that are present are birth. They can affect any part of the body.,Expandable,125,,
+128,Head Malformations,"Entropion is a condition where the bottom eyelid being rolled up rather than sitting flat on the eyeball. It can cause irritation and runny eyes, and if left untreated lead to blindness (2). Entropion is not usually fatal, but is a condition commonly seen in young lambs and if left untreated, may warrant euthanasia due to blindness or pain. It can be present in one or both eyes. It has been proven to have a genetic component (3), so lambs with this condition should not be used for breeding. Sometimes the condition is inherited from a ram, in which case this ram should no longer be used for breeding purposes. For more information see Lamb Diseases.
+
+Brachygnathia is a short lower jaw, or ""overbite"". This means the bottom incisors and upper dental pad don't touch even when the mouth is closed. It can lead to difficulties suckling and eating grass for lambs, and hence cause reduced growth and ulceration in the mouth. This condition is influenced by genetics (1). These sheep should not be retained for breeding purposes. 
+
+Microphthalmia is a condition where sheep have very small or no eyes. Even if the lamb does have eyes, they are usually blind. It is caused by a genetic mutation (4) which is especially common in Texel sheep. 
+
+A lamb can have a cleft plate/palate where the roof of their mouth has not fused properly, leaving a gap. Depending on the severity of the condition, it can also have a split upper lip  It can cause the regurgitation of milk. A common problem associated with this is pneumonia due to milk entering the lungs (5). Surgical intervention to correct the defect is not considered economical. It is considered a hereditary condition (influenced by genetics) (6).",Expandable,125,,
+129,Brain Malformations,"There are various brain malformations including Dandy-Walker malformation, cerebellar abiotrophy and hypomyelinogenesis congenita. Some malformations may be obvious at birth, for example lambs with Dandy-Walker Syndrome have domed skulled. Some malformations may be unseen at birth, but manifest years later as loss of balance and coordination (like cerebellar abiotrophy). Hence, lambs can be stillborn, live but die soon after birth, or seem normal until a later age. Brain malformations commonly have genetic components to them, but can also be caused by toxins like organophosphates, viruses like Border Disease Virus or deficiency of copper in the diet (7).",Expandable,125,,
+130,Spinal Malformations,"Ovine hereditary chondrodysplasia or ""spider lamb syndrome"" causes skeletal deformities due to abnormal bone and cartilage growth. Some severely affected lambs die soon after birth due to facial deformities, abnormal spines or ribs, and a lack of muscle and fat. Some lambs initially cope well but have a reduced life expectancy due to deformities of the forelimbs. Lambs with this condition have issues walking and nursing (8). This condition is genetic and there are commercial tests available to test for it in breeding stock, although these are often not economical. 
+
+Cervical vertebral malformations are damaged areas of the cervical (neck) region of the spine.
+It can cause mobility issues, and difficulty nursing as well as a reduced quality of life (9). Furthermore, the spinal cord can be affected. This can cause weakness in all limbs (although hindlimbs tend to be more affected) and issues with coordination and balance (1).",Expandable,125,,
+131,Limb Malformations,"- Arthrogryposis is when joints are very stiff and unable to flex. It is most commonly seen in the joints of the front legs of lambs. Often affected lambs are unable to stand and nurse. The rigidity of the joints can cause difficulty during the birthing process. If the lamb is born live, they should be promptly euthanised to reduce suffering. The condition has a strong genetic basis (10), as well as being associated with ewe infection with Bluetongue Virus during pregnancy (11) or the ingestion of toxins (e.g. the lupine plant). 
+- lambs can be born with bowed, crooked or bent legs. This can be due to abnormal development of the tendon or bone during pregnancy. Depending on the severity of the condition, lambs can be healthy with slight reduced mobility, may be permanently lame or need to be euthanised. Causes can be toxic, genetic or infectious. 
+- swayback is when lambs are unable to coordinate their legs and have an uncoordinated gait. Some lambs appear unaffected at birth but it becomes more obvious at birth, some lambs are severely affected, and some are stillborn. This is caused by copper deficiency during the ewe's pregnancy affecting the development of the central nervous system. The condition is irreversible (12).",Expandable,125,,
+132,Other Malformations,"- Hernias are holes in the abdominal wall. Pieces of internal matter can poke out of the hole and sit just beneath the skin. They are commonly seen near the navel. Small hernias can be left untreated and monitored, however larger or hernias which change in size should be treated by a vet. Hernias can be caused by navel infection or genetic predispositions (5). 
+- Cryptorchidism is when a lamb's testicle(s) fail to descend. They are retained anywhere between the kidney area to the pelvis or near the scrotum. They contribute to ram infertility, as well as ""accidental rams"" which were believed to be castrated. There is a strong genetic component to this condition (1). 
+- Atresia ani is when a lamb appears to have no anus. Lambs appear to be well initially, but within a few days become bloated and unwell due to being unable to pass faeces. Some females will be able to expel faeces via the vagina, but for males it is always fatal. Veterinary intervention is often uneconomical and unsuccessful. Euthanasia is recommended. Genetics play a role in this condition. 
+- Hypospadia is the malformation of the urethra causing it to be located at a location other than the tip of the penis. This malformation often goes unnoticed, but can cause urine scalding (13).",Expandable,125,,
+133,Effects of Birth Defects,"Lambs who have birth defects might suffer from:
+- lamb mortality
+- reduced quality of life
+- reduced colostrum intake due to mobility issues, weakness or inability to compete with litter mates
+- starvation due to lack of colostrum
+- hypothermia due to lack of energy which is needed to keep themselves warm. This can be either due to a prolonged birthing process which has used up the brown fat reserves initially used for heat production, or due to reduced colostrum intake which is needed as a subsequent source of energy. 
+- mismothering as they may not be able to keep up with the ewe",Expandable,125,,
+134,Preventing Birth Defects,"Birth defects can be prevented by
+- selection of breeding stock so sheep with known issues are not bred from again, especially rams
+- good hygiene practices will prevent disease in ewes, and hence the passing of disease from ewe to foetus
+- correct ewe nutrition will ensure ewes get all trace elements required to form a healthy lamb
+- avoid ewes ingesting toxins by regularly checking fields for toxic plants or materials and providing plenty of alternative forage. 
+- take care when administering drugs or wormers during pregnancy as some may not be suitable for pregnant ewes.",Expandable,125,,
+135,References,"(1) Scott P. Some common genetic defects in sheep. UK Vet Livestock. 2012;17(2):42-5. Available from: https://doi.org/10.1111/j.2044-3870.2011.00056.x
+(2)  McCarter P. Eye Diseases in Sheep [cited 2021 August 22]. Available from: https://www.nadis.org.uk/disease-a-z/sheep/eye-diseases-in-sheep/.
+(3)  Mousel MR, Reynolds JO, White SN. Genome-Wide Association Identifies SLC2A9 and NLN Gene Regions as Associated with Entropion in Domestic Sheep. PLOS ONE. 2015;10(6):e0128909. Available from: https://doi.org/10.1371/journal.pone.0128909
+(4) Becker D, Tetens J, Brunner A, Bürstel D, Ganter M, Kijas J, et al. Microphthalmia in Texel Sheep Is Associated with a Missense Mutation in the Paired-Like Homeodomain 3 (PITX3) Gene. PLOS ONE. 2010;5(1):e8689. Available from: https://doi.org/10.1371/journal.pone.0008689
+(5) FAI. Care of the Newborn Lamb [cited 2021 August 24]. Available from: https://www.faifarms.com/downloads/best-practice-guides-to-caring-for-newborn-lambs/
+(6) Dennis SM. Congenital Defects of Sheep. Veterinary Clinics of North America: Food Animal Practice. 1993;9(1):203-17. Available from: https://doi.org/10.1016/S0749-0720(15)30681-2
+(7) MSD, Packer R. Congenital and Inherited  Cerebellar Disorders  in Animals; 2020 [cited 2021 August 24]. Available from: https://www.msdvetmanual.com/nervous-system/congenital-and-inherited-anomalies-of-the-nervous-system/congenital-and-inherited-cerebellar-disorders-in-animals.
+(8) Young A. Ovine hereditary chondrodysplasia (Spider Lamb Syndrome); 2020 [cited 2021 August 23]. Available from: https://healthtopics.vetmed.ucdavis.edu/health-topics/ovine-hereditary-chondrodysplasia-spider-lamb-syndrome.
+(9) Fonteque J, Souza A, Müller T, Gonçalves R, Granella M, Mendes R, et al. Congenital cervical vertebral malformation in lambs. Acta Scientiae Veterinariae. 2018;46:1-8. Available from: http://dx.doi.org/10.22456/1679-9216.86287
+(10) Doherty ML, Kelley EP, Healy AM, Callanan JJ, Crosby TF, Skelly C, et al. Congenital arthrogryposis: an inherited limb deformity in pedigree Suffolk lambs. Vet Rec. 2000;146(26):748-53. Available from: https://doi.org/10.1136/vr.146.26.748
+(11) Maclachlan NJ, Osburn BI. Teratogenic bluetongue and related orbivirus infections in pregnant ruminant livestock: timing and pathogen genetics are critical. Curr Opin Virol. 2017;27:31-5. Available from: https://doi.org/10.1016/j.coviro.2017.10.002
+(12) Government of Western Australia, Erickson A. Copper deficiency in sheep and cattle; 2019 [cited 2021 August 22]. Available from: https://www.agric.wa.gov.au/feeding-nutrition/copper-deficiency-sheep-and-cattle.
+(13) Smith KC, Brown P, Parkinson TJ. Hypospadias in rams. Vet Rec. 2006;158(23):789-95. Available from: https://doi.org/10.1136/vr.158.23.789",Expandable,125,,
+136,Dystocia (Lambing Difficulties),,Button,99,"105, 109, 115, 102",Causes
+137,Predisposing Factors,"Things that are likely to predispose ewes to dystocia are:
+- ewe nutrition is important in determining the ease of lambing. Thin ewes may not have enough energy to birth quickly. Fat ewes will have fat deposits near the birth canal which make expelling the lamb more difficult. (1)
+- number of lambs in a litter influences the size of each lamb, which influences the ease of lambing. If a ewe is only expecting one lamb, all her energy will be devoted to helping it grow so it will be large and hard to birth, so is associated with a high risk of dystocia (2). Triplets or quadruplets will be significantly smaller and easier to fit through the birth canal, but can suffer complications due to multiple lambs being in the birthing canal at the same time or malpresentation. Hence, high and low birthweights have been shown to be associated with higher rates of dystocia (3). Twins are often seen as ideal. 
+- stress has been known to increase the level of dystocia as ewes will pause lambing when stressed due to hormone releases (3). Often this is detrimental for the lamb. Stress can be caused by transport between locations, herding, dog worrying and handling. 
+- genetics play a role in how easily the ewe will give birth. Some breeds are easier to lamb than others (4), and some specific ewes may have bodily features which make it easier or harder to lamb (eg narrow hips) or may be more prone to malpresentation of lambs 
+- certain ewe diseases increase the prevalence of lamb malformations eg Schmallenberg Virus (5). Malformed lambs can be hard to birth due to their alternative body shape. Disease like pregnancy toxaemia can also reduce the energy an ewe has for labour and hence increase the incidence of dystocia (6)",Expandable,136,,
+138,What is Dystocia?,"Dystocia is difficult or slow labour. There are a variety of reasons it occurs. 
+
+If the lamb is not presented properly, it will be much more difficult to get out. Instead of being born head and front feet first (often called the ""dive position"") it may be coming backwards (tail first), with a front leg(s) back, or breech (7). This usually requires intervention unless the lamb is particularly small. If multiple lambs present at the same time (for example legs from two different lambs are in the birth canal) labour will also not be able to progress normally. If the lamb(s) becomes stuck in the birth canal for a prolonged period of time, there is a risk of death of the lamb and the other lambs still in the uterus (3). 
+
+Large lambs can struggle to fit through the birth canal, even when presented correctly and carried by a strong fit ewe. The largest lambs tend to be produced by ewes only carrying one lamb (8). 
+
+If the cervix fails to dilate in a condition called ringwomb, the lamb is obstructed from being born as it cannot exit the uterus despite contractions. 
+
+In some cases the uterus of the ewe will not contract properly to expel the foetus. This can be due to ewe disease like pregnancy toxaemia or hypocalcaemia or physical injuries eg to the abdominal wall (3). The contracting activity of the uterus can also be disrupted by stress during labour. 
+
+In some cases the uterus will contract correctly initially, but stop before the lamb is born. This can be due to prolonged labour, stress or the lamb being in the wrong position (3).",Expandable,136,,
+139,Effects of Dystocia,"Lambs who have suffered from dystocia might suffer from:
+- stillbirth and increased lamb mortality
+- death of the ewe due to tears in the reproductive tract and an increased chance of infection from assistance during the birth
+- injuries as a result of the difficult birth like fractured ribs and liver or brain damage
+- lambs take longer to stand and nurse after a difficult birth (8). They will have a reduced colostrum intake for this reason. This will increase the risk of lamb disease, starvation and hypothermia. 
+- mismothering is more common if the birth was difficult as the ewe is more likely to be in pain and feeling unwell, so will will be less interested in the lamb. Lambs may also have suffered from brain damage due to low oxygen levels during the birthing process so may be less good at identifying and following their mothers. 
+- hypothermia can be more common due to the lamb spending excessive time in the birth canal and using up its brown fat reserves.",Expandable,136,,
+140,Preventing Dystocia,"Dystocia can be prevented by:
+- correct ewe nutrition as dystocia tends to be higher in over and under fed ewes (1)
+- good hygiene measures to prevent ewe disease during pregnancy
+- choosing breeding stock for ewes who lamb easily, rams who are an appropriate size for the ewe and not retaining old or weak ewes who may suffer from prolonged labour. 
+- reducing stress around lambing
+- close observation of pregnant ewes so intervention can happen quickly if needed",Expandable,136,,
+141,References,"(1) HCC. Making Every Lamb Count; 2011 [cited 2021 August 24]. Available from: https://meatpromotion.wales/en/industry-resources/sheep-management.
+(2) Menzies PI. Lambing Management and Neonatal Care. Current Therapy in Large Animal Theriogenology. 2007:680-95. Available from: https://dx.doi.org/10.1016%2FB978-072169323-1.50094-5
+(3) Jacobson C, Bruce M, Kenyon PR, Lockwood A, Miller D, Refshauge G, et al. A review of dystocia in sheep. Small Ruminant Research. 2020;192:106209. Available from: https://doi.org/10.1016/j.smallrumres.2020.106209
+(4) Dwyer CM, Bünger L. Factors affecting dystocia and offspring vigour in different sheep genotypes. Prev Vet Med. 2012;103(4):257-64. Available from: https://doi.org/10.1016/j.prevetmed.2011.09.002
+(5) van der Brom R, Luttikholt S, Peterson K, Peperkamp NHMT, Mars M, Poel W. Epizootic of ovine congenital malformations associated with Schmallenberg virus infection. Tijdschrift voor diergeneeskunde. 2012;137:106-11.
+(6) Jyothi K, Sudhakara Reddy B, Pridhvidhar Reddy Y, Prabhakara Rao K, Sivajothi S, Ganesan A. Pregnancy toxemia associated with Dystocia in a Nellore Brown Ewe. 2014. 
+(7) Sheep 201. The Lambing Process [cited 2021 August 24]. Available from: http://www.sheep101.info/201/lambingprocess.html.
+(8) Gootwine E. Variability in the rate of decline in birth weight as litter size increases in sheep. Animal Science. 2005;81:393-8. Available from: http://dx.doi.org/10.1079/ASC41160393",Expandable,136,,
+142,Ewe Disease,"Ewe disease is important for lamb survival as lambs rely entirely on their dams for nourishment and protection for the first few weeks of life, including immune protection. Therefore, any disease of the ewe that reduces her ability to provide these vital thing to her lamb(s) reduced the chances of those lamb(s) surviving.",Button,99,"109, 105, 102, 115, 113",Causes
+143,Predisposing Factors,"Things which make a ewe more likely to suffer from disease include:
+- inappropriate nutrition. Either over or underweight ewes can be more likely to suffer from conditions like pregnancy toxaemia (1) and vaginal prolapses (2). If inadequate feed consumed by ewes during pregnancy and/or lactation, body condition will fall, calcium, magnesium and glucose levels will fall and mineral deficiencies may become apparent. 
+- carrying multiple lambs increases the nutrients needed by the ewe. If nutrition is not appropriately targeted  low levels of calcium, magnesium and glucose in ewes' blood can result in clinical disease (1). 
+- presence of other diseases makes ewes more susceptible to further disease due to a weakened immune system and reduced feed intake. 
+- stress increases the chances of pregnancy toxaemia and hypocalcaemia due to sudden reductions in eating (1)
+- high stocking density causes increased disease spread within the flock, as ewes (and lambs) are close together increasing the chance of transmission.",Expandable,142,,
+144,Important/Common Ewe Diseases,"Diseases That Reduce Ewe Body Condition Score
+Diseases which result in ewes having low body condition score (BSC) will impact negatively upon the survival of lambs. Ewes with a low body condition are more prone to disease around lambing, mismothering, giving birth to low birthweight lambs, poor colostrum production and dystocia. All of these reduce lamb survival. Common diseases that can lead to a low ewe BCS include:
+
+- Undernutrition. To compensate, stores of energy such as body fat and muscle will be used up
+- Fasciola hepatica (liver fluke), especially chronic infection during winter and spring (3), can dramatically reduce ewe body condition during late pregnancy and lactation
+- Worms (or gastrointestinal nematodes) such as haemonchus contortus (barber pole worm), trichostrongyl and teladorsagia species may reduce body condition of ewes in summer and autumn before breeding. Trying to improve body condition during pregnancy is difficult and can be detrimental, particularly in late pregnancy as thus can result in large lambs prone to dystocia (3)
+- lameness results in reduced feed intake
+- poor teeth (or ""broken mouth"") interferes with the sheep's ability to feed. Teeth may be painful, and may make it hard to  acquire and chew grass
+- Sheep scab is caused by the Psoroptes ovis mite. Infection results in intense itchiness causing wool loss, skin lesions and discomfort to the sheep. Weight loss is due to the intense itching reducing the feed intake and loss of protein though skin discharges (4)
+- Chronic inflammatory conditions such as chronic pneumonia, mastitis and abscesses cause decreased feed intake and diversion of nutrients to fighting the disease
+- Johne's Disease is caused by Mycobacterium avium subspecies paratuberculosis. Sheep lose weight, have a poor fleece, although affected ewes appear well until the end stages of disease.. During the end stages they become weak, unable to stand and develop ""bottle jaw"" (5). Diarrhoea is not a common feature. 
+- Maedi Visna (MV) is a virus that causes weight loss alongside one or more of pneumonia, mastitis, lameness or incoordination (6). 
+- Ovine Pulmonary Adenocarcinoma (OPA, or Jaagsiekte) is a tumour in the lung caused by infection with Jaagsiekte virus. Lung function is reduced, and there may be fluid discharge from the lungs out of the nose. Jaagsiekte is contagious through those discharges, air, colostrum and milk. (7) 
+- Other less common causes include intestinal adenocarcinoma (cancer of the intestines), scrapie and kidney disease
+
+See the FAS technical note ""Body Condition Scoring of Mature Sheep"" for more guidance on how to BCS here: https://www.fas.scot/downloads/tn702-body-condition-scoring-mature-sheep/
+
+Mastitis
+Mastitis is an important condition when considering lamb survival, as it causes a reduced milk yield and quality. The udder may also be painful, so ewes are reluctant to allow lambs to suckle. This results undernutrition of the lamb, which can lead to starvation, hypothermia and reduced lamb growth rates. In newly lambed ewes, mastitis can reduce colostrum quality and quantity, and reduce lamb suckling, resulting in reduced colostrum intake and its associated benefits (8). 
+
+Mastitis is inflammation of the ewe's udder(s). It is thought to occur in 0-6.6% of ewes in the UK each year (8). Mastitis in sheep is often caused by a bacterial infection. There are over 30 species of bacteria which can cause mastitis in ewes, including Staphylococcus aureus, Mannheimia haemolyticia and E. Coli. Mastitis can be acute (sudden onset) or chronic (long lasting) and mastitis is more likely to occur when (8):
+
+- ewes in the flock or group already have it, as mastitis can be contagious and spread between ewes
+- ewes are underfed during late pregnancy and during lactation
+- ewes have low BCS
+- hygiene at lambing time is poor and ewes are kept indoors for prolonged periods, as bacteria in the environment build up, increasing the likelihood of causing infection in the ewe
+- udder conformation is poor
+- the ewe is more than four years old
+- the ewe is lambing for the first time
+- udders or teats are damaged or infected with orf
+- a ewe is infected with Maedi Visna, which can cause the udder to be large, firm and unproductive
+
+Symptoms include:
+- heat in the udder
+- swelling
+- pain in the udder which may cause the ewe to appear lame
+- milk being watery, bloody or containing clots
+- the ewe looking sick and not eating 
+- lambs not being allowed to suckle or looking hungry
+- lumps in the udder 
+- discolouration of the udder e.g. the udder can look red, black or blue. 
+
+ For more information on mastitis see Understanding Mastitis by AHDB, 2018 at https://projectblue.blob.core.windows.net/media/Default/Imported%20Publication%20Docs/BRP+%20Understanding%20mastitis%20in%20sheep1674_2018-11-22_WEB.pdf
+
+Pregnancy Toxaemia/ Twin Lamb Disease
+Pregnancy toxaemia is a metabolic disease which occurs in the final 4-6 weeks of pregnancy. Ewes in incorrect body condition (either too high or low) and carrying multiple lambs are most likely to suffer. Ewes in late pregnancy have high energy demands. When feed intake is low, but energy requirements are high, blood glucose levels in the ewe can fall. This results in symptoms like lethargy, separation from other sheep, not eating, muscle tremors, apparent blindness and ""star gazing"". Lambs may be aborted while the ewe is unwell, if they are born alive the ewe is unlikely to be able to nurse the lamb(s). Treatment needs to be prompt and aggressive but may still not be effective and may affected ewes die. Seek veterinary advice immediately. 
+
+Hypocalcaemia
+Hypocalcaemia is a metabolic disorder  normally seen in the final 8 weeks of pregnancy or in early lactation.  It is most common in ewes carrying multiple lambs, as more calcium will be required both before and after birth. Older ewes are at increased risk (1). Symptoms include depression, weakness and inability to stand. Rumen stasis also occurs (the rumen stops working) resulting in mild bloat and reflux, causing green fluid to come from the nose and mouth (9). Untreated ewes will eventually become comatose and die. Hypocalcaemia puts ewes at an increased risk of dystocia, prolapse, mastitis, pregnancy toxaemia and metritis (10), all of which are known to affect lamb survival. 
+
+If multiple ewes are affected, the diet should be asses and adjusted. Hypocalcaemia is also seen more commonly after incorrect mineral supplementation, stressful events, change of diet and movement or housing before lambing. Prompt treatment is required, seek veterinary advice. 
+
+Vaginal Prolapse
+During prolapses internal organs protrude through the vulva. This is most common in ewes during late pregnancy, particularly if carrying multiple lambs (11). It is made more likely by ewes being overweight, having limited exercise, lameness resulting in increased lying time and hypocalcaemia. Prolapses are a significant cause of ewe mortality. Vaginal prolapse is seen in around 1% of ewes, although some flocks can have significantly higher prevalence (2). Ewes will present with a pink/red bulge from the vulva. The size can vary between that of a tennis ball and a melon. Affected ewes may behave as if they are in labour, separating themselves from the rest of the flock, abdominal straining and vocalisation. Prolapses increase the risk of abortion, dystocia, stillborn and lamb mortality. 
+
+Prolapsed tissue should be cleaned using warm, clean water and gently returned inside the body. The prolapse can be secured inside the vulva using a prolapse spoon, harness or sutures performed by a veterinary surgeon. For severe cases veterinary assistance will be needed. The method of restraint needs to remain in place until lambing and be replaced after lambing. Most methods of restraint needs to be removed as lambing starts, therefore affected ewes need to be monitored closely for signs of lambing. Housing these ewes ere they will be seen several times a day can help with monitoring. Clearly mark affected ewes so they can be easily identified when selecting ewes for culling. 
+
+Other Diseases
+Any disease that decreases a ewe's appetite, causes depression, pain or increased lying time will reduce interaction between the ewe and lamb, and reduce milk production can affect lamb survival. These can affect the ewe-lamb bond, opportunity for the lamb(s) to suckle and the availability of milk. Therefore, other conditions in the ewe such as metritis, listeria, heat stress and many others, can have a significant impact on lamb survival. When ewes are found to be suffering from such conditions, attention should also be paid to ensuring the lamb received adequate nutrition and protection from cold and predators.",Expandable,142,,
+145,Effects of Ewe Disease,"Ewe disease can cause:
+- increased ewe mortality, which increases lamb mortality
+- increased lamb mortality, due to
+   - mismothering due to the ewe feeling unwell and not attedening to her lamb(s)
+   - starvation if the ewe's udder or milk production are affected
+   - hypothermia due to decreased milk intake and mismothering",Expandable,142,,
+146,Controlling Ewe Disease,"The incidence of ewe disease can be reduced by: 
+- good hygiene to reduce the spread of infectious disease
+- ewe nutrition and monitoring of ewe body condition 
+- ewe observation so signs of disease can be identified early. Early intervention is key to successful treatment of many conditions 
+- selecting healthy ewes and their lambs for breeding should to reduce recurrence or inheritance of traits that predispose to a disease
+- reducing stress around lambing time
+- monitoring for disease, and veterinary involvement in the diagnosis and treatment of disease or development of specific control programmes",Expandable,142,,
+147,References,"(1) AHDB. Feeding the ewe; 2018 [cited 2021 August 19]. Available from: https://ahdb.org.uk/knowledge-library/feeding-the-ewe.
+(2) HCC. Making Every Lamb Count; 2011 [cited 2021 August 18]. Available from: https://meatpromotion.wales/en/industry-resources/sheep-management.
+(3) Abbott K, Taylor M, Stubbings L. Sustainable worm control strategies for sheep. A Technical Manual for Veterinary Surgeons and Advisors. SCOPS 4th edition; 2012. Available from: https://www.scops.org.uk/workspace/pdfs/scops-technical-manual-4th-edition-updated-september-2013.pdf
+(4) NADIS, Simcock E. Sheep Scab; 2019 [cited 2021 August 18]. Available from: https://www.nadis.org.uk/disease-a-z/sheep/sheep-scab/.
+(5) NADIS, Scott P. Johne's Disease (Paratuberculosis). 2011 [cited 2021 August 19]. Available from: https://www.nadis.org.uk/disease-a-z/sheep/johnes-disease-paratuberculosis/
+(6) SRUC. Maedi Visna (MV) in Sheep; 2020 [cited 2021 August 20]. Available from: https://www.sruc.ac.uk/media/wbobswkd/mv_insert_2020-1.pdf.
+(7) NADIS, Scott P. Ovine Pulmonary Adenocarcinoma (OPA); 2016 [cited 2021 August 17]. Available from: https://www.nadis.org.uk/disease-a-z/sheep/ovine-pulmonary-adenocarcinoma-opa/.
+(8) AHDB. Understanding mastitis in sheep; 2018 [cited 2021 August 18]. Available from: https://ahdb.org.uk/knowledge-library/understanding-mastitis-in-sheep.
+(9) NADIS, Scott P. Pre-lambing Bulletin Ewe Nutrition and Metabolic Diseases; 2010 [cited 2021 August 19]. Available from: https://www.nadis.org.uk/disease-a-z/sheep/pre-lambing-bulletin-ewe-nutrition-and-metabolic-diseases/ 
+(10) Friend M, Bhanugopan M, McGrath S, Ataollahi F, Scarlett S, Robertson S et al. Managing metabolic disorders in pregnant ewes to improve ewe and lamb survival. The Rocks, NSW: Australian Wool Innovation Limited, 2018. 85 p. 
+(11) Jackson R, Hilson RP, Roe AR, Perkins N, Heuer C, West DM. Epidemiology of vaginal prolapse in mixed-age ewes in New Zealand. N Z Vet J. 2014;62(6):328-37. Available from: https://doi.org/10.1080/00480169.2014.925788",Expandable,142,,
+148,Hypothermia,,Button,99,"101, 117, 105, 103, 102",Causes
+149,Predisposing Factors,"Things are are likely to predispose lambs to hypothermia are:
+- low colostrum intake after birth causes a drop in energy levels, which means body temperature cannot be maintained (1). 
+- mismothering can cause the lamb to get cold due to it not being licked dry or not being allowed to nurse
+- cold or wet weather will cause the lamb to lose more heat
+- small lambs have less brown fat reserves which are needed to keep the lamb warm until it can nurse colostrum and use the milk as an energy source (2). Lamb with a low birthweight have been shown to have a higher mortality rate (3), as well as low lamb weight being associated with more deaths due to hypothermia (4). Triplets also more likely to die from hypothermia due to low birth weight.",Expandable,148,,
+150,What is Hypothermia?,"Hypothermia is when the body temperature of the animal is below the normal temperature (39-40°C). Most commonly, this happens due to excessive heat loss e.g. if the weather is cold, or due to starvation. In the first few hours of life, lambs will use the brown fat reserves they built up in the womb as an energy source to keep themselves warm. When these run out, the lamb will need energy from colostrum. Hence, if they have not nursed, they will not have enough energy to keep themselves warm and develop hypothermia. The cause of hypothermia should be investigated to ensure it doesnt reoccur. See Starvation for more information on causes of starvation, as it commonly leads to hypothermia. 
+
+Lambs can appear:
+- weak
+- shivering
+- lying down 
+- unresponsive
+- separated from ewe
+- lamb looks ""empty"" due to not feeding
+If a lamb is suspected to be cold, the lamb's temperature should be taken. This can be done quickly by putting a clean finger in the lambs mouth, as this can be a rough indicator of it the lamb is cold or not. A rectal thermometer should be used to determine if the lamb is suffering from hypothermia. Temperatures can be (1):
+- over 40°C - the lamb is suffering from a fever or overheating
+- 39-40°C - normal body temperature
+- 37-39°C - moderate hypothermia
+- less than 37°C - severe hypothermia
+
+See Warming the Lamb for how to treat hypothermia.",Expandable,148,,
+151,Effects of Hypothermia,"Lambs suffering from hypothermia are prone to:
+- lamb mortality",Expandable,148,,
+152,Preventing Hypothermia,"Hypothermia mortality can be prevented by: 
+- adequate colostrum intake to ensure the lamb has an energy source to keep itself warm when the brown fat runs out
+- warming the lamb if it is suffering from hypothermia 
+- correct ewe nutrition so lambs have a good birthweight and hence have good brown fat reserves and are strong enough to nurse quickly
+- bonding protocols to prevent mismothering so the lamb can nurse from the ewe
+- providing a sheltered place for ewes to lamb if outdoors
+- careful observation of ewes and lambs, especially during cold weather to ensure that any newborn lambs are promptly licked dry and for signs of hypothermia",Expandable,148,,
+153,References,"(1) AHDB Beef & Lamb. Reducing lamb losses for Better Returns; 2020 [cited 2021 August 23]. Available from: https://ahdb.org.uk/knowledge-library/reducing-lamb-losses-for-better-returns-2.
+?(2) Menzies PI. Lambing Management and Neonatal Care. Current Therapy in Large Animal Theriogenology. 2007:680-95. Available from: https://dx.doi.org/10.1016%2FB978-072169323-1.50094-5
+(3) McLaren A, Kaseja K, Moore K, Mucha S, Dwyer C, Conington J. Lamb survival & ewe longevity; 2015 [cited 2021 August 23]. Available from: https://www.nationalsheep.org.uk/workspace/pdfs/coningtonjo22112015101634.pdf.
+(4) Abdelqader A, Irshaid R, Tabbaa Mohammad J, Abuajamieh M, Titi H, Al-Fataftah A-R. Factors influencing Awassi lambs survivorship under fields conditions. Livestock Science. 2017;199:1-6. Avaliable from: https://doi.org/10.1016/j.livsci.2017.03.007",Expandable,148,,
+154,Lamb Disease,,Button,99,"101, 111, 109, 105, 102, 115",Causes
+155,Predisposing Factors,"Things that can make a lamb more likely to suffer from disease shortly after birth include:
+- reduced or delayed colostrum intake, as colostrum is essential for immune protection in young lambs (1). Colostrum intake can be reduced if the ewe doesn't have enough colostrum for the lambs, for example if she has multiple lambs in a litter, if she is suffering from disease or if genetic factors influence colostrum production. Sometimes ewes have enough milk, but the lamb isn't able to suckle enough: due to mismothering, the lamb being weak, small, unwell, having too much competition from litter mates or having undergone a difficult birth. Triplets or larger litters are at higher risk of lamb disease due to the reduced colostrum production of the ewe compared to ewes carrying twins and singles, as well as more competition (2). 
+- poor hygiene (dirty, damp conditions) increases the number of bacteria present in the environment which could potentially infect the lamb (3, 4). Hygiene tends to be poorer with high stocking rates and indoors compared to outdoors. The bacteria can infect lambs by mouth, for example from dirty ewe teats, or through  wounds e.g. the navel, castration or tail wounds. Towards the end of the lambing season there is a higher risk of infectious diseases due to a build-up of bacteria in the lambing shed over the lambing period. This is less common in outdoor systems due to increased space and better ventilation. 
+- low birth weight makes lambs more susceptible to disease (5). Low birth weight can be influenced by various factors including ewe disease, ewe nutrition and being part of a large litter. There is a strong correlation between low birth weight and lamb mortality (6). 
+- genetics are an important factor in some diseases, and genetics also determine the ewe's mothering ability, litter size and colostrum production (7, 8, 9). 
+- male lambs have a higher mortality rate than females (6). One theory is that this is due to their navel drying more slowly than female lambs due to urine re-wetting the navel. A wet navel increases the chance of infection through that route.",Expandable,154,,
+156,Important/Common Lamb Diseases,"Bacterial Infections
+- Joint Ill (septic polyarthritis) 
+Affected lambs are lame, and often hungry as they can't keep up with the ewe, there may be swelling and heat in affected joints, and reluctance to stand. It can affect one or multiple legs. Occasionally infection can also be present in the spine, causing paralysis of the back legs or sometimes all legs (4). Lambs which recover may be permanently lame, and difficult to finish (10). Bacteria get into the lambs by mouth off the ewe's teats or through the navel, tail or castration wounds (11). Streptococcus dysgalactiae is a common cause (12), although other bacteria have been associated with disease, including Erysipelothrix rhysiopathiae (12) in older lambs or occasionally in adults. 
+
+- Navel Ill (omphalophlebitis) 
+Navel ill is when an infection is acquired through the navel of the lamb, which is like an open wound until it dries up. Symptoms include the base of the navel being wet, swollen and sometimes pus is visible, lambs can be depressed and lethargic. If the infection spreads there can also be abscesses, peritonitis (inflammation of tissue inside the abdomen), bladder infection or liver abscesses (3), or more distant consequences, such as joint ill, meningitis and septicaemia. 
+
+- Meningitis
+Meningitis is inflammation of the protective membrane around the brain and spinal cord. It can sometimes be accompanied by inflammation in the brain (encephalitis) and spinal cord (encephalomyelitis). Meningitis is often seen alongside navel ill. There are a variety of bacteria which can cause meningitis in lambs, including Streptococcal species and E. coli (13). Lambs appear depressed, hungry, have an abnormal gait, and hold their head rigidly or low (14). It is more common in older lambs (around a month old). Meningitis is most commonly bacterial in lambs, but can sometimes be caused by viruses. 
+
+Watery Mouth 
+Watery mouth (also known as rattle belly) is caused by E. coli infection in the lamb's gut, which produces toxins. It is most common in the first few days of life. Lambs acquire the infection from dirty bedding, housing or the ewe's fleece and udder. Initial symptoms include the lamb being lethargic, reluctant to suck, and depressed. After 2 to 6 hours this will progress to excessive salivation and abdominal swelling, then to coma and death (15). An early sign can be a cold mouth. 
+
+Scour/Diarrhoea 
+Scour is more frequent and watery faeces than normal. Colour, smell, consistency and presence of mucous or blood can vary. Causes of scour can be bacterial, viral, protozoal or nutritional. The most common causes for newborn lambs include (16):
+- Lamb dysentery (bacteria) is caused by Clostridium perfingens type B. It causes sudden death in lambs under a week old. Dysentry (bloody diarrhoea) is more likely to be seen in lambs over 2 weeks old (17). Ewe vaccination and good colostrum management are essential for control (18). 
+- Pathogenic E. coli (bacteria) produce a toxin which causes the gut balance to be disturbed and faeces to become fluid. 
+- Salmonella species (bacteria) can cause diarrhoea with blood.
+- Rotavirus (virus), commonly type B, has been associated with profuse diarrhoea in lambs, which look dull and dehydrated. 
+- Cryptosporidium (protozoa) infection can cause severe, yellow scour, but lambs are often still active and alert until they become dehydrated. Dehydration leads to depression and then death. 
+- Nutrition is a cause of scour in pet/orphan lambs raised on artificial milk substitutes. It can be due to poor quality milk replacer, errors when mixing the milk and overfeeding. 
+
+A major cause of death due to scour is dehydration, but scour also leads to loss of electrolytes, lack of nutrients for growth and increased susceptibility of fly strike. Scour can be treated by rehydrating the lamb with rehydration fluids and encouraging suckling. Specific treatments are needed for certain diseases, seek veterinary advice where lamb diarrhoea is a problem. Some lambs that survive the initial disease will have long term gut damage and struggle to thrive for some time.  
+
+Entropion (turned in eye lids)
+Entropion is not usually fatal, but a condition of young lambs that if untreated, may warrant euthanasia due to blindness and discomfort. It is caused by the eyelid being rolled over rather than sitting flat on the eyeball. It can cause severe discomfort, runny eyes, and if left untreated lead to blindness (19). It can be present in one or both eyes. 
+
+There is a strong genetic component to this condition (20), so affected lambs should not be used for breeding. If levels in a flock have increased since the introduction of a new ram, consider no longer breeding from that ram. Seek veterinary advice for treatment of affected lambs.",Expandable,154,,
+157,Effects of Lamb Disease,"Lambs suffering from disease have a higher chance of:
+- lamb mortality 
+- reduced colostrum/milk intake due to weakness or discomfort, reducing suckling, leading to starvation and/or hypothermia 
+- reduced growth is caused by reduced milk intake and the lamb using nutrition to fight off the disease rather than grow 
+- predation due to weakness or immobility",Expandable,154,,
+158,Controlling Lamb Disease,"The incidence of lamb disease can be reduced by:
+- colostrum intake helps provide immune protection so the lamb is able to fight off the infection
+- navel dipping effectively will help decrease the chance of bacteria infecting the lamb via the navel
+- good hygiene will decrease the bacteria present in the environment
+- ewe nutrition increases the colostrum production and quality of the ewe, her mothering ability and lamb size
+- close observation of lambs ensures that sick lambs are spotted and treated as quickly as possible
+- selection of breeding stock decreases the reoccurrence of these problems in later years by picking ewes and rams with the best traits to reduce disease prevalence and increase colostrum production and mothering ability",Expandable,154,,
+159,References,"(1) AHDB. Colostrum Management for Lambs [cited 2021 August 17]. Available from: https://ahdb.org.uk/knowledge-library/colostrum-management-for-lambs
+(2) Sodiq A, Yuwono P, Santosa S. Litter Size and Lamb Survivability of Batur Sheep in Upland Areas of Banjarnegara Regency, Indonesia. Animal Production. 2011;13.
+(3) HCC. Making Every Lamb Count; 2011 [cited 2021 August 17]. Available from: https://meatpromotion.wales/en/industry-resources/sheep-management.
+(4) AHDB Beef & Lamb. Reducing lamb losses for Better Returns; 2020 [cited 2021 August 17]. Available from: https://ahdb.org.uk/knowledge-library/reducing-lamb-losses-for-better-returns-2.
+(5) Abdelqader A, Irshaid R, Tabbaa Mohammad J, Abuajamieh M, Titi H, Al-Fataftah A-R. Factors influencing Awassi lambs survivorship under fields conditions. Livestock Science. 2017;199:1-6. Available from: https://doi.org/10.1016/j.livsci.2017.03.007
+(6) McLaren A, Kaseja K, Moore K, Mucha S, Dwyer C, Conington J. Lamb survival & ewe longevity; 2015 [cited 2021 August 16]. Available from: https://www.nationalsheep.org.uk/workspace/pdfs/coningtonjo22112015101634.pdf.
+(7) Kaczor U. Genes Involved Litter Size in Olkuska Sheep. 2017. Avaliable from: http://dx.doi.org/10.5772/intechopen.69205
+(8) Hazard D, Mace T, Foulquie D, Delval E, Douls S, Carriere F, et al. Genome wide association studies of maternal behaviours  in sheep. 2020.
+(9) Selvaggi M, D'Alessandro AG, Dario C. Environmental and genetic factors affecting milk yield and quality in three Italian sheep breeds. Journal of Dairy Research. 2017;84(1):27-31. Available from: https://doi.org/10.1017/S0022029916000765
+(10) FAS. Joint ill in lambs [cited 2021 August 16]. Available from: https://www.fas.scot/publication/lambing-information-sheet-joint-ill-in-lambs/.
+(11) Farm Health Online. Joint-ill in sheep [cited 2021 August 18]. Available from: https://www.farmhealthonline.com/disease-management/sheep-diseases/joint-ill-sheep/.
+(12) ?Swinson V. An update on joint ill in sheep. Veterinary Record. 2021;188(1):24-6. Available from: https://doi.org/10.1002/vetr.118
+(13) Callanan J. Meningitis, Encephalitis, and Encephalomyelitis in Animals; 2021 [cited 2021 August 15]. Available from: https://www.msdvetmanual.com/nervous-system/meningitis,-encephalitis,-and-encephalomyelitis/meningitis,-encephalitis,-and-encephalomyelitis-in-animals.
+(14) Sheep 201. Listing of sheep diseases, A-Z [cited 2021 August 16]. Available from: http://www.sheep101.info/201/diseasesa-z.html.
+?(15) Angell J, Duncan J. Watery mouth disease in neonatal lambs: a systematic literature review. Livestock. 2020;25(2):94-103. Available from: https://doi-org.ezproxy.lib.gla.ac.uk/10.12968/live.2020.25.2.94
+?(16) Grünberg W. Diarrhea in Neonatal Ruminants. 2021 [cited 2021 August 15]. Available from: https://www.msdvetmanual.com/digestive-system/intestinal-diseases-in-ruminants/diarrhea-in-neonatal-ruminants
+(17) Grünberg W. Intestinal Diseases in Sheep and Goats. 2021 [cited 2021 August 14]. Available from: https://www.msdvetmanual.com/digestive-system/intestinal-diseases-in-ruminants/intestinal-diseases-in-sheep-and-goats 
+(18) NADIS, Scott P. Clostridia and Pasteurella Vaccination. 2010 [cited 2021 August 16]. Available from: https://www.nadis.org.uk/disease-a-z/sheep/clostridia-and-pasteurella-vaccination/
+(19) McCarter P. Eye Diseases in Sheep [cited 2021 August 14]. Available from: https://www.nadis.org.uk/disease-a-z/sheep/eye-diseases-in-sheep/.
+(20) Mousel MR, Reynolds JO, White SN. Genome-Wide Association Identifies SLC2A9 and NLN Gene Regions as Associated with Entropion in Domestic Sheep. PLOS ONE. 2015;10(6):e0128909. Available from: https://doi.org/10.1371/journal.pone.0128909",Expandable,154,,
+160,Mismothering,,Button,99,"103, 113, 105, 115, 102",Causes
+161,Predisposing Factors,"Things which make mismothering more likely include:
+- first time mothers tend to have a higher incidence of mismothering than experienced ewes. They show more aggressive behaviour towards their lambs than ewes who have lambed before (1). They also tend to be more skittish and easily disturbed, so are more prone due to mismothering due to stress or disruption (2)
+- stress or disruption immediately following lambing can cause a ewe to leave her lamb and not return (2).
+- traumatic or difficult births are associated with reduced mothering, possibly due to the ewe being in discomfort and exhausted
+- ewes with low body condition are more likely to leave their lamb when food is offered. If lambs are not strong enough to follow they may not be able to keep up. It has also been shown that ewes underfed during pregnancy are less likely to lick their lambs after birth, are more aggressive towards their lambs and have a lower maternal attachment (3).
+- breed of sheep can affect whether they are good or bad mothers, therefore genetics are thought to play a role in mothering ability (4)
+- ewe age can influence mismothering. Lamb survival has been shown to be optimum at a ewe age of 3-5 years. Ages above or below this experience higher lamb mortality rates (5). 
+- litters of multiple lambs suffer a higher rate of mismothering as the ewe may only accept the first born lamb and not the others (1)",Expandable,160,,
+162,What is Mismothering?,"Mismothering is when the ewe does not take care of her lamb properly. It is thought to account for 8-13% of lamb losses (2), but also contributes to other causes of lamb death, such as starvation, hypothermia and predation. Four hours after birth, the ewe will only let her own lambs nurse, and rejects any others. By one day old, lambs will develop a preference for their own mother (6). This shows how quickly the ewe can learn to recognise her own lambs, and vice versa. Hence, the first few hours are important for establishing the ewe-lamb bond. 
+
+A ewe with good maternal abilities will turn and lick the lamb soon after birth. This is important for rupturing the birth sac (which otherwise can cause the lamb to suffocate) and cleaning the airways. Licking also stimulates the lamb to breathe, get up and feed.",Expandable,160,,
+163,Effects of Mismothering,"Lambs who have suffered from mismothering are more prone to:
+- starvation due to not being allowed to feed
+- hypothermia due to low colostrum intake and cold exposure of wet, unlicked lambs
+- lamb death due to ewe aggression or being laid on
+- lamb disease due to a reduced immune protection with low colostrum intake
+- predation, as a lone or weak lamb is more likely to be targeted",Expandable,160,,
+164,Preventing Mismothering,"The incidence of mismothering can be reduced by:
+- bonding protocols, which can help establish the ewe-lamb bond
+- reducing stress and disruption at lambing time to enable development of the ewe-lamb bond
+- managing young ewes, or first time lambers, separately in a quiet, calm environment 
+- good ewe nutrition will prevent the ewe wandering off without her lambs in search of food, and increase her maternal abilities
+- careful selection of breeding stock will help remove ewes that are bad mothers, and ewes and rams with a tendency towards difficult lambings
+- close observation of lambs and ewes to identify mismothering as quickly as possible and prevent the ewe harming the lamb",Expandable,160,,
+165,References,"(1) Lv S-J, Yang Y, Li F-K. Parity and litter size effects on maternal behavior of Small Tail Han sheep in China. Animal Science Journal. 2016;87(3):361-9. Available from: https://doi.org/10.1111/asj.12441
+(2) HCC. Making Every Lamb Count; 2011 [cited 2021 August 20]. Available from: https://meatpromotion.wales/en/industry-resources/sheep-management.
+(3) Dwyer CM, Lawrence AB, Bishop SC, Lewis M. Ewe–lamb bonding behaviours at birth are affected by maternal undernutrition in pregnancy. British Journal of Nutrition. 2003;89(1):123-36. Available from: https://doi.org/10.1079/BJN2002743
+(4) Hazard D, Mace T, Foulquie D, Delval E, Douls S, Carriere F, et al. Genome wide association studies of maternal behaviours  in sheep. 2020.
+(5) McLaren A, Kaseja K, Moore K, Mucha S, Dwyer C, Conington J. Lamb survival & ewe longevity; 2015 [cited 2021 August 19]. Available from: https://www.nationalsheep.org.uk/workspace/pdfs/coningtonjo22112015101634.pdf.
+(6) Mora-Medina P, Orihuela A, Arch-Tirado E, Roldán-Santiago P, Terrazas A, Mota-Rojas D. Sensory factors involved in mother-young bonding in sheep: A review. Veterinární medicína. 2018;61:595-611. Available from: https://doi.org/10.17221/255/2014-VETMED",Expandable,160,,
+166,Predation and Dogs,"Factors which make a lamb more prone to being attacked by a dog or predator include:
+- mismothering as a lone lamb is more likely to be targeted than one with a ewe
+- lamb disease, hypothermia, starvation and low birth weight causes a lamb to be less physically fit and able to run away from predators than a healthy strong lamb
+- location for example the field being close to a popular dog walking route, or near woodlands where predators may live.",Button,99,"103, 107",Causes
+167,Predisposing Factors,"Factors which make a lamb more prone to being attacked by a dog or predator include:
+- mismothering as a lone lamb is more likely to be targeted than one with a ewe
+- lamb disease, hypothermia, starvation and low birth weight causes a lamb to be less physically fit and able to run away from predators than a healthy strong lamb
+- location for example the field being close to a popular dog walking route, or near woodlands where predators may live.",Expandable,166,,
+168,Predation and Dog Worrying,"Dog worrying can refer to either sheep being chased by a dog, or the dog attacking the sheep. The majority of incidence involve just one dog, with it being believed that about half the time the dog was accompanied by the owner (1). Dog worrying commonly results in sheep being stressed, mismothering, abortion, injury, death or euthanasia of the sheep. Dogs to not tend to particularly target lambs, but are more likely to target pregnant or lactating ewes. 
+
+Predators are thought to attack the sheep 94% of the time, rather than chase them. The most common predators to sheep in Scotland are though to be foxes, crows, ravens and badgers, followed by various species of eagle and gull. The prevalence of each species differs per geographical region.  Predation commonly results in sheep being stressed, mismothering, abortion, injury, death or euthanasia of the sheep. Predators have been shown to target lambs much more commonly than any other age of sheep. They are more likely to target small weak lambs, but there have been reports of predators attacking large strong lambs (1).",Expandable,166,,
+169,Effects of Predation and Dogs,"Flocks who have suffered from predation or dog worrying may experience:
+- lamb mortality or injury
+- ewe mortality or injury which means the ewe is not/less able to care for and feed her lamb
+- ewe stress can result in mismothering and reduced milk yield",Expandable,166,,
+170,Preventing Predation and Dog Worrying,"Things which may help prevent the effects of predation and dog worrying include:
+- taking care to re-unite and re-bond ewes and lambs who may be prone to mismothering following an incident
+- field management to ensure young lambs are kept away from dog walking paths and areas where predators may live
+- enlisting the help of a gamekeeper, speaking to the public, additional fencing or putting up signage warning dog owners of the dangers of dog worrying 
+- only turning out big, strong lambs who have a good chance of avoiding predators.",Expandable,166,,
+171,References,"(1) Murray L, Warren R. Sheep Attacks and   Harassment   Research; 2019 [cited 2021 August 23]. Available from: https://www.gov.scot/publications/sheep-attacks-harassment-research/pages/2/.",Expandable,166,,
+172,Starvation,,Button,99,"102, 105, 101, 115",Causes
+173,Predisposing Factors,"Things are are likely to predispose lambs to starvation are:
+- poor ewe nutrition will cause an ewe to produce less milk (1). She may not have enough milk to feed more than one lamb. 
+- lambs with a low birth weight are have been shown to be more likely to die of starvation (2) as they are not as quick to stand up and nurse
+- triplets are also more likely to suffer from starvation due to the competition from litter mates for milk (2)
+- poor udder conformation can cause difficulty suckling e.g. if the teats are pointing forwards or very large (3)
+- ewe disease can cause the ewe to not encourage the lamb to nurse, to not allow lambs to sucks due to pain (eg if she has mastitis) or to lie down meaning the lamb can't get to the teat. Mastitis is particularly likely to lead to lamb starvation, as the udders may be painful and there will be a lower quantity and quality of milk produced (3). 
+- ewe death will leave the lamb without a food source. 
+- mismothering will mean the ewe will not allow the lamb to feed
+- orphan or pet lambs will need to be bottle fed or taught to suckle from mounted teats associated with an automatic lamb feeder
+- dystocia/a difficult birth causes delayed suckling of the lamb (4)",Expandable,172,,
+174,Starvation,"A lack of colostrum or milk intake will lead to starvation of the lamb. Colostrum or milk is the sole source of energy for a lamb. This means it is essential that lambs receive sufficient quantity and quality of it to ensure they can survive, grow and thrive. Hungry lamb will appear ""empty"" and hunched up, cry for the ewe, and then become comatose and die. Lambs who have not fed enough will have trouble keeping their body temperature warm enough due to a lack of energy, so are prone to hypothermia. 
+
+Colostrum (the first milk) contains antibodies. These play an important role in strengthening the immune system of the lamb, so are essential in helping the lamb fight off disease. The lamb is only able to absorb the antibodies needed for it's immune system during the first 6 hours of life, so administering colostrum quickly is key not only to prevent starvation and hypothermia, but also to produce a healthy immune system and prevent lamb disease. 
+
+Guidelines state that lambs should receive 50ml/kg of colostrum within two hours after birth, but really as soon as possible. In the first 24hrs they should get 200ml/kg of colostrum (5).",Expandable,172,,
+175,Effects of Starvation,"Lambs are suffering of starvation are more prone to:
+- increased lamb mortality
+- hypothermia because once the brown fat reserves that the lamb has stored when in the uterus have run out, the lamb will no longer be able to keep itself warm unless it gets an alternative energy source like colostrum 
+- lamb disease due to the lamb not getting enough colostrum, and hence not building up a good immune system. 
+- reduced weight gain",Expandable,172,,
+176,Preventing Starvation,"Starvation can be prevented by:
+- ewe and lamb observation can help identify ewes which are feeling unwell, lambs which look empty and lambs which are not being allowed to feed
+- good ewe nutrition to ensure a healthy birthweight of the lamb and sufficient quantity and quality of colostrum production by the ewe
+- some lambs may need an extra supply of milk while the ewe recovers from disease. These lambs can be kept with the ewe but also bottle fed. Note that there is a significant risk that the lamb will stop nursing from the ewe due to a preference for the bottle so extreme care should be taken when undertaking this approach
+- if an ewe is suspected to not be able to feed all her lambs soon after birth, some lambs can be removed and fostered onto another ewe. This is common in litters of triplets, if the ewe has a low milk yield or mastitis, or following an ewe death. Alternatively, the lamb(s) can be separated from their mother and join the pet/orphan lambs, but fostering is preferable. 
+- selection of breeding stock ensures that ewes will poor teat conformations, milk yield or mothering ability are not kept for another lambing season.",Expandable,172,,
+177,References,"(1) AHDB. Colostrum Management for Lambs [cited 2021 August 24]. Available from: https://ahdb.org.uk/knowledge-library/colostrum-management-for-lambs
+(2) Abdelqader A, Irshaid R, Tabbaa Mohammad J, Abuajamieh M, Titi H, Al-Fataftah A-R. Factors influencing Awassi lambs survivorship under fields conditions. Livestock Science. 2017;199:1-6. Avaliable from: https://doi.org/10.1016/j.livsci.2017.03.007
+(3) AHDB. Understanding mastitis in sheep; 2018 [cited 2021 August 25]. Available from: https://ahdb.org.uk/knowledge-library/understanding-mastitis-in-sheep.
+(4) Jacobson C, Bruce M, Kenyon PR, Lockwood A, Miller D, Refshauge G, et al. A review of dystocia in sheep. Small Ruminant Research. 2020;192:106209. Available from: https://doi.org/10.1016/j.smallrumres.2020.106209
+(5) AHDB Beef & Lamb. Reducing lamb losses for Better Returns; 2020 [cited 2021 August 24]. Available from: https://ahdb.org.uk/knowledge-library/reducing-lamb-losses-for-better-returns-2.",Expandable,172,,
+178,Weak Lambs,,Button,99,"105, 102, 103, 101, 109",Causes
+179,Predisposing Factors,"Things are are likely to predispose lambs to being weak is:
+- low birthweight can occur for any number of reasons including ewe disease, ewe nutrition, heat stress during pregnancy, first time lambers, carrying triplets or quadruplets. There is a strong correlation between high and low birthweights and a higher instance of lamb mortality (1)
+- dystocia/a difficult birth can leave a lamb worn out. After being stressed during birth or spending prolonged time in the birth canal lambs tend to be slower to stand, weaker and have a lower chance of survival (2)
+- sublethal abortive disease picked up by the ewe can be passed to the lamb during pregnancy. The disease may not have resulted in an abortion, but can cause the lamb to be born live but weak due to the infection. Common diseases include Border Disease virus, enzootic abortion, Schmallenberg virus and toxoplasmosis. 
+- ewe diseases which reduce Body Condition Score results in poor foetal growth during pregnancy. This causes a lamb to be born in a weakened state. 
+- poor ewe nutrition can cause the birth of weak lambs as the ewe has not been able to devote enough energy to the growth of the lamb during pregnancy. Furthermore, if ewes have trace element deficiencies during pregnancy this can cause the birth of weakened lambs (3). 
+- genetics can predispose lambs to being born weak. Some breeds of sheep have better or poorer lamb vigour, which influences survival.",Expandable,178,,
+180,Weak Lambs,"Some lambs are born less strong than others. They may spend more time lying down, be slow to stand and suckle, more prone to mismothering, and seem confused or sleepy when they do stand up. The delay in receiving colostrum will be detrimental to their chances of survival, and predispose them to disease, starvation and hypothermia.",Expandable,178,,
+181,Effects of Weak Lambs,"Lambs who are weaker than average can suffer from:
+- reduced colostrum intake due to being too weak to suckle. This will subsequently put them at risk of other conditions. 
+- mismothering if they are unable to keep up with their mother or stronger siblings
+- hypothermia is more likely due to reduced colostrum intake as lambs need the energy from colostrum to keep themselves warm once the brown fat reserves run out. 
+- starvation is also more likely due to a delay in standing and suckling, and hence colostrum intake. 
+- there is an increased risk of lamb disease due to reduced colostrum intake. Colostrum is important for fighting off infections as it contains antibodies which the lamb needs to strengthen the immune system
+- predation and dog attacks due to not being able to run away as quickly as other lambs
+- increased risk of zoonotic disease (which can be transferred to humans) due to the cause of the lamb being weak possibly being an infection e.g. E. coli, Q fever or enzootic abortion. Hence, weak lambs should not be kept as children's pets or brought into the house. 
+- lamb mortality",Expandable,178,,
+182,Preventing Lamb Weakness,"Lowering the number of weak lambs and caring for them can help ensure survival. This can be done by:
+- correct ewe nutrition to ensure that lambs are a good weight at birth and don't suffer from the consequences of trace element deficiencies. 
+- close observation of the lambs to spot any weak ones or ewes having trouble lambing to prevent dystocia
+- using bonding protocols if at risk of mismothering
+- keeping the weak lambs inside or in close by, safe field for longer than others
+- ensure adequate colostrum is given to each lamb by checking for hungry lambs, ewe disease, mismothering, and supplementing colostrum when necessary
+- having good hygiene so lamb disease can be prevented",Expandable,178,,
+183,References,"(1) McLaren A, Kaseja K, Moore K, Mucha S, Dwyer C, Conington J. Lamb survival & ewe longevity; 2015 [cited 2021 August 24]. Available from: https://www.nationalsheep.org.uk/workspace/pdfs/coningtonjo22112015101634.pdf.
+(2) Jacobson C, Bruce M, Kenyon PR, Lockwood A, Miller D, Refshauge G, et al. A review of dystocia in sheep. Small Ruminant Research. 2020;192:106209. Available from: https://doi.org/10.1016/j.smallrumres.2020.106209
+(3) AHDB. Feeding the ewe; 2018 [cited 2021 August 24]. Available from: https://ahdb.org.uk/knowledge-library/feeding-the-ewe.",Expandable,178,,

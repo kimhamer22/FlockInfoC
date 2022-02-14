@@ -1,4 +1,5 @@
 import 'package:fic_flutter/widgets/breadcrumb.dart';
+import 'package:fic_flutter/widgets/ham_menu.dart';
 import 'package:fic_flutter/widgets/navigation_button.dart';
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/widgets/top_bar.dart';
@@ -15,7 +16,6 @@ class InfoPage extends StatefulWidget {
 
 class _InfoPageState extends State<InfoPage> {
   late int sectionID;
-  SectionHandler sh = SectionHandler();
   late Future section;
   late Future relevantCats;
   late Future subheadings;
@@ -34,24 +34,11 @@ class _InfoPageState extends State<InfoPage> {
     super.initState();
   }
 
-  final String title = "Vaccination";
-  final String description =
-      """Vaccines are essential for controlling some causes of abortion.
-
-  Vaccines are only effective if:
-  - stored at the correct temperature
-  - given at the correct time
-  - given to the correct animals
-  - administered correctly
-  - used within the stated time from opening (usually 2-8hrs) and before the use by date
-
-  Product information leaflets will show specific details for each vaccine.
-  """;
-
   @override
   Widget build(BuildContext context) {
     try {
       return Scaffold(
+        drawer: const HamMenu(),
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(60),
           child: FutureBuilder(
@@ -106,15 +93,17 @@ class _InfoPageState extends State<InfoPage> {
                             if (snapshot.hasData) {
                               var list = [];
                               var data = snapshot.data as List;
-                              list.add(
-                                const Padding(
-                                    padding: EdgeInsets.all(10),
-                                    child: Text(
-                                      'Relevant Factors',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold),
-                                    )),
-                              );
+                              if (data.isNotEmpty) {
+                                list.add(
+                                  const Padding(
+                                      padding: EdgeInsets.all(10),
+                                      child: Text(
+                                        'Relevant Factors',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold),
+                                      )),
+                                );
+                              }
                               for (var i = 0; i < data.length; i++) {
                                 var title = data[i].translationSection;
                                 list.add(NavigationButton(

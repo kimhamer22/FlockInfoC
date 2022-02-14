@@ -9,6 +9,8 @@ class HomeResources extends StatefulWidget {
 }
 
 class _HomeResources extends State<HomeResources> {
+  final String simpleRoute = '/simple_text';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,8 +32,9 @@ class _HomeResources extends State<HomeResources> {
           ),
         ),
         NavigationButton(
-            title: 'General Resources', route: "/generalresources"),
-        NavigationButton(title: 'Benefits of Reducing Losses', route: "/"),
+            title: 'General Resources', route: simpleRoute, id: 25),
+        NavigationButton(
+            title: 'Benefits of Reducing Losses', route: simpleRoute, id: 26),
       ]),
     );
   }

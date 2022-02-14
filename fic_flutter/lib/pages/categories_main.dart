@@ -1,4 +1,5 @@
 import 'package:fic_flutter/widgets/breadcrumb.dart';
+import 'package:fic_flutter/widgets/ham_menu.dart';
 import 'package:fic_flutter/widgets/expandable_cats.dart';
 import 'package:fic_flutter/widgets/top_bar.dart';
 import 'package:flutter/material.dart';
@@ -36,22 +37,11 @@ class _CategoryPageState extends State<CategoryPage> {
     super.initState();
   }
 
-  //final String title = "Controlling Abortion";
-  // final List<Category> _categories = [
-  //   Category(name: "Vaccination", subCategories: [
-  //     const NavigationButton(title: "Vaccination", route: '/infopage'),
-  //     const NavigationButton(title: "Schmallenberg Virus", route: '/'),
-  //     const NavigationButton(title: "Toxoplasma Gondii", route: '/'),
-  //     const NavigationButton(title: "Bluetongue Virus", route: '/'),
-  //   ]),
-  //   Category(name: "Body Condition Scoring", subCategories: []),
-  //   Category(name: "Reduce Stress", subCategories: []),
-  // ];
-
   @override
   Widget build(BuildContext context) {
     try {
       return Scaffold(
+        drawer: const HamMenu(),
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(60),
           child: FutureBuilder(

@@ -1,3 +1,5 @@
+import 'package:fic_flutter/widgets/ham_menu.dart';
+import 'package:fic_flutter/widgets/navigation_button.dart';
 import 'package:fic_flutter/helpers.dart';
 import 'package:flutter/material.dart';
 import '../widgets/navigation_button.dart';
@@ -32,6 +34,7 @@ class _Sheep extends State<Sheep> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const HamMenu(),
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(60),
         child: FutureBuilder(

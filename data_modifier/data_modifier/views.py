@@ -47,7 +47,6 @@ def navigation(request, section_id=None):
         sections = get_child_sections(section_id)
 
 
-    print(sections)
     context_dict = {}
     context_dict['sections'] = sections
     return render(request, 'data_modifier/navigation.html', context=context_dict)

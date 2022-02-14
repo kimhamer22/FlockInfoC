@@ -84,10 +84,6 @@ DATABASES = {
         "PASSWORD": os.environ.get("SQL_PASSWORD", "password"),
         "HOST": os.environ.get("SQL_HOST", "localhost"),
         "PORT": os.environ.get("SQL_PORT", "5432"),
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
-        # 'ENGINE': 'django.db.backends.postgresqlite', # TODO - change to our database
-        # 'NAME': BASE_DIR / 'flock-control.sqlite'
     },
     'app-db': {
         'ENGINE': 'django.db.backends.sqlite3',

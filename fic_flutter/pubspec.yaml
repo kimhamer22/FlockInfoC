@@ -11,7 +11,9 @@ dependencies:
     sdk: flutter
   sqflite:
   path:
-  flowder: ^0.2.0
+  flowder:
+    git:
+      url: https://github.com/xid-er/flowder.git
 
 dev_dependencies:
   flutter_test:

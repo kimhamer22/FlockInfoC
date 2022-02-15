@@ -60,9 +60,11 @@ packages:
   flowder:
     dependency: "direct main"
     description:
-      name: flowder
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "."
+      ref: HEAD
+      resolved-ref: "7d83884c16fd2200fbdcea781c3294a7355e7871"
+      url: "https://github.com/xid-er/flowder.git"
+    source: git
     version: "0.2.0"
   flutter:
     dependency: "direct main"
@@ -153,7 +155,7 @@ packages:
       name: sqflite_common
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.1+1"
+    version: "2.2.0"
   stack_trace:
     dependency: transitive
     description:
@@ -211,5 +213,5 @@ packages:
     source: hosted
     version: "2.1.1"
 sdks:
-  dart: ">=2.14.0 <3.0.0"
+  dart: ">=2.15.0 <3.0.0"
   flutter: ">=1.20.0"

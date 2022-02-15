@@ -1,10 +1,12 @@
 import 'dart:io';
 
-import 'package:flowder/flowder.dart';
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/widgets/breadcrumb.dart';
 import 'package:fic_flutter/main.dart';
+
+import 'package:flowder/flowder.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:sn_progress_dialog/sn_progress_dialog.dart';
 
 import '../helpers.dart';
 
@@ -21,6 +23,7 @@ class _HamMenu extends State<HamMenu> {
   final String tileRoute = '/simple_text';
   late final String path;
   late DownloaderUtils downloaderUtils;
+  late ProgressDialog pd;
 
   @override
   void initState() {
@@ -36,6 +39,17 @@ class _HamMenu extends State<HamMenu> {
 
   void _setPath() async {
     path = (await getApplicationDocumentsDirectory()).path;
+  }
+
+  _valuableProgress(context, progress) async {
+    if (!pd.isOpen()) {
+      pd.show(
+        max: 100,
+        msg: 'File Downloading...',
+        progressType: ProgressType.valuable,
+      );
+    }
+    pd.update(value: progress.ceil());
   }
 
   @override
@@ -136,41 +150,43 @@ class _HamMenu extends State<HamMenu> {
             ),
             onTap: () async {
               try {
+                pd = ProgressDialog(context: context);
                 downloaderUtils = DownloaderUtils(
                   progressCallback: (current, total) {
                     final progress = (current / total) * 100;
-                    int i = 0;
-                    if (progress > i * 20) {
-                      print('Downloading: $progress');
-                      i = i + 1;
-                    }
-                    SimpleDialog(
-                      title: Text('Loading...'),
-                      children: [
-                        LinearProgressIndicator(
-                          value: progress,
-                        )
-                      ],
-                    );
+                    _valuableProgress(context, progress);
+                    // int i = 0;
+                    // if (progress > i * 20) {
+                    //   print('Downloading: $progress');
+                    //   i = i + 1;
+                    // }
+                    // SimpleDialog(
+                    //   title: const Text('Loading...'),
+                    //   children: [
+                    //     LinearProgressIndicator(
+                    //       value: progress,
+                    //     )
+                    //   ],
+                    // );
+                    //if (progress.toInt() == 100) pd.close();
                   },
                   file: File('$path/20MB.zip'),
                   progress: ProgressImplementation(),
                   onDone: () {
                     print('Download done');
+                    Navigator.popUntil(context, ModalRoute.withName('/'));
+                    breadcrumb.clear();
+                    breadcrumb.add(HomePage.route);
                   },
                   deleteOnCancel: true,
                 );
 
                 // TODO - Change URL to server's zipped DB
                 const url = 'http://ipv4.download.thinkbroadband.com/20MB.zip';
-                final core = await Flowder.download(url, downloaderUtils);
-                core.download(url, downloaderUtils);
+                await Flowder.download(url, downloaderUtils);
               } catch (LateInitializationError) {}
               // TODO - Unzip database
               // TODO - Update database
-              Navigator.popUntil(context, ModalRoute.withName('/'));
-              breadcrumb.clear();
-              breadcrumb.add(HomePage.route);
             },
           )
         ],

@@ -5,6 +5,7 @@ import 'package:fic_flutter/widgets/breadcrumb.dart';
 import 'package:fic_flutter/main.dart';
 
 import 'package:flowder/flowder.dart';
+import 'package:flutter_archive/flutter_archive.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sn_progress_dialog/sn_progress_dialog.dart';
 
@@ -150,30 +151,22 @@ class _HamMenu extends State<HamMenu> {
             ),
             onTap: () async {
               try {
+                const String filename = 'flock-control.zip';
+                final String filepath = '$path/$filename';
                 pd = ProgressDialog(context: context);
                 downloaderUtils = DownloaderUtils(
                   progressCallback: (current, total) {
                     final progress = (current / total) * 100;
                     _valuableProgress(context, progress);
-                    // int i = 0;
-                    // if (progress > i * 20) {
-                    //   print('Downloading: $progress');
-                    //   i = i + 1;
-                    // }
-                    // SimpleDialog(
-                    //   title: const Text('Loading...'),
-                    //   children: [
-                    //     LinearProgressIndicator(
-                    //       value: progress,
-                    //     )
-                    //   ],
-                    // );
-                    //if (progress.toInt() == 100) pd.close();
                   },
-                  file: File('$path/20MB.zip'),
+                  file: File(filepath),
                   progress: ProgressImplementation(),
                   onDone: () {
-                    print('Download done');
+                    final zipFile = File(filepath);
+                    final destinationDir = Directory(path);
+                    ZipFile.extractToDirectory(
+                        zipFile: zipFile, destinationDir: destinationDir);
+
                     Navigator.popUntil(context, ModalRoute.withName('/'));
                     breadcrumb.clear();
                     breadcrumb.add(HomePage.route);
@@ -182,10 +175,14 @@ class _HamMenu extends State<HamMenu> {
                 );
 
                 // TODO - Change URL to server's zipped DB
-                const url = 'http://ipv4.download.thinkbroadband.com/20MB.zip';
+                // Local Django project's static folder
+                const url = 'http://10.0.2.2:8000/static/database/$filename';
+                // Random dummy zip from online
+                // const url = 'http://ipv4.download.thinkbroadband.com/20MB.zip';
                 await Flowder.download(url, downloaderUtils);
-              } catch (LateInitializationError) {}
-              // TODO - Unzip database
+              } catch (e) {
+                print(e);
+              }
               // TODO - Update database
             },
           )

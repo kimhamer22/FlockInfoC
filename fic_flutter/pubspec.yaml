@@ -16,6 +16,7 @@ dependencies:
       url: https://github.com/xid-er/flowder.git
   path_provider:
   sn_progress_dialog: ^1.0.3
+  flutter_archive:
 
 dev_dependencies:
   flutter_test:

@@ -52,7 +52,16 @@ def navigation(request, section_id=None):
     return render(request, 'data_modifier/navigation.html', context=context_dict)
 
 @login_required
-def section_edit(request, section_id=None):
+def section_edit_language(request, section_id=None):
+
+    context_dict = {}
+    context_dict['section_translations'] = enumerate(get_section_languages(section_id))
+
+    return render(request, 'data_modifier/section/edit_language.html', context=context_dict)
+
+
+@login_required
+def section_edit(request, section_id=None, language_id=None):
 
     context_dict = {}
     context_dict['section'] = get_section(section_id)

@@ -27,4 +27,6 @@ urlpatterns = [
     path('navigation/new', views.section_create, name='section_create'),
     path('navigation/<int:section_id>/', views.navigation, name='navigation_section'),
     path('section/edit/<int:section_id>/', views.section_edit, name='section_edit'),
+    path('language/index/', views.language_index, name='language_index'),
+
 ]

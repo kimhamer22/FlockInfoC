@@ -64,3 +64,12 @@ def section_edit(request, section_id=None):
 def section_create(request):
 
     return HttpResponse("TEST")
+
+
+@login_required
+def language_index(request):
+
+    context_dict = {}
+    context_dict['languages'] = get_languages()
+
+    return render(request, 'data_modifier/language/index.html', context=context_dict)

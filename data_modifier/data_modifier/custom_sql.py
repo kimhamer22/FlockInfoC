@@ -44,3 +44,13 @@ def get_section(section_id):
         WHERE s.id=%s""", [section_id])
 		
 		return cursor.fetchone()
+
+
+def get_languages():
+	with connections['app-db'].cursor() as cursor:
+		cursor.execute("""
+			SELECT id, name
+        	FROM language
+        """)
+		
+		return cursor.fetchall()

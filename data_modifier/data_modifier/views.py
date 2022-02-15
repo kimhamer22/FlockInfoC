@@ -58,3 +58,9 @@ def section_edit(request, section_id=None):
     context_dict['section'] = get_section(section_id)
 
     return render(request, 'data_modifier/section/edit.html', context=context_dict)
+
+
+@login_required
+def section_create(request):
+
+    return HttpResponse("TEST")

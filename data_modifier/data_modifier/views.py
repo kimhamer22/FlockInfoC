@@ -69,12 +69,19 @@ def section_create(request):
 @login_required
 def language_index(request):
 
-    if request.method == 'POST':
+    method = request.POST.get('_method', '').lower()
+
+    if method == 'delete':
+        language_id = request.POST.get('language_id')
+        if language_id:
+            delete_language(language_id)
+
+    elif request.method == 'POST':
         language_name = request.POST.get('language_name')
         if language_name:
             insert_language(language_name)
 
     context_dict = {}
-    context_dict['languages'] = get_languages()
+    context_dict['enumerated_languages'] = enumerate(get_languages())
 
     return render(request, 'data_modifier/language/index.html', context=context_dict)

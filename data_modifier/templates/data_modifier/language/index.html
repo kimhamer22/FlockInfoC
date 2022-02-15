@@ -16,11 +16,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for l in languages %}
+                    {% for i, l in enumerated_languages %}
                     <tr>
-                        <th scope="row">{{l.0}}</th>
+                        <th scope="row">{{i|add:"1"}}</th>
                         <td>{{l.1}}</td>
-                        <td><a class="btn btn-danger float-end btn-sm {% if l.1 == 'en' %} disabled {% endif %}" href="#">Remove</a></td>
+                        <td>
+                            <form method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="hidden" name="language_id" value="{{l.0}}">
+                                <input class="btn btn-danger btn-sm float-end {% if l.1 == 'en' %} disabled {% endif %}" value="Remove" type="submit">
+                            </form>
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>

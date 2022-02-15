@@ -54,3 +54,22 @@ def get_languages():
         """)
 		
 		return cursor.fetchall()
+
+
+def insert_language(language):
+	with connections['app-db'].cursor() as cursor:
+		cursor.execute("""
+			INSERT INTO language('name', icon) VALUES(%s, '')
+        """, [language])
+
+def delete_language(language_id):
+
+	# protect english
+	if language_id == 1:
+		pass
+
+	else:
+		with connections['app-db'].cursor() as cursor:
+			cursor.execute("""
+				DELETE FROM language WHERE id=%s
+	        """, [language_id])

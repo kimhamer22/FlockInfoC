@@ -20,13 +20,26 @@
                     <tr>
                         <th scope="row">{{l.0}}</th>
                         <td>{{l.1}}</td>
-                        <td><a class="btn btn-danger float-end btn-sm {% if l.1 == 'en' %} disabled {% endif %}" href="#"  >Remove</a></td>
+                        <td><a class="btn btn-danger float-end btn-sm {% if l.1 == 'en' %} disabled {% endif %}" href="#">Remove</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
 
-            <a class="btn btn-primary float-end" href="#">Add A Language</a>
+            <h2 class="mt-5">New Language</h1>
+
+            <form method="post">
+                {% csrf_token %}
+
+                <div class="form-group mt-2 mb-2">
+                    <label for="language_name">Language: </label>
+                    <input class="form-control" id="language_name" name="language_name">
+                </div>
+                <div class="form-group mb-2">
+                    <input class="btn btn-primary float-end" type="submit" value="Add A Language">
+                </div>
+            </form>
+            
         </div>
         
     </div>

@@ -69,6 +69,11 @@ def section_create(request):
 @login_required
 def language_index(request):
 
+    if request.method == 'POST':
+        language_name = request.POST.get('language_name')
+        if language_name:
+            insert_language(language_name)
+
     context_dict = {}
     context_dict['languages'] = get_languages()
 

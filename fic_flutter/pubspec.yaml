@@ -14,6 +14,7 @@ dependencies:
   flowder:
     git:
       url: https://github.com/xid-er/flowder.git
+  path_provider:
 
 dev_dependencies:
   flutter_test:

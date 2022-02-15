@@ -4,6 +4,7 @@ import 'package:flowder/flowder.dart';
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/widgets/breadcrumb.dart';
 import 'package:fic_flutter/main.dart';
+import 'package:path_provider/path_provider.dart';
 
 import '../helpers.dart';
 
@@ -18,24 +19,23 @@ class _HamMenu extends State<HamMenu> {
   final double fontSize = 20;
   late Future allSpeciesFuture;
   final String tileRoute = '/simple_text';
-
-  final downloaderUtils = DownloaderUtils(
-    progressCallback: (current, total) {
-      final progress = (current / total) * 100;
-      print('Downloading: $progress');
-    },
-    file: File('../assets/database/200MB.zip'),
-    progress: ProgressImplementation(),
-    onDone: () {
-      print('Download done');
-    },
-    deleteOnCancel: true,
-  );
+  late final String path;
+  late DownloaderUtils downloaderUtils;
 
   @override
   void initState() {
     super.initState();
     allSpeciesFuture = Helpers().getSpecies();
+    initPlatformState();
+  }
+
+  Future<void> initPlatformState() async {
+    _setPath();
+    if (!mounted) return;
+  }
+
+  void _setPath() async {
+    path = (await getApplicationDocumentsDirectory()).path;
   }
 
   @override
@@ -135,11 +135,37 @@ class _HamMenu extends State<HamMenu> {
               style: TextStyle(fontSize: fontSize),
             ),
             onTap: () async {
-              // TODO - Pull database
-              // TODO - Change URL to server's zipped DB
-              const url = 'http://ipv4.download.thinkbroadband.com/200MB.zip';
-              final core = await Flowder.download(url, downloaderUtils);
-              core.download(url, downloaderUtils);
+              try {
+                downloaderUtils = DownloaderUtils(
+                  progressCallback: (current, total) {
+                    final progress = (current / total) * 100;
+                    int i = 0;
+                    if (progress > i * 20) {
+                      print('Downloading: $progress');
+                      i = i + 1;
+                    }
+                    SimpleDialog(
+                      title: Text('Loading...'),
+                      children: [
+                        LinearProgressIndicator(
+                          value: progress,
+                        )
+                      ],
+                    );
+                  },
+                  file: File('$path/20MB.zip'),
+                  progress: ProgressImplementation(),
+                  onDone: () {
+                    print('Download done');
+                  },
+                  deleteOnCancel: true,
+                );
+
+                // TODO - Change URL to server's zipped DB
+                const url = 'http://ipv4.download.thinkbroadband.com/20MB.zip';
+                final core = await Flowder.download(url, downloaderUtils);
+                core.download(url, downloaderUtils);
+              } catch (LateInitializationError) {}
               // TODO - Unzip database
               // TODO - Update database
               Navigator.popUntil(context, ModalRoute.withName('/'));

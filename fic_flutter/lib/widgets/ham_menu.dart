@@ -170,9 +170,7 @@ class _HamMenu extends State<HamMenu> {
                     ZipFile.extractToDirectory(
                         zipFile: zipFile, destinationDir: destinationDir);
 
-                    Navigator.popUntil(context, ModalRoute.withName('/'));
-                    breadcrumb.clear();
-                    breadcrumb.add(HomePage.route);
+                    breadcrumbBar.homePressed(context);
                   },
                   deleteOnCancel: true,
                 );

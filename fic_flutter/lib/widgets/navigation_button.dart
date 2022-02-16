@@ -6,8 +6,6 @@ import 'package:fic_flutter/widgets/expandable_cats.dart';
 import 'package:fic_flutter/widgets/top_bar.dart';
 import 'package:flutter/material.dart';
 import '../db_handle.dart';
-import '../widgets/navigation_button.dart';
-import '../helpers.dart';
 
 class NavigationButton extends StatelessWidget {
   final String title;
@@ -29,10 +27,8 @@ class NavigationButton extends StatelessWidget {
       padding: const EdgeInsets.all(8),
       child: MaterialButton(
         onPressed: () {
-          var name;
           Navigator.pushNamed(context, route, arguments: id);
-
-          breadcrumbBar.add(route, context);
+          breadcrumbBar.add(route, context, id);
         },
         child: SizedBox(
           child: Container(

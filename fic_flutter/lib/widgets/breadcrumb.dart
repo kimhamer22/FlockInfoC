@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:fic_flutter/main.dart';
 import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
 
+import '../db_handle.dart';
+import '../helpers.dart';
+
 List<BreadCrumbItem> breads = [
   BreadCrumbItem(
     content: Text("Home"),
@@ -24,15 +27,15 @@ class breadcrumbBar extends StatelessWidget {
     bread_routes = ['/'];
   }
 
-  static void add(String route, BuildContext context) {
+  static add(String route, BuildContext context, int id) async {
     bread_routes.add(route);
+    Section? section = await Helpers().getSection(id);
 
     breads.add(BreadCrumbItem(
-      content: Text(route.substring(1)),
+      content: Text(section?.translationSection ?? 'Loading'),
       textColor: Colors.green,
       onTap: () {
         BreadCrumbItem last_breadcrumb = BreadCrumbItem(content: Text('Home'));
-
         if ((bread_routes.any((e) => e == route)) && (bread_routes != ['/'])) {
           while (bread_routes.any((e) => e == route)) {
             last_breadcrumb = breads.last;
@@ -50,7 +53,7 @@ class breadcrumbBar extends StatelessWidget {
     ));
   }
 
-  static void remove(String route) {}
+  //static void remove(String route) {}
 
   @override
   Widget build(BuildContext context) {

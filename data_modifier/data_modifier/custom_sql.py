@@ -36,9 +36,11 @@ def get_section(section_id, language_id=1):
 		cursor.execute("""
 			SELECT s.id, 
                td.translation as translation_data, 
-               ts.translation as translation_section
+               ts.translation as translation_section,
+               l.name as language
         FROM section as s
         JOIN translations_sections as ts ON s.id = ts.section_id
+        JOIN language as l on ts.language_id=l.id
         LEFT JOIN translations_data as td ON s.id = td.section_id
         WHERE s.id=%s and ts.language_id =%s""", [section_id, language_id])
 		

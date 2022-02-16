@@ -11,6 +11,7 @@ class NavigationButton extends StatelessWidget {
   final String title;
   final String imageURL;
   final String route;
+  Color? colour;
   late int id;
 
   NavigationButton({
@@ -18,6 +19,7 @@ class NavigationButton extends StatelessWidget {
     required this.title,
     this.imageURL = 'assets/images/sheep icon.png',
     required this.route,
+    this.colour = const Color(0x8097E183),
     this.id = 1,
   }) : super(key: key);
 
@@ -34,7 +36,8 @@ class NavigationButton extends StatelessWidget {
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10.0),
-              color: Colors.lightGreen[50],
+              color: colour,
+              //color: Colors.lightGreen[50],
               border: Border.all(),
             ),
             child: Row(children: [

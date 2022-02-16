@@ -61,7 +61,14 @@ def section_edit_language(request, section_id=None):
 
 
 @login_required
-def section_edit(request, section_id=None, language_id=None):
+def section_edit(request, section_id, language_id):
+
+    if request.method == 'POST':
+        heading = request.POST.get('heading')
+        info = request.POST.get('info')
+        if heading and info:
+            update_section(section_id, language_id, heading, info)
+        return redirect(reverse('section_edit_language', args=(section_id,)))
 
     context_dict = {}
     context_dict['section'] = get_section(section_id)

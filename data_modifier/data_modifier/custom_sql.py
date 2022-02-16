@@ -63,6 +63,29 @@ def get_section_languages(section_id):
 		return cursor.fetchall()
 
 
+def update_section(section_id, language_id, translation_section, translation_data):
+	with connections['app-db'].cursor() as cursor:
+		cursor.execute("""
+			UPDATE translations_sections
+			SET translation=%s
+			WHERE section_id=%s and
+			      language_id=%s
+	        """, [translation_section, section_id, language_id])
+
+		# TODO implement this:
+		# if info exists but is not passed: set existing to empty
+		# if info exists and is passed: set existing to passed value
+		# if info does not exist, create it anyways
+
+		# FOR NOW JUST UPDATE EXISTING, TO NOT BREAK ANYTHING ON THE APP
+
+		cursor.execute("""
+			UPDATE translations_data
+			SET translation=%s
+			WHERE section_id=%s and
+			      language_id=%s
+	        """, [translation_data, section_id, language_id])
+
 def get_languages():
 	with connections['app-db'].cursor() as cursor:
 		cursor.execute("""

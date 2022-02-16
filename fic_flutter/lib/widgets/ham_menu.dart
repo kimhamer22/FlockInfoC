@@ -151,7 +151,8 @@ class _HamMenu extends State<HamMenu> {
             ),
             onTap: () async {
               try {
-                const String filename = 'flock-control.zip';
+                // const String filename = 'flock-control.zip';
+                const String filename = '20MB.zip';
                 final String filepath = '$path/$filename';
                 pd = ProgressDialog(context: context);
                 downloaderUtils = DownloaderUtils(
@@ -176,9 +177,9 @@ class _HamMenu extends State<HamMenu> {
 
                 // TODO - Change URL to server's zipped DB
                 // Local Django project's static folder
-                const url = 'http://10.0.2.2:8000/static/database/$filename';
+                //const url = 'http://10.0.2.2:8000/static/database/$filename';
                 // Random dummy zip from online
-                // const url = 'http://ipv4.download.thinkbroadband.com/20MB.zip';
+                const url = 'http://ipv4.download.thinkbroadband.com/20MB.zip';
                 await Flowder.download(url, downloaderUtils);
               } catch (e) {
                 print(e);

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
 import 'package:fic_flutter/widgets/data_search.dart';
 import 'package:fic_flutter/widgets/breadcrumb.dart';
 import 'package:fic_flutter/main.dart';
@@ -37,9 +38,8 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
                 IconButton(
                   icon: Image.asset('assets/images/FIC logo.png'),
                   onPressed: () {
-                    Navigator.popUntil(context, ModalRoute.withName('/'));
-                    breadcrumb.clear();
-                    breadcrumb.add(HomePage.route);
+                    //Navigator.popUntil(context, ModalRoute.withName('/'));
+                    breadcrumbBar.homePressed(context);
                   },
                   iconSize: 50,
                 ),

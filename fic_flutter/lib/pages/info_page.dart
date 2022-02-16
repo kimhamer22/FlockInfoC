@@ -64,7 +64,7 @@ class _InfoPageState extends State<InfoPage> {
                     var description =
                         sectionObj.translationData ?? 'Could not load';
                     return Column(children: [
-                      BreadCrumb(),
+                      breadcrumbBar(),
                       const Text(
                         'Description:',
                         style: TextStyle(fontWeight: FontWeight.bold),

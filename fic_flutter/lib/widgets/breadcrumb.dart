@@ -1,88 +1,82 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/main.dart';
+import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
 
-List<String> breadcrumb = [HomePage.route];
-//list of breadcrumbs as page route names
+List<BreadCrumbItem> breads = [
+  BreadCrumbItem(
+    content: Text("Home"),
+    textColor: Colors.black,
+    onTap: () {},
+  )
+];
+List<String> bread_routes = [];
 
-class BreadCrumb extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        padding: const EdgeInsets.only(left: 10.0),
-        height: 40.0,
-        width: MediaQuery.of(context).size.width,
-        color: const Color.fromARGB(255, 227, 226, 226),
-        child: Row(
-            children: breadcrumb.map((e) => BreadcrumbItem(name: e)).toList()));
+class breadcrumbBar extends StatelessWidget {
+  static void homePressed(BuildContext context) {
+    Navigator.popUntil(context, ModalRoute.withName('/'));
+    breads = [
+      BreadCrumbItem(
+        content: Text("Home"),
+        textColor: Colors.green,
+      )
+    ];
+    bread_routes = ['/'];
   }
-}
 
-class BreadcrumbItem extends StatefulWidget {
-  final String name;
-  BreadcrumbItem({
-    required this.name,
-  });
+  static void add(String route, BuildContext context) {
+    bread_routes.add(route);
 
-  @override
-  _BreadcrumbItemState createState() => _BreadcrumbItemState();
-}
+    breads.add(BreadCrumbItem(
+      content: Text(route.substring(1)),
+      textColor: Colors.green,
+      onTap: () {
+        BreadCrumbItem last_breadcrumb = BreadCrumbItem(content: Text('Home'));
 
-class _BreadcrumbItemState extends State<BreadcrumbItem> {
-  bool onIt = false;
-  Color color = Colors.green;
-  String init_text = '';
-  String main_text = '';
-  TextDecoration decoration = TextDecoration.underline;
+        if ((bread_routes.any((e) => e == route)) && (bread_routes != ['/'])) {
+          while (bread_routes.any((e) => e == route)) {
+            last_breadcrumb = breads.last;
+            breads.removeLast();
+            bread_routes.removeLast();
+          }
+          Navigator.popUntil(context, ModalRoute.withName(route));
+        } else {
+          print("No breadcrumb found");
+        }
+        //Breadcrumbs should include page you're on
+        breads.add(last_breadcrumb);
+        bread_routes.add(route);
+      },
+    ));
+  }
+
+  static void remove(String route) {}
 
   @override
   Widget build(BuildContext context) {
-    if (widget.name == '/') {
-      init_text = '';
-      main_text = 'Home';
-    } else {
-      init_text = '/';
-      main_text = widget.name.substring(1);
-    }
-    if (onIt) {
-      decoration = TextDecoration.none;
-      color = Colors.black45;
-    }
-
-    return Row(children: [
-      Text(
-        init_text,
-      ),
-      GestureDetector(
+    print("building breadcrumbs");
+    if (breads == []) {
+      print("empty breads");
+      breads.add(BreadCrumbItem(
+        content: Text("Home"),
+        textColor: Colors.green,
         onTap: () {
-          if (breadcrumb.last != breadcrumb) {
-            setState(() {
-              Navigator.pop(context);
-              breadcrumb.removeLast();
-            });
-          }
+          breadcrumbBar.homePressed(context);
         },
-        child: MouseRegion(
-          opaque: true,
-          onEnter: (value) {
-            setState(() {
-              onIt = true;
-              color = Colors.green;
-            });
-          },
-          onExit: (value) {
-            setState(() {
-              onIt = false;
-              color = Colors.black45;
-            });
-          },
-          child: Text(main_text,
-              style: TextStyle(
-                color: color,
-                decoration: decoration,
-              )),
-        ),
-      ),
-    ]);
+      ));
+    }
+    return SingleChildScrollView(
+        child: Container(
+            padding: const EdgeInsets.only(left: 10.0),
+            height: 50.0,
+            width: MediaQuery.of(context).size.width,
+            color: const Color.fromARGB(255, 227, 226, 226),
+            child: BreadCrumb.builder(
+              itemCount: breads.length,
+              builder: (index) {
+                return breads[index];
+              },
+              divider: Icon(Icons.chevron_right),
+            )));
   }
 }

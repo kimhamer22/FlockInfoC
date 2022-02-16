@@ -76,7 +76,7 @@ def section_edit(request, section_id, language_id):
         info = request.POST.get('info')
         if heading and info:
             update_section(section_id, language_id, heading, info)
-        return redirect(reverse('section_edit_language', args=(section_id,)))
+        return redirect(reverse('navigation_section'))
 
     context_dict = {}
     context_dict['section'] = get_section(section_id)

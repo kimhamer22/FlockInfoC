@@ -49,10 +49,17 @@ def navigation(request, section_id=None):
 
     context_dict = {}
     context_dict['sections'] = sections
+    context_dict['parent_id'] = section_id
     return render(request, 'data_modifier/navigation.html', context=context_dict)
 
 @login_required
-def section_edit_language(request, section_id=None):
+def section_edit_language(request, parent_id = None, section_id=None):
+
+    method = request.POST.get('_method', '').lower()
+
+    if method == 'delete':
+        delete_section(section_id)
+        return redirect(reverse('navigation_section', args=(parent_id,)))
 
     context_dict = {}
     context_dict['section_translations'] = enumerate(get_section_languages(section_id))
@@ -77,9 +84,28 @@ def section_edit(request, section_id, language_id):
 
 
 @login_required
-def section_create(request):
+def section_create(request, parent_id=None):
 
-    return HttpResponse("TEST")
+    if request.method == 'POST':
+
+        heading = request.POST.get('heading')
+        info = request.POST.get('info')
+
+
+        insert_section(heading, info, parent_id)
+
+        if parent_id is not None:
+            return redirect(reverse('navigation_section', args=(parent_id,)))
+
+        return redirect(reverse('navigation_species'))
+
+    context_dict = {}
+    if parent_id is not None:
+        context_dict['parent_name'] = get_section(parent_id)[2]
+    else:
+        context_dict['parent_name'] = ""
+
+    return render(request, 'data_modifier/section/create.html', context=context_dict)
 
 
 @login_required

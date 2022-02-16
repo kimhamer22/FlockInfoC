@@ -63,6 +63,55 @@ def get_section_languages(section_id):
 		return cursor.fetchall()
 
 
+# TODO REMOVE HARDCODED TYPE (header)
+def insert_section(translation_section, translation_data, parent_id = None):
+	LANGUAGE_ID = 1 # english fixed for all new
+
+	with connections['app-db'].cursor() as cursor:
+		cursor.execute("""
+			INSERT INTO section (type) VALUES(4)
+			""")
+
+		new_section_id = cursor.lastrowid
+
+		cursor.execute("""
+			INSERT INTO translations_sections (language_id, section_id, translation) VALUES(%s, %s, %s)
+			""", [LANGUAGE_ID, new_section_id, translation_section])
+
+		cursor.execute("""
+			INSERT INTO translations_data (language_id, section_id, translation)  VALUES(%s, %s, %s)
+			""", [LANGUAGE_ID, new_section_id, translation_data])
+
+		if parent_id is not None:
+			cursor.execute("""
+				INSERT INTO section_parent VALUES(%s, %s)
+				""", [new_section_id, parent_id])
+
+
+def delete_section(section_id):
+
+	with connections['app-db'].cursor() as cursor:
+
+		cursor.execute("""
+			DELETE FROM translations_sections WHERE section_id=%s
+			""", [section_id])
+
+		cursor.execute("""
+			DELETE FROM translations_data WHERE section_id=%s
+			""", [section_id])
+
+		cursor.execute("""
+			DELETE FROM section_parent WHERE parent_section_id=%s or section_id=%s
+			""", [section_id,section_id])
+
+		cursor.execute("""
+			DELETE FROM relevant_sections WHERE section_id=%s or relevant_sections_id=%s
+			""", [section_id, section_id])
+
+		cursor.execute("""
+			DELETE FROM section WHERE id=%s
+			""", [section_id])
+
 def update_section(section_id, language_id, translation_section, translation_data):
 	with connections['app-db'].cursor() as cursor:
 		cursor.execute("""

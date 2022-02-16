@@ -1,0 +1,20 @@
+{% extends 'data_modifier/base.html' %}
+{% load static %}
+
+{% block content_block %}
+<div class="container align-middle">
+    <form class="form-signin" role="form" method="post" action=".">
+        {% csrf_token %}
+        <label for="inputUsername" class="sr-only">Username</label>
+        <input type="text" name="username" id="id_username" class="form-control"
+        placeholder="Username" required autofocus>
+
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name="password" id="id_password" class="form-control"
+        placeholder="Password" required>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit"
+        value="Submit">Sign in</button>
+    </form>
+</div>
+{% endblock %}

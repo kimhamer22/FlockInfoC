@@ -1,6 +1,13 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/widgets/breadcrumb.dart';
 import 'package:fic_flutter/main.dart';
+
+import 'package:flowder/flowder.dart';
+import 'package:flutter_archive/flutter_archive.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:sn_progress_dialog/sn_progress_dialog.dart';
 
 import '../helpers.dart';
 
@@ -15,11 +22,35 @@ class _HamMenu extends State<HamMenu> {
   final double fontSize = 20;
   late Future allSpeciesFuture;
   final String tileRoute = '/simple_text';
+  late final String path;
+  late DownloaderUtils downloaderUtils;
+  late ProgressDialog pd;
 
   @override
   void initState() {
     super.initState();
     allSpeciesFuture = Helpers().getSpecies();
+    initPlatformState();
+  }
+
+  Future<void> initPlatformState() async {
+    _setPath();
+    if (!mounted) return;
+  }
+
+  void _setPath() async {
+    path = (await getApplicationDocumentsDirectory()).path;
+  }
+
+  _valuableProgress(context, progress) async {
+    if (!pd.isOpen()) {
+      pd.show(
+        max: 100,
+        msg: 'File Downloading...',
+        progressType: ProgressType.valuable,
+      );
+    }
+    pd.update(value: progress.ceil());
   }
 
   @override
@@ -114,6 +145,50 @@ class _HamMenu extends State<HamMenu> {
               breadcrumbBar.add(tileRoute, context);
             },
           ),
+          ListTile(
+            leading: const Icon(Icons.refresh),
+            title: Text(
+              'Update data',
+              style: TextStyle(fontSize: fontSize),
+            ),
+            onTap: () async {
+              try {
+                // const String filename = 'flock-control.zip';
+                const String filename = '20MB.zip';
+                final String filepath = '$path/$filename';
+                pd = ProgressDialog(context: context);
+                downloaderUtils = DownloaderUtils(
+                  progressCallback: (current, total) {
+                    final progress = (current / total) * 100;
+                    _valuableProgress(context, progress);
+                  },
+                  file: File(filepath),
+                  progress: ProgressImplementation(),
+                  onDone: () {
+                    final zipFile = File(filepath);
+                    final destinationDir = Directory(path);
+                    ZipFile.extractToDirectory(
+                        zipFile: zipFile, destinationDir: destinationDir);
+
+                    Navigator.popUntil(context, ModalRoute.withName('/'));
+                    breadcrumb.clear();
+                    breadcrumb.add(HomePage.route);
+                  },
+                  deleteOnCancel: true,
+                );
+
+                // TODO - Change URL to server's zipped DB
+                // Local Django project's static folder
+                //const url = 'http://10.0.2.2:8000/static/database/$filename';
+                // Random dummy zip from online
+                const url = 'http://ipv4.download.thinkbroadband.com/20MB.zip';
+                await Flowder.download(url, downloaderUtils);
+              } catch (e) {
+                print(e);
+              }
+              // TODO - Update database
+            },
+          )
         ],
       ),
     );

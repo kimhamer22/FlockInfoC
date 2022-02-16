@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from data_modifier.custom_sql import *
 from data_modifier.section_type import SectionType
 from django.http import Http404
+import shutil
 
 def index(request):
     context_dict = {'boldmessage': 'Crunchy, creamy, cookie, candy, cupcake!'}
@@ -127,3 +128,9 @@ def language_index(request):
     context_dict['enumerated_languages'] = enumerate(get_languages())
 
     return render(request, 'data_modifier/language/index.html', context=context_dict)
+
+
+@login_required
+def release(request):
+    shutil.make_archive('static/downloads/' + 'database', 'zip', './', 'flock-control.sqlite')
+    return render(request, 'data_modifier/release.html')

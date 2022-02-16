@@ -32,5 +32,6 @@ urlpatterns = [
     path('section/edit/<int:section_id>/', views.section_edit_language, name='section_edit_language_noparent'),
     path('section/edit/<int:section_id>/<int:language_id>/', views.section_edit, name='section_edit'),
     path('language/index/', views.language_index, name='language_index'),
+    path('release', views.release, name='release'),
 
 ]

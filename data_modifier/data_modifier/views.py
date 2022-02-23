@@ -10,7 +10,6 @@ from django.http import Http404
 import shutil
 
 def index(request):
-    context_dict = {'boldmessage': 'Crunchy, creamy, cookie, candy, cupcake!'}
     return render(request, 'data_modifier/index.html', context=context_dict)
 
 def user_login(request):

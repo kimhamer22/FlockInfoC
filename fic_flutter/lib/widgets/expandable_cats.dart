@@ -124,9 +124,15 @@ class _CustomPanelList extends State<CustomPanelList> {
               title: Text(category.name),
             );
           },
-          body: Column(
-            children: category.subCategories,
-          ),
+          body: Column(children: <Widget>[
+            Column(
+              children: category.subCategories.sublist(0, 1),
+            ),
+            const Text('it works????'),
+            Column(
+                children: category.subCategories
+                    .sublist(1, category.subCategories.length - 1)),
+          ]),
           isExpanded: category.isExpanded,
           canTapOnHeader: true,
         );

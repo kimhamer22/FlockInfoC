@@ -7,9 +7,9 @@ from django.contrib.auth.decorators import login_required
 from data_modifier.custom_sql import *
 from data_modifier.section_type import SectionType
 from django.http import Http404
+import shutil
 
 def index(request):
-    context_dict = {'boldmessage': 'Crunchy, creamy, cookie, candy, cupcake!'}
     return render(request, 'data_modifier/index.html', context=context_dict)
 
 def user_login(request):
@@ -49,10 +49,33 @@ def navigation(request, section_id=None):
 
     context_dict = {}
     context_dict['sections'] = sections
+    context_dict['parent_id'] = section_id
     return render(request, 'data_modifier/navigation.html', context=context_dict)
 
 @login_required
-def section_edit(request, section_id=None):
+def section_edit_language(request, parent_id = None, section_id=None):
+
+    method = request.POST.get('_method', '').lower()
+
+    if method == 'delete':
+        delete_section(section_id)
+        return redirect(reverse('navigation_section', args=(parent_id,)))
+
+    context_dict = {}
+    context_dict['section_translations'] = enumerate(get_section_languages(section_id))
+
+    return render(request, 'data_modifier/section/edit_language.html', context=context_dict)
+
+
+@login_required
+def section_edit(request, section_id, language_id):
+
+    if request.method == 'POST':
+        heading = request.POST.get('heading')
+        info = request.POST.get('info')
+        if heading and info:
+            update_section(section_id, language_id, heading, info)
+        return redirect(reverse('navigation_species'))
 
     context_dict = {}
     context_dict['section'] = get_section(section_id)
@@ -61,6 +84,52 @@ def section_edit(request, section_id=None):
 
 
 @login_required
-def section_create(request):
+def section_create(request, parent_id=None):
 
-    return HttpResponse("TEST")
+    if request.method == 'POST':
+
+        heading = request.POST.get('heading')
+        info = request.POST.get('info')
+
+
+        insert_section(heading, info, parent_id)
+
+        if parent_id is not None:
+            return redirect(reverse('navigation_section', args=(parent_id,)))
+
+        return redirect(reverse('navigation_species'))
+
+    context_dict = {}
+    if parent_id is not None:
+        context_dict['parent_name'] = get_section(parent_id)[2]
+    else:
+        context_dict['parent_name'] = ""
+
+    return render(request, 'data_modifier/section/create.html', context=context_dict)
+
+
+@login_required
+def language_index(request):
+
+    method = request.POST.get('_method', '').lower()
+
+    if method == 'delete':
+        language_id = request.POST.get('language_id')
+        if language_id:
+            delete_language(language_id)
+
+    elif request.method == 'POST':
+        language_name = request.POST.get('language_name')
+        if language_name:
+            insert_language(language_name)
+
+    context_dict = {}
+    context_dict['enumerated_languages'] = enumerate(get_languages())
+
+    return render(request, 'data_modifier/language/index.html', context=context_dict)
+
+
+@login_required
+def release(request):
+    shutil.make_archive('static/downloads/' + 'database', 'zip', './', 'flock-control.sqlite')
+    return render(request, 'data_modifier/release.html')

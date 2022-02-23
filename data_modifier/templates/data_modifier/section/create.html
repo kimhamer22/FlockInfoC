@@ -3,18 +3,18 @@
 
 {% block content_block %}
     <div class="container align-middle">
-        <h1>Edit "{{section.2}}" ({{section.3}})</h1>
+        <h1>Create A New Section {% if parent_name != "" %} Under "{{parent_name}}" {% endif %} (en)</h1>
         <form class="form-signin" role="form" method="post" action=".">
             {% csrf_token %}
             <label for="heading" class="sr-only mt-2"><span class="text-danger">*</span> Page Heading:</label>
             <!-- TODO - change to heading based on search -->
-            <input type="text" name="heading" id="heading" class="form-control" placeholder="Heading" required value="{{section.2}}">
+            <input type="text" name="heading" id="heading" class="form-control" placeholder="Heading" required>
         
             <label for="info" class="sr-only mt-2">Information:</label>
             <!-- TODO - change to info based on search -->
-            <textarea type="text" name="info" id="info" class="form-control" placeholder="Information" rows="6">{{section.1}}</textarea>
+            <textarea type="text" name="info" id="info" class="form-control" placeholder="Information" rows="6"></textarea>
         
-            <button class="btn btn-lg btn-primary btn-block mt-3" type="submit" value="Submit">Update Information</button>
+            <button class="btn btn-lg btn-primary btn-block mt-3" type="submit" value="Submit">Create</button>
         </form>
     </div>
 {% endblock %}

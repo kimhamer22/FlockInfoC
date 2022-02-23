@@ -86,6 +86,10 @@ class Category {
   int id;
   List<NavigationButton> subCategories;
   bool isExpanded;
+
+  int getLength() {
+    return subCategories.length;
+  }
 }
 
 class CustomPanelList extends StatefulWidget {
@@ -131,18 +135,20 @@ class _CustomPanelList extends State<CustomPanelList> {
             Column(
               children: category.subCategories.sublist(0, 1),
             ),
-            const Padding(
-              padding: EdgeInsets.fromLTRB(35.0, 10.0, 0.0, 10.0),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  'Relevant Factors:',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16.0,
-                  ),
-                ),
-              ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(35.0, 10.0, 0.0, 10.0),
+              child: category.subCategories.length > 2
+                  ? const Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Relevant Factors:',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16.0,
+                        ),
+                      ),
+                    )
+                  : Container(),
             ),
             Column(
                 children: category.subCategories

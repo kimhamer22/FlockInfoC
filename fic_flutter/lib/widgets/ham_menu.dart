@@ -2,12 +2,13 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/widgets/breadcrumb.dart';
-import 'package:fic_flutter/main.dart';
+import 'package:fic_flutter/db_handle.dart';
 
 import 'package:flowder/flowder.dart';
 import 'package:flutter_archive/flutter_archive.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sn_progress_dialog/sn_progress_dialog.dart';
+import 'package:http/http.dart' as http;
 
 import '../helpers.dart';
 
@@ -25,12 +26,27 @@ class _HamMenu extends State<HamMenu> {
   late final String path;
   late DownloaderUtils downloaderUtils;
   late ProgressDialog pd;
+  late bool upToDateDB;
 
   @override
   void initState() {
     super.initState();
     allSpeciesFuture = Helpers().getSpecies();
     initPlatformState();
+    fetchWebDBVersion().then((response) {
+      var websiteDBVersion = response.body as int;
+      var appDBVersion = getAppDBVersion();
+      upToDateDB = (appDBVersion == websiteDBVersion);
+    });
+  }
+
+  Future<http.Response> fetchWebDBVersion() {
+    return http.get(Uri.parse('http://flockinfo.mvls.gla.ac.uk:8000/version'));
+  }
+
+  getAppDBVersion() async {
+    SectionHandler sh = SectionHandler();
+    return await sh.animalCategories(); // TODO: Change to DB version
   }
 
   Future<void> initPlatformState() async {

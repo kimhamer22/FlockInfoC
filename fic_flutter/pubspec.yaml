@@ -17,8 +17,9 @@ dependencies:
   path_provider:
   sn_progress_dialog: ^1.0.3
   flutter_archive:
-
   flutter_breadcrumb: ^1.0.1
+  http:
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fic_flutter">
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
         android:label="fic_flutter"
         android:icon="@mipmap/ic_launcher">

@@ -121,14 +121,29 @@ class _CustomPanelList extends State<CustomPanelList> {
         return ExpansionPanel(
           headerBuilder: (BuildContext context, bool isExpanded) {
             return ListTile(
-              title: Text(category.name),
+              title: Text(category.name,
+                  style: const TextStyle(
+                    fontSize: 18.0,
+                  )),
             );
           },
           body: Column(children: <Widget>[
             Column(
               children: category.subCategories.sublist(0, 1),
             ),
-            const Text('it works????'),
+            const Padding(
+              padding: EdgeInsets.fromLTRB(35.0, 10.0, 0.0, 10.0),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Relevant Factors:',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16.0,
+                  ),
+                ),
+              ),
+            ),
             Column(
                 children: category.subCategories
                     .sublist(1, category.subCategories.length - 1)),

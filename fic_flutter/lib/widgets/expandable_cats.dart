@@ -86,6 +86,10 @@ class Category {
   int id;
   List<NavigationButton> subCategories;
   bool isExpanded;
+
+  int getLength() {
+    return subCategories.length;
+  }
 }
 
 class CustomPanelList extends StatefulWidget {
@@ -121,12 +125,42 @@ class _CustomPanelList extends State<CustomPanelList> {
         return ExpansionPanel(
           headerBuilder: (BuildContext context, bool isExpanded) {
             return ListTile(
-              title: Text(category.name),
+              title: Text(category.name,
+                  style: const TextStyle(
+                    fontSize: 18.0,
+                  )),
             );
           },
-          body: Column(
-            children: category.subCategories,
-          ),
+          body: Column(children: <Widget>[
+            Column(
+              children: category.subCategories.sublist(0, 1),
+            ),
+            Row(
+              children: [
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: category.subCategories.length > 2
+                      ? const Padding(
+                          padding: EdgeInsets.fromLTRB(35.0, 10.0, 0.0, 10.0),
+                          child: Text(
+                            'Relevant Factors:',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16.0,
+                            ),
+                          ),
+                        )
+                      : Container(),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 10.0),
+              child: Column(
+                  children: category.subCategories
+                      .sublist(1, category.subCategories.length - 1)),
+            ),
+          ]),
           isExpanded: category.isExpanded,
           canTapOnHeader: true,
         );

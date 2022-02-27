@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/widgets/breadcrumb.dart';
-import 'package:fic_flutter/main.dart';
 
 import 'package:flowder/flowder.dart';
 import 'package:flutter_archive/flutter_archive.dart';
@@ -85,7 +84,13 @@ class _HamMenu extends State<HamMenu> {
                         }));
                   }
                   return ExpansionTile(
-                    leading: const Icon(Icons.pets),
+                    leading: SizedBox(
+                      height: 25,
+                      width: 25,
+                      child: Image.asset(
+                        'assets/images/barn_icon.png',
+                      ),
+                    ),
                     title: Text(
                       'Species',
                       style: TextStyle(fontSize: fontSize),

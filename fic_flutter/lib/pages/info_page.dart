@@ -65,9 +65,15 @@ class _InfoPageState extends State<InfoPage> {
                         sectionObj.translationData ?? 'Could not load';
                     return Column(children: [
                       breadcrumbBar(),
-                      const Text(
-                        'Description:',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                      const Padding(
+                        padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+                        child: Text(
+                          'Description:',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16.0,
+                          ),
+                        ),
                       ),
                       Padding(
                           padding: const EdgeInsets.all(10),

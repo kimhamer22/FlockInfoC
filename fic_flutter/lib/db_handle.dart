@@ -177,7 +177,7 @@ class DatabaseImporter {
   static Future open() async {
     // Construct the path to the app's writable database file:
     var dbDir = await getDatabasesPath();
-    var dbPath = join(dbDir, "db.sqlite");
+    var dbPath = join(dbDir, "flock-control.sqlite");
 
     // Delete any existing database:
     // KEEP FOR DEVELOPMENT so database is updated
@@ -196,6 +196,14 @@ class DatabaseImporter {
     var db = openDatabase(dbPath, readOnly: true);
 
     return db;
+  }
+
+  static update(String? path) async {
+    // Construct the path to the app's writable database file:
+    var dbDir = await getDatabasesPath();
+    var dbPath = path ?? join(dbDir, "db.sqlite");
+
+    openDatabase(dbPath, readOnly: true);
   }
 }
 

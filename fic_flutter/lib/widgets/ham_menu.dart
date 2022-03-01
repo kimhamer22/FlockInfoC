@@ -1,12 +1,14 @@
 import 'dart:io';
 
+import 'package:fic_flutter/db_handle.dart';
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/widgets/breadcrumb.dart';
 
 import 'package:flowder/flowder.dart';
 import 'package:flutter_archive/flutter_archive.dart';
-import 'package:path_provider/path_provider.dart';
+import 'package:path/path.dart';
 import 'package:sn_progress_dialog/sn_progress_dialog.dart';
+import 'package:sqflite/sqflite.dart';
 
 import '../helpers.dart';
 
@@ -38,7 +40,7 @@ class _HamMenu extends State<HamMenu> {
   }
 
   void _setPath() async {
-    path = (await getApplicationDocumentsDirectory()).path;
+    path = await getDatabasesPath();
   }
 
   _valuableProgress(context, progress) async {
@@ -159,7 +161,7 @@ class _HamMenu extends State<HamMenu> {
             onTap: () async {
               try {
                 // const String filename = 'flock-control.zip';
-                const String filename = '20MB.zip';
+                const String filename = 'database.zip';
                 final String filepath = '$path/$filename';
                 pd = ProgressDialog(context: context);
                 downloaderUtils = DownloaderUtils(
@@ -170,21 +172,24 @@ class _HamMenu extends State<HamMenu> {
                   file: File(filepath),
                   progress: ProgressImplementation(),
                   onDone: () {
-                    final zipFile = File(filepath);
-                    final destinationDir = Directory(path);
-                    ZipFile.extractToDirectory(
-                        zipFile: zipFile, destinationDir: destinationDir);
-
-                    breadcrumbBar.homePressed(context);
+                    // Unzip database
+                    getDatabasesPath().then((dbDir) {
+                      final zipFile = File(filepath);
+                      final destinationDir = Directory(path);
+                      ZipFile.extractToDirectory(
+                              zipFile: zipFile, destinationDir: destinationDir)
+                          .then((value) {
+                        var dbPath = join(dbDir, "flock-control.sqlite");
+                        DatabaseImporter.update(dbPath);
+                        breadcrumbBar.homePressed(context);
+                      });
+                    });
                   },
                   deleteOnCancel: true,
                 );
 
-                // TODO - Change URL to server's zipped DB
-                // Local Django project's static folder
-                //const url = 'http://10.0.2.2:8000/static/database/$filename';
-                // Random dummy zip from online
-                const url = 'http://ipv4.download.thinkbroadband.com/20MB.zip';
+                const url =
+                    'http://flockinfo.mvls.gla.ac.uk:8000/static/downloads/database.zip';
                 await Flowder.download(url, downloaderUtils);
               } catch (e) {
                 print(e);

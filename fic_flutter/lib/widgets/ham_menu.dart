@@ -33,11 +33,14 @@ class _HamMenu extends State<HamMenu> {
     super.initState();
     allSpeciesFuture = Helpers().getSpecies();
     initPlatformState();
-    fetchWebDBVersion().then((response) {
-      var websiteDBVersion = response.body as int;
-      var appDBVersion = getAppDBVersion();
-      upToDateDB = (appDBVersion == websiteDBVersion);
-    });
+
+    // TODO: Update when we have endpoint
+    // fetchWebDBVersion().then((response) {
+    //   var websiteDBVersion = response.body as int;
+    //   var appDBVersion = getAppDBVersion();
+    //   upToDateDB = (appDBVersion == websiteDBVersion);
+    // });
+    upToDateDB = false;
   }
 
   Future<http.Response> fetchWebDBVersion() {
@@ -162,7 +165,10 @@ class _HamMenu extends State<HamMenu> {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.refresh),
+            leading: Icon(
+              Icons.refresh,
+              color: upToDateDB ? Colors.black45 : Colors.red,
+            ),
             title: Text(
               'Update data',
               style: TextStyle(fontSize: fontSize),

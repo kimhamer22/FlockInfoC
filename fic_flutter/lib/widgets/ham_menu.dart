@@ -178,11 +178,6 @@ class _HamMenu extends State<HamMenu> {
                         breadcrumbBar.homePressed(context);
                       });
                     });
-
-                    // Move and replace database
-                    print(path);
-                    // Update database
-                    // DatabaseImporter.delete();
                   },
                   deleteOnCancel: true,
                 );

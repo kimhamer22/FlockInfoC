@@ -189,12 +189,11 @@ class _HamMenu extends State<HamMenu> {
                 );
 
                 const url =
-                    'http://flockinfo.mvls.gla.ac.uk:8000/static/downloads/database.zip';
+                    'http://flockinfo.mvls.gla.ac.uk/static/downloads/database.zip';
                 await Flowder.download(url, downloaderUtils);
               } catch (e) {
                 print(e);
               }
-              // TODO - Update database
             },
           )
         ],

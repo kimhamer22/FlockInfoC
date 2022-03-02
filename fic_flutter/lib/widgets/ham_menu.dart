@@ -172,16 +172,21 @@ class _HamMenu extends State<HamMenu> {
                   file: File(filepath),
                   progress: ProgressImplementation(),
                   onDone: () {
+                    // Remove previous DB
+
                     // Unzip database
                     getDatabasesPath().then((dbDir) {
-                      final zipFile = File(filepath);
-                      final destinationDir = Directory(path);
-                      ZipFile.extractToDirectory(
-                              zipFile: zipFile, destinationDir: destinationDir)
-                          .then((value) {
-                        var dbPath = join(dbDir, "flock-control.sqlite");
-                        DatabaseImporter.update(dbPath);
-                        breadcrumbBar.homePressed(context);
+                      var dbPath = join(dbDir, "flock-control.sqlite");
+                      DatabaseImporter.delete(dbPath).then((oldFile) {
+                        final zipFile = File(filepath);
+                        final destinationDir = Directory(path);
+                        ZipFile.extractToDirectory(
+                                zipFile: zipFile,
+                                destinationDir: destinationDir)
+                            .then((value) {
+                          DatabaseImporter.update(dbPath);
+                          breadcrumbBar.homePressed(context);
+                        });
                       });
                     });
                   },

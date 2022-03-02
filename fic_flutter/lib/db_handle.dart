@@ -205,6 +205,10 @@ class DatabaseImporter {
 
     openDatabase(dbPath, readOnly: true);
   }
+
+  static Future delete(String path) async {
+    return await File(path).delete();
+  }
 }
 
 /// Handles all database operations related to sections

@@ -1,5 +1,4 @@
 import 'package:fic_flutter/helpers.dart';
-import 'package:fic_flutter/widgets/breadcrumb.dart';
 import 'package:flutter/material.dart';
 import '../widgets/navigation_button.dart';
 
@@ -34,9 +33,12 @@ class _HomeSpecies extends State<HomeSpecies> {
                 var data = snapshot.data as List;
                 for (var i = 0; i < data.length; i++) {
                   var title = data[i].translationSection;
-                  var route = '/' + title.toString().toLowerCase();
-                  list.add(NavigationButton(title: title, route: route));
-                  breadcrumbBar.add(route, context, data[i].id);
+                  var route = '/species';
+                  list.add(NavigationButton(
+                    title: title,
+                    route: route,
+                    id: data[i].id,
+                  ));
                 }
                 return Column(
                   children: list,

@@ -207,6 +207,7 @@ class DatabaseImporter {
   }
 
   static Future delete(String path) async {
+    await deleteDatabase(path);
     return await File(path).delete();
   }
 }

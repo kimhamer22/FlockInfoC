@@ -184,6 +184,7 @@ class _HamMenu extends State<HamMenu> {
                                 zipFile: zipFile,
                                 destinationDir: destinationDir)
                             .then((value) {
+                          zipFile.delete();
                           DatabaseImporter.update(dbPath);
                           breadcrumbBar.homePressed(context);
                         });

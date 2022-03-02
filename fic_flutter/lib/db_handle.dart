@@ -193,7 +193,7 @@ class DatabaseImporter {
           data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
       await File(dbPath).writeAsBytes(bytes);
     }
-    var db = openDatabase(dbPath, readOnly: true);
+    var db = openDatabase(dbPath);
 
     return db;
   }
@@ -201,14 +201,13 @@ class DatabaseImporter {
   static update(String? path) async {
     // Construct the path to the app's writable database file:
     var dbDir = await getDatabasesPath();
-    var dbPath = path ?? join(dbDir, "db.sqlite");
+    var dbPath = path ?? join(dbDir, "flock-control.sqlite");
 
-    openDatabase(dbPath, readOnly: true);
+    openDatabase(dbPath);
   }
 
   static Future delete(String path) async {
-    await deleteDatabase(path);
-    return await File(path).delete();
+    return await deleteDatabase(path);
   }
 }
 

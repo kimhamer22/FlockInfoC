@@ -1,0 +1,11 @@
+asgiref==3.5.0
+autograd @ git+https://github.com/HIPS/autograd@01eacff7a4f12e6f7aebde7c4cb4c1c2633f217d
+backports.zoneinfo==0.2.1
+certifi==2021.10.8
+Django==4.0.1
+jhwutils @ https://github.com/johnhw/jhwutils/zipball/master
+Pillow==9.0.1
+sqlparse==0.4.2
+tzdata==2021.5
+wincertstore==0.2
+psycopg2-binary==2.9.1

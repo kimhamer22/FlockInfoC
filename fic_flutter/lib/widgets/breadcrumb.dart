@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fic_flutter/main.dart';
 import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
 
 import '../db_handle.dart';
@@ -7,7 +6,7 @@ import '../helpers.dart';
 
 List<BreadCrumbItem> breads = [
   BreadCrumbItem(
-    content: Text("Home"),
+    content: const Text("Home"),
     textColor: Colors.black,
     onTap: () {},
   )
@@ -20,7 +19,7 @@ class breadcrumbBar extends StatelessWidget {
     Navigator.popUntil(context, ModalRoute.withName('/'));
     breads = [
       BreadCrumbItem(
-        content: Text("Home"),
+        content: const Text("Home"),
         textColor: Colors.green,
       )
     ];
@@ -44,7 +43,8 @@ class breadcrumbBar extends StatelessWidget {
         //print("internal bread ids");
         //print(bread_ids);
         var page_name = title;
-        BreadCrumbItem last_breadcrumb = BreadCrumbItem(content: Text('Home'));
+        BreadCrumbItem last_breadcrumb =
+            BreadCrumbItem(content: const Text('Home'));
         int current_id = bread_ids.last;
         int target_id = id;
 
@@ -54,7 +54,7 @@ class breadcrumbBar extends StatelessWidget {
             last_breadcrumb = breads.last;
             breads.removeLast();
             bread_routes.removeLast();
-            bread_ids.removeLast();
+            //bread_ids.removeLast();
           }
 
           //try using popUntil to go back, issue arises when navigating between
@@ -80,7 +80,9 @@ class breadcrumbBar extends StatelessWidget {
                 print(current_id);
                 Navigator.pop(context);
                 bread_ids.removeLast();
+                //bread_routes.removeLast();
                 print(bread_ids);
+                print(bread_routes);
                 current_id = bread_ids.last;
                 print(bread_ids);
                 Section? section = await Helpers().getSection(current_id);
@@ -113,13 +115,14 @@ class breadcrumbBar extends StatelessWidget {
     if (breads == []) {
       print("empty breads");
       breads.add(BreadCrumbItem(
-        content: Text("Home"),
+        content: const Text("Home"),
         textColor: Colors.green,
         onTap: () {
           breadcrumbBar.homePressed(context);
         },
       ));
     }
+    bool reverse = breads.length > 4;
     return SingleChildScrollView(
         child: Container(
             padding: const EdgeInsets.only(left: 10.0),
@@ -131,8 +134,9 @@ class breadcrumbBar extends StatelessWidget {
               builder: (index) {
                 return breads[index];
               },
-              divider: Icon(Icons.chevron_right),
-              overflow: ScrollableOverflow(direction: Axis.horizontal),
+              divider: const Icon(Icons.chevron_right),
+              overflow: ScrollableOverflow(
+                  direction: Axis.horizontal, reverse: reverse),
             )));
   }
 }

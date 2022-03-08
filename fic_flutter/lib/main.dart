@@ -1,7 +1,7 @@
 import 'package:fic_flutter/pages/general_resources.dart';
 import 'package:fic_flutter/pages/home_species.dart';
 import 'package:fic_flutter/pages/categories_main.dart';
-import 'package:fic_flutter/pages/sheep.dart';
+import 'package:fic_flutter/pages/single_species.dart';
 import 'package:fic_flutter/pages/simple_text.dart';
 import 'package:fic_flutter/widgets/ham_menu.dart';
 import 'package:flutter/material.dart';
@@ -68,9 +68,7 @@ class FlockControl extends StatelessWidget {
       routes: {
         '/': (context) => const HomePage(title: 'Home'),
         '/infopage': (context) => const InfoPage(),
-        '/sheep': (context) => const Sheep(),
-        '/cows': (context) =>
-            const HomePage(title: 'Home'), // TODO: Do something about Cows
+        '/species': (context) => const SingleSpecies(),
         '/categorypage': (context) => const CategoryPage(3),
         '/generalresources': (context) => const GeneralResources(),
         '/simple_text': (context) => const SimpleText(),

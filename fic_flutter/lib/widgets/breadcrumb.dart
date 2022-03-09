@@ -34,9 +34,6 @@ class BreadcrumbBar extends StatelessWidget {
     var title = section?.translationSection;
     breadRoutes.add(route);
     breadIDs.add(id);
-    print(breadIDs);
-    print(breadRoutes);
-    //print('Adding route:' + route);
 
     breads.add(BreadCrumbItem(
       content: Text(title ?? 'Loading'),

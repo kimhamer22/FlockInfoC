@@ -39,9 +39,6 @@ class BreadcrumbBar extends StatelessWidget {
       content: Text(title ?? 'Loading'),
       textColor: Colors.green,
       onTap: () async {
-        var pageName = title;
-        BreadCrumbItem lastBreadcrumb =
-            BreadCrumbItem(content: const Text('Home'));
         int currentID = breadIDs.last;
         int targetID = id;
 
@@ -50,7 +47,6 @@ class BreadcrumbBar extends StatelessWidget {
         if (breadIDs != [0]) {
           Section? section = await Helpers().getSection(currentID);
           var currentTitle = section?.translationSection;
-          //print(currentTitle);
 
           //iterate through all pages
           //in breads until we are on the right page
@@ -64,9 +60,6 @@ class BreadcrumbBar extends StatelessWidget {
             Section? section = await Helpers().getSection(currentID);
             currentTitle = section?.translationSection;
           }
-          //print("found page");
-        } else {
-          print("No breads left");
         }
       },
     ));

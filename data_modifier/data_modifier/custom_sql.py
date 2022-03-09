@@ -31,6 +31,21 @@ def get_species_sections():
 		
 		return cursor.fetchall()
 
+
+def get_main_page_sections():
+	with connections['app-db'].cursor() as cursor:
+		cursor.execute("""
+			SELECT s.id, 
+				td.translation as translation_data,
+               	ts.translation as translation_section
+	        FROM section as s
+	        JOIN translations_sections as ts ON s.id = ts.section_id
+			LEFT JOIN translations_data as td ON s.id = td.section_id
+
+	        WHERE s.type=%s""", [SectionType.homePage.value[0]])
+
+		return cursor.fetchall()
+
 def get_section(section_id, language_id=1):
 	with connections['app-db'].cursor() as cursor:
 		cursor.execute("""

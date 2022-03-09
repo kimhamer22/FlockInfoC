@@ -77,11 +77,12 @@ class _HamMenu extends State<HamMenu> {
                   var data = snapshot.data as List;
                   for (var i = 0; i < data.length; i++) {
                     var title = Text(data[i].translationSection);
-                    var route = '/' + title.data.toString().toLowerCase();
+                    var route = '/species';
                     list.add(ListTile(
                         title: title,
                         onTap: () {
-                          Navigator.pushNamed(context, route);
+                          Navigator.pushNamed(context, route,
+                              arguments: data[i].id);
                           BreadcrumbBar.add(route, context, data[i].id);
                         }));
                   }

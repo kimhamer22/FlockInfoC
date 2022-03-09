@@ -3,6 +3,8 @@ import 'package:fic_flutter/widgets/ham_menu.dart';
 import 'package:fic_flutter/widgets/navigation_button.dart';
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/widgets/top_bar.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../db_handle.dart';
 import '../helpers.dart';
@@ -77,7 +79,7 @@ class _InfoPageState extends State<InfoPage> {
                       ),
                       Padding(
                           padding: const EdgeInsets.all(10),
-                          child: Text(description)),
+                          child: SelectableText(description)),
                       FutureBuilder(
                           future: subheadings,
                           builder: (context, snapshot) {
@@ -186,7 +188,15 @@ class _CustomTextPanel extends State<CustomTextPanel> {
             );
           },
           body: ListTile(
-            title: Text(heading.expandedValue),
+            title: SelectableLinkify(
+                onOpen: (link) async {
+                  if (await canLaunch(link.url)) {
+                    await launch(link.url);
+                  } else {
+                    throw 'Could not launch $link';
+                  }
+                },
+                text: heading.expandedValue),
           ),
           isExpanded: heading.isExpanded,
           canTapOnHeader: true,

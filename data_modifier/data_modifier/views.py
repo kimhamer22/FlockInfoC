@@ -135,4 +135,6 @@ def language_index(request):
 @login_required
 def release(request):
     shutil.make_archive('static/downloads/' + 'database', 'zip', './', 'flock-control.sqlite')
+
+    increment_version()
     return render(request, 'data_modifier/release.html')

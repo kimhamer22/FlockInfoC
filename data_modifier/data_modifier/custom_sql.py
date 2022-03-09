@@ -173,3 +173,10 @@ def get_version():
         """)
 
 		return cursor.fetchone()[0]
+
+def increment_version():
+	with connections['app-db'].cursor() as cursor:
+		cursor.execute("""
+	        	UPDATE version
+	        	SET version_number=version_number+1
+	        """)

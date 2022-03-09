@@ -11,10 +11,12 @@ List<BreadCrumbItem> breads = [
     onTap: () {},
   )
 ];
-List<String> bread_routes = [];
-List<int> bread_ids = [0];
+List<String> breadRoutes = ['/'];
+List<int> breadIDs = [0];
 
-class breadcrumbBar extends StatelessWidget {
+class BreadcrumbBar extends StatelessWidget {
+  const BreadcrumbBar({Key? key}) : super(key: key);
+
   static void homePressed(BuildContext context) {
     Navigator.popUntil(context, ModalRoute.withName('/'));
     breads = [
@@ -23,86 +25,51 @@ class breadcrumbBar extends StatelessWidget {
         textColor: Colors.green,
       )
     ];
-    bread_routes = ['/'];
-    bread_ids = [0];
+    breadRoutes = ['/'];
+    breadIDs = [0];
   }
 
   static add(String route, BuildContext context, int id) async {
     Section? section = await Helpers().getSection(id);
     var title = section?.translationSection;
-    bread_routes.add(route);
-    bread_ids.add(id);
-    print(bread_ids);
+    breadRoutes.add(route);
+    breadIDs.add(id);
+    print(breadIDs);
+    print(breadRoutes);
     //print('Adding route:' + route);
 
     breads.add(BreadCrumbItem(
       content: Text(title ?? 'Loading'),
       textColor: Colors.green,
       onTap: () async {
-        //variables needed later on in the function
-        //print("internal bread ids");
-        //print(bread_ids);
-        var page_name = title;
-        BreadCrumbItem last_breadcrumb =
+        var pageName = title;
+        BreadCrumbItem lastBreadcrumb =
             BreadCrumbItem(content: const Text('Home'));
-        int current_id = bread_ids.last;
-        int target_id = id;
+        int currentID = breadIDs.last;
+        int targetID = id;
 
-        //clear bread routes when navigating to previous pages
-        if ((bread_routes.any((e) => e == route)) && (bread_routes != ['/'])) {
-          while (bread_routes.any((e) => e == route)) {
-            last_breadcrumb = breads.last;
+        //current page has the id of the last id in the list
+        //use this to find what page we're currently on
+        if (breadIDs != [0]) {
+          Section? section = await Helpers().getSection(currentID);
+          var currentTitle = section?.translationSection;
+          //print(currentTitle);
+
+          //check if previous popUntil nav worked, else iterate through all pages
+          //in bread route until we are on the right page
+          while (currentID != targetID) {
+            Navigator.pop(context);
             breads.removeLast();
-            bread_routes.removeLast();
-            //bread_ids.removeLast();
+            breadIDs.removeLast();
+            breadRoutes.removeLast();
+            currentID = breadIDs.last;
+            Section? section = await Helpers().getSection(currentID);
+            currentTitle = section?.translationSection;
           }
-
-          //try using popUntil to go back, issue arises when navigating between
-          // 2 pages of same type as they have the same route
-          Navigator.popUntil(context, ModalRoute.withName(route));
-
-          //current page has the id of the last id in the list
-          //use this to find what page we're currently on
-          if (bread_ids != [0]) {
-            Section? section = await Helpers().getSection(current_id);
-            var current_title = section?.translationSection;
-            //print(current_title);
-
-            //check if previous popUntil nav worked, else iterate through all pages
-            //in bread route until we are on the right page
-            while (current_id != target_id) {
-              print("trying to get to: " +
-                  page_name! +
-                  " id:" +
-                  target_id.toString());
-              print("from " + current_title! + " id:" + current_id.toString());
-              if (bread_ids.contains(target_id)) {
-                print(current_id);
-                Navigator.pop(context);
-                bread_ids.removeLast();
-                //bread_routes.removeLast();
-                print(bread_ids);
-                print(bread_routes);
-                current_id = bread_ids.last;
-                print(bread_ids);
-                Section? section = await Helpers().getSection(current_id);
-                current_title = section?.translationSection;
-              } else {
-                print("page not found");
-                break;
-              }
-            }
-            //print("found page");
-          } else {
-            print("No breads left");
-          }
+          //print("found page");
         } else {
-          print("No breadcrumb found");
+          print("No breads left");
         }
-        //Breadcrumbs should include page you're on
-        breads.add(last_breadcrumb);
-        bread_routes.add(route);
-        bread_ids.add(current_id);
       },
     ));
   }
@@ -118,7 +85,7 @@ class breadcrumbBar extends StatelessWidget {
         content: const Text("Home"),
         textColor: Colors.green,
         onTap: () {
-          breadcrumbBar.homePressed(context);
+          BreadcrumbBar.homePressed(context);
         },
       ));
     }

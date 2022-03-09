@@ -162,3 +162,21 @@ def delete_language(language_id):
 			cursor.execute("""
 				DELETE FROM language WHERE id=%s
 	        """, [language_id])
+
+
+def get_version():
+	with connections['app-db'].cursor() as cursor:
+		cursor.execute("""
+			SELECT version_number
+        	FROM version
+        	LIMIT 1
+        """)
+
+		return cursor.fetchone()[0]
+
+def increment_version():
+	with connections['app-db'].cursor() as cursor:
+		cursor.execute("""
+	        	UPDATE version
+	        	SET version_number=version_number+1
+	        """)

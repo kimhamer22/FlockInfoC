@@ -24,7 +24,7 @@
                                     <a class="text-decoration-none" href="{% url 'language_index' %}">Languages</a>
                                 </li>
                                 <li class="text-center mt-3">
-                                    <a class="text-decoration-none" href="{% url 'release' %}">RELEASE CHANGES</a>
+                                    <a class="text-decoration-none" onclick="return confirm('Are you sure? This will release the changes to every user of the app')" href="{% url 'release' %}">RELEASE CHANGES</a>
                                 </li>
                                 <li class="text-center mt-3">
                                     <a class="nav-link" href="{% url 'logout' %}">Log Out</a><br />

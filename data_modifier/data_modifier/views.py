@@ -10,7 +10,7 @@ from django.http import Http404
 import shutil
 
 def index(request):
-    return render(request, 'data_modifier/index.html', context=context_dict)
+    return render(request, 'data_modifier/index.html')
 
 def user_login(request):
     if request.method == 'POST':

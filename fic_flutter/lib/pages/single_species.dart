@@ -61,7 +61,7 @@ class _SingleSpecies extends State<SingleSpecies> {
             padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
             child: Column(
               children: [
-                breadcrumbBar(),
+                BreadcrumbBar(),
                 FutureBuilder(
                     future: allCategories,
                     builder: (context, snapshot) {

@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/widgets/breadcrumb.dart';
-import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
-import 'package:fic_flutter/widgets/ham_menu.dart';
-import 'package:fic_flutter/widgets/expandable_cats.dart';
-import 'package:fic_flutter/widgets/top_bar.dart';
-import 'package:flutter/material.dart';
-import '../db_handle.dart';
 
-class NavigationButton extends StatelessWidget {
+class NavigationButton extends StatefulWidget {
   final String title;
   final String imageURL;
   final String route;
@@ -24,19 +18,24 @@ class NavigationButton extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<NavigationButton> createState() => _NavigationButtonState();
+}
+
+class _NavigationButtonState extends State<NavigationButton> {
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8),
       child: MaterialButton(
         onPressed: () {
-          Navigator.pushNamed(context, route, arguments: id);
-          breadcrumbBar.add(route, context, id);
+          Navigator.pushNamed(context, widget.route, arguments: widget.id);
+          BreadcrumbBar.add(widget.route, context, widget.id);
         },
         child: SizedBox(
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10.0),
-              color: colour,
+              color: widget.colour,
               //color: Colors.lightGreen[50],
               border: Border.all(),
             ),
@@ -46,7 +45,7 @@ class NavigationButton extends StatelessWidget {
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width * 0.4,
                   child: Text(
-                    title,
+                    widget.title,
                     style: const TextStyle(color: Colors.black, fontSize: 17),
                     textAlign: TextAlign.start,
                   ),
@@ -55,7 +54,7 @@ class NavigationButton extends StatelessWidget {
               const Spacer(),
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
-                child: Image.asset(imageURL),
+                child: Image.asset(widget.imageURL),
               ),
             ]),
           ),

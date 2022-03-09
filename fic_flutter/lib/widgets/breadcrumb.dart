@@ -52,8 +52,9 @@ class BreadcrumbBar extends StatelessWidget {
           var currentTitle = section?.translationSection;
           //print(currentTitle);
 
-          //check if previous popUntil nav worked, else iterate through all pages
-          //in bread route until we are on the right page
+          //iterate through all pages
+          //in breads until we are on the right page
+          // TODO: Fix bug that doesn't allow navigating to same (earlier) section
           while (currentID != targetID) {
             Navigator.pop(context);
             breads.removeLast();

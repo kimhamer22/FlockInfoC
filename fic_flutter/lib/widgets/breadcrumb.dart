@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fic_flutter/main.dart';
 import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
 
 import '../db_handle.dart';
@@ -7,47 +6,61 @@ import '../helpers.dart';
 
 List<BreadCrumbItem> breads = [
   BreadCrumbItem(
-    content: Text("Home"),
+    content: const Text("Home"),
     textColor: Colors.black,
     onTap: () {},
   )
 ];
-List<String> bread_routes = [];
+List<String> breadRoutes = ['/'];
+List<int> breadIDs = [0];
 
-class breadcrumbBar extends StatelessWidget {
+class BreadcrumbBar extends StatelessWidget {
+  const BreadcrumbBar({Key? key}) : super(key: key);
+
   static void homePressed(BuildContext context) {
     Navigator.popUntil(context, ModalRoute.withName('/'));
     breads = [
       BreadCrumbItem(
-        content: Text("Home"),
+        content: const Text("Home"),
         textColor: Colors.green,
       )
     ];
-    bread_routes = ['/'];
+    breadRoutes = ['/'];
+    breadIDs = [0];
   }
 
   static add(String route, BuildContext context, int id) async {
-    bread_routes.add(route);
     Section? section = await Helpers().getSection(id);
+    var title = section?.translationSection;
+    breadRoutes.add(route);
+    breadIDs.add(id);
 
     breads.add(BreadCrumbItem(
-      content: Text(section?.translationSection ?? 'Loading'),
+      content: Text(title ?? 'Loading'),
       textColor: Colors.green,
-      onTap: () {
-        BreadCrumbItem last_breadcrumb = BreadCrumbItem(content: Text('Home'));
-        if ((bread_routes.any((e) => e == route)) && (bread_routes != ['/'])) {
-          while (bread_routes.any((e) => e == route)) {
-            last_breadcrumb = breads.last;
+      onTap: () async {
+        int currentID = breadIDs.last;
+        int targetID = id;
+
+        //current page has the id of the last id in the list
+        //use this to find what page we're currently on
+        if (breadIDs != [0]) {
+          Section? section = await Helpers().getSection(currentID);
+          var currentTitle = section?.translationSection;
+
+          //iterate through all pages
+          //in breads until we are on the right page
+          // TODO: Fix bug that doesn't allow navigating to same (earlier) section
+          while (currentID != targetID) {
+            Navigator.pop(context);
             breads.removeLast();
-            bread_routes.removeLast();
+            breadIDs.removeLast();
+            breadRoutes.removeLast();
+            currentID = breadIDs.last;
+            Section? section = await Helpers().getSection(currentID);
+            currentTitle = section?.translationSection;
           }
-          Navigator.popUntil(context, ModalRoute.withName(route));
-        } else {
-          print("No breadcrumb found");
         }
-        //Breadcrumbs should include page you're on
-        breads.add(last_breadcrumb);
-        bread_routes.add(route);
       },
     ));
   }
@@ -60,17 +73,18 @@ class breadcrumbBar extends StatelessWidget {
     if (breads == []) {
       print("empty breads");
       breads.add(BreadCrumbItem(
-        content: Text("Home"),
+        content: const Text("Home"),
         textColor: Colors.green,
         onTap: () {
-          breadcrumbBar.homePressed(context);
+          BreadcrumbBar.homePressed(context);
         },
       ));
     }
+    bool reverse = breads.length > 4;
     return SingleChildScrollView(
         child: Container(
             padding: const EdgeInsets.only(left: 10.0),
-            height: 50.0,
+            height: 40.0,
             width: MediaQuery.of(context).size.width,
             color: const Color.fromARGB(255, 227, 226, 226),
             child: BreadCrumb.builder(
@@ -78,7 +92,9 @@ class breadcrumbBar extends StatelessWidget {
               builder: (index) {
                 return breads[index];
               },
-              divider: Icon(Icons.chevron_right),
+              divider: const Icon(Icons.chevron_right),
+              overflow: ScrollableOverflow(
+                  direction: Axis.horizontal, reverse: reverse),
             )));
   }
 }

@@ -66,7 +66,7 @@ class _HamMenu extends State<HamMenu> {
               style: TextStyle(fontSize: fontSize),
             ),
             onTap: () {
-              breadcrumbBar.homePressed(context);
+              BreadcrumbBar.homePressed(context);
             },
           ),
           FutureBuilder(
@@ -77,12 +77,13 @@ class _HamMenu extends State<HamMenu> {
                   var data = snapshot.data as List;
                   for (var i = 0; i < data.length; i++) {
                     var title = Text(data[i].translationSection);
-                    var route = '/' + title.data.toString().toLowerCase();
+                    var route = '/species';
                     list.add(ListTile(
                         title: title,
                         onTap: () {
-                          Navigator.pushNamed(context, route);
-                          breadcrumbBar.add(route, context, data[i].id);
+                          Navigator.pushNamed(context, route,
+                              arguments: data[i].id);
+                          BreadcrumbBar.add(route, context, data[i].id);
                         }));
                   }
                   return ExpansionTile(
@@ -116,7 +117,7 @@ class _HamMenu extends State<HamMenu> {
             onTap: () {
               // 25 - General Resources
               Navigator.pushNamed(context, tileRoute, arguments: 25);
-              breadcrumbBar.add(tileRoute, context, 25);
+              BreadcrumbBar.add(tileRoute, context, 25);
             },
           ),
           ListTile(
@@ -127,7 +128,7 @@ class _HamMenu extends State<HamMenu> {
             ),
             onTap: () {
               Navigator.pushNamed(context, tileRoute, arguments: 26);
-              breadcrumbBar.add(tileRoute, context, 26);
+              BreadcrumbBar.add(tileRoute, context, 26);
             },
           ),
           ListTile(
@@ -138,7 +139,7 @@ class _HamMenu extends State<HamMenu> {
             ),
             onTap: () {
               Navigator.pushNamed(context, tileRoute, arguments: 27);
-              breadcrumbBar.add(tileRoute, context, 27);
+              BreadcrumbBar.add(tileRoute, context, 27);
             },
           ),
           ListTile(
@@ -149,7 +150,7 @@ class _HamMenu extends State<HamMenu> {
             ),
             onTap: () {
               Navigator.pushNamed(context, tileRoute, arguments: 28);
-              breadcrumbBar.add(tileRoute, context, 28);
+              BreadcrumbBar.add(tileRoute, context, 28);
             },
           ),
           ListTile(
@@ -186,7 +187,7 @@ class _HamMenu extends State<HamMenu> {
                             .then((value) {
                           zipFile.delete();
                           DatabaseImporter.update(dbPath);
-                          breadcrumbBar.homePressed(context);
+                          BreadcrumbBar.homePressed(context);
                         });
                       });
                     });

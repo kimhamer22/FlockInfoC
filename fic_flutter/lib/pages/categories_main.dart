@@ -59,7 +59,7 @@ class _CategoryPageState extends State<CategoryPage> {
         body: Padding(
           padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
           child: Column(children: [
-            breadcrumbBar(),
+            BreadcrumbBar(),
             FutureBuilder(
                 future: categories,
                 builder: (context, snapshot) {

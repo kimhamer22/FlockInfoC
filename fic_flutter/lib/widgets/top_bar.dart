@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fic_flutter/widgets/data_search.dart';
+//import 'package:fic_flutter/widgets/data_search.dart';
 import 'package:fic_flutter/widgets/breadcrumb.dart';
 
 class TopBar extends StatelessWidget implements PreferredSizeWidget {
@@ -30,29 +30,13 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
               },
               iconSize: 35,
             ),
-            Stack(
-              alignment: Alignment.center,
-              children: <Widget>[
-                IconButton(
-                  icon: Image.asset('assets/images/FIC logo.png'),
-                  onPressed: () {
-                    //Navigator.popUntil(context, ModalRoute.withName('/'));
-                    BreadcrumbBar.homePressed(context);
-                  },
-                  iconSize: 50,
-                ),
-                Positioned(
-                  top: 12.0,
-                  right: 10.0,
-                  width: 10.0,
-                  height: 10.0,
-                  child: Container(
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                    ),
-                  ),
-                )
-              ],
+            IconButton(
+              icon: const Icon(Icons.home),
+              onPressed: () {
+                //Navigator.popUntil(context, ModalRoute.withName('/'));
+                BreadcrumbBar.homePressed(context);
+              },
+              iconSize: 50,
             ),
             Padding(
                 padding: const EdgeInsets.fromLTRB(5, 0, 0, 0),
@@ -62,15 +46,12 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       actions: [
         IconButton(
-          onPressed: () =>
-              {showSearch(context: context, delegate: DataSearch())},
-          icon: const Icon(Icons.search),
-          iconSize: 30,
-        ),
-        IconButton(
-          onPressed: () => {const Drawer()},
-          icon: const Icon(Icons.settings),
-          iconSize: 30,
+          icon: Image.asset('assets/images/FIC logo.png'),
+          onPressed: () {
+            //Navigator.popUntil(context, ModalRoute.withName('/'));
+            BreadcrumbBar.homePressed(context);
+          },
+          iconSize: 50,
         ),
       ],
     );

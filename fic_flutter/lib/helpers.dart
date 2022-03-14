@@ -1,6 +1,7 @@
 import 'package:fic_flutter/db_handle.dart';
 
 class Helpers {
+  VersionHandler vh = VersionHandler();
   SectionHandler sh = SectionHandler();
   getSection(int id) async {
     return await sh.section(id);
@@ -16,5 +17,9 @@ class Helpers {
 
   getSpecies() async {
     return await sh.animalCategories();
+  }
+
+  getDBVersion() async {
+    return await vh.version();
   }
 }

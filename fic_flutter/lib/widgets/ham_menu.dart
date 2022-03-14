@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/widgets/breadcrumb.dart';
-import 'package:fic_flutter/db_handle.dart';
 
 import 'package:flowder/flowder.dart';
 import 'package:flutter_archive/flutter_archive.dart';
@@ -26,30 +25,58 @@ class _HamMenu extends State<HamMenu> {
   late final String path;
   late DownloaderUtils downloaderUtils;
   late ProgressDialog pd;
-  late bool upToDateDB;
+  bool upToDateDB = true;
+
+  late int websiteDBVersion;
+  late int appDBVersion;
 
   @override
   void initState() {
-    super.initState();
     allSpeciesFuture = Helpers().getSpecies();
     initPlatformState();
+    print("Before future");
 
-    // TODO: Update when we have endpoint
-    // fetchWebDBVersion().then((response) {
-    //   var websiteDBVersion = response.body as int;
-    //   var appDBVersion = getAppDBVersion();
-    //   upToDateDB = (appDBVersion == websiteDBVersion);
-    // });
-    upToDateDB = false;
+    // Future.delayed(Duration.zero, () {
+    //   print("Inside 0");
+    //
+    //   setState(() {
+    //     var response;
+    //     try {
+    //       response = fetchWebDBVersion();
+    //     } catch (e) {
+    //       print(e);
+    //     }
+    //     print("Before casting");
+    //     websiteDBVersion = response.body as int;
+    //     print("Inside 1");
+    //     print(websiteDBVersion);
+    //     appDBVersion = Helpers().getDBVersion() as int;
+    //     print(appDBVersion);
+    //   });
+    // }).whenComplete(() {
+    //   print("Complete");
+    //   upToDateDB = (websiteDBVersion == appDBVersion);
+    //   setState(() {});
+    // }).then;
+
+    // Future.wait(
+    //     [fetchWebDBVersion();
+    //     Helpers().getDBVersion()]);
+    fetchWebDBVersion().then((response) {
+      print("fetched from web!");
+      websiteDBVersion = int.parse(response.body);
+      Helpers().getDBVersion().then((version) {
+        appDBVersion = version;
+      }).whenComplete(() {
+        upToDateDB = (appDBVersion == websiteDBVersion);
+        setState(() {});
+      });
+    }).then;
+    super.initState();
   }
 
   Future<http.Response> fetchWebDBVersion() {
-    return http.get(Uri.parse('http://flockinfo.mvls.gla.ac.uk:8000/version'));
-  }
-
-  getAppDBVersion() async {
-    SectionHandler sh = SectionHandler();
-    return await sh.animalCategories(); // TODO: Change to DB version
+    return http.get(Uri.parse('http://flockinfo.mvls.gla.ac.uk/version'));
   }
 
   Future<void> initPlatformState() async {

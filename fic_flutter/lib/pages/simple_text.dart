@@ -2,6 +2,8 @@ import 'package:fic_flutter/helpers.dart';
 import 'package:fic_flutter/widgets/ham_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/widgets/top_bar.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../db_handle.dart';
 
@@ -57,7 +59,15 @@ class _SimpleText extends State<SimpleText> {
                 if (snapshot.hasData) {
                   var sectionObj = snapshot.data as Section;
                   var description = sectionObj.translationData ?? errorMessage;
-                  return Text(description);
+                  return SelectableLinkify(
+                      onOpen: (link) async {
+                        if (await canLaunch(link.url)) {
+                          await launch(link.url);
+                        } else {
+                          throw 'Could not launch $link';
+                        }
+                      },
+                      text: description);
                 } else {
                   return Text(errorMessage);
                 }

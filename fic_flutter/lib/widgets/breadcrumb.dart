@@ -55,7 +55,6 @@ class BreadcrumbBar extends StatelessWidget {
 
           //iterate through all pages
           //in breads until we are on the right page
-          // TODO: Fix bug that doesn't allow navigating to same (earlier) section
           while (currentID != targetID) {
             Navigator.pop(context);
             breads.removeLast();
@@ -70,13 +69,9 @@ class BreadcrumbBar extends StatelessWidget {
     ));
   }
 
-  //static void remove(String route) {}
-
   @override
   Widget build(BuildContext context) {
-    print("building breadcrumbs");
     if (breads == []) {
-      print("empty breads");
       breads.add(BreadCrumbItem(
         content: const Text("Home"),
         textColor: Colors.green,

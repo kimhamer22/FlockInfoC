@@ -17,13 +17,14 @@ dependencies:
   path_provider:
   sn_progress_dialog: ^1.0.3
   flutter_archive:
-
   flutter_breadcrumb: ^1.0.1
   flutter_linkify:
   url_launcher:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  mockito: ^5.1.0
+  test: ^1.14.0
   flutter_lints: ^1.0.0
 
 flutter:

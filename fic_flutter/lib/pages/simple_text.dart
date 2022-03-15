@@ -1,4 +1,5 @@
 import 'package:fic_flutter/helpers.dart';
+import 'package:fic_flutter/widgets/breadcrumb.dart';
 import 'package:fic_flutter/widgets/ham_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/widgets/top_bar.dart';
@@ -36,6 +37,12 @@ class _SimpleText extends State<SimpleText> {
     try {
       return Scaffold(
         drawer: const HamMenu(),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            BreadcrumbBar.homePressed(context);
+          },
+          child: const Icon(Icons.home),
+        ),
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(60),
           child: FutureBuilder(

@@ -41,6 +41,12 @@ class _SingleSpecies extends State<SingleSpecies> {
   Widget build(BuildContext context) {
     try {
       return Scaffold(
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            BreadcrumbBar.homePressed(context);
+          },
+          child: const Icon(Icons.home),
+        ),
         drawer: const HamMenu(),
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(60),

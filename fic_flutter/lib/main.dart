@@ -3,6 +3,7 @@ import 'package:fic_flutter/pages/home_species.dart';
 import 'package:fic_flutter/pages/categories_main.dart';
 import 'package:fic_flutter/pages/single_species.dart';
 import 'package:fic_flutter/pages/simple_text.dart';
+import 'package:fic_flutter/widgets/breadcrumb.dart';
 import 'package:fic_flutter/widgets/ham_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/widgets/top_bar.dart';
@@ -101,6 +102,12 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: const TopBar(page: 'Home'),
       drawer: const HamMenu(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          BreadcrumbBar.homePressed(context);
+        },
+        child: const Icon(Icons.home),
+      ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
         child: DefaultTabController(

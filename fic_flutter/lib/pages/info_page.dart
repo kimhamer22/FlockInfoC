@@ -41,6 +41,12 @@ class _InfoPageState extends State<InfoPage> {
     try {
       return Scaffold(
         drawer: const HamMenu(),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            BreadcrumbBar.homePressed(context);
+          },
+          child: const Icon(Icons.home),
+        ),
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(60),
           child: FutureBuilder(

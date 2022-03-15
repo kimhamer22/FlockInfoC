@@ -34,12 +34,11 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
               alignment: Alignment.center,
               children: <Widget>[
                 IconButton(
-                  icon: Image.asset('assets/images/FIC logo.png'),
+                  icon: const Icon(Icons.arrow_back),
                   onPressed: () {
-                    //Navigator.popUntil(context, ModalRoute.withName('/'));
                     BreadcrumbBar.homePressed(context);
                   },
-                  iconSize: 50,
+                  iconSize: 40,
                 ),
                 Positioned(
                   top: 12.0,
@@ -61,16 +60,15 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       actions: [
-        IconButton(
-          onPressed: () =>
-              {showSearch(context: context, delegate: DataSearch())},
-          icon: const Icon(Icons.search),
-          iconSize: 30,
+        Container(
+          decoration: const BoxDecoration(
+            shape: BoxShape.circle,
+          ),
         ),
         IconButton(
-          onPressed: () => {const Drawer()},
-          icon: const Icon(Icons.settings),
-          iconSize: 30,
+          icon: Image.asset('assets/images/FIC logo.png'),
+          iconSize: 50,
+          onPressed: () {},
         ),
       ],
     );

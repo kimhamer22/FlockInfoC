@@ -1,8 +1,6 @@
-import 'package:fic_flutter/widgets/ham_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fic_flutter/widgets/top_bar.dart';
-import 'package:mockito/mockito.dart';
 
 void main() {
   testWidgets('Ham Menu Loads', (WidgetTester tester) async {

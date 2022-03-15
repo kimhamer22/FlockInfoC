@@ -18,7 +18,8 @@ dependencies:
   sn_progress_dialog: ^1.0.3
   flutter_archive:
   flutter_breadcrumb: ^1.0.1
-
+  flutter_linkify:
+  url_launcher:
 dev_dependencies:
   flutter_test:
     sdk: flutter

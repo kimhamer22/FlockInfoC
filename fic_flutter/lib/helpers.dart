@@ -17,4 +17,8 @@ class Helpers {
   getSpecies() async {
     return await sh.animalCategories();
   }
+
+  getMainPageSections() async {
+    return await sh.mainPageButtons();
+  }
 }

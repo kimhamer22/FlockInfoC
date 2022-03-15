@@ -15,14 +15,9 @@ class CategoryPage extends StatefulWidget {
 }
 
 class _CategoryPageState extends State<CategoryPage> {
-  SectionHandler sh = SectionHandler();
   late Future categories;
   late Future section;
   late int sectionID;
-
-  _getAllCategories(int id) async {
-    return await sh.childSections(id);
-  }
 
   @override
   void initState() {
@@ -30,7 +25,7 @@ class _CategoryPageState extends State<CategoryPage> {
       var id = ModalRoute.of(context)!.settings.arguments as int;
       sectionID = id;
     }).whenComplete(() {
-      categories = _getAllCategories(sectionID);
+      categories = Helpers().getChildren(sectionID);
       section = Helpers().getSection(sectionID);
       setState(() {});
     });

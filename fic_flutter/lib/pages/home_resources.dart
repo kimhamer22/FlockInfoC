@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../helpers.dart';
 import '../widgets/navigation_button.dart';
 
 class HomeResources extends StatefulWidget {
@@ -10,6 +11,13 @@ class HomeResources extends StatefulWidget {
 
 class _HomeResources extends State<HomeResources> {
   final String simpleRoute = '/simple_text';
+  late Future sections;
+
+  @override
+  void initState() {
+    sections = Helpers().getMainPageSections();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +41,30 @@ class _HomeResources extends State<HomeResources> {
             ),
           ),
           NavigationButton(
-              title: 'Sheep loss prevention', route: '/species', id: 20),
-          NavigationButton(
-              title: 'General Resources', route: simpleRoute, id: 25),
-          NavigationButton(
-              title: 'Benefits of Reducing Losses', route: simpleRoute, id: 26),
+              title: 'Sheep Loss Prevention', route: '/species', id: 20),
+          FutureBuilder(
+              future: sections,
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  var buttons = <NavigationButton>[];
+                  var data = snapshot.data as List;
+                  for (var i = 0; i < data.length; i++) {
+                    var id = data[i].id;
+                    var title = data[i].translationSection;
+                    buttons.add(NavigationButton(
+                      route: '/simple_text',
+                      title: title,
+                      id: id,
+                    ));
+                  }
+
+                  return Column(
+                    children: buttons,
+                  );
+                } else {
+                  return Container();
+                }
+              }),
         ]),
       ),
     );

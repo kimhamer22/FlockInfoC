@@ -22,6 +22,7 @@ class HamMenu extends StatefulWidget {
 class _HamMenu extends State<HamMenu> {
   final double fontSize = 20;
   late Future allSpeciesFuture;
+  late Future mainPageSections;
   final String tileRoute = '/simple_text';
   late final String path;
   late DownloaderUtils downloaderUtils;
@@ -31,6 +32,7 @@ class _HamMenu extends State<HamMenu> {
   void initState() {
     super.initState();
     allSpeciesFuture = Helpers().getSpecies();
+    mainPageSections = Helpers().getMainPageSections();
     initPlatformState();
   }
 
@@ -108,29 +110,35 @@ class _HamMenu extends State<HamMenu> {
                   );
                 }
               }),
-          ListTile(
-            leading: const Icon(Icons.info),
-            title: Text(
-              'General Resources',
-              style: TextStyle(fontSize: fontSize),
-            ),
-            onTap: () {
-              // 25 - General Resources
-              Navigator.pushNamed(context, tileRoute, arguments: 25);
-              BreadcrumbBar.add(tileRoute, context, 25);
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.health_and_safety),
-            title: Text(
-              'Benefits of Reducing Losses',
-              style: TextStyle(fontSize: fontSize),
-            ),
-            onTap: () {
-              Navigator.pushNamed(context, tileRoute, arguments: 26);
-              BreadcrumbBar.add(tileRoute, context, 26);
-            },
-          ),
+          FutureBuilder(
+              future: mainPageSections,
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  var tiles = <ListTile>[];
+                  var data = snapshot.data as List;
+                  for (var i = 0; i < data.length; i++) {
+                    var id = data[i].id;
+                    var title = data[i].translationSection;
+                    tiles.add(ListTile(
+                      leading: const Icon(Icons.info),
+                      title: Text(
+                        title,
+                        style: TextStyle(fontSize: fontSize),
+                      ),
+                      onTap: () {
+                        Navigator.pushNamed(context, tileRoute, arguments: id);
+                        BreadcrumbBar.add(tileRoute, context, id);
+                      },
+                    ));
+                  }
+
+                  return Column(
+                    children: tiles,
+                  );
+                } else {
+                  return Container();
+                }
+              }),
           ListTile(
             leading: const Icon(Icons.article),
             title: Text(

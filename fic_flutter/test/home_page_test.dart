@@ -2,8 +2,13 @@ import 'package:fic_flutter/pages/home_resources.dart';
 import 'package:fic_flutter/pages/home_species.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter/widgets.dart';
 
 void main() {
+  final TestWidgetsFlutterBinding binding =
+      TestWidgetsFlutterBinding.ensureInitialized()
+          as TestWidgetsFlutterBinding;
+
   testWidgets('Tabs labels correct', (WidgetTester tester) async {
     await tester.pumpWidget(MaterialApp(
         home: DefaultTabController(
@@ -50,6 +55,8 @@ void main() {
   });
 
   testWidgets('Tab Bar Exists', (WidgetTester tester) async {
+    binding.window.physicalSizeTestValue = Size(800, 800);
+    binding.window.devicePixelRatioTestValue = 1.0;
     await tester.pumpWidget(MaterialApp(
         home: DefaultTabController(
       length: 2,
@@ -91,6 +98,8 @@ void main() {
   });
 
   testWidgets('Both Tabs Generated', (WidgetTester tester) async {
+    binding.window.physicalSizeTestValue = Size(800, 800);
+    binding.window.devicePixelRatioTestValue = 1.0;
     await tester.pumpWidget(MaterialApp(
         home: DefaultTabController(
       length: 2,

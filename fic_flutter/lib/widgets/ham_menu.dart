@@ -34,44 +34,15 @@ class _HamMenu extends State<HamMenu> {
   void initState() {
     allSpeciesFuture = Helpers().getSpecies();
     initPlatformState();
-    print("Before future");
-
-    // Future.delayed(Duration.zero, () {
-    //   print("Inside 0");
-    //
-    //   setState(() {
-    //     var response;
-    //     try {
-    //       response = fetchWebDBVersion();
-    //     } catch (e) {
-    //       print(e);
-    //     }
-    //     print("Before casting");
-    //     websiteDBVersion = response.body as int;
-    //     print("Inside 1");
-    //     print(websiteDBVersion);
-    //     appDBVersion = Helpers().getDBVersion() as int;
-    //     print(appDBVersion);
-    //   });
-    // }).whenComplete(() {
-    //   print("Complete");
-    //   upToDateDB = (websiteDBVersion == appDBVersion);
-    //   setState(() {});
-    // }).then;
-
-    // Future.wait(
-    //     [fetchWebDBVersion();
-    //     Helpers().getDBVersion()]);
     fetchWebDBVersion().then((response) {
-      print("fetched from web!");
       websiteDBVersion = int.parse(response.body);
       Helpers().getDBVersion().then((version) {
-        appDBVersion = version;
-      }).whenComplete(() {
-        upToDateDB = (appDBVersion == websiteDBVersion);
+        appDBVersion = version.id;
+        upToDateDB = (websiteDBVersion == appDBVersion);
         setState(() {});
       });
-    }).then;
+    });
+
     super.initState();
   }
 

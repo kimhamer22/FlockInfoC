@@ -1,3 +1,4 @@
+import 'package:fic_flutter/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
 
@@ -18,7 +19,11 @@ class BreadcrumbBar extends StatelessWidget {
   const BreadcrumbBar({Key? key}) : super(key: key);
 
   static void homePressed(BuildContext context) {
-    Navigator.popUntil(context, ModalRoute.withName('/'));
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (context) => const HomePage(title: 'Home')),
+      (Route<dynamic> route) => false,
+    );
     breads = [
       BreadCrumbItem(
         content: const Text("Home"),
@@ -65,13 +70,9 @@ class BreadcrumbBar extends StatelessWidget {
     ));
   }
 
-  //static void remove(String route) {}
-
   @override
   Widget build(BuildContext context) {
-    print("building breadcrumbs");
     if (breads == []) {
-      print("empty breads");
       breads.add(BreadCrumbItem(
         content: const Text("Home"),
         textColor: Colors.green,

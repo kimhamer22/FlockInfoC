@@ -135,26 +135,31 @@ def delete_section(section_id):
 
 def update_section(section_id, language_id, translation_section, translation_data):
 	with connections['app-db'].cursor() as cursor:
+
+		# delete previous translations and insert new, better than updating in case the translation is missing
+		# since update would miss out on translations that were missing before
+
+		# deleting
 		cursor.execute("""
-			UPDATE translations_sections
-			SET translation=%s
-			WHERE section_id=%s and
-			      language_id=%s
-	        """, [translation_section, section_id, language_id])
-
-		# TODO implement this:
-		# if info exists but is not passed: set existing to empty
-		# if info exists and is passed: set existing to passed value
-		# if info does not exist, create it anyways
-
-		# FOR NOW JUST UPDATE EXISTING, TO NOT BREAK ANYTHING ON THE APP
+					DELETE FROM translations_sections
+					WHERE section_id=%s and
+					      language_id=%s
+			        """, [section_id, language_id])
 
 		cursor.execute("""
-			UPDATE translations_data
-			SET translation=%s
-			WHERE section_id=%s and
-			      language_id=%s
-	        """, [translation_data, section_id, language_id])
+							DELETE FROM translations_data
+							WHERE section_id=%s and
+							      language_id=%s
+					        """, [section_id, language_id])
+
+		# inserting new
+		cursor.execute("""
+			INSERT INTO translations_sections(language_id, section_id, translation) VALUES(%s, %s, %s)
+	        """, [language_id, section_id, translation_section ])
+
+		cursor.execute("""
+			INSERT INTO translations_data(language_id, section_id, translation) VALUES(%s, %s, %s)
+			""", [language_id, section_id, translation_data])
 
 def get_languages():
 	with connections['app-db'].cursor() as cursor:

@@ -186,6 +186,16 @@ def delete_language(language_id):
 	else:
 		with connections['app-db'].cursor() as cursor:
 			cursor.execute("""
+				DELETE FROM translations_sections
+				WHERE language_id=%s
+				""", [language_id])
+
+			cursor.execute("""
+				DELETE FROM translations_data
+				WHERE language_id=%s
+				""", [language_id])
+
+			cursor.execute("""
 				DELETE FROM language WHERE id=%s
 	        """, [language_id])
 

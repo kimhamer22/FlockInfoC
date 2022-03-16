@@ -66,6 +66,7 @@ def section_edit_language(request, parent_id = None, section_id=None):
 
     context_dict = {}
     context_dict['section_translations'] = enumerate(get_section_languages(section_id))
+    context_dict['section_id'] = section_id
 
     return render(request, 'data_modifier/section/edit_language.html', context=context_dict)
 

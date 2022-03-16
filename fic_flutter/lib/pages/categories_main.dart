@@ -59,21 +59,46 @@ class _CategoryPageState extends State<CategoryPage> {
                 future: categories,
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
+                    var list = <NavigationButton>[];
+                    var data = snapshot.data as List;
+                    for (var i = 0; i < data.length; i++) {
+                      if (data[i].type != 3) {
+                        var title = data[i].translationSection;
+                        list.add(NavigationButton(
+                            title: title,
+                            route: '/simple_text',
+                            id: data[i].id));
+                      }
+                    }
+                    return Column(
+                      children: list,
+                    );
+                  } else {
+                    return const Text('Awaiting data...');
+                  }
+                }),
+            FutureBuilder(
+                future: categories,
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
                     var catsList = <ExpandableCats>[];
                     var tabsList = <Tab>[];
                     var data = snapshot.data as List;
                     for (var i = 0; i < data.length; i++) {
                       var id = data[i].id;
                       var title = data[i].translationSection;
-                      catsList.add(ExpandableCats(
-                        parentID: id,
-                      ));
-                      tabsList.add(Tab(
-                        text: title,
-                      ));
+                      if (data[i].type == 3) {
+                        // 3 - Tab
+                        catsList.add(ExpandableCats(
+                          parentID: id,
+                        ));
+                        tabsList.add(Tab(
+                          text: title,
+                        ));
+                      }
                     }
                     return DefaultTabController(
-                      length: data.length,
+                      length: tabsList.length,
                       child: Expanded(
                         child: Column(
                           children: <Widget>[

@@ -50,14 +50,18 @@ def get_section(section_id, language_id=1):
 	with connections['app-db'].cursor() as cursor:
 		cursor.execute("""
 			SELECT s.id, 
-               td.translation as translation_data, 
-               ts.translation as translation_section,
-               l.name as language
+               COALESCE (tran.translation_data, ""), 
+               COALESCE (tran.translation_section, ""),
+               (SELECT name FROM language where id=%s) as l_name,
+               (SELECT translation FROM translations_sections where section_id=%s and language_id=1) as default_title
         FROM section as s
-        JOIN translations_sections as ts ON s.id = ts.section_id
-        JOIN language as l on ts.language_id=l.id
-        LEFT JOIN translations_data as td ON s.id = td.section_id
-        WHERE s.id=%s and ts.language_id =%s""", [section_id, language_id])
+        LEFT JOIN (
+        	SELECT td.section_id, td.translation as translation_data, ts.translation as translation_section, l2.name as language 
+        	FROM language as l2 
+			LEFT JOIN translations_sections as ts ON l2.id = ts.language_id
+			LEFT JOIN translations_data as td ON l2.id = td.language_id
+			WHERE td.section_id=%s and ts.section_id=%s and l2.id=%s
+		) as tran ON tran.section_id = s.id""", [language_id, section_id, section_id, section_id, language_id])
 		
 		return cursor.fetchone()
 

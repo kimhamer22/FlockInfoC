@@ -82,7 +82,7 @@ def section_edit(request, section_id, language_id):
         return redirect(reverse('navigation_species'))
 
     context_dict = {}
-    context_dict['section'] = get_section(section_id)
+    context_dict['section'] = get_section(section_id, language_id)
 
     return render(request, 'data_modifier/section/edit.html', context=context_dict)
 

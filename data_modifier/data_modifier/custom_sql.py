@@ -1,19 +1,16 @@
 from django.db import connections
 from data_modifier.section_type import SectionType
 
-# TODO - add language
 def get_child_sections(section_id):
 	with connections['app-db'].cursor() as cursor:
 		cursor.execute("""
 			SELECT s.id, 
-				td.translation as translation_data, 
 				ts.translation as translation_section
 			FROM section as s
 			JOIN translations_sections as ts ON s.id = ts.section_id
-			LEFT JOIN translations_data as td ON s.id = td.section_id
 			LEFT JOIN section_parent as sp ON s.id = sp.section_id
 			LEFT JOIN translations_sections as pts ON sp.parent_section_id = pts.section_id
-			WHERE sp.parent_section_id=%s""", [section_id])
+			WHERE sp.parent_section_id=%s and ts.language_id=1 and pts.language_id=1""", [section_id])
 
 		return cursor.fetchall()
 
@@ -21,13 +18,10 @@ def get_species_sections():
 	with connections['app-db'].cursor() as cursor:
 		cursor.execute("""
 			SELECT s.id, 
-				td.translation as translation_data,
                	ts.translation as translation_section
 	        FROM section as s
 	        JOIN translations_sections as ts ON s.id = ts.section_id
-			LEFT JOIN translations_data as td ON s.id = td.section_id
-
-	        WHERE s.type=%s""", [SectionType.speciesCategory.value[0]])
+	        WHERE s.type=%s and ts.language_id=1""", [SectionType.speciesCategory.value[0]])
 		
 		return cursor.fetchall()
 
@@ -36,13 +30,10 @@ def get_main_page_sections():
 	with connections['app-db'].cursor() as cursor:
 		cursor.execute("""
 			SELECT s.id, 
-				td.translation as translation_data,
                	ts.translation as translation_section
 	        FROM section as s
 	        JOIN translations_sections as ts ON s.id = ts.section_id
-			LEFT JOIN translations_data as td ON s.id = td.section_id
-
-	        WHERE s.type=%s""", [SectionType.homePage.value[0]])
+	        WHERE s.type=%s and ts.language_id=1""", [SectionType.homePage.value[0]])
 
 		return cursor.fetchall()
 
@@ -54,14 +45,14 @@ def get_section(section_id, language_id=1):
                COALESCE (tran.translation_section, ""),
                (SELECT name FROM language where id=%s) as l_name,
                (SELECT translation FROM translations_sections where section_id=%s and language_id=1) as default_title
-        FROM section as s
-        LEFT JOIN (
-        	SELECT td.section_id, td.translation as translation_data, ts.translation as translation_section, l2.name as language 
-        	FROM language as l2 
-			LEFT JOIN translations_sections as ts ON l2.id = ts.language_id
-			LEFT JOIN translations_data as td ON l2.id = td.language_id
-			WHERE td.section_id=%s and ts.section_id=%s and l2.id=%s
-		) as tran ON tran.section_id = s.id""", [language_id, section_id, section_id, section_id, language_id])
+			FROM section as s
+			LEFT JOIN (
+				SELECT ts.section_id, td.translation as translation_data, ts.translation as translation_section 
+				FROM translations_sections as ts
+				LEFT JOIN ( SELECT * FROM translations_data WHERE language_id=%s and section_id=%s) as td
+				WHERE ts.language_id=%s and ts.section_id=%s
+			) as tran
+			WHERE s.id=%s""", [language_id, section_id, language_id, section_id, language_id, section_id, section_id])
 		
 		return cursor.fetchone()
 
@@ -69,16 +60,17 @@ def get_section_languages(section_id):
 	with connections['app-db'].cursor() as cursor:
 		cursor.execute("""
 			SELECT s.id as id, 
-               COALESCE (s.translation_data, "-") as translation_data, 
                COALESCE (s.translation_section, "-") as translation_section,
                l.name as language,
                l.id as language_id
 			FROM language as l
-			LEFT JOIN (SELECT s2.id, td.translation as translation_data, ts.translation as translation_section, td.language_id as lang
-			 FROM section as s2
-			 LEFT JOIN translations_sections as ts ON s2.id = ts.section_id
-			 LEFT JOIN translations_data as td ON s2.id = td.section_id
-			 WHERE td.language_id = ts.language_id and s2.id=%s) as s on l.id=s.lang
+			LEFT JOIN (
+				SELECT ts.section_id as id, ts.translation as translation_section, 
+				       ts.language_id as lang
+				FROM translations_sections as ts
+				WHERE ts.section_id=%s
+			) as s ON s.lang=l.id
+			
         """, [section_id])
 		
 		return cursor.fetchall()
@@ -141,25 +133,26 @@ def update_section(section_id, language_id, translation_section, translation_dat
 
 		# deleting
 		cursor.execute("""
-					DELETE FROM translations_sections
-					WHERE section_id=%s and
-					      language_id=%s
-			        """, [section_id, language_id])
+			DELETE FROM translations_sections
+			WHERE section_id=%s and
+				  language_id=%s
+			""", [section_id, language_id])
 
 		cursor.execute("""
-							DELETE FROM translations_data
-							WHERE section_id=%s and
-							      language_id=%s
-					        """, [section_id, language_id])
+			DELETE FROM translations_data
+			WHERE section_id=%s and
+				  language_id=%s
+			""", [section_id, language_id])
 
 		# inserting new
 		cursor.execute("""
 			INSERT INTO translations_sections(language_id, section_id, translation) VALUES(%s, %s, %s)
 	        """, [language_id, section_id, translation_section ])
 
-		cursor.execute("""
-			INSERT INTO translations_data(language_id, section_id, translation) VALUES(%s, %s, %s)
-			""", [language_id, section_id, translation_data])
+		if translation_data and translation_data != "":
+			cursor.execute("""
+				INSERT INTO translations_data(language_id, section_id, translation) VALUES(%s, %s, %s)
+				""", [language_id, section_id, translation_data])
 
 def get_languages():
 	with connections['app-db'].cursor() as cursor:

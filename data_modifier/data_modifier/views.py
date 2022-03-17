@@ -77,7 +77,7 @@ def section_edit(request, section_id, language_id):
     if request.method == 'POST':
         heading = request.POST.get('heading')
         info = request.POST.get('info')
-        if heading and info:
+        if heading:
             update_section(section_id, language_id, heading, info)
         return redirect(reverse('navigation_species'))
 

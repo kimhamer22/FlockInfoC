@@ -240,7 +240,7 @@ class _HamMenu extends State<HamMenu> {
                         title: title,
                         onTap: () {
                           globals.language = id;
-                          breadcrumbBar.homePressed(context);
+                          BreadcrumbBar.homePressed(context);
                         }));
                   }
                   return ExpansionTile(

@@ -65,10 +65,15 @@ def section_edit_language(request, parent_id = None, section_id=None):
         return redirect(reverse('navigation_section', args=(parent_id,)))
 
     context_dict = {}
+
+    relevant_sections = get_relevant_sections(section_id)
     sections = get_section_languages(section_id)
+
     context_dict['section_translations'] = enumerate(sections)
     context_dict['section_id'] = section_id
     context_dict['section_name'] = sections[0][1]
+    context_dict['relevant_sections'] = enumerate(relevant_sections)
+
     return render(request, 'data_modifier/section/edit_language.html', context=context_dict)
 
 

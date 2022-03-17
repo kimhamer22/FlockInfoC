@@ -154,6 +154,18 @@ def update_section(section_id, language_id, translation_section, translation_dat
 				INSERT INTO translations_data(language_id, section_id, translation) VALUES(%s, %s, %s)
 				""", [language_id, section_id, translation_data])
 
+
+def get_relevant_sections(section_id):
+	with connections['app-db'].cursor() as cursor:
+		cursor.execute("""
+				SELECT ts.section_id, ts.translation
+				FROM relevant_sections as rs
+				JOIN translations_sections as ts ON rs.relevant_sections_id=ts.section_id
+				WHERE rs.section_id=%s
+	        """, [section_id])
+
+		return cursor.fetchall()
+
 def get_languages():
 	with connections['app-db'].cursor() as cursor:
 		cursor.execute("""

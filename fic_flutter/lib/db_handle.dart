@@ -31,6 +31,18 @@ class AssociatedImage {
   }
 }
 
+class Version {
+  final int id;
+
+  Version({required this.id});
+
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+    };
+  }
+}
+
 class Language {
   final int id;
   final String name;
@@ -350,6 +362,34 @@ class SectionHandler {
     return List.generate(maps.length, (i) {
       return sectionGenerator(maps[i]);
     });
+  }
+}
+
+/// Handles all database operations related to sections
+class VersionHandler {
+  late Database db;
+
+  VersionHandler();
+
+  Version versionGenerator(data) {
+    return Version(
+      id: data['version_number'],
+    );
+  }
+
+  /// Returns all languages
+  Future<Version> version() async {
+    final db = await DatabaseImporter.open();
+
+    var query = """
+        SELECT *
+        FROM version
+        LIMIT 1
+    """;
+
+    final List<Map<String, dynamic>> maps = await db.rawQuery(query);
+    print(maps);
+    return versionGenerator(maps[0]);
   }
 }
 

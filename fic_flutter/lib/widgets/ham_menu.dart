@@ -8,6 +8,7 @@ import 'package:flowder/flowder.dart';
 import 'package:flutter_archive/flutter_archive.dart';
 import 'package:path/path.dart';
 import 'package:sn_progress_dialog/sn_progress_dialog.dart';
+import 'package:http/http.dart' as http;
 import 'package:sqflite/sqflite.dart';
 
 import '../helpers.dart';
@@ -26,12 +27,29 @@ class _HamMenu extends State<HamMenu> {
   late final String path;
   late DownloaderUtils downloaderUtils;
   late ProgressDialog pd;
+  bool upToDateDB = true;
+
+  late int websiteDBVersion;
+  late int appDBVersion;
 
   @override
   void initState() {
-    super.initState();
     allSpeciesFuture = Helpers().getSpecies();
     initPlatformState();
+    fetchWebDBVersion().then((response) {
+      websiteDBVersion = int.parse(response.body);
+      Helpers().getDBVersion().then((version) {
+        appDBVersion = version.id;
+        upToDateDB = (websiteDBVersion == appDBVersion);
+        setState(() {});
+      });
+    });
+
+    super.initState();
+  }
+
+  Future<http.Response> fetchWebDBVersion() {
+    return http.get(Uri.parse('http://flockinfo.mvls.gla.ac.uk/version'));
   }
 
   Future<void> initPlatformState() async {
@@ -154,7 +172,10 @@ class _HamMenu extends State<HamMenu> {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.refresh),
+            leading: Icon(
+              Icons.refresh,
+              color: upToDateDB ? Colors.black45 : Colors.red,
+            ),
             title: Text(
               'Update data',
               style: TextStyle(fontSize: fontSize),

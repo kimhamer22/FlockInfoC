@@ -66,6 +66,7 @@ def section_edit_language(request, parent_id = None, section_id=None):
 
     context_dict = {}
     context_dict['section_translations'] = enumerate(get_section_languages(section_id))
+    context_dict['section_id'] = section_id
 
     return render(request, 'data_modifier/section/edit_language.html', context=context_dict)
 
@@ -81,7 +82,7 @@ def section_edit(request, section_id, language_id):
         return redirect(reverse('navigation_species'))
 
     context_dict = {}
-    context_dict['section'] = get_section(section_id)
+    context_dict['section'] = get_section(section_id, language_id)
 
     return render(request, 'data_modifier/section/edit.html', context=context_dict)
 

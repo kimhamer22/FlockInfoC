@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'dart:io';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
+import 'package:fic_flutter/globals.dart' as globals;
 
 import 'exceptions/database_record_not_found.dart';
 
@@ -46,19 +47,16 @@ class Version {
 class Language {
   final int id;
   final String name;
-  final Uint8List icon;
 
   Language({
     required this.id,
     required this.name,
-    required this.icon,
   });
 
   Map<String, dynamic> toMap() {
     return {
       'id': id,
       'name': name,
-      'icon': icon,
     };
   }
 }
@@ -223,6 +221,31 @@ class DatabaseImporter {
   }
 }
 
+/// Handles operations for languages
+class LanguageHandler {
+  late Database db;
+  LanguageHandler();
+
+  Language languageGenerator(data) {
+    return Language(id: data['id'], name: data['name']);
+  }
+
+  /// Returns all languages
+  Future<List<Language>> languages() async {
+    final db = await DatabaseImporter.open();
+
+    var query = """
+        SELECT *
+        FROM language
+    """;
+
+    final List<Map<String, dynamic>> maps = await db.rawQuery(query);
+    return List.generate(maps.length, (i) {
+      return languageGenerator(maps[i]);
+    });
+  }
+}
+
 /// Handles all database operations related to sections
 class SectionHandler {
   late Database db;
@@ -250,8 +273,8 @@ class SectionHandler {
         WHERE s.type=""" +
         SectionType.speciesCategory.index.toString() +
         """ and
-        ts.language_id = 1
-    """;
+        ts.language_id = """ +
+        globals.language.toString();
 
     final List<Map<String, dynamic>> maps = await db.rawQuery(query);
     return List.generate(maps.length, (i) {
@@ -276,8 +299,8 @@ class SectionHandler {
         WHERE sp.parent_section_id=""" +
         parentId.toString() +
         """ and
-        ts.language_id = 1
-    """;
+        ts.language_id = """ +
+        globals.language.toString();
 
     final List<Map<String, dynamic>> maps = await db.rawQuery(query);
     return List.generate(maps.length, (i) {
@@ -304,8 +327,8 @@ class SectionHandler {
         WHERE s.id =""" +
         id.toString() +
         """ and
-        ts.language_id = 1
-    """;
+        ts.language_id = """ +
+        globals.language.toString();
     final List<Map<String, dynamic>> maps = await db.rawQuery(query);
 
     if (maps.isEmpty) {
@@ -331,8 +354,8 @@ class SectionHandler {
         WHERE s.type=""" +
         SectionType.homePage.index.toString() +
         """ and
-        ts.language_id = 1
-    """;
+        ts.language_id = """ +
+        globals.language.toString();
 
     final List<Map<String, dynamic>> maps = await db.rawQuery(query);
     return List.generate(maps.length, (i) {
@@ -356,8 +379,10 @@ class SectionHandler {
       JOIN translations_sections as ts ON s.id = ts.section_id
       WHERE rs.relevant_sections_id = """ +
         id.toString() +
-        """
-       """;
+        """ and
+        ts.language_id = """ +
+        globals.language.toString();
+
     final List<Map<String, dynamic>> maps = await db.rawQuery(query);
     return List.generate(maps.length, (i) {
       return sectionGenerator(maps[i]);

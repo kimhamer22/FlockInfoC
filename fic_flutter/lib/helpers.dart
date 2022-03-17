@@ -3,6 +3,8 @@ import 'package:fic_flutter/db_handle.dart';
 class Helpers {
   VersionHandler vh = VersionHandler();
   SectionHandler sh = SectionHandler();
+  LanguageHandler lh = LanguageHandler();
+
   getSection(int id) async {
     return await sh.section(id);
   }
@@ -21,5 +23,9 @@ class Helpers {
 
   getDBVersion() async {
     return await vh.version();
+  }
+
+  getLanguages() async {
+    return await lh.languages();
   }
 }

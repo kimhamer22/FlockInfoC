@@ -1,8 +1,9 @@
 import 'dart:io';
 
-import 'package:fic_flutter/db_handle.dart';
 import 'package:flutter/material.dart';
+import 'package:fic_flutter/db_handle.dart';
 import 'package:fic_flutter/widgets/breadcrumb.dart';
+import 'package:fic_flutter/globals.dart' as globals;
 
 import 'package:flowder/flowder.dart';
 import 'package:flutter_archive/flutter_archive.dart';
@@ -23,6 +24,7 @@ class HamMenu extends StatefulWidget {
 class _HamMenu extends State<HamMenu> {
   final double fontSize = 20;
   late Future allSpeciesFuture;
+  late Future allLanguages;
   final String tileRoute = '/simple_text';
   late final String path;
   late DownloaderUtils downloaderUtils;
@@ -35,6 +37,7 @@ class _HamMenu extends State<HamMenu> {
   @override
   void initState() {
     allSpeciesFuture = Helpers().getSpecies();
+    allLanguages = Helpers().getLanguages();
     initPlatformState();
     fetchWebDBVersion().then((response) {
       websiteDBVersion = int.parse(response.body);
@@ -223,7 +226,39 @@ class _HamMenu extends State<HamMenu> {
                 print(e);
               }
             },
-          )
+          ),
+          FutureBuilder(
+              future: allLanguages,
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  var list = <ListTile>[];
+                  var data = snapshot.data as List;
+                  for (var i = 0; i < data.length; i++) {
+                    var title = Text(data[i].name);
+                    var id = data[i].id;
+                    list.add(ListTile(
+                        title: title,
+                        onTap: () {
+                          globals.language = id;
+                          breadcrumbBar.homePressed(context);
+                        }));
+                  }
+                  return ExpansionTile(
+                    leading: const Icon(Icons.translate),
+                    title: Text(
+                      'Languages',
+                      style: TextStyle(fontSize: fontSize),
+                    ),
+                    children: list,
+                  );
+                } else {
+                  return ListTile(
+                    leading: const Icon(Icons.translate),
+                    title:
+                        Text('Languages', style: TextStyle(fontSize: fontSize)),
+                  );
+                }
+              }),
         ],
       ),
     );

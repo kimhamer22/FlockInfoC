@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from data_modifier.custom_sql import *
 from data_modifier.section_type import SectionType
 from django.http import Http404
+from django.db import IntegrityError
 import shutil
 
 def index(request):
@@ -67,14 +68,36 @@ def section_edit_language(request, parent_id = None, section_id=None):
     context_dict = {}
 
     relevant_sections = get_relevant_sections(section_id)
-    sections = get_section_languages(section_id)
+    translations = get_section_languages(section_id)
+    all_sections = get_all_sections_sorted()
 
-    context_dict['section_translations'] = enumerate(sections)
+    context_dict['section_translations'] = enumerate(translations)
     context_dict['section_id'] = section_id
-    context_dict['section_name'] = sections[0][1]
+    context_dict['section_name'] = translations[0][1]
     context_dict['relevant_sections'] = enumerate(relevant_sections)
+    context_dict['all_sections'] = enumerate(all_sections)
+    context_dict['parent_id'] = parent_id
 
     return render(request, 'data_modifier/section/edit_language.html', context=context_dict)
+
+
+@login_required
+def section_relevant(request, section_id, parent_id = None):
+    method = request.POST.get('_method', '').lower()
+    relevant_section_id = request.POST.get('section', '').lower()
+
+    if not method:
+        try:
+            insert_relevant_section(section_id, relevant_section_id)
+        except IntegrityError as e:
+            pass #already added anyways, just prevent error
+
+    elif method  == 'delete':
+        print("OK")
+        delete_relevant_sections(section_id, relevant_section_id)
+
+
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
 
 @login_required

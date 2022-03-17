@@ -47,16 +47,16 @@ class _HamMenu extends State<HamMenu> {
     return directory.path;
   }
 
- // _valuableProgress(context, progress) async {
- //   if (!pd.isOpen()) {
- //     pd.show(
- //       max: 100,
- //       msg: 'File Downloading...',
- //       progressType: ProgressType.valuable,
- //     );
- //   }
- //   pd.update(value: progress.ceil());
- // }
+  // _valuableProgress(context, progress) async {
+  //   if (!pd.isOpen()) {
+  //     pd.show(
+  //       max: 100,
+  //       msg: 'File Downloading...',
+  //       progressType: ProgressType.valuable,
+  //     );
+  //   }
+  //   pd.update(value: progress.ceil());
+  // }
 
   @override
   Widget build(BuildContext context) {

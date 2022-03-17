@@ -3,6 +3,7 @@ version: '3.8'
 services:
   web:
     build: ../data_modifier
+    restart: always
     # REMOVE python manage.py createsuperusersafe from prod docker-compose file
     command: bash -c "python manage.py migrate && 
                       python manage.py createsuperusersafe &&
@@ -10,7 +11,7 @@ services:
     volumes:
       - ../data_modifier:/usr/src/app/
     ports:
-      - 8000:8000
+      - 80:8000
     env_file:
       - ./.env.dev
     depends_on:

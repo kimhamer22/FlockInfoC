@@ -62,6 +62,7 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
           },
           iconSize: 50,
         ),
+        Container(),
       ],
     );
   }

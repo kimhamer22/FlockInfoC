@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:fic_flutter/db_handle.dart';
 import 'package:fic_flutter/widgets/alert_dialogue.dart';
 import 'package:flutter/material.dart';
-import 'package:fic_flutter/db_handle.dart';
 import 'package:fic_flutter/widgets/breadcrumb.dart';
 import 'package:fic_flutter/globals.dart' as globals;
 
@@ -13,7 +12,6 @@ import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sn_progress_dialog/sn_progress_dialog.dart';
 import 'package:http/http.dart' as http;
-import 'package:sqflite/sqflite.dart';
 
 import '../helpers.dart';
 

@@ -413,7 +413,6 @@ class VersionHandler {
     """;
 
     final List<Map<String, dynamic>> maps = await db.rawQuery(query);
-    print(maps);
     return versionGenerator(maps[0]);
   }
 }

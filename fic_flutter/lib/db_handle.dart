@@ -300,7 +300,13 @@ class SectionHandler {
         parentId.toString() +
         """ and
         ts.language_id = """ +
-        globals.language.toString();
+        globals.language.toString() +
+        """ and
+        (pts.language_id = """ +
+        globals.language.toString() +
+        """ or pts.language_id IS NULL)
+        and (td.language_id IS NULL or td.language_id=""" +
+        globals.language.toString() +""")""";
 
     final List<Map<String, dynamic>> maps = await db.rawQuery(query);
     return List.generate(maps.length, (i) {
@@ -321,9 +327,19 @@ class SectionHandler {
                pts.translation as parent
         FROM section as s
         JOIN translations_sections as ts ON s.id = ts.section_id
-        LEFT JOIN translations_data as td ON s.id = td.section_id
-        LEFT JOIN section_parent as sp ON s.id = sp.section_id
-        LEFT JOIN translations_sections as pts ON sp.parent_section_id = pts.section_id
+        LEFT JOIN (
+          SELECT tss.translation, tss.language_id
+          FROM section_parent as spp
+          JOIN translations_sections as tss on spp.parent_section_id = tss.section_id
+          WHERE spp.section_id = """ + id.toString() + """ and
+                tss.language_id= """+ globals.language.toString() + """
+        ) as pts
+        LEFT JOIN (
+          SELECT tdd.translation
+          FROM translations_data as tdd
+          WHERE tdd.section_id = """ + id.toString() + """ and
+                tdd.language_id= """+ globals.language.toString() + """
+        ) as td
         WHERE s.id =""" +
         id.toString() +
         """ and

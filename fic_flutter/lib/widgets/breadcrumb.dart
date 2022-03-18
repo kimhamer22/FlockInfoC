@@ -35,6 +35,7 @@ class BreadcrumbBar extends StatelessWidget {
   }
 
   static add(String route, BuildContext context, int id) async {
+    print(id);
     Section? section = await Helpers().getSection(id);
     var title = section?.translationSection;
     breadRoutes.add(route);

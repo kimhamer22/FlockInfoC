@@ -16,16 +16,26 @@
                                     <a href="{% url 'index' %}"><img src="{% static "images/FIC logo.png" %}" alt="Sheep icon" style="width:20%;" /></a>
                                     <a class="text-decoration-none" href="{% url 'index' %}">FIC Admin Control</a>
                                 </li>
-                                <li class="text-center">
-                                    <a class="text-decoration-none" href="{% url 'navigation_species' %}">Section Navigation</a>
+                                {% if user.is_authenticated %}
+                                <li class="text-center mt-3">
+                                    <a class="text-decoration-none" href="{% url 'navigation_species' %}">Navigation</a>
                                 </li>
-                                <li class="text-center">
-                                    {% if user.is_authenticated %}
-                                        <a class="nav-link" href="{% url 'logout' %}">Log Out</a><br />
-                                    {% else %}
-                                        <a class="nav-link" href="{% url 'login' %}">Log In</a><br />
-                                    {% endif %}
+                                <li class="text-center mt-3">
+                                    <a class="text-decoration-none" href="{% url 'language_index' %}">Languages</a>
                                 </li>
+                                <li class="text-center mt-3">
+                                    <a class="text-decoration-none" onclick="return confirm('Are you sure? This will release the changes to every user of the app')" href="{% url 'release' %}">RELEASE CHANGES</a>
+                                </li>
+                                <li class="text-center mt-3">
+                                    <a class="nav-link" href="{% url 'logout' %}">Log Out</a><br />
+                                </li>
+                                {% else %}
+
+                                <li class="text-center mt-3">
+                                    <a class="nav-link" href="{% url 'login' %}">Log In</a><br />
+                                </li>
+                                {% endif %}
+
                             </ul>
                     </nav>
                 </div>

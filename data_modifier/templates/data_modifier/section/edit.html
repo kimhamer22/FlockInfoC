@@ -3,34 +3,18 @@
 
 {% block content_block %}
     <div class="container align-middle">
-        <h1>Edit {{section.2}}</h1>
+        <h1>Edit "{{section.4}}" ({{section.3}})</h1>
         <form class="form-signin" role="form" method="post" action=".">
             {% csrf_token %}
-            <label for="id_lang" class="sr-only">Language:</label>
-            <select name="language" id="id_lang" class="form-control" placeholder="Select language..." required></select>
-        
-            <p>(Insert search here)</p>
-        
-            <label for="heading" class="sr-only">Page Heading:</label>
+            <label for="heading" class="sr-only mt-2"><span class="text-danger">*</span> Page Heading:</label>
             <!-- TODO - change to heading based on search -->
-            <input type="text" name="heading" id="heading" class="form-control" placeholder="[HEADING]" required value="{{section.2}}">
+            <input type="text" name="heading" id="heading" class="form-control" placeholder="Heading" required value="{{section.2}}">
         
-            <label for="info" class="sr-only">Information:</label>
+            <label for="info" class="sr-only mt-2">Information:</label>
             <!-- TODO - change to info based on search -->
-            <textarea type="text" name="info" id="info" class="form-control" placeholder="[INFO]" rows="6" required>{{section.1}}</textarea>
+            <textarea type="text" name="info" id="info" class="form-control" placeholder="Information" rows="6">{{section.1}}</textarea>
         
-            <label for="parents">Parent Categories (none for top-level categories, e.g., species):</label>
-            <div id="parents" class="row">
-        
-            </div>
-        
-            <label for="children">Child Categories (none for bottom-level categories, i.e., articles about specific
-                topics/their subheadings):</label>
-            <div id="parents" class="row">
-        
-            </div>
-        
-            <button class="btn btn-lg btn-primary btn-block mt-2" type="submit" value="Submit">Update Information</button>
+            <button class="btn btn-lg btn-primary btn-block mt-3" type="submit" value="Submit">Update Information</button>
         </form>
     </div>
 {% endblock %}

@@ -1,1 +1,4 @@
 .env.dev
+.env.dev.db
+flock-control.sqlite
+static/downloads/database.zip

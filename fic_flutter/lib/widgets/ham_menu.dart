@@ -12,7 +12,8 @@ import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sn_progress_dialog/sn_progress_dialog.dart';
 import 'package:http/http.dart' as http;
-
+import 'package:sqflite/sqflite.dart';
+import 'dart:io' show Platform;
 import '../helpers.dart';
 
 class HamMenu extends StatefulWidget {
@@ -64,8 +65,13 @@ class _HamMenu extends State<HamMenu> {
   }
 
   Future<String> _setPath() async {
-    final directory = await getApplicationDocumentsDirectory();
-    return directory.path;
+    String os = Platform.operatingSystem;
+    if (os == 'ios') {
+      final directory = await getApplicationDocumentsDirectory();
+      return directory.path;
+    } else {
+      return await getDatabasesPath();
+    }
   }
 
   // _valuableProgress(context, progress) async {
@@ -195,9 +201,11 @@ class _HamMenu extends State<HamMenu> {
             ),
             onTap: () async {
               try {
+                String os = Platform.operatingSystem;
                 // const String filename = 'flock-control.zip';
                 final path = await _setPath();
                 final String filepath = '$path/database.zip';
+
                 //pd = ProgressDialog(context: context);
                 downloaderUtils = DownloaderUtils(
                   progressCallback: (current, total) {
@@ -210,22 +218,39 @@ class _HamMenu extends State<HamMenu> {
                     // Remove previous DB
 
                     // Unzip database
-                    _setPath().then((dbDir) {
-                      var dbPath = join(dbDir, "flock-control.sqlite");
-                      DatabaseImporter.delete(dbPath).then((oldFile) {
-                        final zipFile = File(filepath);
-                        final destinationDir = Directory(path);
-                        ZipFile.extractToDirectory(
-                                zipFile: zipFile,
-                                destinationDir: destinationDir)
-                            .then((value) {
-                          zipFile.delete();
-                          DatabaseImporter.update(dbPath);
-                          BreadcrumbBar.homePressed(context);
-                          showAlertDialog(context);
-                        });
-                      });
-                    });
+                    os == 'ios'
+                        ? _setPath().then((dbDir) {
+                            var dbPath = join(dbDir, "flock-control.sqlite");
+                            DatabaseImporter.delete(dbPath).then((oldFile) {
+                              final zipFile = File(filepath);
+                              final destinationDir = Directory(path);
+                              ZipFile.extractToDirectory(
+                                      zipFile: zipFile,
+                                      destinationDir: destinationDir)
+                                  .then((value) {
+                                zipFile.delete();
+                                DatabaseImporter.update(dbPath);
+                                BreadcrumbBar.homePressed(context);
+                                showAlertDialog(context);
+                              });
+                            });
+                          })
+                        : getDatabasesPath().then((dbDir) {
+                            var dbPath = join(dbDir, "flock-control.sqlite");
+                            DatabaseImporter.delete(dbPath).then((oldFile) {
+                              final zipFile = File(filepath);
+                              final destinationDir = Directory(path);
+                              ZipFile.extractToDirectory(
+                                      zipFile: zipFile,
+                                      destinationDir: destinationDir)
+                                  .then((value) {
+                                zipFile.delete();
+                                DatabaseImporter.update(dbPath);
+                                BreadcrumbBar.homePressed(context);
+                                showAlertDialog(context);
+                              });
+                            });
+                          });
                   },
                   deleteOnCancel: true,
                 );

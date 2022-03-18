@@ -19,6 +19,10 @@
     SUPERUSER_EMAIL=test2@test.com<br>
     SUPERUSER_USERNAME=test2<br>
     SUPERUSER_PASSWORD=test2<br>
+4. Create **.env.dev.db** file. Template: <br>
+    POSTGRES_USER=postgres<br>
+    POSTGRES_PASSWORD=postgres<br>
+    POSTGRES_DB=main<br>
 4. Run `$ docker-compose build`
 5. Run `$ docker-compose up` to run the website. Server will be running on terminal. Run `$ docker-compose up -d` to run on daemon instead. Run `$ docker-compose down` to stop the server. 
 6. You should be able to access the website by going to `http://localhost:8000`. To log in, use SUPERUSER_USERNAME and SUPERUSER_PASSWORD from your **.env.dev**

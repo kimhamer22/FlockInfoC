@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:fic_flutter/db_handle.dart';
+import 'package:fic_flutter/widgets/alert_dialogue.dart';
 import 'package:flutter/material.dart';
 import 'package:fic_flutter/db_handle.dart';
 import 'package:fic_flutter/widgets/breadcrumb.dart';
@@ -8,6 +10,7 @@ import 'package:fic_flutter/globals.dart' as globals;
 import 'package:flowder/flowder.dart';
 import 'package:flutter_archive/flutter_archive.dart';
 import 'package:path/path.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:sn_progress_dialog/sn_progress_dialog.dart';
 import 'package:http/http.dart' as http;
 import 'package:sqflite/sqflite.dart';
@@ -25,6 +28,7 @@ class _HamMenu extends State<HamMenu> {
   final double fontSize = 20;
   late Future allSpeciesFuture;
   late Future allLanguages;
+  late Future mainPageSections;
   final String tileRoute = '/simple_text';
   late final String path;
   late DownloaderUtils downloaderUtils;
@@ -38,6 +42,7 @@ class _HamMenu extends State<HamMenu> {
   void initState() {
     allSpeciesFuture = Helpers().getSpecies();
     allLanguages = Helpers().getLanguages();
+    mainPageSections = Helpers().getMainPageSections();
     initPlatformState();
     fetchWebDBVersion().then((response) {
       websiteDBVersion = int.parse(response.body);
@@ -60,20 +65,21 @@ class _HamMenu extends State<HamMenu> {
     if (!mounted) return;
   }
 
-  void _setPath() async {
-    path = await getDatabasesPath();
+  Future<String> _setPath() async {
+    final directory = await getApplicationDocumentsDirectory();
+    return directory.path;
   }
 
-  _valuableProgress(context, progress) async {
-    if (!pd.isOpen()) {
-      pd.show(
-        max: 100,
-        msg: 'File Downloading...',
-        progressType: ProgressType.valuable,
-      );
-    }
-    pd.update(value: progress.ceil());
-  }
+  // _valuableProgress(context, progress) async {
+  //   if (!pd.isOpen()) {
+  //     pd.show(
+  //       max: 100,
+  //       msg: 'File Downloading...',
+  //       progressType: ProgressType.valuable,
+  //     );
+  //   }
+  //   pd.update(value: progress.ceil());
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -129,29 +135,35 @@ class _HamMenu extends State<HamMenu> {
                   );
                 }
               }),
-          ListTile(
-            leading: const Icon(Icons.info),
-            title: Text(
-              'General Resources',
-              style: TextStyle(fontSize: fontSize),
-            ),
-            onTap: () {
-              // 25 - General Resources
-              Navigator.pushNamed(context, tileRoute, arguments: 25);
-              BreadcrumbBar.add(tileRoute, context, 25);
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.health_and_safety),
-            title: Text(
-              'Benefits of Reducing Losses',
-              style: TextStyle(fontSize: fontSize),
-            ),
-            onTap: () {
-              Navigator.pushNamed(context, tileRoute, arguments: 26);
-              BreadcrumbBar.add(tileRoute, context, 26);
-            },
-          ),
+          FutureBuilder(
+              future: mainPageSections,
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  var tiles = <ListTile>[];
+                  var data = snapshot.data as List;
+                  for (var i = 0; i < data.length; i++) {
+                    var id = data[i].id;
+                    var title = data[i].translationSection;
+                    tiles.add(ListTile(
+                      leading: const Icon(Icons.info),
+                      title: Text(
+                        title,
+                        style: TextStyle(fontSize: fontSize),
+                      ),
+                      onTap: () {
+                        Navigator.pushNamed(context, tileRoute, arguments: id);
+                        BreadcrumbBar.add(tileRoute, context, id);
+                      },
+                    ));
+                  }
+
+                  return Column(
+                    children: tiles,
+                  );
+                } else {
+                  return Container();
+                }
+              }),
           ListTile(
             leading: const Icon(Icons.article),
             title: Text(
@@ -186,13 +198,13 @@ class _HamMenu extends State<HamMenu> {
             onTap: () async {
               try {
                 // const String filename = 'flock-control.zip';
-                const String filename = 'database.zip';
-                final String filepath = '$path/$filename';
-                pd = ProgressDialog(context: context);
+                final path = await _setPath();
+                final String filepath = '$path/database.zip';
+                //pd = ProgressDialog(context: context);
                 downloaderUtils = DownloaderUtils(
                   progressCallback: (current, total) {
-                    final progress = (current / total) * 100;
-                    _valuableProgress(context, progress);
+                    //final progress = (current / total) * 100;
+                    //_valuableProgress(context, progress);
                   },
                   file: File(filepath),
                   progress: ProgressImplementation(),
@@ -200,7 +212,7 @@ class _HamMenu extends State<HamMenu> {
                     // Remove previous DB
 
                     // Unzip database
-                    getDatabasesPath().then((dbDir) {
+                    _setPath().then((dbDir) {
                       var dbPath = join(dbDir, "flock-control.sqlite");
                       DatabaseImporter.delete(dbPath).then((oldFile) {
                         final zipFile = File(filepath);
@@ -212,6 +224,7 @@ class _HamMenu extends State<HamMenu> {
                           zipFile.delete();
                           DatabaseImporter.update(dbPath);
                           BreadcrumbBar.homePressed(context);
+                          showAlertDialog(context);
                         });
                       });
                     });
@@ -223,7 +236,7 @@ class _HamMenu extends State<HamMenu> {
                     'http://flockinfo.mvls.gla.ac.uk/static/downloads/database.zip';
                 await Flowder.download(url, downloaderUtils);
               } catch (e) {
-                print(e);
+                BreadcrumbBar.homePressed(context);
               }
             },
           ),

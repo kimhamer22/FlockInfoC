@@ -28,4 +28,8 @@ class Helpers {
   getLanguages() async {
     return await lh.languages();
   }
+
+  getMainPageSections() async {
+    return await sh.mainPageButtons();
+  }
 }

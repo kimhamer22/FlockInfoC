@@ -30,14 +30,23 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
               },
               iconSize: 35,
             ),
-            IconButton(
-              icon: const Icon(Icons.home),
-              onPressed: () {
-                //Navigator.popUntil(context, ModalRoute.withName('/'));
-                BreadcrumbBar.homePressed(context);
-              },
-              iconSize: 50,
-            ),
+            page == 'Home'
+                ? IconButton(
+                    icon: const Icon(Icons.home),
+                    onPressed: () {
+                      //Navigator.popUntil(context, ModalRoute.withName('/'));
+                      BreadcrumbBar.homePressed(context);
+                    },
+                    iconSize: 50,
+                  )
+                : BackButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                      breadRoutes.removeLast();
+                      breadIDs.removeLast();
+                      breads.removeLast();
+                    },
+                  ),
             Padding(
                 padding: const EdgeInsets.fromLTRB(5, 0, 0, 0),
                 child: Text(page)),
@@ -53,6 +62,7 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
           },
           iconSize: 50,
         ),
+        Container(),
       ],
     );
   }

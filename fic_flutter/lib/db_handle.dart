@@ -363,6 +363,26 @@ class SectionHandler {
     });
   }
 
+  Future<List<Section>> hamMenuButtons() async {
+    final db = await DatabaseImporter.open();
+
+    var query = """
+        SELECT s.*, 
+               ts.translation as translation_section
+        FROM section as s
+        JOIN translations_sections as ts ON s.id = ts.section_id
+        WHERE s.type=""" +
+        SectionType.hamMenu.index.toString() +
+        """ and
+        ts.language_id = """ +
+        globals.language.toString();
+
+    final List<Map<String, dynamic>> maps = await db.rawQuery(query);
+    return List.generate(maps.length, (i) {
+      return sectionGenerator(maps[i]);
+    });
+  }
+
   Future<List<Section>> relevantSections(int id) async {
     final db = await DatabaseImporter.open();
 

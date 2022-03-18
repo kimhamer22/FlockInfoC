@@ -27,6 +27,7 @@ class _HamMenu extends State<HamMenu> {
   late Future allSpeciesFuture;
   late Future allLanguages;
   late Future mainPageSections;
+  late Future hamMenuSections;
   final String tileRoute = '/simple_text';
   late final String path;
   late DownloaderUtils downloaderUtils;
@@ -41,9 +42,10 @@ class _HamMenu extends State<HamMenu> {
     allSpeciesFuture = Helpers().getSpecies();
     allLanguages = Helpers().getLanguages();
     mainPageSections = Helpers().getMainPageSections();
+    hamMenuSections = Helpers().getHamMenuSections();
     initPlatformState();
     fetchWebDBVersion().then((response) {
-      websiteDBVersion = int.tryParse(response.body) ?? 1;
+      websiteDBVersion = int.parse(response.body);
       Helpers().getDBVersion().then((version) {
         appDBVersion = version.id;
         upToDateDB = (websiteDBVersion == appDBVersion);
@@ -143,6 +145,35 @@ class _HamMenu extends State<HamMenu> {
                     var id = data[i].id;
                     var title = data[i].translationSection;
                     tiles.add(ListTile(
+                      leading: const Icon(Icons.health_and_safety),
+                      title: Text(
+                        title,
+                        style: TextStyle(fontSize: fontSize),
+                      ),
+                      onTap: () {
+                        Navigator.pushNamed(context, tileRoute, arguments: id);
+                        BreadcrumbBar.add(tileRoute, context, id);
+                      },
+                    ));
+                  }
+
+                  return Column(
+                    children: tiles,
+                  );
+                } else {
+                  return Container();
+                }
+              }),
+          FutureBuilder(
+              future: hamMenuSections,
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  var tiles = <ListTile>[];
+                  var data = snapshot.data as List;
+                  for (var i = 0; i < data.length; i++) {
+                    var id = data[i].id;
+                    var title = data[i].translationSection;
+                    tiles.add(ListTile(
                       leading: const Icon(Icons.info),
                       title: Text(
                         title,
@@ -162,28 +193,28 @@ class _HamMenu extends State<HamMenu> {
                   return Container();
                 }
               }),
-          ListTile(
-            leading: const Icon(Icons.article),
-            title: Text(
-              'Acknowledgements',
-              style: TextStyle(fontSize: fontSize),
-            ),
-            onTap: () {
-              Navigator.pushNamed(context, tileRoute, arguments: 27);
-              BreadcrumbBar.add(tileRoute, context, 27);
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.email),
-            title: Text(
-              'Contact Us',
-              style: TextStyle(fontSize: fontSize),
-            ),
-            onTap: () {
-              Navigator.pushNamed(context, tileRoute, arguments: 28);
-              BreadcrumbBar.add(tileRoute, context, 28);
-            },
-          ),
+          // ListTile(
+          //   leading: const Icon(Icons.article),
+          //   title: Text(
+          //     'Acknowledgements',
+          //     style: TextStyle(fontSize: fontSize),
+          //   ),
+          //   onTap: () {
+          //     Navigator.pushNamed(context, tileRoute, arguments: 27);
+          //     BreadcrumbBar.add(tileRoute, context, 27);
+          //   },
+          // ),
+          // ListTile(
+          //   leading: const Icon(Icons.email),
+          //   title: Text(
+          //     'Contact Us',
+          //     style: TextStyle(fontSize: fontSize),
+          //   ),
+          //   onTap: () {
+          //     Navigator.pushNamed(context, tileRoute, arguments: 28);
+          //     BreadcrumbBar.add(tileRoute, context, 28);
+          //   },
+          // ),
           ListTile(
             leading: Icon(
               Icons.refresh,

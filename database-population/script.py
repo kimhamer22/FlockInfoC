@@ -32,7 +32,7 @@ def flush_table(name):
 
 
 def enum_reverse(s):
-	dic = {"species" : 0, "home" : 1, "button" : 2, "tab" : 3, "expandable" : 4}
+	dic = {"species" : 0, "home" : 1, "button" : 2, "tab" : 3, "expandable" : 4, "hammenu": 5}
 	s = s.lower().strip()
 
 	if s not in dic:

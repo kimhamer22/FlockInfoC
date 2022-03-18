@@ -4,4 +4,5 @@ enum SectionType {
   button, // intermediate button (e.g. nutrition)
   tab, // tab (e.g. causes and control)
   expandable, // expandable heading
+  hamMenu, // items appearing in ham menu (exclusively)
 }

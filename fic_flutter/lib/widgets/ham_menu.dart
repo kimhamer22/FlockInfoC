@@ -46,7 +46,7 @@ class _HamMenu extends State<HamMenu> {
     fetchWebDBVersion().then((response) {
       websiteDBVersion = int.tryParse(response.body) ?? 1;
       Helpers().getDBVersion().then((version) {
-        appDBVersion = version.id;
+        appDBVersion = version.id + 1;
         upToDateDB = (websiteDBVersion == appDBVersion);
         setState(() {});
       });

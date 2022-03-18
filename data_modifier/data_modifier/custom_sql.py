@@ -47,7 +47,7 @@ def get_section(section_id, language_id=1):
                COALESCE (tran.translation_data, ""), 
                COALESCE (tran.translation_section, ""),
                (SELECT name FROM language where id=%s) as l_name,
-               (SELECT translation FROM translations_sections where section_id=%s and language_id=1) as default_title,
+               (SELECT translation FROM translations_sections where section_id=%s and language_id=1) as default_title
 			FROM section as s
 			LEFT JOIN (
 				SELECT ts.section_id, td.translation as translation_data, ts.translation as translation_section 

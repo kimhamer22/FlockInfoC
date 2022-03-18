@@ -13,6 +13,14 @@
             <label for="info" class="sr-only mt-2">Information:</label>
             <!-- TODO - change to info based on search -->
             <textarea type="text" name="info" id="info" class="form-control" placeholder="Information" rows="6"></textarea>
+
+            <label for="type" class="sr-only mt-2"><span class="text-danger">*</span> Type:</label>
+            <!-- TODO - change to heading based on search -->
+            <select type="form-select" name="type" id="type" class="form-control" required>
+                {% for i, t in types %}
+                        <option value="{{i}}">{{t.name}}</option>
+                    {% endfor %}
+            </select>
         
             <button class="btn btn-lg btn-primary btn-block mt-3" type="submit" value="Submit">Create</button>
         </form>

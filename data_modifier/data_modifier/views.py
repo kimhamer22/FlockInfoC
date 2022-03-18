@@ -60,10 +60,13 @@ def navigation(request, section_id=None):
 def section_edit_language(request, parent_id = None, section_id=None):
 
     method = request.POST.get('_method', '').lower()
+    section_type = request.POST.get('type')
 
     if method == 'delete':
         delete_section(section_id)
         return redirect(reverse('navigation_section', args=(parent_id,)))
+    elif section_type:
+        update_section_type(section_id, section_type)
 
     context_dict = {}
 
@@ -77,6 +80,8 @@ def section_edit_language(request, parent_id = None, section_id=None):
     context_dict['relevant_sections'] = enumerate(relevant_sections)
     context_dict['all_sections'] = enumerate(all_sections)
     context_dict['parent_id'] = parent_id
+    context_dict['section_type'] = int(get_section_type(section_id)[0])
+    context_dict['types'] = enumerate([s_type for s_type in SectionType])
 
     return render(request, 'data_modifier/section/edit_language.html', context=context_dict)
 
@@ -123,9 +128,9 @@ def section_create(request, parent_id=None):
 
         heading = request.POST.get('heading')
         info = request.POST.get('info')
+        section_type = request.POST.get('type')
 
-
-        insert_section(heading, info, parent_id)
+        insert_section(section_type, heading, info, parent_id)
 
         if parent_id is not None:
             return redirect(reverse('navigation_section', args=(parent_id,)))
@@ -137,6 +142,7 @@ def section_create(request, parent_id=None):
         context_dict['parent_name'] = get_section(parent_id)[2]
     else:
         context_dict['parent_name'] = ""
+    context_dict['types'] = enumerate([s_type for s_type in SectionType])
 
     return render(request, 'data_modifier/section/create.html', context=context_dict)
 

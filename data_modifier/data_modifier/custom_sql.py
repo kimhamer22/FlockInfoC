@@ -43,7 +43,7 @@ def get_main_page_sections():
 def get_section(section_id, language_id=1):
 	with connections['app-db'].cursor() as cursor:
 		cursor.execute("""
-			SELECT s.id, 
+			SELECT s.id, s.type,
                COALESCE (tran.translation_data, ""), 
                COALESCE (tran.translation_section, ""),
                (SELECT name FROM language where id=%s) as l_name,
@@ -56,6 +56,16 @@ def get_section(section_id, language_id=1):
 				WHERE ts.language_id=%s and ts.section_id=%s
 			) as tran
 			WHERE s.id=%s""", [language_id, section_id, language_id, section_id, language_id, section_id, section_id])
+		
+		return cursor.fetchone()
+
+def get_section_type(section_id):
+	with connections['app-db'].cursor() as cursor:
+		cursor.execute("""
+			SELECT s.type
+			FROM section as s
+			WHERE s.id=%s
+			LIMIT 1""", [section_id])
 		
 		return cursor.fetchone()
 
@@ -80,13 +90,13 @@ def get_section_languages(section_id):
 
 
 # TODO REMOVE HARDCODED TYPE (header)
-def insert_section(translation_section, translation_data, parent_id = None):
+def insert_section(section_type, translation_section, translation_data, parent_id = None):
 	LANGUAGE_ID = 1 # english fixed for all new
 
 	with connections['app-db'].cursor() as cursor:
 		cursor.execute("""
-			INSERT INTO section (type) VALUES(4)
-			""")
+			INSERT INTO section (type) VALUES(%s)
+			""", [section_type])
 
 		new_section_id = cursor.lastrowid
 
@@ -156,6 +166,19 @@ def update_section(section_id, language_id, translation_section, translation_dat
 			cursor.execute("""
 				INSERT INTO translations_data(language_id, section_id, translation) VALUES(%s, %s, %s)
 				""", [language_id, section_id, translation_data])
+
+def update_section_type(section_id, section_type):
+	with connections['app-db'].cursor() as cursor:
+
+		# delete previous section and insert new, better than updating in case the translation is missing
+		# since update would miss out on translations that were missing before
+
+		# deleting
+		cursor.execute(f"""
+			UPDATE section
+			SET type={section_type}
+			WHERE id={section_id}
+			""",)
 
 
 def get_relevant_sections(section_id):

@@ -5,7 +5,18 @@
     <div class="container align-middle">
         <h1>Edit "{{ section_name }}"</h1>
         <hr>
-        
+        <div id="type" class="col-md-2">
+            <form class="form-signin" role="form" method="post" action="." name="_method" value="update_type">
+                {% csrf_token %}
+                <h3>Type of Section</h3>
+                <select type="form-select" name="type" id="type" class="form-control">
+                    {% for i, t in types %}
+                        <option value="{{i}}" {% if i == section_type %} selected {% endif %}>{{t.name}}</option>
+                    {% endfor %}
+                </select>
+                <button class="btn btn-primary btn-block mt-3" type="submit" value="update_type">Update Type</button>
+            </form>
+        </div>
 
         <div class="col-md-12">
             <h3 class="mt-5">Translations Of The Section</h3>

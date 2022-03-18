@@ -174,11 +174,11 @@ def update_section_type(section_id, section_type):
 		# since update would miss out on translations that were missing before
 
 		# deleting
-		cursor.execute(f"""
+		cursor.execute("""
 			UPDATE section
-			SET type={section_type}
-			WHERE id={section_id}
-			""",)
+			SET type=%s
+			WHERE id=%s
+			""", [section_type, section_id])
 
 
 def get_relevant_sections(section_id):

@@ -10,7 +10,8 @@ def get_child_sections(section_id):
 			JOIN translations_sections as ts ON s.id = ts.section_id
 			LEFT JOIN section_parent as sp ON s.id = sp.section_id
 			LEFT JOIN translations_sections as pts ON sp.parent_section_id = pts.section_id
-			WHERE sp.parent_section_id=%s and ts.language_id=1 and pts.language_id=1""", [section_id])
+			WHERE sp.parent_section_id=%s and ts.language_id=1 and pts.language_id=1
+			ORDER BY ts.translation""", [section_id])
 
 		return cursor.fetchall()
 
@@ -21,7 +22,8 @@ def get_species_sections():
                	ts.translation as translation_section
 	        FROM section as s
 	        JOIN translations_sections as ts ON s.id = ts.section_id
-	        WHERE s.type=%s and ts.language_id=1""", [SectionType.speciesCategory.value[0]])
+	        WHERE s.type=%s and ts.language_id=1
+	        ORDER BY ts.translation""", [SectionType.speciesCategory.value[0]])
 		
 		return cursor.fetchall()
 
@@ -33,7 +35,8 @@ def get_main_page_sections():
                	ts.translation as translation_section
 	        FROM section as s
 	        JOIN translations_sections as ts ON s.id = ts.section_id
-	        WHERE s.type=%s and ts.language_id=1""", [SectionType.homePage.value[0]])
+	        WHERE s.type=%s and ts.language_id=1
+	        ORDER BY ts.translation""", [SectionType.homePage.value[0]])
 
 		return cursor.fetchall()
 
@@ -153,6 +156,48 @@ def update_section(section_id, language_id, translation_section, translation_dat
 			cursor.execute("""
 				INSERT INTO translations_data(language_id, section_id, translation) VALUES(%s, %s, %s)
 				""", [language_id, section_id, translation_data])
+
+
+def get_relevant_sections(section_id):
+	with connections['app-db'].cursor() as cursor:
+		cursor.execute("""
+				SELECT ts.section_id, ts.translation
+				FROM relevant_sections as rs
+				JOIN translations_sections as ts ON rs.relevant_sections_id=ts.section_id
+				WHERE rs.section_id=%s
+				ORDER BY ts.translation
+	        """, [section_id])
+
+		return cursor.fetchall()
+
+
+def delete_relevant_sections(section_id, to_delete_id):
+	with connections['app-db'].cursor() as cursor:
+		cursor.execute("""
+					DELETE FROM relevant_sections 
+					WHERE (section_id=%s and relevant_sections_id=%s) or 
+					      (section_id=%s and relevant_sections_id=%s)
+					""", [section_id, to_delete_id, to_delete_id, section_id])
+
+
+def insert_relevant_section(section_id, relevant_section_id):
+	with connections['app-db'].cursor() as cursor:
+		cursor.execute("""
+				INSERT INTO relevant_sections
+				VALUES (%s, %s), (%s, %s)
+	        """, [section_id, relevant_section_id, relevant_section_id, section_id])
+
+
+def get_all_sections_sorted():
+	with connections['app-db'].cursor() as cursor:
+		cursor.execute("""
+				SELECT ts.section_id, ts.translation
+				FROM translations_sections as ts
+				ORDER BY ts.translation
+	        """)
+
+		return cursor.fetchall()
+
 
 def get_languages():
 	with connections['app-db'].cursor() as cursor:

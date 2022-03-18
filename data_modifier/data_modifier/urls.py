@@ -29,6 +29,10 @@ urlpatterns = [
     path('navigation/<int:section_id>/', views.navigation, name='navigation_section'),
     path('section/edit/parent/<int:parent_id>/<int:section_id>/', views.section_edit_language, name='section_edit_language'),
     path('section/edit/<int:section_id>/', views.section_edit_language, name='section_edit_language_noparent'),
+    path('section/edit/parent/<int:parent_id>/<int:section_id>/relevant', views.section_relevant,
+         name='section_relevant'),
+    path('section/edit/<int:section_id>/relevant', views.section_relevant, name='section_relevant_noparent'),
+
     path('section/edit/<int:section_id>/<int:language_id>/', views.section_edit, name='section_edit'),
     path('language/index/', views.language_index, name='language_index'),
     path('release', views.release, name='release'),

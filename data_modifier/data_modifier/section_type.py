@@ -6,3 +6,4 @@ class SectionType(Enum):
 	button = 2, # intermediate button (e.g. nutrition)
 	tab = 3, # tab (e.g. causes and control)
 	expandable = 4, # expandable heading
+	hamburgerMenu = 5,  # appears on the Hamburger Menu

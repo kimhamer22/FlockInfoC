@@ -44,7 +44,7 @@ def navigation(request, section_id=None):
 
     # Load species if no id is provided
     if not section_id:
-        sections = get_species_sections() + get_main_page_sections()
+        sections = get_species_sections() + get_main_page_sections() + get_hamburger_menu_sections()
 
     # Load children of current section
     else:

@@ -40,6 +40,18 @@ def get_main_page_sections():
 
 		return cursor.fetchall()
 
+def get_hamburger_menu_sections():
+	with connections['app-db'].cursor() as cursor:
+		cursor.execute("""
+			SELECT s.id, 
+               	ts.translation as translation_section
+	        FROM section as s
+	        JOIN translations_sections as ts ON s.id = ts.section_id
+	        WHERE s.type=%s and ts.language_id=1
+	        ORDER BY ts.translation""", [SectionType.hamburgerMenu.value[0]])
+
+		return cursor.fetchall()
+
 def get_section(section_id, language_id=1):
 	with connections['app-db'].cursor() as cursor:
 		cursor.execute("""

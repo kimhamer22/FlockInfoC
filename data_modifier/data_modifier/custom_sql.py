@@ -174,10 +174,9 @@ def update_section(section_id, language_id, translation_section, translation_dat
 			INSERT INTO translations_sections(language_id, section_id, translation) VALUES(%s, %s, %s)
 	        """, [language_id, section_id, translation_section ])
 
-		if translation_data and translation_data != "":
-			cursor.execute("""
-				INSERT INTO translations_data(language_id, section_id, translation) VALUES(%s, %s, %s)
-				""", [language_id, section_id, translation_data])
+        cursor.execute("""
+            INSERT INTO translations_data(language_id, section_id, translation) VALUES(%s, %s, %s)
+            """, [language_id, section_id, translation_data])
 
 def update_section_type(section_id, section_type):
 	with connections['app-db'].cursor() as cursor:

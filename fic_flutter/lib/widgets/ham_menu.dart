@@ -37,6 +37,21 @@ class _HamMenu extends State<HamMenu> {
   late int websiteDBVersion;
   late int appDBVersion;
 
+  Map icons = <String, Icon>{
+    "Benefits of Reducing Losses": const Icon(Icons.health_and_safety),
+    "Additional Resources": const Icon(Icons.info),
+    "Acknowledgements": const Icon(Icons.article),
+    "Contact Us": const Icon(Icons.mail)
+  };
+
+  Icon getIcon(String name) {
+    if (icons.containsKey(name)) {
+      return icons[name];
+    } else {
+      return const Icon(Icons.info);
+    }
+  }
+
   @override
   void initState() {
     allSpeciesFuture = Helpers().getSpecies();
@@ -45,7 +60,7 @@ class _HamMenu extends State<HamMenu> {
     hamMenuSections = Helpers().getHamMenuSections();
     initPlatformState();
     fetchWebDBVersion().then((response) {
-      websiteDBVersion = int.parse(response.body);
+      websiteDBVersion = int.tryParse(response.body) ?? 1;
       Helpers().getDBVersion().then((version) {
         appDBVersion = version.id;
         upToDateDB = (websiteDBVersion == appDBVersion);
@@ -145,7 +160,7 @@ class _HamMenu extends State<HamMenu> {
                     var id = data[i].id;
                     var title = data[i].translationSection;
                     tiles.add(ListTile(
-                      leading: const Icon(Icons.health_and_safety),
+                      leading: getIcon(title),
                       title: Text(
                         title,
                         style: TextStyle(fontSize: fontSize),
@@ -174,7 +189,7 @@ class _HamMenu extends State<HamMenu> {
                     var id = data[i].id;
                     var title = data[i].translationSection;
                     tiles.add(ListTile(
-                      leading: const Icon(Icons.info),
+                      leading: getIcon(title),
                       title: Text(
                         title,
                         style: TextStyle(fontSize: fontSize),

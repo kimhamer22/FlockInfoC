@@ -32,4 +32,8 @@ class Helpers {
   getMainPageSections() async {
     return await sh.mainPageButtons();
   }
+
+  getHamMenuSections() async {
+    return await sh.hamMenuButtons();
+  }
 }

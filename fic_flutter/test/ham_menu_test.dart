@@ -8,12 +8,10 @@ void main() {
 
     final tileHomeFinder = find.text('Home');
     final speciesTileFinder = find.text('Species');
-    final ackTileFinder = find.text('Acknowledgements');
     final contactTileFinder = find.text('Update data');
 
     expect(tileHomeFinder, findsOneWidget);
     expect(speciesTileFinder, findsOneWidget);
-    expect(ackTileFinder, findsOneWidget);
     expect(contactTileFinder, findsOneWidget);
   });
 }

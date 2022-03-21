@@ -28,6 +28,7 @@ class _HamMenu extends State<HamMenu> {
   late Future allSpeciesFuture;
   late Future allLanguages;
   late Future mainPageSections;
+  late Future hamMenuSections;
   final String tileRoute = '/simple_text';
   late final String path;
   late DownloaderUtils downloaderUtils;
@@ -37,11 +38,27 @@ class _HamMenu extends State<HamMenu> {
   late int websiteDBVersion;
   late int appDBVersion;
 
+  Map icons = <String, Icon>{
+    "Benefits of Reducing Losses": const Icon(Icons.health_and_safety),
+    "Additional Resources": const Icon(Icons.info),
+    "Acknowledgements": const Icon(Icons.article),
+    "Contact Us": const Icon(Icons.mail)
+  };
+
+  Icon getIcon(String name) {
+    if (icons.containsKey(name)) {
+      return icons[name];
+    } else {
+      return const Icon(Icons.info);
+    }
+  }
+
   @override
   void initState() {
     allSpeciesFuture = Helpers().getSpecies();
     allLanguages = Helpers().getLanguages();
     mainPageSections = Helpers().getMainPageSections();
+    hamMenuSections = Helpers().getHamMenuSections();
     initPlatformState();
     fetchWebDBVersion().then((response) {
       websiteDBVersion = int.tryParse(response.body) ?? 1;
@@ -149,7 +166,7 @@ class _HamMenu extends State<HamMenu> {
                     var id = data[i].id;
                     var title = data[i].translationSection;
                     tiles.add(ListTile(
-                      leading: const Icon(Icons.info),
+                      leading: getIcon(title),
                       title: Text(
                         title,
                         style: TextStyle(fontSize: fontSize),
@@ -168,28 +185,57 @@ class _HamMenu extends State<HamMenu> {
                   return Container();
                 }
               }),
-          ListTile(
-            leading: const Icon(Icons.article),
-            title: Text(
-              'Acknowledgements',
-              style: TextStyle(fontSize: fontSize),
-            ),
-            onTap: () {
-              Navigator.pushNamed(context, tileRoute, arguments: 27);
-              BreadcrumbBar.add(tileRoute, context, 27);
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.email),
-            title: Text(
-              'Contact Us',
-              style: TextStyle(fontSize: fontSize),
-            ),
-            onTap: () {
-              Navigator.pushNamed(context, tileRoute, arguments: 28);
-              BreadcrumbBar.add(tileRoute, context, 28);
-            },
-          ),
+          FutureBuilder(
+              future: hamMenuSections,
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  var tiles = <ListTile>[];
+                  var data = snapshot.data as List;
+                  for (var i = 0; i < data.length; i++) {
+                    var id = data[i].id;
+                    var title = data[i].translationSection;
+                    tiles.add(ListTile(
+                      leading: getIcon(title),
+                      title: Text(
+                        title,
+                        style: TextStyle(fontSize: fontSize),
+                      ),
+                      onTap: () {
+                        Navigator.pushNamed(context, tileRoute, arguments: id);
+                        BreadcrumbBar.add(tileRoute, context, id);
+                      },
+                    ));
+                  }
+
+                  return Column(
+                    children: tiles,
+                  );
+                } else {
+                  return Container();
+                }
+              }),
+          // ListTile(
+          //   leading: const Icon(Icons.article),
+          //   title: Text(
+          //     'Acknowledgements',
+          //     style: TextStyle(fontSize: fontSize),
+          //   ),
+          //   onTap: () {
+          //     Navigator.pushNamed(context, tileRoute, arguments: 27);
+          //     BreadcrumbBar.add(tileRoute, context, 27);
+          //   },
+          // ),
+          // ListTile(
+          //   leading: const Icon(Icons.email),
+          //   title: Text(
+          //     'Contact Us',
+          //     style: TextStyle(fontSize: fontSize),
+          //   ),
+          //   onTap: () {
+          //     Navigator.pushNamed(context, tileRoute, arguments: 28);
+          //     BreadcrumbBar.add(tileRoute, context, 28);
+          //   },
+          // ),
           ListTile(
             leading: Icon(
               Icons.refresh,
